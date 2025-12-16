@@ -137,3 +137,129 @@
 .lang-btn span {
   line-height: 19.5px;
 }
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .header-container {
+    padding: 0 10px;
+  }
+  .right-section {
+    gap: 20px;
+  }
+  .navigation {
+    gap: 20px;
+  }
+  .nav-link {
+    font-size: 14px;
+  }
+  .contact-cta {
+    padding: 10px 15px;
+  }
+  .contact-wrapper p {
+    font-size: 16px;
+  }
+  .lang-switcher {
+    padding: 5px;
+  }
+  .toggle-container {
+    height: 35px;
+    width: 90px;
+  }
+  .lang-btn {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 0;
+    background-color: rgba(255, 255, 255, 0.9); /* More opaque for mobile */
+  }
+
+  .contact-cta {
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none; /* remove border on mobile */
+    background-color: #62c4aa; /* solid background */
+  }
+  .contact-cta:hover {
+    background: #62c4aa;
+  }
+  .contact-wrapper p {
+    color: white;
+    font-size: 18px;
+  }
+
+  .right-section {
+    flex-direction: column-reverse; /* Logo and nav above lang switcher */
+    width: 100%;
+    gap: 15px;
+  }
+
+  .nav-and-logo {
+    flex-direction: column-reverse; /* Nav below logo */
+    width: 100%;
+    gap: 15px;
+  }
+
+  .logo img {
+    width: 60px;
+    height: auto;
+  }
+
+  .navigation {
+    flex-direction: column; /* Stack nav links */
+    width: 100%;
+    gap: 10px;
+    padding: 10px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-link {
+    color: #333; /* Darker color for readability on lighter background */
+    font-size: 16px;
+    padding: 5px 0;
+  }
+  .nav-link:hover {
+    opacity: 1; /* No opacity change on hover for mobile */
+  }
+
+  .lang-switcher {
+    padding: 0;
+    border-left: none;
+  }
+
+  .toggle-container {
+    height: 40px;
+    width: 120px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.05);
+  }
+  .lang-btn {
+    color: rgba(0, 0, 0, 0.6);
+  }
+  .lang-btn.active {
+    background: rgba(0, 0, 0, 0.1);
+    color: #333;
+  }
+}
+
+@media (max-width: 480px) {
+  .right-section {
+    gap: 10px;
+  }
+  .nav-and-logo {
+    gap: 10px;
+  }
+  .navigation {
+    gap: 5px;
+    padding: 5px 0;
+  }
+  .nav-link {
+    font-size: 14px;
+  }
+}
