@@ -1,0 +1,20 @@
+<div class="main-layout-container">
+  <div aria-hidden="true" class="background-wrapper">
+    <div class="background-image-container">
+      <img [src]="imgHeaderBackground" alt="Background" class="background-image">
+    </div>
+    <div class="overlay"></div>
+    <div class="bottom-fade"></div>
+  </div>
+
+  <div class="content-wrapper">
+    <!-- Offset to match Figma's pt-[99px] on the parent -->
+    <div class="header-offset">
+      <app-header></app-header>
+    </div>
+    <div class="hero-offset">
+      <app-hero-section></app-hero-section>
+    </div>
+    <ng-content></ng-content>
+  </div>
+</div>

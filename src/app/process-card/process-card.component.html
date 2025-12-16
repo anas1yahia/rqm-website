@@ -1,0 +1,21 @@
+<div class="card-container" [class.active]="isActive" [class.inactive]="!isActive">
+  <div class="card-header">
+    <div class="card-icon">
+    <img [src]="icon" alt="icon" class="icon-img">
+  </div>
+    <div class="card-title-wrapper">
+      <h3 class="card-title">{{ title }}</h3>
+    </div>
+
+  </div>
+
+  <div class="card-body">
+    <p class="card-desc">{{ description }}</p>
+  </div>
+
+  <div class="card-bg-wrapper">
+    <div class="card-bg-mask" @bgImageAnimation>
+       <img [src]="bgImage" alt="background" class="bg-img">
+    </div>
+  </div>
+</div>

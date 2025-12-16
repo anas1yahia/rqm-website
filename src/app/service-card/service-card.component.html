@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-bg">
+    <img [src]="bgImage" alt="" class="bg-graphic">
+  </div>
+
+  <!-- Text Block -->
+  <div class="text-block">
+    <h3>{{ title }}</h3>
+    <p>{{ description }}</p>
+  </div>
+
+  <!-- Footer -->
+  <div class="card-footer">
+    <div class="arrow-icon">
+      <lucide-icon [img]="ArrowUpLeft" [size]="16" strokeWidth="2" color="white"></lucide-icon>
+    </div>
+    <span class="footer-text">{{ footerText }}</span>
+  </div>
+</div>

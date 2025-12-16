@@ -1,0 +1,27 @@
+<div class="card-wrapper">
+    <div class="card-content">
+        <!-- Illustration -->
+        <div class="illustration-container">
+            <img [src]="illustration" alt="" class="illustration">
+        </div>
+
+        <!-- Background Border/Overlay -->
+        <div class="card-overlay"></div>
+
+        <!-- Progress Bars (Top Right) -->
+        <div class="progress-bars">
+            <div class="bar bar-short"></div>
+            <div class="bar bar-long"></div>
+        </div>
+
+        <!-- Content (Bottom) -->
+        <div class="text-container">
+            <div class="title-row">
+                <h3 class="card-title">{{ title }}</h3>
+            </div>
+            <div class="desc-row">
+                <p class="card-desc">{{ description }}</p>
+            </div>
+        </div>
+    </div>
+</div>

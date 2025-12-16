@@ -1,0 +1,32 @@
+<div class="process-section-container">
+  <div class="header-container">
+    <h2 class="section-title">
+      <span class="block">الصفر الذي</span>
+      <span class="block">ننطلق منه في رقم</span>
+    </h2>
+  </div>
+
+  <div class="content-body-wrapper">
+    <!-- Active Card Display (Left side) -->
+    <div class="active-card-container">
+      <div class="card-slot">
+       <ng-container *ngFor="let card of [cards[activeIndex]]; trackBy: trackById">
+         <app-process-card
+           [title]="card.title"
+           [description]="card.description"
+           [icon]="card.icon"
+           [bgImage]="card.bgImage"
+           [isActive]="true"
+           [position]="activeIndex"
+           class="process-card-item active-item">
+         </app-process-card>
+       </ng-container>
+      </div>
+    </div>
+
+    <!-- Values Card (Right side) -->
+    <div class="values-card-wrapper">
+      <app-values-card></app-values-card>
+    </div>
+  </div>
+</div>

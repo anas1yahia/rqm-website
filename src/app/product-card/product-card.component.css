@@ -1,0 +1,345 @@
+:host {
+  display: block;
+}
+
+.product-card {
+  position: relative;
+  width: 447px;
+  height: 464px;
+  border-radius: 0px;
+  background: rgba(248, 248, 248, 0.02);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 27px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.product-card.small-card {
+  width: 424px;
+  height: 410px;
+  padding: 0;
+  /* Adjust border/background specific to small card if needed */
+  border: 0.5px solid rgba(117, 108, 234, 0.3); /* Based on Figma 5782:849 */
+  background: transparent; /* Container has bg inside */
+}
+
+/* Background Glow */
+.card-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top left, var(--theme-color), transparent 70%);
+  opacity: 0.1; /* Adjusted opacity */
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Small Card Background specific */
+.small-card .card-bg-layer {
+  position: absolute;
+  inset: 0;
+  background: rgba(248, 248, 248, 0.02);
+  z-index: 0;
+}
+
+/* Borders */
+.card-border {
+  position: absolute;
+  inset: 0;
+  border-radius: 11px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.corner-border {
+  position: absolute;
+  width: 27px;
+  height: 27px;
+  border: 2px solid var(--theme-color);
+  z-index: 2;
+}
+.corner-border.top-right {
+  top: 0;
+  right: 0;
+  border-bottom: 0;
+  border-left: 0;
+}
+.corner-border.bottom-left {
+  bottom: 0;
+  left: 0;
+  border-top: 0;
+  border-right: 0;
+}
+
+/* Small card corner borders adjustments */
+.small-card .corner-border {
+  width: 20px;
+  height: 20px;
+  border-width: 1px;
+}
+.small-card .corner-border.top-right {
+  top: 0;
+  right: 0; /* Align perfectly */
+}
+
+/* Header */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  z-index: 3;
+  margin-bottom: 20px;
+}
+
+.status-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.status-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--theme-color);
+}
+
+.status-text {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-size: 10px;
+  color: var(--theme-color);
+}
+
+.logo-container {
+  width: 80px;
+  height: auto;
+}
+
+.product-logo {
+  width: 100%;
+  height: auto;
+}
+
+/* Body */
+.card-body {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* RTL */
+  text-align: right;
+  flex: 1;
+}
+
+.title-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-bottom: 15px;
+}
+
+.product-title {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: #e8f2ff;
+  margin: 0 0 5px 0;
+}
+
+.title-underline {
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(to left, var(--theme-color), transparent);
+}
+
+.product-description {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: #c6cedd;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+  max-width: 90%;
+}
+
+.features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.feature-item {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+
+.feature-text {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-size: 12px;
+  color: #e8f2ff;
+}
+
+.feature-icon-wrapper {
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-icon {
+  width: 8px;
+  height: 8px;
+  background-color: var(--theme-color);
+  border-radius: 50%;
+}
+
+/* Footer */
+.card-footer {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.action-btn {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 20px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border: 1px solid var(--theme-color);
+  color: white;
+  cursor: pointer;
+}
+.action-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.btn-text {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-size: 12px;
+}
+
+/* Small Card Specific Styles */
+.small-card-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  /* Justify content based on layout */
+}
+
+.illustration-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center illustration */
+}
+
+.illustration-img {
+  width: 60%;
+  height: auto;
+  opacity: 0.1; /* As per design bg illustration style */
+  transform: scale(1.2); /* Adjust scale to fill or match design */
+}
+
+/* Pills / Badge Top Left */
+.pills-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 4;
+}
+
+.pill {
+  background: rgba(229, 228, 238, 0.1);
+  border: 0.5px solid rgba(229, 228, 238, 0.3);
+  border-radius: 20px;
+  padding: 4px 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-size: 10px;
+  color: #e1e1e8;
+  white-space: nowrap;
+}
+.pill::before {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 4px;
+  background-color: #e1e1e8;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+/* Footer / Link */
+.small-card-footer {
+  position: absolute;
+  bottom: 30px;
+  right: 20px; /* Align right or left? Design shows left aligned box with text */
+  left: 20px;
+  z-index: 4;
+  display: flex;
+  justify-content: flex-start; /* Align left */
+}
+
+.more-link {
+  background: rgba(235, 236, 238, 0.19);
+  padding: 10px 20px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  backdrop-filter: blur(5px);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.more-link span {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-size: 12px;
+  color: white;
+}
+.more-link:hover {
+  background: rgba(235, 236, 238, 0.25);
+}
+
+.arrow-icon {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive */
+
+/*# sourceMappingURL=product-card.component.css.map */

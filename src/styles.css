@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #0A0C1A;
+  margin: 0;
+  font-family: "IBM Plex Sans Arabic", sans-serif; /* Ensuring font consistency */
+}
+
+/* Custom Scrollbar Design */
+::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+  height: 8px; /* Height of horizontal scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #1a202c; /* Dark background for the track */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #36c9cb; /* Thumb color - matches a theme accent */
+  border-radius: 10px;
+  border: 2px solid #1a202c; /* Spacing around the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #62c4aa; /* Lighter/different accent on hover */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin; /* "auto" or "thin" */
+  scrollbar-color: #36c9cb #1a202c; /* thumb color track color */
+}
+
+/*# sourceMappingURL=styles.css.map */

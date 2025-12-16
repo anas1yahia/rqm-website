@@ -1,0 +1,139 @@
+:host {
+  display: block;
+  width: 100%;
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+}
+
+.header-container {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 38px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px 0 8px; /* pr-16 pl-8 from Figma */
+  width: 100%;
+  box-sizing: border-box;
+  backdrop-filter: blur(10px); /* Often implied with transparent bg */
+}
+
+/* Contact CTA */
+.contact-cta {
+  border: 1px solid #62c4aa;
+  border-radius: 37px;
+  padding: 11.25px 20px 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-cta:hover {
+  background: rgba(98, 196, 170, 0.1);
+}
+
+.contact-wrapper p {
+  margin: 0;
+  font-size: 18.7px;
+  color: white;
+  line-height: 22.46px;
+  white-space: nowrap;
+}
+
+/* Right Section */
+.right-section {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+/* Nav + Logo */
+.nav-and-logo {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.navigation {
+  display: flex;
+  gap: 46px;
+  align-items: center;
+}
+
+.nav-link {
+  font-size: 16px;
+  color: white;
+  text-decoration: none;
+  font-weight: 700; /* Bold */
+  transition: opacity 0.2s;
+}
+
+.nav-link:hover {
+  opacity: 0.8;
+}
+
+.logo img {
+  width: 74.05px;
+  height: 35.975px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Lang Switcher */
+.lang-switcher {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 7px 7px 7px 8px;
+  border-left: 1px solid rgba(119, 145, 196, 0.2);
+}
+
+.divider-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.divider-bg img {
+  height: 100%;
+  width: auto;
+  opacity: 0.5;
+}
+
+.toggle-container {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  padding: 1px 5px;
+  height: 41.5px;
+  width: 110.85px;
+  box-sizing: border-box;
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  border-radius: 100px;
+  padding: 6px 0; /* Horizontal padding handled by flex */
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+  font-family: inherit;
+  transition: all 0.3s;
+}
+
+.lang-btn.active {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.lang-btn span {
+  line-height: 19.5px;
+}

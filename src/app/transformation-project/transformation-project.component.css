@@ -1,0 +1,137 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.transformation-container {
+  width: 100%;
+  max-width: 1350px; /* Matching info-section width */
+  margin: 0 auto;
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  box-sizing: border-box;
+}
+
+/* Header Section */
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  direction: ltr; /* Ensure proper button alignment */
+}
+
+.control-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(248, 248, 248, 0.02);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.control-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+.control-btn:active {
+  transform: scale(0.95);
+}
+
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-wrapper.rotate-45 {
+  transform: rotate(45deg);
+}
+.icon-wrapper.rotate-225 {
+  transform: rotate(225deg);
+}
+
+.text-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* For RTL text alignment */
+  text-align: right;
+}
+
+.title-wrapper {
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  color: #e8f2ff;
+  margin: 0;
+}
+
+.subtitle-wrapper {
+  margin-bottom: 0;
+}
+
+.section-subtitle {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  color: #c6cedd;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header-section {
+    flex-direction: column-reverse;
+    gap: 20px;
+    align-items: flex-end;
+  }
+  .controls {
+    align-self: flex-start;
+    flex-direction: row-reverse; /* Maintain LTR button order */
+  }
+  .text-content {
+    align-items: flex-end;
+    text-align: right;
+  }
+  .section-title {
+    font-size: 24px;
+  }
+  .section-subtitle {
+    font-size: 14px;
+  }
+}
+/* Cards List */
+.cards-list {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  height: 380px; /* Fixed height from design */
+}
+
+@media (max-width: 1024px) {
+  .cards-list {
+    flex-wrap: wrap;
+    height: auto;
+  }
+  app-transformation-card {
+    flex-basis: 100%; /* Stack on mobile */
+    min-height: 300px;
+  }
+}
+
+/*# sourceMappingURL=transformation-project.component.css.map */

@@ -1,0 +1,113 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.process-section-container {
+  display: flex;
+  padding: 64px 117px 0 117px;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 66px;
+  border-radius: 28px;
+  border: 2px solid #0D99FF;
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 1350px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  min-height: 600px;
+}
+
+/* Header Container */
+.header-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: #e8f2ff;
+  margin: 0;
+  text-align: right;
+  line-height: 1.2;
+}
+
+.block {
+  display: block;
+  width: 100%;
+}
+
+/* Content Body Wrapper */
+.content-body-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  gap: 50px;
+  margin-left: 60px; /* Offset for the header alignment */
+}
+
+/* Active Card Container */
+.active-card-container {
+  min-width: 0; /* Allow it to shrink below its content size */
+}
+
+.card-slot {
+  position: relative;
+  min-height: 400px; /* Ensure space for card animation */
+}
+
+/* Values Card Wrapper */
+.values-card-wrapper {
+  margin-left: 40px;
+  flex-shrink: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .process-section-container {
+    padding: 40px 20px 40px 20px;
+    align-items: center;
+  }
+  .header-container {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+  .section-title {
+    font-size: 32px;
+    text-align: center;
+  }
+  .content-body-wrapper {
+    flex-direction: column-reverse;
+    gap: 40px;
+    margin-left: 0;
+  }
+  .values-card-wrapper {
+    margin-left: 0;
+    width: 100%;
+  }
+  .active-card-container {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 28px;
+  }
+  .content-body-wrapper {
+    gap: 30px;
+  }
+  .values-card-wrapper {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=process-section.component.css.map */

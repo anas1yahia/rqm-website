@@ -1,0 +1,57 @@
+<div class="transformation-container">
+  <!-- Top Section: Header & Controls -->
+  <div class="header-section">
+    <!-- Controls (Left side) -->
+    <div class="controls">
+      <!-- Next Slide Button -->
+      <button class="control-btn next-btn" aria-label="Next Slide">
+        <div class="icon-wrapper rotate-225">
+          <lucide-icon [img]="ArrowUp" [size]="14" strokeWidth="2" color="white"></lucide-icon>
+        </div>
+      </button>
+
+      <!-- Previous Slide Button -->
+      <button class="control-btn prev-btn" aria-label="Previous Slide">
+        <div class="icon-wrapper rotate-45">
+          <lucide-icon [img]="ArrowUp" [size]="14" strokeWidth="2" color="white"></lucide-icon>
+        </div>
+      </button>
+    </div>
+
+    <!-- Text Content (Right side) -->
+    <div class="text-content">
+      <div class="title-wrapper">
+        <h2 class="section-title">نحوّل مشروعك إلى واقع</h2>
+      </div>
+      <div class="subtitle-wrapper">
+        <p class="section-subtitle">
+          خطوات منهجية مدعّمة بالخبرة والمهارة لتحقيق أهدافك
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cards List -->
+  <div class="cards-list">
+    <!-- Card 3: Analysis -->
+    <app-transformation-card
+      title="التحليل"
+      description="نحلل متطلبات الأعمال بمنهجيات رشيقة."
+      illustration="/AnalysisIllustration.svg">
+    </app-transformation-card>
+
+    <!-- Card 2: Study -->
+    <app-transformation-card
+      title="الدراسة"
+      description="نبحث وندرس ونختبر جدوى العمل."
+      illustration="/StudyIllustration.svg">
+    </app-transformation-card>
+
+    <!-- Card 1: Building -->
+    <app-transformation-card
+      title="البناء"
+      description="نؤسس المشروع ونبني نموذج عمله الأوّلي"
+      illustration="/BuildingIllustration.svg">
+    </app-transformation-card>
+  </div>
+</div>

@@ -1,0 +1,125 @@
+:host {
+  display: block;
+  direction: rtl;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 380px;
+  height: 356px;
+  padding: 24px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 4px 0px rgba(249, 244, 244, 0.8);
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  align-items: flex-end;
+}
+
+.card-container.active {
+  background: rgba(116, 124, 145, 0.12);
+}
+
+.card-container.inactive {
+  background: rgba(16, 16, 16, 0.77);
+  opacity: 0.8; 
+  /* In design, inactive cards are visible but maybe shifted/smaller/behind. 
+     The parent component will handle positioning/transform. 
+     This class just handles inner styling. */
+}
+
+/* Header */
+.card-header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-end; /* RTL */
+  width: 100%;
+  z-index: 2;
+}
+
+.card-title-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+.card-title {
+  margin: 0;
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: white;
+  text-align: right;
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+}
+
+.card-icon {
+  width: 36px;
+  height: 36px;
+}
+
+.icon-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Body */
+.card-body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+  text-align: right;
+}
+
+.card-desc {
+  margin: 0;
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #cbc8c7;
+  line-height: 20px;
+  white-space: pre-wrap;
+}
+
+/* Background/Illustration */
+.card-bg-wrapper {
+  position: absolute;
+  top: 123px;
+  left: 97px;
+  width: 202px;
+  height: 194px;
+  border-radius: 97px;
+  box-shadow: 0px 0px 4px 0px rgba(249, 244, 244, 0.8);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.card-bg-mask {
+  position: absolute;
+  inset: 0;
+  border-radius: 97px;
+  overflow: hidden;
+}
+
+.bg-img {
+  position: absolute;
+  /* Values from Figma for '01' state or general fit */
+  width: 474%;
+  height: 500%;
+  left: -189%;
+  top: -125%;
+  max-width: none;
+  object-fit: cover;
+}
+
+/* Adjustments for inactive cards if specific internal layout changes are needed 
+   based on the 'component set' variants provided */

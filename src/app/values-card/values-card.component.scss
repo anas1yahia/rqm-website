@@ -1,0 +1,131 @@
+:host {
+  display: block;
+}
+
+.values-card-container {
+  width: 431px;
+  height: 393px;
+  border-top-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  background-image: 
+    linear-gradient(180deg, rgba(102, 153, 255, 0.172) 0%, rgba(51, 204, 204, 0.04) 100%), 
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.02) 100%);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Based on 'justify-between' in design */
+  align-items: center;
+  padding: 72px 32px;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.text-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* RTL */
+  text-align: right;
+  width: 100%;
+  z-index: 4;
+}
+
+.card-title {
+  margin: 0;
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  color: white;
+  line-height: 42px;
+  text-transform: capitalize;
+}
+
+.card-description {
+  margin: 0;
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: white;
+  line-height: 1.5;
+}
+
+/* Button */
+.button-wrapper {
+  position: relative;
+  width: 275px;
+  height: 60px;
+  z-index: 3;
+}
+
+.custom-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid #6699ff; /* #69f */
+  border-left: 0;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+  border-bottom-left-radius: 16px;
+  padding: 18px 37px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.button-text {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  font-weight: 400;
+  font-size: 18.7px;
+  color: white;
+  line-height: 22.46px;
+}
+
+.button-number-container {
+  position: absolute;
+  top: 13px;
+  left: 0.44px;
+  display: flex;
+  gap: 12px; /* Approx spacing */
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  font-weight: 700;
+  font-size: 13.3px;
+  color: white;
+}
+
+.number-group {
+  display: flex;
+  flex-direction: column;
+  line-height: 16px;
+}
+
+/* Corner Borders */
+.corner-border {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #36c9cb;
+}
+
+.corner-border.bottom-left {
+  bottom: 0;
+  left: 0;
+  border-top: 0;
+  border-right: 0;
+  z-index: 2;
+}
+
+.corner-border.top-right {
+  top: 0;
+  right: -0.4px;
+  border-bottom: 0;
+  border-left: 0;
+  z-index: 1;
+}

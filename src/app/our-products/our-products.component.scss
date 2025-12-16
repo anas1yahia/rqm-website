@@ -1,6 +1,6 @@
 :host {
   display: block;
-  width: 100%;
+width: 100%;
 }
 
 .products-container {
@@ -17,28 +17,29 @@
 .header-section {
   display: flex;
   gap: 16px;
-  align-items: flex-end;
+  align-items: center;
   justify-content: flex-end;
   position: relative;
   width: 100%;
   height: auto;
 
   .title-wrapper {
-    height: 57px;
+
     width: 115.68px;
     position: relative;
     flex-shrink: 0;
 
     .section-title {
+      height: 100%;
       font-family: 'IBM Plex Sans Arabic', sans-serif;
       font-weight: bold;
       font-size: 38px;
       color: #e8f2ff;
-      text-align: right;
+      text-align: center;
       line-height: normal;
       font-style: normal;
-      position: relative;
-      flex-shrink: 0;
+      //position: relative;
+      //flex-shrink: 0;
     }
   }
 
@@ -51,7 +52,12 @@
   }
 }
 
-
+.product-line{
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 20px;
+}
 
 /* Responsive */
 @media (max-width: 1200px) {

@@ -1,0 +1,78 @@
+<div class="product-card" [class.small-card]="isSmall" [style.--theme-color]="themeColor">
+  <!-- Background Glow & Borders -->
+  <div class="card-glow"></div>
+  <div class="card-border"></div>
+  <div class="corner-border top-right"></div>
+  <div class="corner-border bottom-left"></div>
+
+  <!-- Content for Large Cards -->
+  @if (!isSmall) {
+    <!-- Header: Logo & Status -->
+    <div class="card-header">
+      <div class="status-badge">
+        <div class="status-dot"></div>
+        <span class="status-text">جرب الان</span>
+      </div>
+      <div class="logo-container">
+        <img [src]="logo" alt="Product Logo" class="product-logo">
+      </div>
+    </div>
+
+    <!-- Body: Title, Subtitle, Description -->
+    <div class="card-body">
+      <div class="title-section">
+        <h3 class="product-title">{{ title }}</h3>
+        <div class="title-underline"></div>
+      </div>
+      <p class="product-description">{{ description }}</p>
+      
+      <!-- Features List -->
+      <div class="features-list">
+        @for (feature of features; track feature) {
+          <div class="feature-item">
+            <span class="feature-text">{{ feature }}</span>
+            <div class="feature-icon-wrapper">
+               <div class="feature-icon"></div> <!-- Placeholder for icon -->
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Footer: Action Button -->
+    <div class="card-footer">
+      <button class="action-btn">
+        <span class="btn-text">اكتشف المزيد</span>
+        <div class="btn-icon">
+           <!-- Lucide Icon -->
+           <lucide-icon [img]="ChevronLeft" [size]="16" strokeWidth="2"></lucide-icon>
+        </div>
+      </button>
+    </div>
+  }
+
+  <!-- Content for Small Card (More Solutions) -->
+  @if (isSmall) {
+    <div class="small-card-content">
+      <div class="illustration-container">
+        <!-- Placeholder for 'more' illustration or use passed logo as illustration -->
+         <img [src]="logo" alt="Illustration" class="illustration-img">
+      </div>
+      
+      <div class="small-card-footer">
+         <div class="more-link">
+           <span>تعرف على المزيد من حلولنا</span>
+           <div class="arrow-icon">
+             <!-- Arrow Icon -->
+             <lucide-icon [img]="ArrowUpLeft" [size]="20" strokeWidth="2" color="white"></lucide-icon>
+           </div>
+         </div>
+      </div>
+      
+      <!-- List of bubbles/pills from design -->
+      <div class="pills-container">
+        <div class="pill">تعرف علر حلولنا الاخرى</div>
+      </div>
+    </div>
+  }
+</div>
