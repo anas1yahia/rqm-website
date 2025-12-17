@@ -1,0 +1,70 @@
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.pipeline-network-wrapper {
+  width: 100%;
+  height: 100%;
+  opacity: 0.4; /* Slightly more subtle */
+}
+
+.pipeline-svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.logic-path {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  animation: executeCode 5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@keyframes executeCode {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.code-nodes {
+  .code-symbol {
+    font-size: 14px;
+    text-anchor: middle;
+    animation: blinkCode 4s infinite alternate;
+    
+    @for $i from 1 through 10 {
+      &:nth-child(#{$i}) {
+        animation-delay: #{$i * 0.5}s;
+      }
+    }
+  }
+}
+
+@keyframes blinkCode {
+  0%, 100% {
+    opacity: 0.2;
+    fill: rgba(54, 201, 203, 0.4);
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 0.8;
+    fill: #62C4AA;
+    transform: scale(1.1);
+  }
+}
+
+.execution-flow {
+  circle, text {
+    opacity: 0.8;
+  }
+}

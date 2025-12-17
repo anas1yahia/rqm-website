@@ -1,0 +1,72 @@
+<div class="pipeline-network-wrapper">
+  <svg class="pipeline-svg" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="codeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="rgba(54, 201, 203, 0.05)" />
+        <stop offset="50%" stop-color="rgba(98, 196, 170, 0.3)" />
+        <stop offset="100%" stop-color="rgba(54, 201, 203, 0.05)" />
+      </linearGradient>
+      
+      <filter id="codeGlow">
+        <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+        <feMerge>
+          <feMergeNode in="coloredBlur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+
+    <!-- Circuit-like Logic Paths (Right angles for "Programming/Hardware" feel) -->
+    <g class="network-lines" stroke="url(#codeGradient)" stroke-width="1" fill="none">
+      <!-- Logic Stream 1 -->
+      <path d="M0 150 H200 V50 H400 V250 H600 V150 H1000" class="logic-path" />
+      <!-- Logic Stream 2 -->
+      <path d="M0 450 H150 V550 H350 V350 H550 V450 H1000" class="logic-path" />
+      <!-- Logic Stream 3 -->
+      <path d="M100 0 V100 H300 V200 H100 V400 H500 V300 H700 V600" class="logic-path" />
+      <!-- Logic Stream 4 -->
+      <path d="M800 0 V150 H600 V450 H900 V600" class="logic-path" />
+      
+      <!-- Cross Connections -->
+      <path d="M200 50 H600" class="logic-path" opacity="0.5" />
+      <path d="M400 350 H800" class="logic-path" opacity="0.5" />
+    </g>
+
+    <!-- Programming Symbols as Nodes -->
+    <g class="code-nodes" fill="rgba(54, 201, 203, 0.4)" font-family="monospace" font-weight="bold">
+      <text x="195" y="55" class="code-symbol">{{ '{' }} {{ '}' }}</text>
+      <text x="395" y="255" class="code-symbol">&lt; /&gt;</text>
+      <text x="595" y="155" class="code-symbol">( )</text>
+      <text x="145" y="555" class="code-symbol">=&gt;</text>
+      <text x="345" y="355" class="code-symbol">if</text>
+      <text x="545" y="455" class="code-symbol">for</text>
+      <text x="595" y="455" class="code-symbol">ptr</text>
+      <text x="95" y="105" class="code-symbol">01</text>
+      <text x="795" y="155" class="code-symbol">&&</text>
+      <text x="495" y="305" class="code-symbol">||</text>
+    </g>
+
+    <!-- Execution Packets (Data flow) -->
+    <g class="execution-flow">
+      <circle r="2" fill="#36C9CB" filter="url(#codeGlow)">
+        <animateMotion dur="8s" repeatCount="indefinite" path="M0 150 H200 V50 H400 V250 H600 V150 H1000" />
+      </circle>
+      <circle r="2" fill="#62C4AA" filter="url(#codeGlow)">
+        <animateMotion dur="10s" repeatCount="indefinite" path="M0 450 H150 V550 H350 V350 H550 V450 H1000" />
+      </circle>
+      <circle r="1.5" fill="#36C9CB" filter="url(#codeGlow)">
+        <animateMotion dur="12s" begin="2s" repeatCount="indefinite" path="M100 0 V100 H300 V200 H100 V400 H500 V300 H700 V600" />
+      </circle>
+      
+      <!-- Binary Packets -->
+      <text font-size="10" fill="#36C9CB" filter="url(#codeGlow)" font-family="monospace">
+        1
+        <animateMotion dur="6s" repeatCount="indefinite" path="M600 0 V150 H400" />
+      </text>
+      <text font-size="10" fill="#62C4AA" filter="url(#codeGlow)" font-family="monospace">
+        0
+        <animateMotion dur="5s" begin="1s" repeatCount="indefinite" path="M200 50 H600" />
+      </text>
+    </g>
+  </svg>
+</div>

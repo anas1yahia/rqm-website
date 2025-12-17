@@ -21,24 +21,13 @@
   overflow: hidden; /* Clip animated background */
 
   background-image:
-    repeating-linear-gradient(90deg, rgba(54, 201, 203, 0.02) 0%, transparent 1px, transparent 40px), /* Vertical lines */
-    repeating-linear-gradient(0deg, rgba(54, 201, 203, 0.01) 0%, transparent 1px, transparent 40px); /* Very subtle horizontal for grid feel */
+    repeating-linear-gradient(90deg, rgba(54, 201, 203, 0.01) 0%, transparent 1px, transparent 40px), /* Vertical lines */
+    repeating-linear-gradient(0deg, rgba(54, 201, 203, 0.005) 0%, transparent 1px, transparent 40px); /* Very subtle horizontal for grid feel */
 
   background-size: 40px 40px; /* Adjust size for line density and spacing */
   background-position: 0 0;
   background-repeat: repeat;
   background-blend-mode: soft-light; /* Blend with existing background */
-
-  animation: pipeline-flow 90s linear infinite; /* Slow, continuous animation */
-}
-
-@keyframes pipeline-flow {
-  0% {
-    background-position: 0% 0%;
-  }
-  100% {
-    background-position: 100% 0%; /* Animate horizontally for vertical lines */
-  }
 }
 
 /* Section Header */

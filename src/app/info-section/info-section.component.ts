@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ServiceCardComponent } from '../service-card/service-card.component';
+import { PipelineNetworkComponent } from '../pipeline-network/pipeline-network.component';
 
 @Component({
   selector: 'app-info-section',
   standalone: true,
-  imports: [CommonModule, ServiceCardComponent],
+  imports: [CommonModule, ServiceCardComponent, PipelineNetworkComponent],
   templateUrl: './info-section.component.html',
   styleUrls: ['./info-section.component.scss']
 })

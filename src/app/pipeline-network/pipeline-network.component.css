@@ -1,0 +1,90 @@
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.pipeline-network-wrapper {
+  width: 100%;
+  height: 100%;
+  opacity: 0.4; /* Slightly more subtle */
+}
+
+.pipeline-svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.logic-path {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  animation: executeCode 5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@keyframes executeCode {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.code-nodes .code-symbol {
+  font-size: 14px;
+  text-anchor: middle;
+  animation: blinkCode 4s infinite alternate;
+}
+.code-nodes .code-symbol:nth-child(1) {
+  animation-delay: 0.5s;
+}
+.code-nodes .code-symbol:nth-child(2) {
+  animation-delay: 1s;
+}
+.code-nodes .code-symbol:nth-child(3) {
+  animation-delay: 1.5s;
+}
+.code-nodes .code-symbol:nth-child(4) {
+  animation-delay: 2s;
+}
+.code-nodes .code-symbol:nth-child(5) {
+  animation-delay: 2.5s;
+}
+.code-nodes .code-symbol:nth-child(6) {
+  animation-delay: 3s;
+}
+.code-nodes .code-symbol:nth-child(7) {
+  animation-delay: 3.5s;
+}
+.code-nodes .code-symbol:nth-child(8) {
+  animation-delay: 4s;
+}
+.code-nodes .code-symbol:nth-child(9) {
+  animation-delay: 4.5s;
+}
+.code-nodes .code-symbol:nth-child(10) {
+  animation-delay: 5s;
+}
+
+@keyframes blinkCode {
+  0%, 100% {
+    opacity: 0.2;
+    fill: rgba(54, 201, 203, 0.4);
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 0.8;
+    fill: #62C4AA;
+    transform: scale(1.1);
+  }
+}
+.execution-flow circle, .execution-flow text {
+  opacity: 0.8;
+}
+
+/*# sourceMappingURL=pipeline-network.component.css.map */
