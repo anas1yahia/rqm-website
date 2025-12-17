@@ -3,10 +3,13 @@
   width: 100%;
   font-family: 'IBM Plex Sans Arabic', sans-serif;
   direction: rtl;
+  position: relative;
+  z-index: 0;
 }
 
 .info-section-container {
   width: 100%;
+  z-index: 1;
   max-width: 1350px;
   margin: 0 auto;
   padding: 80px 20px;

@@ -1,9 +1,12 @@
 :host {
   display: block;
   width: 100%;
+  position: relative;
+  z-index: -1;
 }
 
 .products-container {
+  z-index: 1;
   width: 100%;
   max-width: 1350px;
   margin: 0 auto;

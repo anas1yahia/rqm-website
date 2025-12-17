@@ -5,6 +5,7 @@
 }
 
 .card-container {
+
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -28,7 +29,7 @@
 
 .card-container.inactive {
   background: rgba(16, 16, 16, 0.77);
-  opacity: 0.8; 
+  opacity: 0.8;
 }
 
 /* Header */
@@ -130,22 +131,22 @@
     min-height: 300px;
     padding: 20px;
   }
-  
+
   .card-title {
     font-size: 18px;
   }
-  
+
   .card-desc {
     font-size: 16px;
     line-height: 1.4;
   }
-  
+
   .card-bg-wrapper {
     width: 160px;
     height: 154px;
     top: 100px; /* Adjust vertical position */
   }
-  
+
   .bg-img {
     /* Adjust scale if necessary for smaller wrapper */
   }

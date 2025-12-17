@@ -1,6 +1,7 @@
 :host {
   display: block;
   position: relative;
+  z-index: 0; /* Sit below header */
   width: 100%;
   max-width: 1084px; /* Figma width */
   margin: 0 auto;
