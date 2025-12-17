@@ -1,15 +1,21 @@
 <header class="header-container">
-  <!-- Contact Us CTA -->
-  <div class="contact-cta">
+  <!-- Contact Us CTA (Visible on Desktop, maybe moved/hidden on mobile depending on space) -->
+  <div class="contact-cta hidden-mobile">
     <div class="contact-wrapper">
        <p>تواصل معنا</p>
     </div>
   </div>
 
+  <!-- Mobile Burger Button -->
+  <button class="burger-btn" (click)="toggleMenu()" aria-label="Toggle menu">
+    <lucide-icon [img]="isMenuOpen ? XIcon : MenuIcon" [size]="24" strokeWidth="2" color="white"></lucide-icon>
+  </button>
+
   <!-- Right Section: Navigation, Logo, Language -->
   <div class="right-section">
     <div class="nav-and-logo">
-      <nav class="navigation">
+      <!-- Desktop Navigation -->
+      <nav class="navigation desktop-nav">
         <a href="#" class="nav-link">تواصل معنا</a>
         <a href="#" class="nav-link">الخدمات</a>
         <a href="#" class="nav-link">عن رقم</a>
@@ -20,7 +26,7 @@
       </div>
     </div>
 
-    <div class="lang-switcher">
+    <div class="lang-switcher hidden-mobile">
       <div class="divider-bg">
         <img [src]="backgroundBorder" alt="">
       </div>
@@ -35,3 +41,25 @@
     </div>
   </div>
 </header>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu-overlay" *ngIf="isMenuOpen" @menuState>
+  <div class="mobile-menu-content" @navItems>
+    <nav class="mobile-nav">
+      <a href="#" class="mobile-nav-link" (click)="toggleMenu()">الرئيسية</a>
+      <a href="#" class="mobile-nav-link" (click)="toggleMenu()">عن رقم</a>
+      <a href="#" class="mobile-nav-link" (click)="toggleMenu()">الخدمات</a>
+      <a href="#" class="mobile-nav-link" (click)="toggleMenu()">تواصل معنا</a>
+    </nav>
+    
+    <!-- Mobile Lang Switcher inside menu -->
+    <div class="mobile-lang-switcher">
+        <button class="lang-btn active">
+          <span>عربي</span>
+        </button>
+        <button class="lang-btn">
+          <span>EN</span>
+        </button>
+    </div>
+  </div>
+</div>

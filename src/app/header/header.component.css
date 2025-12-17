@@ -1,7 +1,7 @@
 :host {
   display: block;
   width: 100%;
-  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  font-family: "IBM Plex Sans Arabic", sans-serif;
   position: relative;
   z-index: 100; /* Ensure header stays on top */
 }
@@ -191,10 +191,9 @@
   color: white;
   text-decoration: none;
   transition: color 0.3s;
-  
-  &:hover {
-    color: #36c9cb;
-  }
+}
+.mobile-nav-link:hover {
+  color: #36c9cb;
 }
 
 .mobile-lang-switcher {
@@ -204,10 +203,9 @@
   padding: 10px;
   border-radius: 30px;
   width: 140px;
-  
-  .lang-btn {
-    font-size: 16px;
-  }
+}
+.mobile-lang-switcher .lang-btn {
+  font-size: 16px;
 }
 
 /* Responsive Logic */
@@ -215,40 +213,34 @@
   .header-container {
     padding: 0 10px;
   }
-  
   .burger-btn {
     display: block;
     order: 1; /* Left side */
   }
-  
   .contact-cta.hidden-mobile {
     display: none;
   }
-  
   .desktop-nav {
     display: none;
   }
-  
   .lang-switcher.hidden-mobile {
     display: none; /* Move to menu */
   }
-  
   .right-section {
     width: auto;
     gap: 10px;
   }
-  
   .nav-and-logo {
     gap: 10px;
   }
-  
   /* Reorder for mobile header bar */
   /* We want: [Burger] [Logo] */
   .header-container {
-     justify-content: space-between;
-     flex-direction: row; /* Ensure row */
+    justify-content: space-between;
+    flex-direction: row; /* Ensure row */
   }
-  
   /* Since Burger is first in DOM now (after Contact which is hidden), it's Left. */
   /* Right Section is on Right. */
 }
+
+/*# sourceMappingURL=header.component.css.map */
