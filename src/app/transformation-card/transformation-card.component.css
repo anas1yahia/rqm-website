@@ -22,11 +22,10 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-image: repeating-conic-gradient(rgba(182, 204, 248, 0.05) 0% 25%, transparent 25% 50%);
-  background-size: 100px 100px;
+  background-image: repeating-linear-gradient(0deg, rgba(182, 204, 248, 0.03) 0%, transparent 1px, transparent 20px), repeating-linear-gradient(90deg, rgba(182, 204, 248, 0.03) 0%, transparent 1px, transparent 20px);
+  background-size: 20px 20px; /* Smaller squares for a more digital look */
   z-index: 0;
   opacity: 0; /* Hidden by default */
-  /* Remove opacity transition, use clip-path animation instead */
   pointer-events: none;
 }
 .card-wrapper {
