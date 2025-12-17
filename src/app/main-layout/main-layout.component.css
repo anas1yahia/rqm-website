@@ -59,8 +59,11 @@
   flex-direction: column;
   gap: 5rem; /* Based on Figma's gap-[10px] */
   align-items: center;
-  padding-top: 2%; /* Based on Figma's pt-[99px] */
+  padding-top: 50px; /* Adjusted from 2% or 99px for better mobile start */
+  padding-bottom: 50px;
   width: 100%; /* Changed from max-width: 1512px */
+  padding-left: 20px;
+  padding-right: 20px;
   box-sizing: border-box;
   z-index: 1; /* Bring content forward */
 }
@@ -73,11 +76,23 @@
 
 /* Specific adjustments for header and hero section to align with Figma */
 app-header {
-  width: 1084px; /* Figma's container width for header */
+  width: 100%;
+  max-width: 1084px; /* Figma's container width for header */
 }
 
 app-hero-section {
-  width: 1084px; /* Figma's container width for hero section */
+  width: 100%;
+  max-width: 1084px; /* Figma's container width for hero section */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content-wrapper {
+    gap: 2rem; /* Reduce gap on mobile */
+    padding-top: 20px; /* Reduce top padding */
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 /*# sourceMappingURL=main-layout.component.css.map */

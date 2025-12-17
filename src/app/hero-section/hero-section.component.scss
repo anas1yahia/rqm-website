@@ -354,35 +354,123 @@
 }
 
 /* Responsive */
-@media (max-width: 850px) {
+@media (max-width: 1024px) {
+  .hero-section {
+    min-height: auto; /* Allow height to grow */
+  }
+
   .content-wrapper {
-    flex-direction: column;
-    gap: 30px;
-    align-items: center;
-    padding: 20px;
-    text-align: center;
+    flex-direction: column-reverse; /* Stack graphic on top or bottom? Design choice. Usually text first on mobile? Or graphic first?
+    Previous code: flex-direction: column (which stacks top-down).
+    Desktop was row-reverse (Graphic Left, Text Right).
+    If we want Text Top, Graphic Bottom on mobile, we use column-reverse (if row-reverse was implied Graphic First in DOM).
+    HTML: Graphic is First in DOM. Text is Second.
+    Desktop (row-reverse): Text (Right/Start), Graphic (Left/End).
+    Mobile (column): Graphic (Top), Text (Bottom).
+    Usually we want Text First on mobile. So 'column-reverse' would put Text (2) on Top, Graphic (1) on Bottom.
+    */
+    flex-direction: column-reverse;
+    justify-content: center;
+    gap: 40px;
+    padding: 60px 20px;
   }
 
   .text-content {
     width: 100%;
+    max-width: 100%;
     align-items: center;
-  }
-
-  .badge-container {
-    align-self: center;
-  }
-
-  .description {
     text-align: center;
-  }
-
-  .cta-section {
-    justify-content: center;
-    flex-direction: row-reverse; /* Icon on the right side */
   }
 
   .graphic-container {
     margin-left: 0;
-    margin-bottom: 20px;
+    /* Scale graphic slightly if needed */
+    transform: scale(0.9);
+  }
+
+  .cta-section {
+    justify-content: center;
+  }
+  
+  /* Adjust background elements for tablet */
+  .bg-blur-1 {
+    left: 80%;
+  }
+  .bg-blur-2 {
+    top: 50%;
+  }
+  .orb-1 {
+    left: 85%;
+  }
+}
+
+@media (max-width: 768px) {
+  .titles h1 {
+    font-size: 36px;
+  }
+  .titles h2 {
+    font-size: 28px;
+  }
+  .description {
+    font-size: 16px;
+    max-width: 100%;
+  }
+  
+  .graphic-container {
+    transform: scale(0.8);
+    margin-bottom: -40px; /* Offset spacing due to scale */
+    margin-top: -20px;
+  }
+  
+  /* Reposition decorations for mobile */
+  .bg-blur-1 {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10%;
+  }
+  
+  .bg-blur-2 {
+    top: auto;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .orb-1, .orb-2 {
+    display: none; /* Hide floating orbs on small mobile to reduce clutter or reposition */
+  }
+}
+
+@media (max-width: 480px) {
+  .content-wrapper {
+    padding: 40px 16px;
+  }
+
+  .titles h1 {
+    font-size: 32px;
+  }
+  .titles h2 {
+    font-size: 24px;
+  }
+
+  .cta-section {
+    flex-direction: column; /* Stack button and icon vertically? Or keep row but wrap? */
+    /* Design typically keeps CTA row. But if button is wide... */
+    /* The button is min-width 274px. Screen 320px. It fits. */
+    flex-direction: row-reverse;
+    gap: 12px;
+  }
+  
+  .main-cta {
+    min-width: auto;
+    width: 100%;
+    justify-content: space-between;
+    padding: 18px 20px;
+  }
+  
+  .graphic-container {
+    transform: scale(0.65);
+    margin-bottom: -80px;
+    margin-top: -40px;
   }
 }
