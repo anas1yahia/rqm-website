@@ -80,8 +80,9 @@
 
 .card-footer {
   width: 100%;
-  bottom: 32px;
-  right: 32px;
+  /* Removed bottom:32px/right:32px as they do nothing in flex flow unless relative/absolute. 
+     The parent .card is flex column justify-between, so footer sits at bottom naturally. 
+  */
   z-index: 1;
   display: flex;
   flex-direction: row-reverse;
@@ -103,7 +104,7 @@
 
 .footer-text {
   color: #C6CEDD;
-  font-size: 1.8rem;
+  font-size: 18px; /* Fixed from 1.8rem */
   font-weight: 400;
   cursor: pointer;
   transition: color 0.3s ease;
@@ -118,30 +119,34 @@
 /* Responsive */
 @media (max-width: 1200px) {
   .card {
-    width: 380px;
-    height: 374px;
+    width: 360px;
+  }
+}
+
+@media (max-width: 992px) {
+  .card {
+    width: 100%;
+    max-width: 395px;
   }
 }
 
 @media (max-width: 768px) {
   .card {
     width: 100%;
-    max-width: 395px;
-    height: 374px;
-  }
-
-  .cards-container {
-    flex-direction: column;
-    align-items: center;
+    max-width: 100%;
+    /* Keep fixed height to maintain design integrity unless overflowing */
+    /* If we really want to prevent scroll issues with fixed height, we can use min-height but visual alignment might suffer */
+    /* I'll use min-height for safety on mobile */
+    height: auto;
+    min-height: 374px;
+    padding: 24px;
   }
 }
 
 @media (max-width: 500px) {
   .card {
-    width: 100%;
-    height: 374px;
-    min-height: 374px;
-    padding: 24px;
+    padding: 20px;
+    min-height: auto; /* Allow it to shrink if content is small, or grow if large */
   }
 
   .text-block h3 {
@@ -149,11 +154,12 @@
   }
 
   .text-block p {
-    font-size: 13px;
+    font-size: 14px;
+    -webkit-line-clamp: 6; /* Show more lines on mobile */
   }
-
+  
   .card-footer {
-    gap: 8px;
+    margin-top: 20px; /* Add spacing if height is auto */
   }
 
   .arrow-icon {
@@ -162,6 +168,6 @@
   }
 
   .footer-text {
-    font-size: 12px;
+    font-size: 14px;
   }
 }

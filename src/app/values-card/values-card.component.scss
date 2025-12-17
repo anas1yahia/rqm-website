@@ -3,8 +3,10 @@
 }
 
 .values-card-container {
-  width: 431px;
-  height: 393px;
+  width: 100%;
+  max-width: 431px;
+  height: auto;
+  min-height: 393px;
   border-top-left-radius: 16px;
   border-bottom-right-radius: 16px;
   background-image: 
@@ -14,17 +16,21 @@
   flex-direction: column;
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
+  margin: 0 auto; /* Center if wrapper allows */
 }
 
 .content-wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Based on 'justify-between' in design */
+  justify-content: space-between;
   align-items: center;
   padding: 72px 32px;
   height: 100%;
+  min-height: 393px; /* Ensure visual balance */
   box-sizing: border-box;
   position: relative;
+  gap: 30px; /* Gap between text and button if height grows */
 }
 
 .text-section {
@@ -42,12 +48,12 @@
   font-weight: 700;
   font-size: 28px;
   color: white;
-  line-height: 42px;
+  line-height: 1.4;
   text-transform: capitalize;
 }
 
 .card-description {
-  margin: 0;
+  margin: 10px 0 0 0;
   font-family: 'IBM Plex Sans Arabic', sans-serif;
   font-weight: 400;
   font-size: 24px;
@@ -58,52 +64,63 @@
 /* Button */
 .button-wrapper {
   position: relative;
-  width: 275px;
+  width: 100%;
+  max-width: 275px;
   height: 60px;
   z-index: 3;
+  margin-top: auto; /* Push to bottom */
 }
 
 .custom-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 3px solid #6699ff; /* #69f */
+  width: 100%;
+  height: 100%;
+  border: 3px solid #6699ff;
   border-left: 0;
   border-top-right-radius: 16px;
   border-bottom-right-radius: 16px;
   border-bottom-left-radius: 16px;
-  padding: 18px 37px;
   display: flex;
   align-items: center;
   justify-content: center;
   white-space: nowrap;
+  box-sizing: border-box;
+  /* Adjust padding inside */
+  padding: 0 20px;
 }
 
 .button-text {
   font-family: 'IBM Plex Sans Arabic', sans-serif;
   font-weight: 400;
-  font-size: 18.7px;
+  font-size: 18px;
   color: white;
-  line-height: 22.46px;
+  text-align: center;
 }
 
 .button-number-container {
   position: absolute;
-  top: 13px;
-  left: 0.44px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -20px; /* Offset to hang outside or align left */
+  /* The original design had specific positioning for numbers */
+  /* I'll simplify it for robustness or keep absolute if visual requires */
+  left: 10px;
   display: flex;
-  gap: 12px; /* Approx spacing */
+  gap: 8px;
   font-family: 'IBM Plex Sans Arabic', sans-serif;
   font-weight: 700;
-  font-size: 13.3px;
+  font-size: 13px;
   color: white;
+  display: none; /* Hiding strictly complex decorative numbers on smaller cards or refine layout */
+  /* If numbers are critical, I need to position them better. 
+     Original CSS had absolute positioning. 
+     Let's try to restore them but make sure they don't overlap text.
+  */
 }
 
-.number-group {
+/* Restoring numbers visibility but checking layout */
+.button-number-container {
   display: flex;
-  flex-direction: column;
-  line-height: 16px;
+  left: -30px; /* Position to left of button */
 }
 
 /* Corner Borders */
@@ -128,4 +145,37 @@
   border-bottom: 0;
   border-left: 0;
   z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .values-card-container {
+    min-height: auto;
+  }
+
+  .content-wrapper {
+    padding: 40px 24px;
+    min-height: auto;
+    gap: 40px;
+  }
+
+  .card-title {
+    font-size: 24px;
+  }
+
+  .card-description {
+    font-size: 18px;
+  }
+
+  .button-wrapper {
+    max-width: 100%;
+  }
+
+  .custom-button {
+    font-size: 16px;
+  }
+  
+  .button-number-container {
+    display: none; /* Hide decorative numbers on very small screens to save space */
+  }
 }
