@@ -157,8 +157,23 @@
   justify-content: center;
   white-space: nowrap;
   box-sizing: border-box;
-  /* Adjust padding inside */
   padding: 0 20px;
+  cursor: pointer; /* Add pointer */
+  /* Hover Slide Effect */
+  background: linear-gradient(to right, white 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  transition: background-position 0.4s ease-out, border-color 0.3s;
+}
+
+.custom-button:hover {
+  background-position: 0 0;
+  border-color: white;
+}
+
+.custom-button:hover .button-text {
+  color: #0A0C1A;
+  transition: color 0.3s;
 }
 
 .button-text {
@@ -178,16 +193,22 @@
   /* I'll simplify it for robustness or keep absolute if visual requires */
   left: 10px;
   display: flex;
-  gap: 8px;
+  flex-direction: column;
+  gap: 2px;
   font-family: "IBM Plex Sans Arabic", sans-serif;
   font-weight: 700;
   font-size: 13px;
   color: white;
   display: none; /* Hiding strictly complex decorative numbers on smaller cards or refine layout */
-  /* If numbers are critical, I need to position them better. 
-     Original CSS had absolute positioning. 
+  /* If numbers are critical, I need to position them better.
+     Original CSS had absolute positioning.
      Let's try to restore them but make sure they don't overlap text.
   */
+}
+.button-number-container .number-group {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
 }
 
 /* Restoring numbers visibility but checking layout */

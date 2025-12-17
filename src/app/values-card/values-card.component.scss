@@ -9,8 +9,8 @@
   min-height: 393px;
   border-top-left-radius: 16px;
   border-bottom-right-radius: 16px;
-  background-image: 
-    linear-gradient(180deg, rgba(102, 153, 255, 0.172) 0%, rgba(51, 204, 204, 0.04) 100%), 
+  background-image:
+    linear-gradient(180deg, rgba(102, 153, 255, 0.172) 0%, rgba(51, 204, 204, 0.04) 100%),
     linear-gradient(90deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.02) 100%);
   display: flex;
   flex-direction: column;
@@ -23,8 +23,8 @@
   /* Glitch Effect on Hover */
   &:hover {
     animation: glitch-shake 0.4s cubic-bezier(.25, .46, .45, .94) both;
-    box-shadow: 
-      -2px -2px 0px rgba(54, 201, 203, 0.3), 
+    box-shadow:
+      -2px -2px 0px rgba(54, 201, 203, 0.3),
       2px 2px 0px rgba(255, 0, 193, 0.3);
 
     .card-title, .card-description {
@@ -41,7 +41,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: inherit; 
+    background: inherit;
     pointer-events: none;
     z-index: 20;
     opacity: 0.5;
@@ -135,8 +135,24 @@
   justify-content: center;
   white-space: nowrap;
   box-sizing: border-box;
-  /* Adjust padding inside */
   padding: 0 20px;
+  cursor: pointer; /* Add pointer */
+
+  /* Hover Slide Effect */
+  background: linear-gradient(to right, white 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  transition: background-position 0.4s ease-out, border-color 0.3s;
+}
+
+.custom-button:hover {
+  background-position: 0 0;
+  border-color: white;
+}
+
+.custom-button:hover .button-text {
+  color: #0A0C1A;
+  transition: color 0.3s;
 }
 
 .button-text {
@@ -156,16 +172,23 @@
   /* I'll simplify it for robustness or keep absolute if visual requires */
   left: 10px;
   display: flex;
-  gap: 8px;
+  flex-direction: column;
+  gap: 2px;
   font-family: 'IBM Plex Sans Arabic', sans-serif;
   font-weight: 700;
   font-size: 13px;
   color: white;
   display: none; /* Hiding strictly complex decorative numbers on smaller cards or refine layout */
-  /* If numbers are critical, I need to position them better. 
-     Original CSS had absolute positioning. 
+  /* If numbers are critical, I need to position them better.
+     Original CSS had absolute positioning.
      Let's try to restore them but make sure they don't overlap text.
   */
+
+  .number-group{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+  }
 }
 
 /* Restoring numbers visibility but checking layout */
@@ -225,7 +248,7 @@
   .custom-button {
     font-size: 16px;
   }
-  
+
   .button-number-container {
     display: none; /* Hide decorative numbers on very small screens to save space */
   }

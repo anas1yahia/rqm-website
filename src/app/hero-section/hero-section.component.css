@@ -518,7 +518,11 @@
 
 .main-cta {
   position: relative;
-  background: transparent;
+  /* Hover Slide Effect */
+  background: linear-gradient(to right, white 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  transition: background-position 0.4s ease-out;
   border-top: 3px solid #3a405e; /* Figma: 5735:7821 border */
   border-right: 3px solid #3a405e;
   border-bottom: 3px solid #3a405e;
@@ -532,6 +536,17 @@
   height: 59.69px; /* Figma: 5735:7820 height */
   min-width: 274.88px; /* Figma: 5735:7820 width */
   box-sizing: border-box;
+}
+
+.main-cta:hover {
+  background-position: 0 0;
+  border-color: white; /* Optional: brighten border */
+}
+
+.main-cta:hover .cta-text span,
+.main-cta:hover .binary-code .col {
+  color: #0A0C1A;
+  transition: color 0.3s;
 }
 
 .cta-text {

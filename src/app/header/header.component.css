@@ -40,11 +40,21 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background 0.3s;
+  /* Hover Slide Effect */
+  background: linear-gradient(to right, white 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  transition: background-position 0.4s ease-out, border-color 0.3s;
 }
 
 .contact-cta:hover {
-  background: rgba(98, 196, 170, 0.1);
+  background-position: 0 0;
+  border-color: white;
+}
+
+.contact-cta:hover .contact-wrapper p {
+  color: #0A0C1A; /* Dark text on white */
+  transition: color 0.3s;
 }
 
 .contact-wrapper p {
