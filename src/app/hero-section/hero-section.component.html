@@ -1,38 +1,38 @@
 <section class="hero-section">
   <!-- Background Decorations from Figma -->
   <div class="hero-bg-details">
-    <div class="bg-blur-1"></div>
-    <div class="bg-blur-2"></div>
+    <div class="bg-blur-1" [appParallax]="-4"></div>
+    <div class="bg-blur-2" [appParallax]="-3"></div>
     <div class="bg-line-right"></div>
     <div class="bg-line-left"></div>
   </div>
 
   <!-- Orbs (Figma nodes: 5735:7885, 5735:7886) -->
-  <div class="orb-container orb-1">
+  <div class="orb-container orb-1" [appParallax]="5">
     <div class="orb"></div>
   </div>
-  <div class="orb-container orb-2">
+  <div class="orb-container orb-2" [appParallax]="3">
     <div class="orb"></div>
   </div>
 
   <div class="content-wrapper">
     <!-- Graphic Illustration (Left Side - Figma: 5735:7827) -->
-    <div class="graphic-container">
+    <div class="graphic-container pixel-reveal">
       <div class="graphic-inner">
         <!-- Main Base Vector -->
-        <img [src]="imgVector" alt="" class="vector-base">
+        <img [src]="imgVector" alt="" class="vector-base" [appParallax]="-1">
 
         <!-- Large Zero -->
-        <p class="large-zero">0</p>
+        <p class="large-zero" [appParallax]="-0.5">0</p>
 
         <!-- Floating Vectors -->
-        <div class="floating-vector fv1">
+        <div class="floating-vector fv1" [appParallax]="1">
           <img [src]="imgVector1" alt="">
         </div>
-        <div class="floating-vector fv2">
+        <div class="floating-vector fv2" [appParallax]="2">
           <img [src]="imgVector2" alt="">
         </div>
-        <div class="floating-vector fv3">
+        <div class="floating-vector fv3" [appParallax]="-1.5">
           <img [src]="imgVector3" alt="">
         </div>
 
@@ -89,8 +89,8 @@
       </div>
 
       <div class="titles">
-        <h1>الذكاء الاصطناعي</h1>
-        <h2>شريك أعمالك الرقمية</h2>
+        <h1 appTextDecode>الذكاء الاصطناعي</h1>
+        <h2 appTextDecode>شريك أعمالك الرقمية</h2>
       </div>
 
       <p class="description">

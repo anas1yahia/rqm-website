@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LucideAngularModule, ChevronLeft } from 'lucide-angular';
+import { ParallaxDirective } from '../directives/parallax';
+import { TextDecodeDirective } from '../directives/text-decode';
 
 @Component({
   selector: 'app-hero-section',
   standalone: true,
-  imports: [CommonModule, LucideAngularModule],
+  imports: [CommonModule, LucideAngularModule, ParallaxDirective, TextDecodeDirective],
   templateUrl: './hero-section.component.html',
   styleUrls: ['./hero-section.component.scss']
 })
