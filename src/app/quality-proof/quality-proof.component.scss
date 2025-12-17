@@ -43,10 +43,11 @@
 .iso-links-group {
   width: 100%;
   display: flex;
-  align-items: stretch; /* Stretch to same height */
+  align-items: center; /* Stretch to same height */
   height: 100%;
 
   @media (max-width: 576px) {
+    display: flex;
     flex-direction: column;
     width: 100%;
   }
