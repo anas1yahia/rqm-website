@@ -5,7 +5,7 @@
 }
 
 .main-layout-container {
-
+  position: relative; /* Contain absolute children */
   width: 100%;
   min-height: 100vh; /* Ensure it covers the viewport */
   display: flex;
