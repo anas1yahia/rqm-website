@@ -17,8 +17,24 @@
   flex-direction: column;
   gap: 60px;
   align-items: flex-start;
+  position: relative; /* Ensure proper stacking context for pseudo-elements/background */
+  overflow: hidden; /* Clip animated background */
+  background-image: radial-gradient(circle at 20% 80%, rgba(54, 201, 203, 0.05) 0%, transparent 10%), radial-gradient(circle at 80% 20%, rgba(98, 196, 170, 0.05) 0%, transparent 10%), radial-gradient(circle at 50% 50%, rgba(182, 204, 248, 0.03) 0%, transparent 10%), linear-gradient(45deg, rgba(54, 201, 203, 0.03) 1px, transparent 1px), linear-gradient(-45deg, rgba(98, 196, 170, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(182, 204, 248, 0.02) 1px, transparent 1px), linear-gradient(0deg, rgba(182, 204, 248, 0.02) 1px, transparent 1px);
+  background-size: 80px 80px; /* Adjust size for pattern density */
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-blend-mode: soft-light; /* Blend with existing background */
+  animation: pipeline-pan 120s linear infinite; /* Slow, continuous animation */
 }
 
+@keyframes pipeline-pan {
+  from {
+    background-position: 0% 0%;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+}
 /* Section Header */
 .section-header {
   display: flex;
