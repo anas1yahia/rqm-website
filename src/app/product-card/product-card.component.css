@@ -243,7 +243,7 @@
   font-size: 12px;
 }
 
-/* Small Card Specific Styles */
+/* Small Card Specific Styles - Global Flex Layout */
 .small-card-content {
   position: relative;
   width: 100%;
@@ -251,23 +251,24 @@
   z-index: 3;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   min-height: inherit; /* Inherit form parent */
-  /* Justify content based on layout */
 }
 
 .illustration-container {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
+  top: auto;
+  left: auto;
   width: 100%;
-  height: 100%;
+  height: auto;
+  min-height: 150px;
+  flex: 1; /* Grow to fill */
   overflow: hidden;
   z-index: 0;
   display: flex;
   justify-content: center;
-  align-items: center; /* Center illustration */
-  background-color: transparent; /* Default background */
-  transition: background-color 0.3s ease-in-out;
+  align-items: center;
+  order: 2; /* Middle */
 }
 
 .illustration-container.skeleton-loading {
@@ -290,18 +291,22 @@
   }
 }
 .illustration-img {
-  width: 60%;
-  height: auto;
-  opacity: 0.1; /* As per design bg illustration style */
-  transform: scale(1.2); /* Adjust scale to fill or match design */
+  width: 80%; /* Default desktop width */
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.15;
+  transform: scale(1.1);
   transition: opacity 0.3s ease-in-out;
 }
 
 /* Pills / Badge Top Left */
 .pills-container {
-  position: absolute;
-  top: 20px;
-  left: 20px;
+  position: relative;
+  top: auto;
+  left: auto;
+  order: 1; /* Top */
+  align-self: flex-start;
+  margin: 20px 0 0 20px;
   z-index: 4;
 }
 
@@ -330,10 +335,14 @@
 
 /* Footer / Link */
 .small-card-footer {
-  position: absolute;
-  bottom: 30px;
-  right: 20px; /* Align right or left? Design shows left aligned box with text */
-  left: 20px;
+  position: relative;
+  bottom: auto;
+  right: auto;
+  left: auto;
+  order: 3; /* Bottom */
+  width: 100%;
+  padding-left: 20px;
+  margin: 0 0 30px 0;
   z-index: 4;
   display: flex;
   justify-content: flex-start; /* Align left */
@@ -374,7 +383,7 @@
     padding: 30px 20px;
   }
   .product-card.small-card {
-    min-height: 350px; /* Reduced min-height */
+    min-height: 300px;
   }
   .product-title {
     font-size: 20px;
@@ -382,53 +391,20 @@
   .product-description {
     font-size: 13px;
   }
-  /* Small Card Specific Fixes for Mobile with Flexbox Logic */
-  .product-card.small-card .small-card-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    padding: 0; /* Handled by parent padding or internal spacing if needed */
-  }
+  /* Small Card Mobile Tweaks */
   .product-card.small-card .pills-container {
-    position: relative; /* Remove absolute positioning */
-    top: auto;
-    left: auto;
-    order: 1; /* First */
-    align-self: flex-start;
-    margin-bottom: 20px;
-  }
-  .product-card.small-card .illustration-container {
-    position: relative; /* Remove absolute positioning */
-    top: auto;
-    left: auto;
-    order: 2; /* Middle */
-    width: 100%;
-    height: auto;
-    flex: 1; /* Fill remaining space */
-    min-height: 150px;
-    margin-bottom: 20px;
+    margin: 15px 0 0 15px;
   }
   .product-card.small-card .illustration-img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    transform: none; /* Reset desktop scaling */
-    opacity: 0.2; /* Subtle opacity */
+    width: 60%;
   }
   .product-card.small-card .small-card-footer {
-    position: relative; /* Remove absolute positioning */
-    bottom: auto;
-    right: auto;
-    left: auto;
-    order: 3; /* Last */
-    width: 100%;
     justify-content: center;
+    padding: 0 15px;
+    margin: 0 0 20px 0;
   }
   .product-card.small-card .more-link {
-    width: 100%; /* Full width for easier tap */
-    max-width: 100%;
-    box-sizing: border-box;
+    width: 100%;
     justify-content: space-between;
     padding: 12px 16px;
   }
