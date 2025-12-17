@@ -12,6 +12,10 @@
   max-width: 1440px; /* Set max width for large screens */
   margin: 0 auto; /* Center the footer */
   overflow: hidden;
+  border-top: 1px solid #36c9cb;
+  border-left: 1px solid #36c9cb;
+  border-right: 1px solid #36c9cb;
+  border-radius: 0; /* Ensure no rounded corners */
 
   /* Responsive padding */
   @media (max-width: 1200px) {
