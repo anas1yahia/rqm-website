@@ -16,10 +16,10 @@
     <div class="nav-and-logo">
       <!-- Desktop Navigation -->
       <nav class="navigation desktop-nav">
-        <a href="#" class="nav-link">تواصل معنا</a>
-        <a href="#" class="nav-link">الخدمات</a>
-        <a href="#" class="nav-link">عن رقم</a>
-        <a href="#" class="nav-link">الرئيسية</a>
+        <a routerLink="/" fragment="contact" class="nav-link">تواصل معنا</a>
+        <a routerLink="/" fragment="services" class="nav-link">الخدمات</a>
+        <a routerLink="/" fragment="about" class="nav-link">عن رقم</a>
+        <a routerLink="/" fragment="home" class="nav-link">الرئيسية</a>
       </nav>
       <div class="logo">
         <img [src]="logoImage" alt="Rqm Logo">
@@ -46,10 +46,10 @@
 <div class="mobile-menu-overlay" *ngIf="isMenuOpen" @menuState (click)="toggleMenu()">
   <div class="mobile-menu-content" @sheetState @navItems (click)="$event.stopPropagation()">
     <nav class="mobile-nav">
-      <a href="#" class="mobile-nav-link" (click)="toggleMenu()">الرئيسية</a>
-      <a href="#" class="mobile-nav-link" (click)="toggleMenu()">عن رقم</a>
-      <a href="#" class="mobile-nav-link" (click)="toggleMenu()">الخدمات</a>
-      <a href="#" class="mobile-nav-link" (click)="toggleMenu()">تواصل معنا</a>
+      <a routerLink="/" fragment="home" class="mobile-nav-link" (click)="toggleMenu()">الرئيسية</a>
+      <a routerLink="/" fragment="about" class="mobile-nav-link" (click)="toggleMenu()">عن رقم</a>
+      <a routerLink="/" fragment="services" class="mobile-nav-link" (click)="toggleMenu()">الخدمات</a>
+      <a routerLink="/" fragment="contact" class="mobile-nav-link" (click)="toggleMenu()">تواصل معنا</a>
     </nav>
     
     <!-- Mobile Lang Switcher inside menu -->

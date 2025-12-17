@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { trigger, state, style, animate, transition, query, stagger } from '@angular/animations';
 import { LucideAngularModule, Menu, X } from 'lucide-angular';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, LucideAngularModule],
+  imports: [CommonModule, RouterModule, LucideAngularModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   animations: [
