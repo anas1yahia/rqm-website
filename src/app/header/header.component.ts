@@ -12,19 +12,19 @@ import { LucideAngularModule, Menu, X } from 'lucide-angular';
   animations: [
     trigger('menuState', [
       transition(':enter', [
-        style({ transform: 'translateY(-100%)', opacity: 0 }),
+        style({ transform: 'translateY(100%)', opacity: 0 }),
         animate('0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)', style({ transform: 'translateY(0)', opacity: 1 }))
       ]),
       transition(':leave', [
-        animate('0.4s ease-in', style({ transform: 'translateY(-100%)', opacity: 0 }))
+        animate('0.4s ease-in', style({ transform: 'translateY(100%)', opacity: 0 }))
       ])
     ]),
     trigger('navItems', [
       transition(':enter', [
         query('a', [
-          style({ transform: 'translateY(20px)', opacity: 0 }),
-          stagger('100ms', [
-            animate('0.4s ease-out', style({ transform: 'translateY(0)', opacity: 1 }))
+          style({ transform: 'translateY(50px) scale(0.9)', opacity: 0 }),
+          stagger('150ms', [
+            animate('0.5s cubic-bezier(0.35, 0, 0.25, 1)', style({ transform: 'translateY(0) scale(1)', opacity: 1 }))
           ])
         ], { optional: true })
       ])
