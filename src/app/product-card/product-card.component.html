@@ -54,9 +54,9 @@
   <!-- Content for Small Card (More Solutions) -->
   @if (isSmall) {
     <div class="small-card-content">
-      <div class="illustration-container">
+      <div class="illustration-container" [class.skeleton-loading]="isLoading">
         <!-- Placeholder for 'more' illustration or use passed logo as illustration -->
-         <img [src]="logo" alt="Illustration" class="illustration-img">
+         <img [src]="logo" alt="Illustration" class="illustration-img" (load)="onImageLoad()">
       </div>
       
       <div class="small-card-footer">

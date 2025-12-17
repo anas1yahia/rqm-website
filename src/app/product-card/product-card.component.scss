@@ -5,7 +5,7 @@
 
 .product-card {
   position: relative;
-  width: 447px;
+  width: 407px;
   height: 464px;
   border-radius: 0px;
   background: rgba(248, 248, 248, 0.02);
@@ -267,6 +267,29 @@
   display: flex;
   justify-content: center;
   align-items: center; /* Center illustration */
+  background-color: transparent; /* Default background */
+  transition: background-color 0.3s ease-in-out;
+}
+
+.illustration-container.skeleton-loading {
+  background-color: rgba(255, 255, 255, 0.1); /* Skeleton background */
+  animation: pulse-skeleton 1.5s infinite ease-in-out;
+
+  .illustration-img {
+    opacity: 0; /* Hide image during loading */
+  }
+}
+
+@keyframes pulse-skeleton {
+  0% {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
 }
 
 .illustration-img {
@@ -274,7 +297,9 @@
   height: auto;
   opacity: 0.1; /* As per design bg illustration style */
   transform: scale(1.2); /* Adjust scale to fill or match design */
+  transition: opacity 0.3s ease-in-out;
 }
+
 
 /* Pills / Badge Top Left */
 .pills-container {

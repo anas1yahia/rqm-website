@@ -1,0 +1,131 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.partners-section {
+  display: flex;
+  flex-direction: column;
+  gap: 61px;
+  padding-bottom: 120px;
+  position: relative;
+  width: 100%;
+  overflow: hidden; /* Hide scrollbars from marquee */
+}
+
+.header-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 132px;
+  width: 100%;
+  box-sizing: border-box;
+
+  h2 {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-weight: 700;
+    font-size: 38px;
+    color: #e8f2ff;
+    margin: 0;
+    text-align: right;
+  }
+  
+  @media (max-width: 768px) {
+    padding: 0 20px;
+    justify-content: center;
+    h2 {
+      text-align: center;
+      font-size: 32px;
+    }
+  }
+}
+
+.partners-container {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  width: 100%;
+}
+
+.marquee-row {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  display: flex;
+}
+
+.marquee-content {
+  display: flex;
+  gap: 60px; /* Space between logos */
+  animation: marquee 30s linear infinite;
+  padding-left: 60px;
+  
+  /* Ensure content is wide enough or duplicated enough */
+}
+
+.marquee-row.reverse .marquee-content {
+  animation-direction: reverse;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Assuming content is duplicated once, move by 50% of width */
+  }
+}
+
+.logo-item {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  cursor: pointer; /* Indicate interactivity */
+  transition: all 0.3s ease;
+  
+  /* Default state: Grayscale and slightly dimmed */
+  filter: grayscale(100%);
+  opacity: 0.5;
+
+  &:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.05); /* Slight scale up for effect */
+  }
+  
+  img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+  }
+  
+  &.composite {
+    gap: 10px;
+  }
+}
+
+/* Specific composite styling */
+.moyasar-group, .hyyak-group {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 8px;
+  
+  img {
+    height: 100%;
+    width: auto;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .partners-container {
+    gap: 40px;
+  }
+  
+  .marquee-content {
+    gap: 40px;
+    padding-left: 40px;
+  }
+}

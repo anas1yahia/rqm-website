@@ -12,5 +12,12 @@ export class TransformationCardComponent {
   @Input() title: string = '';
   @Input() description: string = '';
   @Input() illustration: string = '';
-  @Input() marginClass: string = ''; // To handle specific margins/offsets like "items-end", "items-start" etc if needed, or we can handle it via parent container
+  @Input() marginClass: string = '';
+
+  isLoading: boolean = true; // Added for skeleton loading
+
+  onImageLoad() {
+    this.isLoading = false; // Set to false when the image loads
+  }
 }
+

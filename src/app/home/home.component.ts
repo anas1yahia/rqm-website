@@ -5,11 +5,14 @@ import { InfoSectionComponent } from '../info-section/info-section.component';
 import { TransformationProjectComponent } from '../transformation-project/transformation-project.component';
 import { ProcessSectionComponent } from '../process-section/process-section.component';
 import { OurProductsComponent } from '../our-products/our-products.component';
+import { QualityProofComponent } from '../quality-proof/quality-proof.component';
+import { OurPartnersComponent } from '../our-partners/our-partners.component';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, MainLayoutComponent, InfoSectionComponent, TransformationProjectComponent, ProcessSectionComponent, OurProductsComponent],
+  imports: [CommonModule, MainLayoutComponent, InfoSectionComponent, TransformationProjectComponent, ProcessSectionComponent, OurProductsComponent, QualityProofComponent, OurPartnersComponent, FooterComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })

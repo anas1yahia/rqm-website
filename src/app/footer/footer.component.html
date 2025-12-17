@@ -1,0 +1,75 @@
+<footer class="footer-section">
+  <!-- Background Decorations -->
+  <div class="bg-decoration">
+     <img [src]="bgShape" alt="" class="bg-shape shape-1">
+     <img [src]="bgShape" alt="" class="bg-shape shape-2">
+     <!-- New Bottom Left Logo -->
+     <img [src]="footerLogoBg" alt="" class="bg-shape shape-bottom-left">
+  </div>
+
+  <div class="content-container">
+    <div class="main-content">
+      
+      <!-- Socials (Left) -->
+      <div class="column social-column">
+        <h3>تابعنا</h3>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/company/byrqm-sa" target="_blank" class="icon-link">
+            <lucide-icon [img]="Linkedin" [size]="20" strokeWidth="1.5"></lucide-icon>
+          </a>
+          <a href="https://www.instagram.com/byrqm_sa/" target="_blank" class="icon-link">
+            <lucide-icon [img]="Instagram" [size]="20" strokeWidth="1.5"></lucide-icon>
+          </a>
+          <a href="mailto:info@rqm.sa" class="icon-link">
+            <lucide-icon [img]="Mail" [size]="20" strokeWidth="1.5"></lucide-icon>
+          </a>
+          <a href="https://x.com/byrqm_sa" target="_blank" class="icon-link">
+            <lucide-icon [img]="X" [size]="20" strokeWidth="1.5"></lucide-icon>
+          </a>
+        </div>
+      </div>
+
+      <!-- Location -->
+      <div class="column location-column">
+        <h3>مقرنا</h3>
+        <p>الرياض، الصحافة 13315</p>
+      </div>
+
+      <!-- Useful Links -->
+      <div class="column links-column">
+        <h3>روابط تهمك</h3>
+        <nav>
+          <a href="#">سياسة الخصوصية</a>
+          <a href="#">تواصل معنا</a>
+        </nav>
+      </div>
+
+      <!-- About -->
+      <div class="column links-column">
+        <h3>عن رقم</h3>
+        <nav>
+          <a href="#">الرئيسية</a>
+          <a href="#">من نحن</a>
+          <a href="#">الخدمات</a>
+        </nav>
+      </div>
+
+      <!-- Logo (Right) -->
+      <div class="column logo-column">
+        <div class="logo-wrapper">
+             <img [src]="mainFooterLogo" alt="RQM Logo" class="main-logo-img">
+        </div>
+        <p class="slogan">بوابتك للمستقبل الرقمي</p>
+      </div>
+
+    </div>
+
+    <!-- Divider & Copyright -->
+    <div class="footer-bottom">
+      <div class="divider-line">
+         <img [src]="divider" alt="">
+      </div>
+      <p class="copyright">جميع الحقوق محفوظة لشركة رقم © 2025</p>
+    </div>
+  </div>
+</footer>

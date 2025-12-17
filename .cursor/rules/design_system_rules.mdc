@@ -1,0 +1,151 @@
+---
+description: Design System Rules for RQM Website (Angular 21 + SCSS)
+globs: ["**/*.ts", "**/*.html", "**/*.scss"]
+---
+
+# Design System Rules
+
+## 1. Token Definitions
+
+**Current State:** Tokens are currently hardcoded in `src/styles.scss` and individual component SCSS files.
+**Standard:** Centralize design tokens in SCSS variables to ensure consistency.
+
+*   **Location:** Create/Use `src/styles/_variables.scss` (needs to be created/imported).
+*   **Format:** SCSS Variables (`$variable-name: value;`).
+*   **Key Tokens (Identified):**
+    *   **Colors:**
+        *   Background: `#0A0C1A`
+        *   Primary Accent: `#36c9cb`
+        *   Secondary/Hover: `#62c4aa`
+        *   Surface/Card: `rgba(255, 255, 255, 0.2)` (with blur)
+    *   **Typography:**
+        *   Font Family: `"IBM Plex Sans Arabic", sans-serif`
+    *   **Spacing:** Currently pixel-based (e.g., `8px`, `16px`, `32px`).
+
+**Code Snippet (Recommended `_variables.scss`):**
+```scss
+// Colors
+$color-bg-dark: #0A0C1A;
+$color-primary: #36c9cb;
+$color-secondary: #62c4aa;
+$color-text-white: #ffffff;
+$color-surface-glass: rgba(255, 255, 255, 0.2);
+
+// Typography
+$font-family-main: "IBM Plex Sans Arabic", sans-serif;
+
+// Spacing
+$spacing-xs: 8px;
+$spacing-sm: 16px;
+$spacing-md: 24px;
+$spacing-lg: 32px;
+$spacing-xl: 48px;
+```
+
+## 2. Component Library
+
+**Architecture:** Angular Standalone Components.
+**Location:** `src/app/<feature-name>/` or `src/app/components/<component-name>/`.
+
+*   **Structure:**
+    *   `*.component.ts`: Logic (Imports `CommonModule`, `RouterOutlet`, etc.).
+    *   `*.component.html`: Template.
+    *   `*.component.scss`: Component-scoped styles.
+*   **Naming Convention:** Kebab-case for files (`header.component.ts`), PascalCase for classes (`HeaderComponent`).
+
+**Example Structure:**
+```typescript
+// src/app/header/header.component.ts
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+@Component({
+  selector: 'app-header',
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss']
+})
+export class HeaderComponent {
+  // Logic here
+}
+```
+
+## 3. Frameworks & Libraries
+
+*   **Core:** Angular v21
+*   **Styling:** SCSS (Sass)
+*   **Icons:** `lucide-angular` (preferred for UI icons), SVGs for illustrations.
+*   **Build:** Angular CLI (`@angular/build`) with Vite/Esbuild.
+
+## 4. Asset Management
+
+**Storage:**
+*   Static assets (images, fonts, global SVGs) go in `public/`.
+*   During build, these are served from the root (`/`).
+
+**Referencing:**
+*   **HTML:** `<img src="filename.png" alt="...">` (if in root of public) or `<img src="images/filename.png">` (if organized in subfolders).
+*   **SCSS:** `background-image: url('/header_bg01.png');`
+*   **Avoid:** Hardcoded remote URLs (e.g., `https://figma.com/api/...`) in production code. Use local assets.
+
+**Optimization:**
+*   Use SVG for vector graphics (logos, icons).
+*   Use optimized PNG/WebP for complex images (backgrounds).
+
+## 5. Icon System
+
+**Library:** `lucide-angular`
+**Custom SVGs:** Store in `public/` and use via `<img>` tags or inline SVG if manipulation is needed.
+
+**Usage Example (Lucide):**
+```typescript
+import { LucideAngularModule, Menu } from 'lucide-angular';
+
+@Component({
+  imports: [LucideAngularModule]
+})
+export class MyComponent {
+  readonly MenuIcon = Menu;
+}
+```
+
+## 6. Styling Approach
+
+*   **Methodology:** Component-scoped SCSS (`ViewEncapsulation.Emulated` is default).
+*   **Global Styles:** `src/styles.scss` for resets, scrollbars, and global typography.
+*   **Responsive Design:** Mobile-first or Desktop-first using SCSS media queries.
+    *   Breakpoints seen: `1200px`, `768px`, `480px`.
+*   **Glassmorphism:** Frequent use of `backdrop-filter: blur(...)` and `rgba` backgrounds.
+
+**Snippet (Glassmorphism Mixin recommendation):**
+```scss
+@mixin glass-effect($opacity: 0.2, $blur: 10px) {
+  background: rgba(255, 255, 255, $opacity);
+  backdrop-filter: blur($blur);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+```
+
+## 7. Project Structure
+
+**Organization:** Feature-based.
+```
+src/
+├── app/
+│   ├── app.config.ts      # App configuration
+│   ├── app.routes.ts      # Routing
+│   ├── header/            # Feature: Header
+│   ├── home/              # Feature: Home Page
+│   ├── hero-section/      # Feature: Hero
+│   └── ...
+├── assets/                # (Optional, strictly use public/ in new Angular)
+├── styles.scss            # Global styles
+└── index.html             # Entry point
+```
+
+**New Feature Workflow:**
+1.  Create directory `src/app/<feature-name>`.
+2.  Generate component: `ng g c <feature-name> --flat=false`.
+3.  Add route in `app.routes.ts` (if it's a page).
+4.  Import into parent component (if it's a widget).

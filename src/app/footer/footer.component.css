@@ -1,0 +1,203 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.footer-section {
+  background-color: #0A0C1A;
+  position: relative;
+  padding: 40px 146px; /* Match design padding */
+  overflow: hidden;
+  /* Responsive padding */
+}
+@media (max-width: 1200px) {
+  .footer-section {
+    padding: 40px 60px;
+  }
+}
+@media (max-width: 768px) {
+  .footer-section {
+    padding: 40px 20px;
+  }
+}
+
+.bg-decoration {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 1; /* Subtle watermark */
+}
+.bg-decoration .bg-shape {
+  position: absolute;
+  /* Approximate positioning based on Figma "inset" data or visual guess */
+  width: 60%;
+  height: auto;
+}
+.bg-decoration .bg-shape.shape-1 {
+  top: -10%;
+  right: -5%;
+  transform: rotate(-10deg);
+}
+.bg-decoration .bg-shape.shape-2 {
+  bottom: -20%;
+  left: -10%;
+  transform: rotate(180deg);
+}
+.bg-decoration .bg-shape.shape-bottom-left {
+  bottom: 0;
+  left: 0;
+  width: 400px; /* Adjust size as needed, assumed large bg element */
+  height: auto;
+  max-width: 50%;
+  opacity: 1; /* Adjust opacity if it's meant to be subtle or fully visible */
+  transform: translate(-20%, 20%); /* Slight offset if needed */
+}
+
+.content-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+.main-content {
+  background: rgba(93, 95, 102, 0.1);
+  border-radius: 24px;
+  padding: 30px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  backdrop-filter: blur(10px); /* Optional for glass feel */
+  /* Responsive */
+}
+@media (max-width: 992px) {
+  .main-content {
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column-reverse; /* Logo on top on mobile? Or standard stack */
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-end; /* Right align text */
+  text-align: right;
+}
+.column h3 {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: white;
+  margin: 0;
+}
+.column p, .column a {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-size: 16px;
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.column p:hover, .column a:hover {
+  opacity: 0.8;
+}
+.column {
+  /* Specific column tweaks */
+}
+.column.social-column {
+  align-items: center; /* Icons centered relative to title? Or right? */
+  /* Screenshot shows title "Follow us" and icons below. */
+  /* If "Follow us" is right aligned, icons should be too? */
+  /* Actually, "Follow us" is above icons. */
+  align-items: flex-end;
+}
+@media (max-width: 768px) {
+  .column {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.social-icons {
+  display: flex;
+  gap: 16px;
+}
+.social-icons .icon-link {
+  width: 32px; /* Bigger touch target */
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%; /* Rounded or square based on design. Design shows circles? Screenshot has square outline for Linkedin? */
+  /* Screenshot: Square with rounded corners or just icons? */
+  /* Screenshot: Only icons have borders? Or no borders? */
+  /* Re-checking screenshot: The icons are inside shapes or just icons? */
+  /* Linkedin is a square icon. Instagram is camera icon. */
+  /* The design context showed SVG vectors. I'll stick to Lucide icons with no background first, maybe just color. */
+  /* Design context has `img3` inside `element_Vector`. */
+  border: none;
+  color: white;
+}
+.social-icons .icon-link:hover {
+  color: #36c9cb; /* Theme accent */
+  transform: translateY(-2px);
+}
+
+.logo-column {
+  align-items: center; /* Center logo and slogan */
+}
+.logo-column .logo-wrapper {
+  height: 52px;
+  width: 107px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo-column .logo-wrapper .main-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.logo-column .slogan {
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+.footer-bottom .divider-line {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+.footer-bottom .divider-line img {
+  display: none; /* Use CSS border instead of image for cleaner line */
+}
+.footer-bottom .copyright {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  margin: 0;
+}
+
+/*# sourceMappingURL=footer.component.css.map */

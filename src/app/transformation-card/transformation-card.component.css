@@ -41,12 +41,34 @@
   justify-content: center;
   align-items: center;
   pointer-events: none;
+  background-color: transparent; /* Default background */
+  transition: background-color 0.3s ease-in-out;
 }
 
+.illustration-container.skeleton-loading {
+  background-color: rgba(255, 255, 255, 0.1); /* Skeleton background */
+  animation: pulse-skeleton 1.5s infinite ease-in-out;
+}
+.illustration-container.skeleton-loading .illustration {
+  opacity: 0; /* Hide image during loading */
+}
+
+@keyframes pulse-skeleton {
+  0% {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
 .illustration {
   width: 100%;
   height: auto;
   object-fit: contain;
+  transition: opacity 0.3s ease-in-out;
 }
 
 /* Overlay/Border */

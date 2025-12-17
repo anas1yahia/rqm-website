@@ -1,8 +1,8 @@
 <div class="card-wrapper">
     <div class="card-content">
         <!-- Illustration -->
-        <div class="illustration-container">
-            <img [src]="illustration" alt="" class="illustration">
+        <div class="illustration-container" [class.skeleton-loading]="isLoading">
+            <img [src]="illustration" alt="" class="illustration" (load)="onImageLoad()">
         </div>
 
         <!-- Background Border/Overlay -->
