@@ -147,6 +147,7 @@
   height: 27px;
   border: 2px solid var(--theme-color);
   z-index: 2;
+  transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), height 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .corner-border.top-right {
   top: 0;
@@ -159,6 +160,11 @@
   left: 0;
   border-top: 0;
   border-right: 0;
+}
+
+.product-card:hover .corner-border {
+  width: 45px;
+  height: 45px;
 }
 
 /* Small card corner borders adjustments */

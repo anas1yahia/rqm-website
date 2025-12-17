@@ -118,6 +118,9 @@
   padding: 50px 51.31px; /* Consistent padding */
   box-sizing: border-box;
   z-index: 10; /* Bring content forward */
+  /* Matrix Grid for Wrapper */
+  background-image: linear-gradient(rgba(54, 201, 203, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(54, 201, 203, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
 }
 
 /* Graphic Side - now on the left */

@@ -223,6 +223,12 @@
   width: 25px;
   height: 25px;
   border: 1px solid #36c9cb;
+  transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), height 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.values-card-container:hover .corner-border {
+  width: 40px;
+  height: 40px;
 }
 
 .corner-border.bottom-left {
