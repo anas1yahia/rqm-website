@@ -8,7 +8,9 @@
 .footer-section {
   background-color: #0A0C1A;
   position: relative;
-  padding: 40px 146px; /* Match design padding */
+  padding: 40px 20px;
+  max-width: 1440px; /* Set max width for large screens */
+  margin: 0 auto; /* Center the footer */
   overflow: hidden;
   /* Responsive padding */
 }
