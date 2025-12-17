@@ -8,11 +8,12 @@ import { OurProductsComponent } from '../our-products/our-products.component';
 import { QualityProofComponent } from '../quality-proof/quality-proof.component';
 import { OurPartnersComponent } from '../our-partners/our-partners.component';
 import { FooterComponent } from '../footer/footer.component';
+import { ScrollFadeDirective } from '../directives/scroll-fade';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, MainLayoutComponent, InfoSectionComponent, TransformationProjectComponent, ProcessSectionComponent, OurProductsComponent, QualityProofComponent, OurPartnersComponent, FooterComponent],
+  imports: [CommonModule, MainLayoutComponent, InfoSectionComponent, TransformationProjectComponent, ProcessSectionComponent, OurProductsComponent, QualityProofComponent, OurPartnersComponent, FooterComponent, ScrollFadeDirective],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
