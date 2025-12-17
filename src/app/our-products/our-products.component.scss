@@ -8,12 +8,16 @@
   z-index: 1;
   width: 100%;
   max-width: 1350px;
-  margin: 0 auto;
+  margin: 50px auto; /* Added margin-top and margin-bottom */
   padding: 50px 20px;
   display: flex;
   flex-direction: column;
   gap: 40px;
   box-sizing: border-box;
+  background: rgba(182, 204, 248, 0.05); /* Glass background */
+  backdrop-filter: blur(10px); /* Glass effect */
+  border-radius: 12px; /* Rounded corners */
+  border: 0.8px solid rgba(255, 255, 255, 0.2); /* Subtle border */
 }
 
 .header-section {
