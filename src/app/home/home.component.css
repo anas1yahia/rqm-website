@@ -8,7 +8,7 @@
   width: 100%;
   min-height: 100vh;
   display: flex;
-  gap: 120px;
+  gap: 64px;
   flex-direction: column;
   position: relative;
   z-index: 1;
