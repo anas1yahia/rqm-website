@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LucideAngularModule, ChevronLeft } from 'lucide-angular';
 import { ParallaxDirective } from '../directives/parallax';
@@ -11,7 +11,7 @@ import { TextDecodeDirective } from '../directives/text-decode';
   templateUrl: './hero-section.component.html',
   styleUrls: ['./hero-section.component.scss']
 })
-export class HeroSectionComponent {
+export class HeroSectionComponent implements OnInit {
   imgIcon = "https://www.figma.com/api/mcp/asset/4d31c854-20c7-471e-b568-00d212ff6108";
   imgVector = "https://www.figma.com/api/mcp/asset/f6533a7e-fea0-410b-b752-ea3cbcc63d9e";
   imgVector1 = "https://www.figma.com/api/mcp/asset/5a3d93a1-eb56-4ace-9efe-0c75d7214696";
@@ -28,4 +28,35 @@ export class HeroSectionComponent {
 
   // For button icon
   readonly ChevronLeft = ChevronLeft;
+
+  isLoaded: boolean = false;
+  matrixSquares: { delay: number }[] = [];
+  squareSize: number = 20; // Default square size, can be adjusted
+  private numRows: number = 0;
+  private numCols: number = 0;
+
+  constructor(private el: ElementRef) {}
+
+  ngOnInit() {
+    this.calculateMatrixGrid();
+    // Trigger animation after a short delay to ensure rendering
+    setTimeout(() => {
+      this.isLoaded = true;
+    }, 100);
+  }
+
+  calculateMatrixGrid() {
+    // Use setTimeout to ensure DOM is rendered and dimensions are available
+    setTimeout(() => {
+      const heroRect = this.el.nativeElement.getBoundingClientRect();
+      this.numCols = Math.ceil(heroRect.width / this.squareSize);
+      this.numRows = Math.ceil(heroRect.height / this.squareSize);
+
+      const totalSquares = this.numRows * this.numCols;
+      this.matrixSquares = Array.from({ length: totalSquares }).map((_, i) => ({
+        // Stagger animation based on index
+        delay: Math.random() * 500 // Random delay up to 500ms for each square
+      }));
+    }, 0);
+  }
 }

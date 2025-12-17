@@ -1,4 +1,7 @@
 <section class="hero-section">
+  <div class="matrix-grid">
+    <div *ngFor="let square of matrixSquares" class="matrix-square" [style.width.px]="squareSize" [style.height.px]="squareSize" [class.active]="isLoaded" [style.animation-delay.ms]="square.delay"></div>
+  </div>
   <!-- Background Decorations from Figma -->
   <div class="hero-bg-details">
     <div class="bg-blur-1" [appParallax]="-4"></div>

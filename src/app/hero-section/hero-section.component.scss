@@ -17,6 +17,32 @@
   border: 0.8px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0px 20px 40px -9px rgba(0, 0, 0, 0.3);
   overflow: hidden; /* clip */
+
+  /* Matrix Grid Container */
+  .matrix-grid {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 0; /* Behind content */
+    pointer-events: none;
+  }
+
+  /* Individual Matrix Square */
+  .matrix-square {
+    background-color: rgba(182, 204, 248, 0.05); /* Original square color */
+    opacity: 0;
+  }
+
+  .matrix-square.active {
+    animation: appear 0.1s forwards; /* Short animation for appearance */
+  }
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
+  }
 }
 
 /* Background Decorations (Figma 5735:7800 children) */
@@ -118,12 +144,6 @@
   padding: 50px 51.31px; /* Consistent padding */
   box-sizing: border-box;
   z-index: 10; /* Bring content forward */
-  
-  /* Matrix Grid for Wrapper */
-  background-image: 
-    linear-gradient(rgba(54, 201, 203, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(54, 201, 203, 0.03) 1px, transparent 1px);
-  background-size: 30px 30px;
 }
 
 /* Graphic Side - now on the left */
@@ -132,12 +152,8 @@
   width: 296.657px; /* Figma: 5735:7827 width */
   height: 374.429px; /* Figma: 5735:7827 height */
   background: rgba(255, 255, 255, 0.02); /* Figma: 5735:7827 bg */
-  
-  /* Matrix Grid Effect */
-  background-image: 
-    linear-gradient(rgba(54, 201, 203, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(54, 201, 203, 0.1) 1px, transparent 1px);
-  background-size: 20px 20px;
+
+  /* Remove Matrix Grid Effect from graphic-container */
   backdrop-filter: blur(5px); /* Glass effect */
 
   overflow: hidden;
