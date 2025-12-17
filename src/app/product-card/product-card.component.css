@@ -4,8 +4,10 @@
 
 .product-card {
   position: relative;
-  width: 407px;
-  height: 464px;
+  width: 100%;
+  max-width: 407px;
+  height: auto;
+  min-height: 464px;
   border-radius: 0px;
   background: rgba(248, 248, 248, 0.02);
   overflow: hidden;
@@ -15,10 +17,11 @@
   box-sizing: border-box;
   transition: transform 0.3s ease, border-color 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 0 auto;
 }
 .product-card.small-card {
-  width: 424px;
-  height: 410px;
+  max-width: 424px;
+  min-height: 410px;
   padding: 0;
   /* Adjust border/background specific to small card if needed */
   border: 0.5px solid rgba(117, 108, 234, 0.3); /* Based on Figma 5782:849 */
@@ -216,6 +219,7 @@
   z-index: 3;
   display: flex;
   justify-content: flex-end;
+  margin-top: auto; /* Push footer to bottom */
 }
 
 .action-btn {
@@ -247,6 +251,7 @@
   z-index: 3;
   display: flex;
   flex-direction: column;
+  min-height: inherit; /* Inherit form parent */
   /* Justify content based on layout */
 }
 
@@ -363,5 +368,70 @@
 }
 
 /* Responsive */
+@media (max-width: 480px) {
+  .product-card {
+    min-height: auto;
+    padding: 30px 20px;
+  }
+  .product-card.small-card {
+    min-height: 350px; /* Reduced min-height */
+  }
+  .product-title {
+    font-size: 20px;
+  }
+  .product-description {
+    font-size: 13px;
+  }
+  /* Small Card Specific Fixes for Mobile with Flexbox Logic */
+  .product-card.small-card .small-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0; /* Handled by parent padding or internal spacing if needed */
+  }
+  .product-card.small-card .pills-container {
+    position: relative; /* Remove absolute positioning */
+    top: auto;
+    left: auto;
+    order: 1; /* First */
+    align-self: flex-start;
+    margin-bottom: 20px;
+  }
+  .product-card.small-card .illustration-container {
+    position: relative; /* Remove absolute positioning */
+    top: auto;
+    left: auto;
+    order: 2; /* Middle */
+    width: 100%;
+    height: auto;
+    flex: 1; /* Fill remaining space */
+    min-height: 150px;
+    margin-bottom: 20px;
+  }
+  .product-card.small-card .illustration-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform: none; /* Reset desktop scaling */
+    opacity: 0.2; /* Subtle opacity */
+  }
+  .product-card.small-card .small-card-footer {
+    position: relative; /* Remove absolute positioning */
+    bottom: auto;
+    right: auto;
+    left: auto;
+    order: 3; /* Last */
+    width: 100%;
+    justify-content: center;
+  }
+  .product-card.small-card .more-link {
+    width: 100%; /* Full width for easier tap */
+    max-width: 100%;
+    box-sizing: border-box;
+    justify-content: space-between;
+    padding: 12px 16px;
+  }
+}
 
 /*# sourceMappingURL=product-card.component.css.map */

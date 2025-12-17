@@ -59,7 +59,7 @@
   flex-direction: column;
   gap: 5rem; /* Based on Figma's gap-[10px] */
   align-items: center;
-  padding-top: 50px; /* Adjusted from 2% or 99px for better mobile start */
+  padding-top: 140px; /* Increased to compensate for fixed header (approx 80px header + 50px original padding + gap adjustment) */
   padding-bottom: 50px;
   width: 100%; /* Changed from max-width: 1512px */
   padding-left: 20px;
@@ -68,16 +68,29 @@
   z-index: 1; /* Bring content forward */
 }
 
-.header-offset, .hero-offset {
+.header-offset {
   width: 100%;
   display: flex;
   justify-content: center; /* Center the components */
+  position: fixed; /* Fixed to viewport */
+  top: 20px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  pointer-events: none; /* Allow clicks to pass through the empty wrapper */
+}
+
+.projected-content {
+  width: 100%;
+  position: relative;
+  z-index: 0; /* Ensure content is lower than header */
 }
 
 /* Specific adjustments for header and hero section to align with Figma */
 app-header {
   width: 100%;
   max-width: 1084px; /* Figma's container width for header */
+  pointer-events: auto; /* Re-enable clicks on the header itself */
 }
 
 app-hero-section {

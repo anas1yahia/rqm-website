@@ -13,11 +13,13 @@
 @media (max-width: 1200px) {
   .footer-section {
     padding: 40px 60px;
+    z-index: -1;
   }
 }
 @media (max-width: 768px) {
   .footer-section {
     padding: 40px 20px;
+    z-index: -1;
   }
 }
 

@@ -12,11 +12,20 @@ import { LucideAngularModule, Menu, X } from 'lucide-angular';
   animations: [
     trigger('menuState', [
       transition(':enter', [
-        style({ transform: 'translateY(100%)', opacity: 0 }),
-        animate('0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)', style({ transform: 'translateY(0)', opacity: 1 }))
+        style({ opacity: 0 }),
+        animate('0.3s ease-out', style({ opacity: 1 }))
       ]),
       transition(':leave', [
-        animate('0.4s ease-in', style({ transform: 'translateY(100%)', opacity: 0 }))
+        animate('0.2s ease-in', style({ opacity: 0 }))
+      ])
+    ]),
+    trigger('sheetState', [
+      transition(':enter', [
+        style({ transform: 'translateY(100%)' }),
+        animate('0.5s cubic-bezier(0.32, 0.72, 0, 1)', style({ transform: 'translateY(0)' }))
+      ]),
+      transition(':leave', [
+        animate('0.3s ease-in', style({ transform: 'translateY(100%)' }))
       ])
     ]),
     trigger('navItems', [

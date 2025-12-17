@@ -43,8 +43,8 @@
 </header>
 
 <!-- Mobile Menu Overlay -->
-<div class="mobile-menu-overlay" *ngIf="isMenuOpen" @menuState>
-  <div class="mobile-menu-content" @navItems>
+<div class="mobile-menu-overlay" *ngIf="isMenuOpen" @menuState (click)="toggleMenu()">
+  <div class="mobile-menu-content" @sheetState @navItems (click)="$event.stopPropagation()">
     <nav class="mobile-nav">
       <a href="#" class="mobile-nav-link" (click)="toggleMenu()">الرئيسية</a>
       <a href="#" class="mobile-nav-link" (click)="toggleMenu()">عن رقم</a>

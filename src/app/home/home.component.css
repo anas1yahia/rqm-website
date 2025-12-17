@@ -14,6 +14,7 @@
 .content-body {
   /* Padding or styles for the content following the hero */
   width: 100%;
+  z-index: -1;
 }
 
 /*# sourceMappingURL=home.component.css.map */
