@@ -1,4 +1,7 @@
-<div class="card-wrapper">
+<div class="card-wrapper" (mouseenter)="onMouseEnter($event)" (mouseleave)="onMouseLeave()">
+    <div class="matrix-grid">
+        <div *ngFor="let square of matrixSquares" class="matrix-square" [style.width.px]="squareSize" [style.height.px]="squareSize" [class.active]="isHovered" [style.animation-delay.ms]="square.delay"></div>
+    </div>
     <div class="card-content">
         <!-- Illustration -->
         <div class="illustration-container" [class.skeleton-loading]="isLoading">
