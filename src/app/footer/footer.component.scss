@@ -168,6 +168,12 @@
   }
 }
 
+nav{
+  display: flex;
+  flex-direction: column;
+}
+
+
 .logo-column {
   align-items: center; /* Center logo and slogan */
 
