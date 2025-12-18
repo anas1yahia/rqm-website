@@ -1,3 +1,17 @@
+/* Page Transition Overlay */
+.page-transition-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: #0A0C1A; /* Match body bg */
+  z-index: 999999; /* Highest possible */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease-in-out;
+}
 
+.page-transition-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
 
 /*# sourceMappingURL=app.css.map */

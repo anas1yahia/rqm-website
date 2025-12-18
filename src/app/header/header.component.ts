@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { trigger, state, style, animate, transition, query, stagger } from '@angular/animations';
 import { LucideAngularModule, Menu, X } from 'lucide-angular';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { UiService } from '../services/ui.service';
 
 @Component({
   selector: 'app-header',
@@ -53,6 +54,7 @@ export class HeaderComponent {
 
   constructor(
     private translate: TranslateService,
+    private uiService: UiService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
     this.currentLang = this.translate.currentLang || this.translate.defaultLang || 'en';
@@ -64,9 +66,23 @@ export class HeaderComponent {
   }
 
   switchLanguage(lang: string) {
-    this.translate.use(lang);
-    this.currentLang = lang;
-    this.updateDirection(lang);
+    if (this.currentLang === lang) return;
+
+    // Start transition (fade to black)
+    this.uiService.startTransition();
+
+    // Wait for fade in (match CSS duration)
+    setTimeout(() => {
+      this.translate.use(lang).subscribe(() => {
+        this.currentLang = lang;
+        this.updateDirection(lang);
+        
+        // Wait a bit for layout to settle, then fade out
+        setTimeout(() => {
+          this.uiService.endTransition();
+        }, 300);
+      });
+    }, 400);
   }
 
   private updateDirection(lang: string) {

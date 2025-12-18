@@ -1,1 +1,6 @@
+<div class="page-transition-overlay" [class.active]="uiService.isTransitionActive()">
+  @if (uiService.isTransitionVisible()) {
+    <app-matrix-rain></app-matrix-rain>
+  }
+</div>
 <router-outlet />
