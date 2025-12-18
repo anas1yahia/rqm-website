@@ -17,7 +17,7 @@
 
 .header-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start; /* Align start based on dir (Left for LTR, Right for RTL) */
   padding: 0 132px;
   width: 100%;
   box-sizing: border-box;
@@ -28,7 +28,6 @@
   font-size: 38px;
   color: #e8f2ff;
   margin: 0;
-  text-align: right;
 }
 @media (max-width: 768px) {
   .header-container {

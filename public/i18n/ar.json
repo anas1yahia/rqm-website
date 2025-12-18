@@ -79,5 +79,22 @@
     "TITLE": "نطاق الامتثال",
     "ISO_LOGO_ALT": "شعار الآيزو",
     "SDAIA_LOGO_ALT": "شعار سدايا"
+  },
+  "OUR_PARTNERS": {
+    "TITLE": "شركاء النجاح"
+  },
+  "FOOTER": {
+    "FOLLOW_US": "تابعنا",
+    "OUR_LOCATION": "مقرنا",
+    "LOCATION_TEXT": "الرياض، الصحافة 13315",
+    "USEFUL_LINKS": "روابط تهمك",
+    "PRIVACY_POLICY": "سياسة الخصوصية",
+    "CONTACT_US": "تواصل معنا",
+    "ABOUT_RQM": "عن رقم",
+    "HOME": "الرئيسية",
+    "WHO_WE_ARE": "من نحن",
+    "SERVICES": "الخدمات",
+    "SLOGAN": "بوابتك للمستقبل الرقمي",
+    "COPYRIGHT": "جميع الحقوق محفوظة لشركة رقم © 2025"
   }
 }

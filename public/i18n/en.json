@@ -79,5 +79,22 @@
     "TITLE": "Compliance Scope",
     "ISO_LOGO_ALT": "ISO Logo",
     "SDAIA_LOGO_ALT": "SDAIA Logo"
+  },
+  "OUR_PARTNERS": {
+    "TITLE": "Success Partners"
+  },
+  "FOOTER": {
+    "FOLLOW_US": "Follow Us",
+    "OUR_LOCATION": "Our Location",
+    "LOCATION_TEXT": "Riyadh, As Sahafah 13315",
+    "USEFUL_LINKS": "Useful Links",
+    "PRIVACY_POLICY": "Privacy Policy",
+    "CONTACT_US": "Contact Us",
+    "ABOUT_RQM": "About RQM",
+    "HOME": "Home",
+    "WHO_WE_ARE": "Who We Are",
+    "SERVICES": "Services",
+    "SLOGAN": "Your gateway to the digital future",
+    "COPYRIGHT": "All rights reserved to RQM © 2025"
   }
 }

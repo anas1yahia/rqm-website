@@ -12,7 +12,7 @@
       
       <!-- Socials (Left) -->
       <div class="column social-column">
-        <h3>تابعنا</h3>
+        <h3>{{ 'FOOTER.FOLLOW_US' | translate }}</h3>
         <div class="social-icons">
           <a href="https://www.linkedin.com/company/byrqm-sa" target="_blank" class="icon-link">
             <lucide-icon [img]="Linkedin" [size]="20" strokeWidth="1.5"></lucide-icon>
@@ -31,26 +31,26 @@
 
       <!-- Location -->
       <div class="column location-column">
-        <h3>مقرنا</h3>
-        <p>الرياض، الصحافة 13315</p>
+        <h3>{{ 'FOOTER.OUR_LOCATION' | translate }}</h3>
+        <p>{{ 'FOOTER.LOCATION_TEXT' | translate }}</p>
       </div>
 
       <!-- Useful Links -->
       <div class="column links-column">
-        <h3>روابط تهمك</h3>
+        <h3>{{ 'FOOTER.USEFUL_LINKS' | translate }}</h3>
         <nav>
-          <a href="#">سياسة الخصوصية</a>
-          <a href="#">تواصل معنا</a>
+          <a href="#">{{ 'FOOTER.PRIVACY_POLICY' | translate }}</a>
+          <a href="#">{{ 'FOOTER.CONTACT_US' | translate }}</a>
         </nav>
       </div>
 
       <!-- About -->
       <div class="column links-column">
-        <h3>عن رقم</h3>
+        <h3>{{ 'FOOTER.ABOUT_RQM' | translate }}</h3>
         <nav>
-          <a href="#">الرئيسية</a>
-          <a href="#">من نحن</a>
-          <a href="#">الخدمات</a>
+          <a href="#">{{ 'FOOTER.HOME' | translate }}</a>
+          <a href="#">{{ 'FOOTER.WHO_WE_ARE' | translate }}</a>
+          <a href="#">{{ 'FOOTER.SERVICES' | translate }}</a>
         </nav>
       </div>
 
@@ -59,7 +59,7 @@
         <div class="logo-wrapper">
              <img [src]="mainFooterLogo" alt="RQM Logo" class="main-logo-img">
         </div>
-        <p class="slogan">بوابتك للمستقبل الرقمي</p>
+        <p class="slogan">{{ 'FOOTER.SLOGAN' | translate }}</p>
       </div>
 
     </div>
@@ -69,7 +69,7 @@
       <div class="divider-line">
          <img [src]="divider" alt="">
       </div>
-      <p class="copyright">جميع الحقوق محفوظة لشركة رقم © 2025</p>
+      <p class="copyright">{{ 'FOOTER.COPYRIGHT' | translate }}</p>
     </div>
   </div>
 </footer>
