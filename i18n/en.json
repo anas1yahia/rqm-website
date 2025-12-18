@@ -1,0 +1,100 @@
+{
+  "HEADER": {
+    "CONTACT_US": "Contact Us",
+    "SERVICES": "Services",
+    "ABOUT": "About RQM",
+    "HOME": "Home"
+  },
+  "HERO": {
+    "BADGE": "The Beginning",
+    "TITLE_1": "Artificial Intelligence",
+    "TITLE_2": "Your Digital Business Partner",
+    "DESCRIPTION": "We enhance your business efficiency with sustainable AI-driven solutions to support the digital economy ecosystem.",
+    "CTA": "Step \"Zero\" starts from RQM"
+  },
+  "MAIN_LAYOUT": {
+    "BACKGROUND_ALT": "Background"
+  },
+  "INFO_SECTION": {
+    "SUBTITLE": "At RQM, we aspire to build",
+    "TITLE": "Services that shape the future",
+    "CARD_CYBER_TITLE": "Cybersecurity Services",
+    "CARD_CYBER_DESC": "We offer advanced cybersecurity services including vulnerability testing and scanning, and security assessment for systems and applications using the latest technologies. We work on risk analysis and vulnerability identification, providing practical solutions to address them. We also provide integrated cyber infrastructure ensuring continuous protection and enhancing corporate readiness against digital threats.",
+    "CARD_CYBER_FOOTER": "Enhance your business security",
+    "CARD_AI_TITLE": "Building AI Solutions",
+    "CARD_AI_DESC": "We use integrated AI technologies to develop AI agents, machine learning applications, and business automation. We also work on improving natural language processing, big data analysis, and providing integrated technical infrastructure ensuring sustainability and success of solutions.",
+    "CARD_AI_FOOTER": "Our Services",
+    "CARD_DIGITAL_TITLE": "Building Advanced Digital Solutions",
+    "CARD_DIGITAL_DESC": "We build integrated digital solutions with our clients, including custom software development, business applications, and integration tools. We work on building and studying user interfaces and experience to improve interaction with systems. We also provide integrated technical infrastructure ensuring sustainability and success of solutions.",
+    "CARD_DIGITAL_FOOTER": "Know Us"
+  },
+  "TRANSFORMATION": {
+    "TITLE": "Transforming your project into reality",
+    "SUBTITLE": "Systematic steps supported by experience and skill to achieve your goals",
+    "CARD_ANALYSIS_TITLE": "Analysis",
+    "CARD_ANALYSIS_DESC": "We analyze business requirements with agile methodologies.",
+    "CARD_STUDY_TITLE": "Study",
+    "CARD_STUDY_DESC": "We research, study, and test the feasibility of the work.",
+    "CARD_BUILD_TITLE": "Building",
+    "CARD_BUILD_DESC": "We establish the project and build its initial business model."
+  },
+  "PROCESS": {
+    "TITLE_LINE1": "The zero",
+    "TITLE_LINE2": "we start from at RQM",
+    "CARD_SUSTAINABILITY_TITLE": "Sustainability",
+    "CARD_SUSTAINABILITY_DESC": "We maintain the sustainability of business efficiency and growth.",
+    "CARD_ANALYSIS_TITLE": "Analysis",
+    "CARD_ANALYSIS_DESC": "We wrap our work in transparency and prioritize ethical standards.",
+    "CARD_PERFECTION_TITLE": "Perfection",
+    "CARD_PERFECTION_DESC": "We pay attention to work details to meet client needs.",
+    "CARD_COMMITMENT_TITLE": "Commitment",
+    "CARD_COMMITMENT_DESC": "We measure our steps precisely and pledge our responsibility towards the client."
+  },
+  "VALUES_CARD": {
+    "TITLE": "Our High Values",
+    "DESCRIPTION": "These values represent the cornerstone of all our work with partners",
+    "BUTTON_TEXT": "Step \"Zero\" starts from RQM"
+  },
+  "PRODUCT_CARD": {
+    "TRY_NOW": "Try Now",
+    "DISCOVER_MORE": "Discover More",
+    "LEARN_MORE_SOLUTIONS": "Learn more about our solutions",
+    "LEARN_OTHER_SOLUTIONS": "Learn about our other solutions"
+  },
+  "PRODUCTS": {
+    "TITLE": "Our Products",
+    "CARD_QAYD_TITLE": "Qayd Platform for Legal Affairs",
+    "CARD_QAYD_DESCRIPTION": "Manage your business with innovative technologies to enhance the efficiency of legal and administrative work in one platform, saving time, reducing costs, and boosting client confidence.",
+    "CARD_QAYD_FEATURE_1": "Unified dashboard for all cases",
+    "CARD_QAYD_FEATURE_2": "Accurate details for each case and its records.",
+    "CARD_QAYD_FEATURE_3": "Automatic organization of court session dates",
+    "CARD_SMART_GATEWAY_TITLE": "Your Smart Gateway for Digital Investment",
+    "CARD_SMART_GATEWAY_DESCRIPTION": "An integrated platform that provides AI tools and solutions for institutions and companies in the financial and investment services sector.",
+    "CARD_SMART_GATEWAY_FEATURE_1": "Advanced high-performance cloud",
+    "CARD_SMART_GATEWAY_FEATURE_2": "Reliable regulatory compliance",
+    "CARD_SMART_GATEWAY_FEATURE_3": "Flexible integration with systems",
+    "CARD_MORE_SOLUTIONS_PILL": "Learn about our other solutions"
+  },
+  "QUALITY_PROOF": {
+    "TITLE": "Compliance Scope",
+    "ISO_LOGO_ALT": "ISO Logo",
+    "SDAIA_LOGO_ALT": "SDAIA Logo"
+  },
+  "OUR_PARTNERS": {
+    "TITLE": "Success Partners"
+  },
+  "FOOTER": {
+    "FOLLOW_US": "Follow Us",
+    "OUR_LOCATION": "Our Location",
+    "LOCATION_TEXT": "Riyadh, As Sahafah 13315",
+    "USEFUL_LINKS": "Useful Links",
+    "PRIVACY_POLICY": "Privacy Policy",
+    "CONTACT_US": "Contact Us",
+    "ABOUT_RQM": "About RQM",
+    "HOME": "Home",
+    "WHO_WE_ARE": "Who We Are",
+    "SERVICES": "Services",
+    "SLOGAN": "Your gateway to the digital future",
+    "COPYRIGHT": "All rights reserved to RQM © 2025"
+  }
+}
