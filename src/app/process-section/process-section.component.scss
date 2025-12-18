@@ -28,7 +28,7 @@
 
   :host-context([data-theme="light"]) & {
     background: linear-gradient(180deg, rgba(76, 137, 213, 0.83) -16.72%, rgba(62, 124, 200, 0.83) 60.81%), 
-                url('/Section4.png') lightgray 50% / cover no-repeat;
+                url('../../../public/Section4.png') lightgray 50% / cover no-repeat;
   }
 }
 
