@@ -45,7 +45,7 @@ import { ThemeService } from '../services/theme.service';
   ]
 })
 export class HeaderComponent {
-  logoDark = "footer/logowhite-footer.svg"; // Identical path to working footer logo
+  logoDark = "header/logo-white.svg"; // Organized path
   logoLight = "header-logo-light.svg"; // Colored logo
   backgroundBorder = "header/bg-border.png";
 
