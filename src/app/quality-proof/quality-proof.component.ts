@@ -10,6 +10,6 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrls: ['./quality-proof.component.scss']
 })
 export class QualityProofComponent {
-  isoLogo = "iso-logo.svg";
-  sdaiaLogo = "sdaia-logo.png";
+  isoLogo = "./iso-logo.svg";
+  sdaiaLogo = "./sdaia-logo.png";
 }

@@ -20,13 +20,13 @@ interface CardData {
   styleUrls: ['./process-section.component.scss'],
 })
 export class ProcessSectionComponent implements OnInit {
-  imgBg = "process/bg.png";
+  imgBg = "./process/bg.png";
 
   // Icons for cards
-  iconSustainability = "process/sustainability.svg";
-  iconAnalysis = "process/analysis.svg";
-  iconPerfection = "process/perfection.svg";
-  iconCommitment = "process/commitment.svg";
+  iconSustainability = "./process/sustainability.svg";
+  iconAnalysis = "./process/analysis.svg";
+  iconPerfection = "./process/perfection.svg";
+  iconCommitment = "./process/commitment.svg";
 
   // Data
   cards: CardData[] = [
@@ -35,28 +35,28 @@ export class ProcessSectionComponent implements OnInit {
       title: 'PROCESS.CARD_SUSTAINABILITY_TITLE',
       description: 'PROCESS.CARD_SUSTAINABILITY_DESC',
       icon: this.iconSustainability,
-      bgImage: "/value card/01.png"
+      bgImage: "./value card/01.png"
     },
     {
       id: 'analysis',
       title: 'PROCESS.CARD_ANALYSIS_TITLE',
       description: 'PROCESS.CARD_ANALYSIS_DESC',
       icon: this.iconAnalysis,
-      bgImage: "/value card/02.png"
+      bgImage: "./value card/02.png"
     },
     {
       id: 'perfection',
       title: 'PROCESS.CARD_PERFECTION_TITLE',
       description: 'PROCESS.CARD_PERFECTION_DESC',
       icon: this.iconPerfection,
-      bgImage: "/value card/03.png"
+      bgImage: "./value card/03.png"
     },
     {
       id: 'commitment',
       title: 'PROCESS.CARD_COMMITMENT_TITLE',
       description: 'PROCESS.CARD_COMMITMENT_DESC',
       icon: this.iconCommitment,
-      bgImage: "/value card/04.png"
+      bgImage: "./value card/04.png"
     }
   ];
 

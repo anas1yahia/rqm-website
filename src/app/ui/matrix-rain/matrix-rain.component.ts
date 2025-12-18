@@ -43,7 +43,7 @@ export class MatrixRainComponent implements AfterViewInit, OnDestroy {
   private logoGrid: boolean[][] = []; // [col][row] true if part of logo
 
   constructor() {
-    this.logoImage.src = 'footer/logowhite-footer.svg';
+    this.logoImage.src = './footer/logowhite-footer.svg';
     this.logoImage.onload = () => {
       this.logoLoaded = true;
       // If canvas is already ready, map the logo
