@@ -19,15 +19,14 @@ interface CardData {
   templateUrl: './process-section.component.html',
   styleUrls: ['./process-section.component.scss'],
 })
-export class ProcessSectionComponent implements OnInit, OnDestroy {
-  // Assets
-  imgBg = "https://www.figma.com/api/mcp/asset/29004465-5217-4f60-b76c-20d8a3d02008"; 
-  
-  // Icons
-  iconSustainability = "https://www.figma.com/api/mcp/asset/f41f44b4-ef6c-40aa-8739-9ee4b89f0e0f";
-  iconAnalysis = "https://www.figma.com/api/mcp/asset/ae8a9e0f-25d0-4b0e-a211-fbd6cfb4b030"; 
-  iconPerfection = "https://www.figma.com/api/mcp/asset/8b091450-ffde-4c1b-8f37-435981e1ed95";
-  iconCommitment = "https://www.figma.com/api/mcp/asset/735622ee-1c7a-4226-b8e6-df6282552ca6";
+export class ProcessSectionComponent implements OnInit {
+  imgBg = "process/bg.png";
+
+  // Icons for cards
+  iconSustainability = "process/sustainability.svg";
+  iconAnalysis = "process/analysis.svg";
+  iconPerfection = "process/perfection.svg";
+  iconCommitment = "process/commitment.svg";
 
   // Data
   cards: CardData[] = [

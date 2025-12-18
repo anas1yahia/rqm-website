@@ -45,9 +45,9 @@ import { ThemeService } from '../services/theme.service';
   ]
 })
 export class HeaderComponent {
-  logoDark = "https://www.figma.com/api/mcp/asset/b81f1129-1ac8-4da8-b8e2-e5421ea91484"; // White logo
+  logoDark = "header/logo-dark.svg"; // Local white logo
   logoLight = "header-logo-light.svg"; // Colored logo
-  backgroundBorder = "https://www.figma.com/api/mcp/asset/15c023cd-5554-4a58-b669-8a4f515af04e";
+  backgroundBorder = "header/bg-border.svg";
   
   isMenuOpen = false;
   isScrolled = false;
