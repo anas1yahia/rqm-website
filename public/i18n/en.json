@@ -3,7 +3,9 @@
     "CONTACT_US": "Contact Us",
     "SERVICES": "Services",
     "ABOUT": "About RQM",
-    "HOME": "Home"
+    "HOME": "Home",
+    "LIGHT_MODE": "Light Mode",
+    "DARK_MODE": "Dark Mode"
   },
   "HERO": {
     "BADGE": "The Beginning",

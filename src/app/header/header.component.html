@@ -59,7 +59,15 @@
       <a [routerLink]="['/', currentLang]" fragment="services" class="mobile-nav-link" (click)="toggleMenu()">{{ 'HEADER.SERVICES' | translate }}</a>
       <a [routerLink]="['/', currentLang]" fragment="contact" class="mobile-nav-link" (click)="toggleMenu()">{{ 'HEADER.CONTACT_US' | translate }}</a>
     </nav>
-    
+
+    <!-- Mobile Theme Switcher -->
+    <div class="mobile-theme-switcher">
+      <button class="theme-btn" (click)="themeService.toggleTheme()" aria-label="Toggle Theme">
+        <lucide-icon [img]="themeService.currentTheme() === 'dark' ? SunIcon : MoonIcon" [size]="24" strokeWidth="1.5"></lucide-icon>
+
+      </button>
+    </div>
+
     <!-- Mobile Lang Switcher inside menu -->
     <div class="mobile-lang-switcher">
         <button class="lang-btn" [class.active]="currentLang === 'ar'" (click)="switchLanguage('ar')">
