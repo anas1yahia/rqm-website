@@ -34,7 +34,7 @@ export class MatrixRainComponent implements AfterViewInit, OnDestroy {
   private rows!: number;
   private drops: number[] = [];
   private animationFrameId!: number;
-  private fontSize = 14; // Slightly smaller for better resolution on logo
+  private fontSize = 10; // Smaller font for higher resolution
   private chars = '01';
   
   // Logo Logic
@@ -102,8 +102,8 @@ export class MatrixRainComponent implements AfterViewInit, OnDestroy {
     const offCtx = offCanvas.getContext('2d')!;
 
     // 2. Determine logo size (maintain aspect ratio)
-    // Scale logo to be about 40-50% of screen width, max 400px
-    const targetWidth = Math.min(this.width * 0.6, 500);
+    // Scale logo to be about 35% of screen width, max 300px
+    const targetWidth = Math.min(this.width * 0.35, 300);
     const scale = targetWidth / this.logoImage.width;
     const targetHeight = this.logoImage.height * scale;
 

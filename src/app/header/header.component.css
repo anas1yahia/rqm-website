@@ -19,6 +19,54 @@
   backdrop-filter: blur(10px);
   position: relative;
   z-index: 1001; /* Above overlay */
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Light Theme Scrolled State */
+.header-container.scrolled-light {
+  background-color: rgba(255, 255, 255, 0.9); /* Solid white/glass */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+.header-container.scrolled-light .nav-link {
+  color: #0A0C1A;
+}
+.header-container.scrolled-light .nav-link:hover {
+  color: #36c9cb;
+}
+.header-container.scrolled-light .theme-btn, .header-container.scrolled-light .lang-btn {
+  color: #0A0C1A;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+.header-container.scrolled-light .theme-btn:hover, .header-container.scrolled-light .lang-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+.header-container.scrolled-light .lang-btn.active {
+  background: rgba(0, 0, 0, 0.1);
+  color: #0A0C1A;
+}
+.header-container.scrolled-light .contact-cta {
+  border-color: #36c9cb;
+}
+.header-container.scrolled-light .contact-cta .contact-wrapper p {
+  color: #0A0C1A;
+}
+.header-container.scrolled-light .contact-cta:hover {
+  background: #36c9cb;
+}
+.header-container.scrolled-light .contact-cta:hover .contact-wrapper p {
+  color: white;
+}
+.header-container.scrolled-light .toggle-container {
+  border-color: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.02);
+}
+.header-container.scrolled-light .divider-bg {
+  filter: invert(1); /* Invert the divider graphic to be visible on white */
+  opacity: 0.2;
+}
+.header-container.scrolled-light .burger-btn {
+  color: #0A0C1A;
 }
 
 /* Burger Button */
@@ -105,13 +153,45 @@
   display: block;
 }
 
+/* Controls Wrapper (Lang + Theme) */
+.controls-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Theme Button */
+.theme-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s ease;
+}
+.theme-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: rotate(15deg);
+}
+
 /* Lang Switcher */
 .lang-switcher {
   position: relative;
   display: flex;
   align-items: center;
   padding: 7px 7px 7px 8px;
-  border-inline-end: 1px solid rgba(119, 145, 196, 0.2); /* Logical border on the end side */
+  /* Removed border-inline-end from here as it might look weird next to theme button if we change structure.
+     If keeping original design of vertical divider, we might need to adjust.
+     Let's keep it simple for now or check if divider was critical. 
+     Original: border-inline-end: 1px solid rgba(119, 145, 196, 0.2); 
+  */
+  border-inline-end: 1px solid rgba(119, 145, 196, 0.2);
 }
 
 .divider-bg {
@@ -243,7 +323,7 @@
   .desktop-nav {
     display: none;
   }
-  .lang-switcher.hidden-mobile {
+  .controls-wrapper.hidden-mobile {
     display: none; /* Move to menu */
   }
   .right-section {

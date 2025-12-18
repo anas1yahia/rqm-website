@@ -35,16 +35,17 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(248, 248, 248, 0.02);
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
+  color: var(--text-color); /* Ensure icon color adapts */
 }
 .control-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--glass-bg);
   transform: scale(1.05);
 }
 .control-btn:active {
@@ -79,7 +80,7 @@
   font-family: "IBM Plex Sans Arabic", sans-serif;
   font-weight: 700;
   font-size: 28px;
-  color: #e8f2ff;
+  color: var(--text-color);
   margin: 0;
 }
 
@@ -91,7 +92,7 @@
   font-family: "IBM Plex Sans Arabic", sans-serif;
   font-weight: 300;
   font-size: 16px;
-  color: #c6cedd;
+  color: var(--text-muted);
   margin: 0;
   line-height: 1.6;
 }

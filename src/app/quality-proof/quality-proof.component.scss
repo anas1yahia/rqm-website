@@ -63,7 +63,8 @@
   justify-content: center;
   padding: 0 24px; /* Increased padding for better visual */
   height: 100.8px; /* Match tallest logo height */
-  border: 1px solid rgba(250, 251, 253, 0.12);
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
 
   /* Use margin-inline to respect direction */
   margin-inline-end: -1px;
@@ -82,7 +83,7 @@
     font-family: 'IBM Plex Sans Arabic', sans-serif;
     font-weight: 700;
     font-size: 14.4px;
-    color: white;
+    color: var(--text-color);
     margin: 0;
     white-space: nowrap;
     text-align: center;
@@ -110,8 +111,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(250, 251, 253, 0.12); /* Match link border/bg style for consistency if needed, or transparent */
-  border: 1px solid rgba(250, 251, 253, 0.12); /* Add border to match links */
+  background: var(--card-bg); /* Match link border/bg style for consistency if needed, or transparent */
+  border: 1px solid var(--card-border); /* Add border to match links */
 
   .iso-img {
     width: 100%; /* Adjust size inside */
@@ -119,6 +120,10 @@
     object-fit: contain;
     filter: grayscale(100%);
     opacity: 0.8;
+    
+    :host-context([data-theme="light"]) & {
+      filter: grayscale(100%) invert(1) brightness(0.2); /* Make it dark for light theme if it was white */
+    }
   }
 }
 
@@ -131,6 +136,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid var(--card-border);
 
   .sdaia-img {
     width: 100%;
@@ -144,7 +150,7 @@
     font-family: 'IBM Plex Sans Arabic', sans-serif;
     font-weight: 700;
     font-size: 32px;
-    color: white;
+    color: var(--text-color);
     margin: 0;
     letter-spacing: -0.78px;
     white-space: nowrap;

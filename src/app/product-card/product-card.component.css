@@ -9,15 +9,15 @@
   height: auto;
   min-height: 464px;
   border-radius: 0px;
-  background: rgba(248, 248, 248, 0.02);
+  background: var(--card-bg);
   overflow: hidden;
   display: flex;
   gap: 16px;
   flex-direction: column;
   padding: 40px 27px;
   box-sizing: border-box;
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  border: 1px solid var(--card-border);
   margin: 0 auto;
   /* Glitch Effect on Hover */
 }
@@ -127,7 +127,7 @@
 .small-card .card-bg-layer {
   position: absolute;
   inset: 0;
-  background: rgba(248, 248, 248, 0.02);
+  background: var(--card-bg);
   z-index: 0;
 }
 
@@ -136,7 +136,7 @@
   position: absolute;
   inset: 0;
   border-radius: 11px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--card-border);
   pointer-events: none;
   z-index: 1;
   transition: all 0.3s;
@@ -196,8 +196,8 @@
   gap: 6px;
   padding: 4px 10px;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--glass-bg);
+  border: 1px solid var(--card-border);
 }
 
 .status-dot {
@@ -245,7 +245,7 @@
   font-family: "IBM Plex Sans Arabic", sans-serif;
   font-weight: 700;
   font-size: 22px;
-  color: #e8f2ff;
+  color: var(--text-color);
   margin: 0 0 5px 0;
 }
 
@@ -259,7 +259,7 @@
   font-family: "IBM Plex Sans Arabic", sans-serif;
   font-weight: 300;
   font-size: 14px;
-  color: #c6cedd;
+  color: var(--text-muted);
   line-height: 1.6;
   margin: 0 0 20px 0;
   max-width: 90%;
@@ -283,14 +283,14 @@
 .feature-text {
   font-family: "IBM Plex Sans Arabic", sans-serif;
   font-size: 12px;
-  color: #e8f2ff;
+  color: var(--text-color);
 }
 
 .feature-icon-wrapper {
   width: 22px;
   height: 22px;
   border-radius: 4px;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--glass-bg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -327,6 +327,12 @@
   border: 1px solid var(--theme-color);
   color: white;
   cursor: pointer;
+}
+:host-context([data-theme=light]) .action-btn {
+  color: var(--theme-color);
+}
+:host-context([data-theme=light]) .action-btn:hover {
+  color: #0A0C1A;
 }
 
 .action-btn:hover {
@@ -371,7 +377,7 @@
 }
 
 .illustration-container.skeleton-loading {
-  background-color: rgba(255, 255, 255, 0.1); /* Skeleton background */
+  background-color: var(--glass-bg); /* Skeleton background */
   animation: pulse-skeleton 1.5s infinite ease-in-out;
 }
 .illustration-container.skeleton-loading .illustration-img {
@@ -380,13 +386,13 @@
 
 @keyframes pulse-skeleton {
   0% {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--glass-bg);
   }
   50% {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: var(--card-border);
   }
   100% {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--glass-bg);
   }
 }
 .illustration-img {
@@ -395,7 +401,11 @@
   object-fit: contain;
   opacity: 0.15;
   transform: scale(1.1);
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, filter 0.3s ease;
+}
+:host-context([data-theme=light]) .illustration-img {
+  opacity: 0.6;
+  filter: var(--illustration-filter);
 }
 
 /* Pills / Badge Top Left */
@@ -410,8 +420,8 @@
 }
 
 .pill {
-  background: rgba(229, 228, 238, 0.1);
-  border: 0.5px solid rgba(229, 228, 238, 0.3);
+  background: var(--glass-bg);
+  border: 0.5px solid var(--card-border);
   border-radius: 20px;
   padding: 4px 10px;
   display: flex;
@@ -419,7 +429,7 @@
   gap: 6px;
   font-family: "IBM Plex Sans Arabic", sans-serif;
   font-size: 10px;
-  color: #e1e1e8;
+  color: var(--text-muted);
   white-space: nowrap;
 }
 .pill::before {
@@ -427,7 +437,7 @@
   display: block;
   width: 4px;
   height: 4px;
-  background-color: #e1e1e8;
+  background-color: var(--text-muted);
   border-radius: 50%;
   opacity: 0.8;
 }
@@ -448,7 +458,7 @@
 }
 
 .more-link {
-  background: rgba(235, 236, 238, 0.19);
+  background: var(--glass-bg);
   padding: 10px 20px;
   border-radius: 16px;
   display: flex;
@@ -461,10 +471,10 @@
 .more-link span {
   font-family: "IBM Plex Sans Arabic", sans-serif;
   font-size: 12px;
-  color: white;
+  color: var(--text-color);
 }
 .more-link:hover {
-  background: rgba(235, 236, 238, 0.25);
+  background: var(--card-border);
 }
 
 .arrow-icon {
@@ -473,6 +483,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--text-color);
 }
 
 /* Responsive */

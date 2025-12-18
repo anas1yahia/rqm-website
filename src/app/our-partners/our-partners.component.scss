@@ -26,8 +26,9 @@
     font-family: 'IBM Plex Sans Arabic', sans-serif;
     font-weight: 700;
     font-size: 38px;
-    color: #e8f2ff;
+    color: var(--text-color);
     margin: 0;
+    transition: color 0.3s ease;
   }
   
   @media (max-width: 768px) {
@@ -88,6 +89,10 @@
   /* Default state: Grayscale and slightly dimmed */
   filter: grayscale(100%);
   opacity: 0.5;
+
+  :host-context([data-theme="light"]) & {
+    opacity: 0.7;
+  }
 
   &:hover {
     filter: grayscale(0%);

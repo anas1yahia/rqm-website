@@ -8,14 +8,14 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  background: rgba(182, 204, 248, 0.05);
+  background: var(--card-bg);
   border-radius: 12px;
   position: relative;
   overflow: hidden;
   /* Min width/height from design if needed */
   min-width: 300px;
   height: 100%;
-  transition: transform 0.3s ease; /* Keep transform transition */
+  transition: transform 0.3s ease, background 0.3s ease; /* Keep transform transition */
   /* Matrix Grid Container */
 }
 .card-wrapper .matrix-grid {
@@ -30,7 +30,7 @@
   /* Individual Matrix Square */
 }
 .card-wrapper .matrix-square {
-  background-color: rgba(182, 204, 248, 0.05); /* Original square color */
+  background-color: var(--card-bg); /* Original square color */
   opacity: 0;
 }
 .card-wrapper .matrix-square.active {
@@ -149,7 +149,7 @@
 }
 
 .illustration-container.skeleton-loading {
-  background-color: rgba(255, 255, 255, 0.1); /* Skeleton background */
+  background-color: var(--glass-bg); /* Skeleton background */
   animation: pulse-skeleton 1.5s infinite ease-in-out;
 }
 .illustration-container.skeleton-loading .illustration {
@@ -158,20 +158,21 @@
 
 @keyframes pulse-skeleton {
   0% {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--glass-bg);
   }
   50% {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: var(--card-border);
   }
   100% {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--glass-bg);
   }
 }
 .illustration {
   width: 100%;
   height: auto;
   object-fit: contain;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, filter 0.3s ease;
+  filter: var(--illustration-filter);
 }
 
 /* Overlay/Border */
@@ -181,8 +182,8 @@
   right: 0;
   width: 100%;
   height: 100%;
-  border: 1px solid rgba(2, 7, 14, 0.1);
-  background: rgba(2, 7, 14, 0.02);
+  border: 1px solid var(--card-border);
+  background: transparent;
   pointer-events: none;
   z-index: 0;
 }
@@ -205,13 +206,13 @@
 
 .bar-short {
   width: 6px;
-  background: white;
+  background: var(--text-color);
   opacity: 0.5;
 }
 
 .bar-long {
   width: 19px;
-  background: white;
+  background: var(--text-color);
   opacity: 0.3;
 }
 
@@ -236,7 +237,7 @@
   margin: 0;
   font-size: 32px;
   font-weight: 700;
-  color: white;
+  color: var(--text-color);
   text-transform: uppercase;
   text-align: right;
   line-height: 1;
@@ -252,7 +253,7 @@
   margin: 0;
   font-size: 24px;
   font-weight: 300;
-  color: white;
+  color: var(--text-muted);
   opacity: 0.7;
   text-align: right;
   white-space: pre-wrap;

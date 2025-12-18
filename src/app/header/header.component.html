@@ -1,31 +1,38 @@
-<header class="header-container">
+<header class="header-container" [class.scrolled-light]="isScrolled && themeService.currentTheme() === 'light'">
   <!-- Right Section: Navigation, Logo, Language -->
   <div class="right-section">
     <!-- Language Switcher (First in Arabic/RTL) -->
-    <div class="lang-switcher hidden-mobile">
-      <div class="divider-bg">
-        <img [src]="backgroundBorder" alt="">
-      </div>
-      <div class="toggle-container">
-        <button class="lang-btn" [class.active]="currentLang === 'ar'" (click)="switchLanguage('ar')">
-          <span>عربي</span>
-        </button>
-        <button class="lang-btn" [class.active]="currentLang === 'en'" (click)="switchLanguage('en')">
-          <span>EN</span>
-        </button>
+    <div class="controls-wrapper hidden-mobile">
+      <!-- Theme Switcher -->
+      <button class="theme-btn" (click)="themeService.toggleTheme()" aria-label="Toggle Theme">
+        <lucide-icon [img]="themeService.currentTheme() === 'dark' ? SunIcon : MoonIcon" [size]="20" strokeWidth="1.5"></lucide-icon>
+      </button>
+
+      <div class="lang-switcher">
+        <div class="divider-bg">
+          <img [src]="backgroundBorder" alt="">
+        </div>
+        <div class="toggle-container">
+          <button class="lang-btn" [class.active]="currentLang === 'ar'" (click)="switchLanguage('ar')">
+            <span>عربي</span>
+          </button>
+          <button class="lang-btn" [class.active]="currentLang === 'en'" (click)="switchLanguage('en')">
+            <span>EN</span>
+          </button>
+        </div>
       </div>
     </div>
 
     <div class="nav-and-logo">
       <div class="logo">
-        <img [src]="logoImage" alt="Rqm Logo">
+        <img [src]="currentLogo" alt="Rqm Logo">
       </div>
       <!-- Desktop Navigation -->
       <nav class="navigation desktop-nav">
-        <a routerLink="/" fragment="home" class="nav-link">{{ 'HEADER.HOME' | translate }}</a>
-        <a routerLink="/" fragment="about" class="nav-link">{{ 'HEADER.ABOUT' | translate }}</a>
-        <a routerLink="/" fragment="services" class="nav-link">{{ 'HEADER.SERVICES' | translate }}</a>
-        <a routerLink="/" fragment="contact" class="nav-link">{{ 'HEADER.CONTACT_US' | translate }}</a>
+        <a [routerLink]="['/', currentLang]" fragment="home" class="nav-link">{{ 'HEADER.HOME' | translate }}</a>
+        <a [routerLink]="['/', currentLang]" fragment="about" class="nav-link">{{ 'HEADER.ABOUT' | translate }}</a>
+        <a [routerLink]="['/', currentLang]" fragment="services" class="nav-link">{{ 'HEADER.SERVICES' | translate }}</a>
+        <a [routerLink]="['/', currentLang]" fragment="contact" class="nav-link">{{ 'HEADER.CONTACT_US' | translate }}</a>
       </nav>
     </div>
   </div>
@@ -47,10 +54,10 @@
 <div class="mobile-menu-overlay" *ngIf="isMenuOpen" @menuState (click)="toggleMenu()">
   <div class="mobile-menu-content" @sheetState @navItems (click)="$event.stopPropagation()">
     <nav class="mobile-nav">
-      <a routerLink="/" fragment="home" class="mobile-nav-link" (click)="toggleMenu()">{{ 'HEADER.HOME' | translate }}</a>
-      <a routerLink="/" fragment="about" class="mobile-nav-link" (click)="toggleMenu()">{{ 'HEADER.ABOUT' | translate }}</a>
-      <a routerLink="/" fragment="services" class="mobile-nav-link" (click)="toggleMenu()">{{ 'HEADER.SERVICES' | translate }}</a>
-      <a routerLink="/" fragment="contact" class="mobile-nav-link" (click)="toggleMenu()">{{ 'HEADER.CONTACT_US' | translate }}</a>
+      <a [routerLink]="['/', currentLang]" fragment="home" class="mobile-nav-link" (click)="toggleMenu()">{{ 'HEADER.HOME' | translate }}</a>
+      <a [routerLink]="['/', currentLang]" fragment="about" class="mobile-nav-link" (click)="toggleMenu()">{{ 'HEADER.ABOUT' | translate }}</a>
+      <a [routerLink]="['/', currentLang]" fragment="services" class="mobile-nav-link" (click)="toggleMenu()">{{ 'HEADER.SERVICES' | translate }}</a>
+      <a [routerLink]="['/', currentLang]" fragment="contact" class="mobile-nav-link" (click)="toggleMenu()">{{ 'HEADER.CONTACT_US' | translate }}</a>
     </nav>
     
     <!-- Mobile Lang Switcher inside menu -->

@@ -1,9 +1,56 @@
 /* You can add global styles to this file, and also import other style files */
 
+:root {
+  /* Default Dark Theme Variables */
+  --bg-color: #0A0C1A;
+  --text-color: #ffffff;
+  --text-muted: #c6cedd;
+  --primary-color: #36c9cb;
+  --secondary-color: #62c4aa;
+  
+  --card-bg: rgba(248, 248, 248, 0.02);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  
+  --header-bg: rgba(255, 255, 255, 0.2);
+  --nav-link-color: #ffffff;
+  
+  --scrollbar-track: #1a202c;
+  --scrollbar-thumb: #36c9cb;
+  
+  --grid-line-color: rgba(54, 201, 203, 0.05); /* Subtle grid for dark */
+  --card-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.25);
+  --illustration-filter: none;
+}
+
+[data-theme="light"] {
+  --bg-color: #F0F2F5; /* Light greyish white */
+  --text-color: #0A0C1A;
+  --text-muted: #5D6B82;
+  --primary-color: #2BA6A8; /* Darker teal for contrast */
+  --secondary-color: #4EA38C;
+  
+  --card-bg: rgba(2, 7, 14, 0.02);
+  --card-border: rgba(2, 7, 14, 0.05);
+  --glass-bg: rgba(2, 7, 14, 0.03);
+  
+  --header-bg: rgba(255, 255, 255, 0.7); /* More opaque for light */
+  --nav-link-color: #0A0C1A;
+  
+  --scrollbar-track: #e2e8f0;
+  --scrollbar-thumb: #2BA6A8;
+  
+  --grid-line-color: rgba(43, 166, 168, 0.1); /* Slightly more visible grid for light */
+  --card-shadow: none;
+  --illustration-filter: invert(48%) sepia(13%) saturate(1045%) hue-rotate(161deg) brightness(93%) contrast(86%);
+}
+
 body {
-  background-color: #0A0C1A;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   margin: 0;
   font-family: "IBM Plex Sans Arabic", sans-serif; /* Ensuring font consistency */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Custom Scrollbar Design */
@@ -13,24 +60,24 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a202c; /* Dark background for the track */
+  background: var(--scrollbar-track); /* Dark background for the track */
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #36c9cb; /* Thumb color - matches a theme accent */
+  background-color: var(--scrollbar-thumb); /* Thumb color - matches a theme accent */
   border-radius: 10px;
-  border: 2px solid #1a202c; /* Spacing around the thumb */
+  border: 2px solid var(--scrollbar-track); /* Spacing around the thumb */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #62c4aa; /* Lighter/different accent on hover */
+  background-color: var(--secondary-color); /* Lighter/different accent on hover */
 }
 
 /* For Firefox */
 * {
   scrollbar-width: thin; /* "auto" or "thin" */
-  scrollbar-color: #36c9cb #1a202c; /* thumb color track color */
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track); /* thumb color track color */
 }
 
 /* Global Scroll Fade Animation */

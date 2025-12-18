@@ -38,12 +38,19 @@
 }
 .header-section .title-wrapper {
   width: fit-content;
-  /* ... existing styles ... */
 }
 .header-section .title-wrapper .section-title {
-  /* ... */
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-weight: 700;
+  font-size: 38px;
   text-align: center; /* Revert to original */
-  color: #C6CEDD;
+  color: var(--text-color);
+  margin: 0;
+}
+
+:host-context([data-theme=light]) .products-container {
+  background: rgba(255, 255, 255, 0.4);
+  border-color: rgba(0, 0, 0, 0.05);
 }
 
 .product-line {

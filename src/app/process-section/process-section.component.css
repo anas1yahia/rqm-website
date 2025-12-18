@@ -21,6 +21,12 @@
   position: relative;
   overflow: hidden;
   min-height: 600px;
+  /* Theme-specific background */
+  background: transparent; /* Default Dark Theme */
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+:host-context([data-theme=light]) .process-section-container {
+  background: linear-gradient(180deg, rgba(76, 137, 213, 0.83) -16.72%, rgba(62, 124, 200, 0.83) 60.81%), url("/Section4.png") lightgray 50%/cover no-repeat;
 }
 
 /* Header Container */

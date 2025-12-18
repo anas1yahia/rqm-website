@@ -21,8 +21,8 @@
   overflow: hidden; /* Clip animated background */
 
   background-image:
-    repeating-linear-gradient(90deg, rgba(54, 201, 203, 0.01) 0%, transparent 1px, transparent 40px), /* Vertical lines */
-    repeating-linear-gradient(0deg, rgba(54, 201, 203, 0.005) 0%, transparent 1px, transparent 40px); /* Very subtle horizontal for grid feel */
+    repeating-linear-gradient(90deg, var(--grid-line-color) 0%, transparent 1px, transparent 40px), /* Vertical lines */
+    repeating-linear-gradient(0deg, var(--grid-line-color) 0%, transparent 1px, transparent 40px); /* Very subtle horizontal for grid feel */
 
   background-size: 40px 40px; /* Adjust size for line density and spacing */
   background-position: 0 0;
@@ -48,7 +48,7 @@
 .subtitle {
   margin: 0;
   font-size: 1.2rem;
-  color: #C6CEDD;
+  color: var(--text-muted);
   font-weight: 400;
   font-family: 'IBM Plex Sans Arabic', sans-serif;
   letter-spacing: -0.02em;
@@ -58,7 +58,7 @@
   margin: 0;
   font-size: 40px;
   font-weight: 700;
-  background: linear-gradient(90deg, #36C9CB 0%, #62C4AA 100%);
+  background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
