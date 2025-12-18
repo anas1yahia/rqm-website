@@ -7,7 +7,8 @@
 
 .quality-proof-container {
   display: flex;
-  justify-content: flex-end; /* Align to right generally, or space-between */
+  flex-direction: row-reverse;
+  justify-content: flex-start;
   align-items: center;
   gap: 104px;
   padding: 0 132px;
@@ -31,10 +32,11 @@
 
 .left-content {
   display: flex;
+  flex-direction: row-reverse;
   align-items: center;
   gap: 21px;
   flex: 1;
-  justify-content: flex-end;
+  justify-content: flex-start;
   width: 100%;
 }
 @media (max-width: 768px) {
@@ -47,6 +49,7 @@
 .iso-links-group {
   width: 100%;
   display: flex;
+  flex-direction: row-reverse;
   align-items: center; /* Stretch to same height */
   height: 100%;
 }
@@ -66,11 +69,11 @@
   padding: 0 24px; /* Increased padding for better visual */
   height: 100.8px; /* Match tallest logo height */
   border: 1px solid rgba(250, 251, 253, 0.12);
-  /* Collapse borders */
-  margin-right: -1px;
+  /* Use margin-inline to respect direction */
+  margin-inline-end: -1px;
 }
 .iso-link-item:last-child {
-  margin-right: 0;
+  margin-inline-end: 0;
 }
 @media (max-width: 576px) {
   .iso-link-item {
