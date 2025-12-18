@@ -80,9 +80,9 @@ export class HeaderComponent {
         // Wait a bit for layout to settle, then fade out
         setTimeout(() => {
           this.uiService.endTransition();
-        }, 300);
+        }, 600);
       });
-    }, 400);
+    }, 800);
   }
 
   private updateDirection(lang: string) {

@@ -19,9 +19,9 @@ export class UiService {
 
   endTransition() {
     this.isTransitionActive.set(false);
-    // Wait for CSS transition (0.4s) before removing from DOM
+    // Wait for CSS transition (0.8s) before removing from DOM
     setTimeout(() => {
       this.isTransitionVisible.set(false);
-    }, 400);
+    }, 800);
   }
 }
