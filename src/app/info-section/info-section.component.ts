@@ -12,12 +12,12 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   styleUrls: ['./info-section.component.scss']
 })
 export class InfoSectionComponent {
-  arrowIcon = "./info/arrow.svg";
+  arrowIcon = "info/arrow.svg";
 
   // Background patterns for cards
-  card1Bg = "./info/card1bg.svg";
-  card2Bg = "./bg-card.svg"; // This was already local but keep consistency if needed
-  card3Bg = "./info/card3bg.svg";
+  card1Bg = "info/card1bg.svg";
+  card2Bg = "bg-card.svg"; // This was already local but keep consistency if needed
+  card3Bg = "info/card3bg.svg";
 
   constructor(private translate: TranslateService) {}
 }
