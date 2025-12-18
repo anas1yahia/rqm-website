@@ -3,7 +3,7 @@
   width: 100%;
   font-family: "IBM Plex Sans Arabic", sans-serif;
   position: relative;
-  z-index: 100; /* Ensure header stays on top */
+  z-index: 1000; /* Ensure header stays on top */
 }
 
 .header-container {
@@ -18,7 +18,7 @@
   box-sizing: border-box;
   backdrop-filter: blur(10px);
   position: relative;
-  z-index: 101; /* Above overlay */
+  z-index: 1001; /* Above overlay */
 }
 
 /* Burger Button */

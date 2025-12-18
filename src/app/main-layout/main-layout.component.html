@@ -9,14 +9,15 @@
 
   <div class="content-wrapper">
     <!-- Offset to match Figma's pt-[99px] on the parent -->
-    <div class="header-offset">
-      <app-header></app-header>
-    </div>
     <div class="hero-offset">
       <app-hero-section></app-hero-section>
     </div>
     <div class="projected-content">
       <ng-content></ng-content>
     </div>
+  </div>
+
+  <div class="header-offset">
+      <app-header></app-header>
   </div>
 </div>
