@@ -55,12 +55,12 @@
 
     &.shape-bottom-left {
       bottom: 0;
-      inset-inline-start: 0;
+      inset-inline-end: 0;
       width: 400px; /* Adjust size as needed, assumed large bg element */
       height: auto;
       max-width: 50%;
       opacity: 1; /* Adjust opacity if it's meant to be subtle or fully visible */
-      transform: translate(-20%, 20%); /* Slight offset if needed */
+      transform: translate(20%, 20%); /* Adjusted translate direction for end side */
     }
   }
 }

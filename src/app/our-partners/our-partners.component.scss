@@ -107,6 +107,9 @@
   
   &.composite {
     gap: 12px;
+    img {
+      height: 24px; /* Smaller for composite logos */
+    }
   }
 }
 
@@ -114,12 +117,13 @@
 .moyasar-group, .hyyak-group {
   display: flex;
   align-items: center;
-  height: 100%;
+  height: 32px; /* Base height for the group */
   gap: 8px;
   
   img {
-    height: 100%;
+    height: 24px; /* Consistent with other composite logos */
     width: auto;
+    object-fit: contain;
   }
 }
 
