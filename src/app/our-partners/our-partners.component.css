@@ -58,10 +58,10 @@
 
 .marquee-content {
   display: flex;
-  gap: 60px; /* Space between logos */
-  animation: marquee 30s linear infinite;
-  padding-left: 60px;
-  /* Ensure content is wide enough or duplicated enough */
+  gap: 80px; /* Increased gap for better spacing */
+  animation: marquee 40s linear infinite; /* Slower speed for better readability */
+  padding-left: 80px;
+  width: max-content; /* Ensure it takes full width of logos */
 }
 
 .marquee-row.reverse .marquee-content {
@@ -73,11 +73,10 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%); /* Assuming content is duplicated once, move by 50% of width */
+    transform: translateX(-50%); /* Loop point */
   }
 }
 .logo-item {
-  height: 40px;
   display: flex;
   align-items: center;
   flex-shrink: 0;
@@ -93,15 +92,16 @@
 .logo-item:hover {
   filter: grayscale(0%);
   opacity: 1;
-  transform: scale(1.05); /* Slight scale up for effect */
+  transform: scale(1.1); /* Scale up from base size on hover */
 }
 .logo-item img {
-  height: 100%;
+  /* Controlled small size to fit website */
+  height: 32px;
   width: auto;
   object-fit: contain;
 }
 .logo-item.composite {
-  gap: 10px;
+  gap: 12px;
 }
 
 /* Specific composite styling */
