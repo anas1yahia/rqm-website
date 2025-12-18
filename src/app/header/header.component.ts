@@ -45,10 +45,10 @@ import { ThemeService } from '../services/theme.service';
   ]
 })
 export class HeaderComponent {
-  logoDark = "header/logo-white.svg"; // Standard path
-  logoLight = "header-logo-light.svg"; // Colored logo
+  logoDark = "footer/logowhite-footer.svg"; // Standard path
+  logoLight = "footer/logowhite-footer.svg"; // Colored logo
   backgroundBorder = "header/bg-border.png"; // Standard path
-  
+
   isMenuOpen = false;
   isScrolled = false;
   readonly MenuIcon = Menu;
@@ -67,7 +67,7 @@ export class HeaderComponent {
   ) {
     this.currentLang = this.translate.currentLang || this.translate.defaultLang || 'en';
     this.updateDirection(this.currentLang);
-    
+
     // Subscribe to lang changes to update local state (e.g. if changed via URL)
     this.translate.onLangChange.subscribe((event) => {
       this.currentLang = event.lang;
