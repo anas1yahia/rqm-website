@@ -17,8 +17,8 @@ export class FooterComponent {
   divider = 'footer/divider.png';
   
   // New assets
-  footerLogoBg = 'footer/footer logo.svg'; // The bottom left one
-  mainFooterLogo = 'footer/logowhite footer.svg'; // The replacement for the main logo
+  footerLogoBg = 'footer/footer-logo.svg'; // The bottom left one
+  mainFooterLogo = 'footer/logowhite-footer.svg'; // The replacement for the main logo
 
   readonly Linkedin = Linkedin;
   readonly Instagram = Instagram;
