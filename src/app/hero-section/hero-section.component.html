@@ -87,17 +87,17 @@
     <div class="text-content">
       <div class="badge-container">
         <div class="badge">
-          <span>البداية</span>
+          <span>{{ 'HERO.BADGE' | translate }}</span>
         </div>
       </div>
 
       <div class="titles">
-        <h1 appTextDecode>الذكاء الاصطناعي</h1>
-        <h2 appTextDecode>شريك أعمالك الرقمية</h2>
+        <h1 [appTextDecode]="'HERO.TITLE_1' | translate"></h1>
+        <h2 [appTextDecode]="'HERO.TITLE_2' | translate"></h2>
       </div>
 
       <p class="description">
-        نعزز كفاءة أعمالك بحلول مستدامة يقودها الذكاء الاصطناعي لدعم منظومة الاقتصاد الرقمي.
+        {{ 'HERO.DESCRIPTION' | translate }}
       </p>
 
       <div class="cta-section">
@@ -106,7 +106,7 @@
         </div>
         <button class="main-cta">
           <div class="cta-text">
-            <span>الخطوة “صفر” تبدأ من رقم</span>
+            <span>{{ 'HERO.CTA' | translate }}</span>
           </div>
           <div class="binary-code">
             <div class="col">

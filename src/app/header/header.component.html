@@ -1,8 +1,32 @@
 <header class="header-container">
-  <!-- Contact Us CTA (Visible on Desktop, maybe moved/hidden on mobile depending on space) -->
-  <div class="contact-cta hidden-mobile">
-    <div class="contact-wrapper">
-       <p>تواصل معنا</p>
+  <!-- Right Section: Navigation, Logo, Language -->
+  <div class="right-section">
+    <!-- Language Switcher (First in Arabic/RTL) -->
+    <div class="lang-switcher hidden-mobile">
+      <div class="divider-bg">
+        <img [src]="backgroundBorder" alt="">
+      </div>
+      <div class="toggle-container">
+        <button class="lang-btn" [class.active]="currentLang === 'ar'" (click)="switchLanguage('ar')">
+          <span>عربي</span>
+        </button>
+        <button class="lang-btn" [class.active]="currentLang === 'en'" (click)="switchLanguage('en')">
+          <span>EN</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="nav-and-logo">
+      <div class="logo">
+        <img [src]="logoImage" alt="Rqm Logo">
+      </div>
+      <!-- Desktop Navigation -->
+      <nav class="navigation desktop-nav">
+        <a routerLink="/" fragment="home" class="nav-link">{{ 'HEADER.HOME' | translate }}</a>
+        <a routerLink="/" fragment="about" class="nav-link">{{ 'HEADER.ABOUT' | translate }}</a>
+        <a routerLink="/" fragment="services" class="nav-link">{{ 'HEADER.SERVICES' | translate }}</a>
+        <a routerLink="/" fragment="contact" class="nav-link">{{ 'HEADER.CONTACT_US' | translate }}</a>
+      </nav>
     </div>
   </div>
 
@@ -11,33 +35,10 @@
     <lucide-icon [img]="isMenuOpen ? XIcon : MenuIcon" [size]="24" strokeWidth="2" color="white"></lucide-icon>
   </button>
 
-  <!-- Right Section: Navigation, Logo, Language -->
-  <div class="right-section">
-    <div class="nav-and-logo">
-      <!-- Desktop Navigation -->
-      <nav class="navigation desktop-nav">
-        <a routerLink="/" fragment="contact" class="nav-link">تواصل معنا</a>
-        <a routerLink="/" fragment="services" class="nav-link">الخدمات</a>
-        <a routerLink="/" fragment="about" class="nav-link">عن رقم</a>
-        <a routerLink="/" fragment="home" class="nav-link">الرئيسية</a>
-      </nav>
-      <div class="logo">
-        <img [src]="logoImage" alt="Rqm Logo">
-      </div>
-    </div>
-
-    <div class="lang-switcher hidden-mobile">
-      <div class="divider-bg">
-        <img [src]="backgroundBorder" alt="">
-      </div>
-      <div class="toggle-container">
-        <button class="lang-btn active">
-          <span>عربي</span>
-        </button>
-        <button class="lang-btn">
-          <span>EN</span>
-        </button>
-      </div>
+  <!-- Contact Us CTA (Visible on Desktop, maybe moved/hidden on mobile depending on space) -->
+  <div class="contact-cta hidden-mobile">
+    <div class="contact-wrapper">
+       <p>{{ 'HEADER.CONTACT_US' | translate }}</p>
     </div>
   </div>
 </header>
@@ -46,18 +47,18 @@
 <div class="mobile-menu-overlay" *ngIf="isMenuOpen" @menuState (click)="toggleMenu()">
   <div class="mobile-menu-content" @sheetState @navItems (click)="$event.stopPropagation()">
     <nav class="mobile-nav">
-      <a routerLink="/" fragment="home" class="mobile-nav-link" (click)="toggleMenu()">الرئيسية</a>
-      <a routerLink="/" fragment="about" class="mobile-nav-link" (click)="toggleMenu()">عن رقم</a>
-      <a routerLink="/" fragment="services" class="mobile-nav-link" (click)="toggleMenu()">الخدمات</a>
-      <a routerLink="/" fragment="contact" class="mobile-nav-link" (click)="toggleMenu()">تواصل معنا</a>
+      <a routerLink="/" fragment="home" class="mobile-nav-link" (click)="toggleMenu()">{{ 'HEADER.HOME' | translate }}</a>
+      <a routerLink="/" fragment="about" class="mobile-nav-link" (click)="toggleMenu()">{{ 'HEADER.ABOUT' | translate }}</a>
+      <a routerLink="/" fragment="services" class="mobile-nav-link" (click)="toggleMenu()">{{ 'HEADER.SERVICES' | translate }}</a>
+      <a routerLink="/" fragment="contact" class="mobile-nav-link" (click)="toggleMenu()">{{ 'HEADER.CONTACT_US' | translate }}</a>
     </nav>
     
     <!-- Mobile Lang Switcher inside menu -->
     <div class="mobile-lang-switcher">
-        <button class="lang-btn active">
+        <button class="lang-btn" [class.active]="currentLang === 'ar'" (click)="switchLanguage('ar')">
           <span>عربي</span>
         </button>
-        <button class="lang-btn">
+        <button class="lang-btn" [class.active]="currentLang === 'en'" (click)="switchLanguage('en')">
           <span>EN</span>
         </button>
     </div>

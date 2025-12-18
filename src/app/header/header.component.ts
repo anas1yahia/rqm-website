@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { trigger, state, style, animate, transition, query, stagger } from '@angular/animations';
 import { LucideAngularModule, Menu, X } from 'lucide-angular';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, RouterModule, LucideAngularModule],
+  imports: [CommonModule, RouterModule, LucideAngularModule, TranslateModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   animations: [
@@ -48,8 +49,31 @@ export class HeaderComponent {
   isMenuOpen = false;
   readonly MenuIcon = Menu;
   readonly XIcon = X;
+  currentLang: string = 'en';
+
+  constructor(
+    private translate: TranslateService,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {
+    this.currentLang = this.translate.currentLang || this.translate.defaultLang || 'en';
+    this.updateDirection(this.currentLang);
+  }
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  switchLanguage(lang: string) {
+    this.translate.use(lang);
+    this.currentLang = lang;
+    this.updateDirection(lang);
+  }
+
+  private updateDirection(lang: string) {
+    if (isPlatformBrowser(this.platformId)) {
+      const dir = lang === 'ar' ? 'rtl' : 'ltr';
+      document.documentElement.dir = dir;
+      document.documentElement.lang = lang;
+    }
   }
 }

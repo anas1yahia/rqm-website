@@ -6,7 +6,7 @@
   max-width: 1084px; /* Figma width */
   margin: 0 auto;
   font-family: 'IBM Plex Sans Arabic', sans-serif;
-  direction: rtl; /* Corrected: Layout should be RTL for Arabic content */
+  /* Removed direction: rtl to respect global setting */
 }
 
 .hero-section {
@@ -276,7 +276,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start; /* Align right for RTL */
-  text-align: right;
+  text-align: start;
   z-index: 10;
   width: 50%; /* Approximate width distribution */
   max-width: 500px; /* Max width for text block */
@@ -314,6 +314,7 @@
   font-size: 51.314px; /* Figma: 5735:7811 */
   font-weight: 700; /* Bold */
   color: white;
+  text-wrap: nowrap;
   line-height: 1.2; /* Calculated from 61.576px / 51.314px */
 }
 
@@ -356,7 +357,7 @@
 
 .main-cta {
   position: relative;
-  
+
   /* Hover Slide Effect */
   background: linear-gradient(to right, white 50%, transparent 50%);
   background-size: 200% 100%;
@@ -364,12 +365,12 @@
   transition: background-position 0.4s ease-out;
 
   border-top: 3px solid #3a405e; /* Figma: 5735:7821 border */
-  border-right: 3px solid #3a405e;
+  border-inline-start: 3px solid #3a405e;
   border-bottom: 3px solid #3a405e;
-  border-left: 0; /* No left border */
+  border-inline-end: 0;
 
-  border-top-right-radius: 99px; /* Figma: 5735:7821 rounded-tr-[99px] */
-  border-bottom-right-radius: 99px; /* Figma: 5735:7821 rounded-br-[99px] */
+  border-start-start-radius: 99px; /* Figma: 5735:7821 rounded-tr-[99px] */
+  border-end-start-radius: 99px; /* Figma: 5735:7821 rounded-br-[99px] */
 
   padding: 18px 37px 17.97px 37.44px; /* Figma padding values for content */
   display: flex;
@@ -393,8 +394,8 @@
 
 .cta-text {
   flex: 1;
-  text-align: right; /* Figma: 5735:7823 text-right */
-  margin-right: 15px; /* Spacing between text and binary code */
+  text-align: start; /* Figma: 5735:7823 text-right */
+  margin-inline-end: 15px; /* Spacing between text and binary code */
 }
 
 .cta-text span {
@@ -457,7 +458,7 @@
   .cta-section {
     justify-content: center;
   }
-  
+
   /* Adjust background elements for tablet */
   .bg-blur-1 {
     left: 80%;
@@ -481,27 +482,27 @@
     font-size: 16px;
     max-width: 100%;
   }
-  
+
   .graphic-container {
     transform: scale(0.8);
     margin-bottom: -40px; /* Offset spacing due to scale */
     margin-top: -20px;
   }
-  
+
   /* Reposition decorations for mobile */
   .bg-blur-1 {
     left: 50%;
     transform: translateX(-50%);
     top: 10%;
   }
-  
+
   .bg-blur-2 {
     top: auto;
     bottom: 10%;
     left: 50%;
     transform: translateX(-50%);
   }
-  
+
   .orb-1, .orb-2 {
     display: none; /* Hide floating orbs on small mobile to reduce clutter or reposition */
   }
@@ -526,14 +527,14 @@
     flex-direction: row-reverse;
     gap: 12px;
   }
-  
+
   .main-cta {
     min-width: auto;
     width: 100%;
     justify-content: space-between;
     padding: 18px 20px;
   }
-  
+
   .graphic-container {
     transform: scale(0.65);
     margin-bottom: -80px;

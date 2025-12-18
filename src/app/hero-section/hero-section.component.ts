@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { LucideAngularModule, ChevronLeft } from 'lucide-angular';
 import { ParallaxDirective } from '../directives/parallax';
 import { TextDecodeDirective } from '../directives/text-decode';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-hero-section',
   standalone: true,
-  imports: [CommonModule, LucideAngularModule, ParallaxDirective, TextDecodeDirective],
+  imports: [CommonModule, LucideAngularModule, ParallaxDirective, TextDecodeDirective, TranslateModule],
   templateUrl: './hero-section.component.html',
   styleUrls: ['./hero-section.component.scss']
 })
@@ -35,7 +36,7 @@ export class HeroSectionComponent implements OnInit {
   private numRows: number = 0;
   private numCols: number = 0;
 
-  constructor(private el: ElementRef) {}
+  constructor(private el: ElementRef, private translate: TranslateService) {}
 
   ngOnInit() {
     this.calculateMatrixGrid();

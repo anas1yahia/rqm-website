@@ -1,11 +1,11 @@
-import { Directive, ElementRef, Input, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { Directive, ElementRef, Input, OnInit, OnChanges, SimpleChanges, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
 @Directive({
   selector: '[appTextDecode]',
   standalone: true
 })
-export class TextDecodeDirective implements OnInit {
+export class TextDecodeDirective implements OnInit, OnChanges {
   @Input('appTextDecode') finalText: string = '';
   @Input() duration: number = 1000;
   
@@ -20,11 +20,19 @@ export class TextDecodeDirective implements OnInit {
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
-      if (!this.finalText) {
+      if (!this.finalText && this.el.nativeElement.innerText) {
         this.finalText = this.el.nativeElement.innerText.trim();
+        this.setText(this.finalText);
       }
-      // console.log('TextDecodeDirective init for:', this.finalText);
-      this.setText(this.finalText);
+    }
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (isPlatformBrowser(this.platformId) && changes['finalText'] && !changes['finalText'].firstChange) {
+       this.setText(this.finalText);
+    } else if (isPlatformBrowser(this.platformId) && changes['finalText'] && changes['finalText'].firstChange && this.finalText) {
+       // Handle case where input is provided on init
+       this.setText(this.finalText);
     }
   }
 

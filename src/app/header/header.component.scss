@@ -12,7 +12,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 16px 0 8px; /* pr-16 pl-8 from Figma */
+  padding-inline: 16px 8px; /* Logical padding */
+  padding-block: 0;
   width: 100%;
   box-sizing: border-box;
   backdrop-filter: blur(10px);
@@ -111,7 +112,7 @@
   display: flex;
   align-items: center;
   padding: 7px 7px 7px 8px;
-  border-left: 1px solid rgba(119, 145, 196, 0.2);
+  border-inline-end: 1px solid rgba(119, 145, 196, 0.2); /* Logical border on the end side */
 }
 
 .divider-bg {
@@ -233,12 +234,12 @@
 /* Responsive Logic */
 @media (max-width: 992px) {
   .header-container {
-    padding: 0 10px;
+    padding-inline: 10px; /* Logical padding */
   }
   
   .burger-btn {
     display: block;
-    order: 1; /* Left side */
+    order: -1; /* Make burger appear first (Right in RTL, Left in LTR) */
   }
   
   .contact-cta.hidden-mobile {
