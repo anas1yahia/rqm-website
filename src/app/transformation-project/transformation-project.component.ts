@@ -1,15 +1,18 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TransformationCardComponent } from '../transformation-card/transformation-card.component';
 import { LucideAngularModule, ArrowUp } from 'lucide-angular';
+import { TransformationCardComponent } from '../transformation-card/transformation-card.component';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-transformation-project',
   standalone: true,
-  imports: [CommonModule, TransformationCardComponent, LucideAngularModule],
+  imports: [CommonModule, LucideAngularModule, TransformationCardComponent, TranslateModule],
   templateUrl: './transformation-project.component.html',
   styleUrls: ['./transformation-project.component.scss']
 })
 export class TransformationProjectComponent {
   readonly ArrowUp = ArrowUp;
+
+  constructor(private translate: TranslateService) {}
 }

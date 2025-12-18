@@ -10,7 +10,7 @@
   display: flex;
   padding: 64px 117px 0 117px;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start; /* Logical start */
   gap: 66px;
   border-radius: 28px;
   border: 2px solid #0D99FF;
@@ -28,7 +28,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start; /* Logical start */
   margin-bottom: 20px;
 }
 
@@ -38,7 +38,7 @@
   font-size: 2.4rem;
   color: #e8f2ff;
   margin: 0;
-  text-align: right;
+  text-align: start; /* Logical start */
   line-height: 1.2;
 }
 
@@ -50,11 +50,11 @@
 /* Content Body Wrapper */
 .content-body-wrapper {
   display: flex;
+  flex-direction: row-reverse;
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
   gap: 50px;
-  margin-left: 60px; /* Offset for the header alignment */
 }
 
 /* Active Card Container */

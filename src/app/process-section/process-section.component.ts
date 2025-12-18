@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProcessCardComponent } from '../process-card/process-card.component';
 import { ValuesCardComponent } from '../values-card/values-card.component';
-import { trigger, transition, style, animate } from '@angular/animations';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 interface CardData {
   id: string;
@@ -15,7 +15,7 @@ interface CardData {
 @Component({
   selector: 'app-process-section',
   standalone: true,
-  imports: [CommonModule, ProcessCardComponent, ValuesCardComponent],
+  imports: [CommonModule, ProcessCardComponent, ValuesCardComponent, TranslateModule],
   templateUrl: './process-section.component.html',
   styleUrls: ['./process-section.component.scss'],
 })
@@ -33,29 +33,29 @@ export class ProcessSectionComponent implements OnInit, OnDestroy {
   cards: CardData[] = [
     {
       id: 'sustainability',
-      title: 'الاستدامة',
-      description: 'نحافظ على استدامة كفاءة الأعمال ونموّها',
+      title: 'PROCESS.CARD_SUSTAINABILITY_TITLE',
+      description: 'PROCESS.CARD_SUSTAINABILITY_DESC',
       icon: this.iconSustainability,
       bgImage: "/value card/01.png"
     },
     {
       id: 'analysis',
-      title: 'التحليل',
-      description: 'نغلف أعمالنا بالشفافية ونولي المعايير الأخلاقية الأولوية.',
+      title: 'PROCESS.CARD_ANALYSIS_TITLE',
+      description: 'PROCESS.CARD_ANALYSIS_DESC',
       icon: this.iconAnalysis,
       bgImage: "/value card/02.png"
     },
     {
       id: 'perfection',
-      title: 'الإتقان',
-      description: 'نهتم بتفاصيل العمل  لنلبّي احتياجات العميل',
+      title: 'PROCESS.CARD_PERFECTION_TITLE',
+      description: 'PROCESS.CARD_PERFECTION_DESC',
       icon: this.iconPerfection,
       bgImage: "/value card/03.png"
     },
     {
       id: 'commitment',
-      title: 'الالتزام',
-      description: 'نقيس خطواتنا بدقة ونتعهد بمسؤوليتنا تجاه العميل.',
+      title: 'PROCESS.CARD_COMMITMENT_TITLE',
+      description: 'PROCESS.CARD_COMMITMENT_DESC',
       icon: this.iconCommitment,
       bgImage: "/value card/04.png"
     }
@@ -65,7 +65,7 @@ export class ProcessSectionComponent implements OnInit, OnDestroy {
   activeIndex = 0;
   intervalId: any;
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor(private cdr: ChangeDetectorRef, private translate: TranslateService) {}
 
   ngOnInit() {
     this.startRotation();

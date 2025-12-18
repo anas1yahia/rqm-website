@@ -1,7 +1,19 @@
 <div class="transformation-container">
   <!-- Top Section: Header & Controls -->
   <div class="header-section">
-    <!-- Controls (Left side) -->
+    <!-- Text Content (Right side in RTL, Left in LTR) -->
+    <div class="text-content">
+      <div class="title-wrapper">
+        <h2 class="section-title">{{ 'TRANSFORMATION.TITLE' | translate }}</h2>
+      </div>
+      <div class="subtitle-wrapper">
+        <p class="section-subtitle">
+          {{ 'TRANSFORMATION.SUBTITLE' | translate }}
+        </p>
+      </div>
+    </div>
+
+    <!-- Controls (Left side in RTL, Right in LTR) -->
     <div class="controls">
       <!-- Next Slide Button -->
       <button class="control-btn next-btn" aria-label="Next Slide">
@@ -17,41 +29,29 @@
         </div>
       </button>
     </div>
-
-    <!-- Text Content (Right side) -->
-    <div class="text-content">
-      <div class="title-wrapper">
-        <h2 class="section-title">نحوّل مشروعك إلى واقع</h2>
-      </div>
-      <div class="subtitle-wrapper">
-        <p class="section-subtitle">
-          خطوات منهجية مدعّمة بالخبرة والمهارة لتحقيق أهدافك
-        </p>
-      </div>
-    </div>
   </div>
 
   <!-- Cards List -->
   <div class="cards-list">
-    <!-- Card 3: Analysis -->
+    <!-- Card 1: Building -->
     <app-transformation-card
-      title="التحليل"
-      description="نحلل متطلبات الأعمال بمنهجيات رشيقة."
-      illustration="/AnalysisIllustration.svg">
+      [title]="'TRANSFORMATION.CARD_BUILD_TITLE' | translate"
+      [description]="'TRANSFORMATION.CARD_BUILD_DESC' | translate"
+      illustration="/BuildingIllustration.svg">
     </app-transformation-card>
 
     <!-- Card 2: Study -->
     <app-transformation-card
-      title="الدراسة"
-      description="نبحث وندرس ونختبر جدوى العمل."
+      [title]="'TRANSFORMATION.CARD_STUDY_TITLE' | translate"
+      [description]="'TRANSFORMATION.CARD_STUDY_DESC' | translate"
       illustration="/StudyIllustration.svg">
     </app-transformation-card>
 
-    <!-- Card 1: Building -->
+    <!-- Card 3: Analysis -->
     <app-transformation-card
-      title="البناء"
-      description="نؤسس المشروع ونبني نموذج عمله الأوّلي"
-      illustration="/BuildingIllustration.svg">
+      [title]="'TRANSFORMATION.CARD_ANALYSIS_TITLE' | translate"
+      [description]="'TRANSFORMATION.CARD_ANALYSIS_DESC' | translate"
+      illustration="/AnalysisIllustration.svg">
     </app-transformation-card>
   </div>
 </div>

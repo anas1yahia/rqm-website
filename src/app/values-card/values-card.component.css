@@ -109,8 +109,8 @@
 .text-section {
   display: flex;
   flex-direction: column;
-  align-items: flex-end; /* RTL */
-  text-align: right;
+  align-items: flex-start; /* Logical start */
+  text-align: start; /* Logical start */
   width: 100%;
   z-index: 4;
 }

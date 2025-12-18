@@ -1,6 +1,6 @@
 :host {
   display: block;
-  direction: rtl;
+  /* Removed direction: rtl */
   width: 100%; /* Ensure host allows shrinking */
 }
 
@@ -18,7 +18,7 @@
   position: relative;
   overflow: hidden;
   transition: all 0.5s ease;
-  align-items: flex-end;
+  align-items: flex-start; /* Logical Start (Right in RTL) */
   margin: 0 auto; /* Center if container is wider */
 }
 
@@ -36,7 +36,7 @@
   display: flex;
   gap: 12px;
   align-items: center;
-  justify-content: flex-end; /* RTL */
+  justify-content: flex-start; /* Logical Start (Right in RTL, Left in LTR) */
   width: 100%;
   z-index: 2;
 }
@@ -54,7 +54,7 @@
   font-weight: 700;
   font-size: 20px;
   color: white;
-  text-align: right;
+  text-align: start; /* Logical start */
   white-space: nowrap;
   letter-spacing: -0.01em;
 }
@@ -78,7 +78,7 @@
   flex-direction: column;
   justify-content: center;
   z-index: 2;
-  text-align: right;
+  text-align: start; /* Logical start */
 }
 
 .card-desc {

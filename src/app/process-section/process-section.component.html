@@ -1,8 +1,8 @@
 <div class="process-section-container">
   <div class="header-container">
     <h2 class="section-title">
-      <span class="block">الصفر الذي</span>
-      <span class="block">ننطلق منه في رقم</span>
+      <span class="block">{{ 'PROCESS.TITLE_LINE1' | translate }}</span>
+      <span class="block">{{ 'PROCESS.TITLE_LINE2' | translate }}</span>
     </h2>
   </div>
 
@@ -12,8 +12,8 @@
       <div class="card-slot">
        <ng-container *ngFor="let card of [cards[activeIndex]]; trackBy: trackById">
          <app-process-card
-           [title]="card.title"
-           [description]="card.description"
+           [title]="card.title | translate"
+           [description]="card.description | translate"
            [icon]="card.icon"
            [bgImage]="card.bgImage"
            [isActive]="true"

@@ -27,5 +27,32 @@
     "CARD_DIGITAL_TITLE": "Building Advanced Digital Solutions",
     "CARD_DIGITAL_DESC": "We build integrated digital solutions with our clients, including custom software development, business applications, and integration tools. We work on building and studying user interfaces and experience to improve interaction with systems. We also provide integrated technical infrastructure ensuring sustainability and success of solutions.",
     "CARD_DIGITAL_FOOTER": "Know Us"
+  },
+  "TRANSFORMATION": {
+    "TITLE": "Transforming your project into reality",
+    "SUBTITLE": "Systematic steps supported by experience and skill to achieve your goals",
+    "CARD_ANALYSIS_TITLE": "Analysis",
+    "CARD_ANALYSIS_DESC": "We analyze business requirements with agile methodologies.",
+    "CARD_STUDY_TITLE": "Study",
+    "CARD_STUDY_DESC": "We research, study, and test the feasibility of the work.",
+    "CARD_BUILD_TITLE": "Building",
+    "CARD_BUILD_DESC": "We establish the project and build its initial business model."
+  },
+  "PROCESS": {
+    "TITLE_LINE1": "The zero",
+    "TITLE_LINE2": "we start from at RQM",
+    "CARD_SUSTAINABILITY_TITLE": "Sustainability",
+    "CARD_SUSTAINABILITY_DESC": "We maintain the sustainability of business efficiency and growth.",
+    "CARD_ANALYSIS_TITLE": "Analysis",
+    "CARD_ANALYSIS_DESC": "We wrap our work in transparency and prioritize ethical standards.",
+    "CARD_PERFECTION_TITLE": "Perfection",
+    "CARD_PERFECTION_DESC": "We pay attention to work details to meet client needs.",
+    "CARD_COMMITMENT_TITLE": "Commitment",
+    "CARD_COMMITMENT_DESC": "We measure our steps precisely and pledge our responsibility towards the client."
+  },
+  "VALUES_CARD": {
+    "TITLE": "Our High Values",
+    "DESCRIPTION": "These values represent the cornerstone of all our work with partners",
+    "BUTTON_TEXT": "Step \"Zero\" starts from RQM"
   }
 }

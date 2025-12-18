@@ -28,7 +28,7 @@
 .controls {
   display: flex;
   gap: 12px;
-  direction: ltr; /* Ensure proper button alignment */
+  /* Removed direction: ltr to follow global direction */
 }
 
 .control-btn {
@@ -67,8 +67,8 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-end; /* For RTL text alignment */
-  text-align: right;
+  align-items: flex-start; /* Logical start */
+  text-align: start; /* Logical start */
 }
 
 .title-wrapper {
@@ -121,7 +121,7 @@
 /* Cards List */
 .cards-list {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row; /* Logical row */
   gap: 16px;
   width: 100%;
   height: 380px; /* Fixed height from design */
