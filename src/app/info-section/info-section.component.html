@@ -4,8 +4,8 @@
   <!-- Header -->
   <div class="section-header">
     <div class="header-text">
-      <p class="subtitle">نطمح في رقم لبناء</p>
-      <p class="title-gradient">خدمات تصنع المستقبل</p>
+      <p class="subtitle">{{ 'INFO_SECTION.SUBTITLE' | translate }}</p>
+      <p class="title-gradient">{{ 'INFO_SECTION.TITLE' | translate }}</p>
     </div>
   </div>
 
@@ -13,25 +13,25 @@
           <div class="cards-container">
             <!-- Card 1: Cybersecurity (Left) -->
             <app-service-card
-              title="خدمات الامن السيبراني"
-              description="نقدم خدمات أمن سيبراني متقدمة تشمل اختبار وفحص الثغرات، وتقييم مستوى الأمان للأنظمة والتطبيقات باستخدام أحدث التقنيات. نعمل على تحليل المخاطر وتحديد نقاط الضعف، مع تقديم حلول عملية لمعالجتها، كما نوفر بنية تحتية سيبرانية متكاملة تضمن استمرارية الحماية وتعزز جاهزية الشركات للتصدي للتهديدات الرقمية"
+              [title]="'INFO_SECTION.CARD_CYBER_TITLE' | translate"
+              [description]="'INFO_SECTION.CARD_CYBER_DESC' | translate"
               [bgImage]="card1Bg"
-              footerText="عزز امان اعمالك">
+              [footerText]="'INFO_SECTION.CARD_CYBER_FOOTER' | translate">
             </app-service-card>
       
             <!-- Card 2: AI (Middle) -->
             <app-service-card
-              title="بناء حلول الذكاء الاصطناعي"
-              description="نستخدم تقنيات الذكاء الاصطناعي المتكاملة لتطوير وكلاء الذكاء الاصطناعي، وتطبيقات التعلم الآلي، وأتمتة الأعمال. كما نعمل على تحسين معالجة اللغة الطبيعية وتحليل البيانات الضخمة وتوفير بنية تحتية تقنية متكاملة تضمن استدامة الحلول ونجاحها."
+              [title]="'INFO_SECTION.CARD_AI_TITLE' | translate"
+              [description]="'INFO_SECTION.CARD_AI_DESC' | translate"
               bgImage="/bg-card.svg"
-              footerText="خدماتنا">
+              [footerText]="'INFO_SECTION.CARD_AI_FOOTER' | translate">
             </app-service-card>
       
             <!-- Card 3: Digital Solutions (Right) -->
             <app-service-card
-              title="بناء الحلول الرقمية المتقدمة"
-              description="نبني مع عملائنا الحلول الرقمية المتكاملة التي تشمل تطوير البرمجيات المخصصة وتطبيقات الأعمال وأدوات التكامل. نعمل على بناء ودراسة واجهات وتجربة المستخدم لتحسين التفاعل مع الأنظمة. كما نوفر البنية التحتية التقنية المتكاملة لضمان استدامة الحلول ونجاحها."
+              [title]="'INFO_SECTION.CARD_DIGITAL_TITLE' | translate"
+              [description]="'INFO_SECTION.CARD_DIGITAL_DESC' | translate"
               [bgImage]="card3Bg"
-              footerText="تعرف علينا">
+              [footerText]="'INFO_SECTION.CARD_DIGITAL_FOOTER' | translate">
             </app-service-card>
           </div></div>

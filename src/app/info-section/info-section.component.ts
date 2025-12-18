@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ServiceCardComponent } from '../service-card/service-card.component';
 import { PipelineNetworkComponent } from '../pipeline-network/pipeline-network.component';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-info-section',
   standalone: true,
-  imports: [CommonModule, ServiceCardComponent, PipelineNetworkComponent],
+  imports: [CommonModule, ServiceCardComponent, PipelineNetworkComponent, TranslateModule],
   templateUrl: './info-section.component.html',
   styleUrls: ['./info-section.component.scss']
 })
@@ -21,4 +22,6 @@ export class InfoSectionComponent {
   // Card 3 (Digital Solutions) - Right
   // From node 5489:6580 -> imgGroupGroup1
   card3Bg = "https://www.figma.com/api/mcp/asset/9ea7cb14-0266-44f1-b35d-414e307f6ca9";
+
+  constructor(private translate: TranslateService) {}
 }

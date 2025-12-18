@@ -11,5 +11,21 @@
     "TITLE_2": "Your Digital Business Partner",
     "DESCRIPTION": "We enhance your business efficiency with sustainable AI-driven solutions to support the digital economy ecosystem.",
     "CTA": "Step \"Zero\" starts from RQM"
+  },
+  "MAIN_LAYOUT": {
+    "BACKGROUND_ALT": "Background"
+  },
+  "INFO_SECTION": {
+    "SUBTITLE": "At RQM, we aspire to build",
+    "TITLE": "Services that shape the future",
+    "CARD_CYBER_TITLE": "Cybersecurity Services",
+    "CARD_CYBER_DESC": "We offer advanced cybersecurity services including vulnerability testing and scanning, and security assessment for systems and applications using the latest technologies. We work on risk analysis and vulnerability identification, providing practical solutions to address them. We also provide integrated cyber infrastructure ensuring continuous protection and enhancing corporate readiness against digital threats.",
+    "CARD_CYBER_FOOTER": "Enhance your business security",
+    "CARD_AI_TITLE": "Building AI Solutions",
+    "CARD_AI_DESC": "We use integrated AI technologies to develop AI agents, machine learning applications, and business automation. We also work on improving natural language processing, big data analysis, and providing integrated technical infrastructure ensuring sustainability and success of solutions.",
+    "CARD_AI_FOOTER": "Our Services",
+    "CARD_DIGITAL_TITLE": "Building Advanced Digital Solutions",
+    "CARD_DIGITAL_DESC": "We build integrated digital solutions with our clients, including custom software development, business applications, and integration tools. We work on building and studying user interfaces and experience to improve interaction with systems. We also provide integrated technical infrastructure ensuring sustainability and success of solutions.",
+    "CARD_DIGITAL_FOOTER": "Know Us"
   }
 }

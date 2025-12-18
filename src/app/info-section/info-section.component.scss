@@ -2,7 +2,7 @@
   display: block;
   width: 100%;
   font-family: 'IBM Plex Sans Arabic', sans-serif;
-  direction: rtl;
+  /* Removed direction: rtl to respect global setting */
   position: relative;
   z-index: 0;
 }
@@ -34,7 +34,7 @@
 .section-header {
   display: flex;
   justify-content: flex-start;
-  text-align: right;
+  text-align: start;
   margin-bottom: 32px;
 }
 
@@ -62,7 +62,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-align: right;
+  text-align: start;
   line-height: 1.2;
   letter-spacing: -0.02em;
 }
