@@ -12,6 +12,7 @@
   background: rgba(248, 248, 248, 0.02);
   overflow: hidden;
   display: flex;
+  gap: 16px;
   flex-direction: column;
   padding: 40px 27px;
   box-sizing: border-box;
