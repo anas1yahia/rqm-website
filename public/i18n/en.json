@@ -54,5 +54,30 @@
     "TITLE": "Our High Values",
     "DESCRIPTION": "These values represent the cornerstone of all our work with partners",
     "BUTTON_TEXT": "Step \"Zero\" starts from RQM"
+  },
+  "PRODUCT_CARD": {
+    "TRY_NOW": "Try Now",
+    "DISCOVER_MORE": "Discover More",
+    "LEARN_MORE_SOLUTIONS": "Learn more about our solutions",
+    "LEARN_OTHER_SOLUTIONS": "Learn about our other solutions"
+  },
+  "PRODUCTS": {
+    "TITLE": "Our Products",
+    "CARD_QAYD_TITLE": "Qayd Platform for Legal Affairs",
+    "CARD_QAYD_DESCRIPTION": "Manage your business with innovative technologies to enhance the efficiency of legal and administrative work in one platform, saving time, reducing costs, and boosting client confidence.",
+    "CARD_QAYD_FEATURE_1": "Unified dashboard for all cases",
+    "CARD_QAYD_FEATURE_2": "Accurate details for each case and its records.",
+    "CARD_QAYD_FEATURE_3": "Automatic organization of court session dates",
+    "CARD_SMART_GATEWAY_TITLE": "Your Smart Gateway for Digital Investment",
+    "CARD_SMART_GATEWAY_DESCRIPTION": "An integrated platform that provides AI tools and solutions for institutions and companies in the financial and investment services sector.",
+    "CARD_SMART_GATEWAY_FEATURE_1": "Advanced high-performance cloud",
+    "CARD_SMART_GATEWAY_FEATURE_2": "Reliable regulatory compliance",
+    "CARD_SMART_GATEWAY_FEATURE_3": "Flexible integration with systems",
+    "CARD_MORE_SOLUTIONS_PILL": "Learn about our other solutions"
+  },
+  "QUALITY_PROOF": {
+    "TITLE": "Compliance Scope",
+    "ISO_LOGO_ALT": "ISO Logo",
+    "SDAIA_LOGO_ALT": "SDAIA Logo"
   }
 }

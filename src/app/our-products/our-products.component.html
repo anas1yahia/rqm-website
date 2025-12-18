@@ -1,9 +1,10 @@
 <div class="products-container">
   <div class="header-section">
-    <div class="title-wrapper">
-      <h2 class="section-title">منتجاتنا</h2>
-    </div>
     <div class="decorative-bar"></div>
+    <div class="title-wrapper">
+      <h2 class="section-title">{{ 'PRODUCTS.TITLE' | translate }}</h2>
+    </div>
+
   </div>
 
 
@@ -12,18 +13,26 @@
 <div class="product-line">
   <!-- Product 1 (Right in RTL) -->
   <app-product-card
-    title="منصة قيد للاعمال القانونية"
-    description="أدر أعمالك بتقنيات مبتكرة لرفع كفاءة الأعمال القانونية والإدارية في منصة واحدة، تختصر الوقت وتوفر التكاليف وترفع من ثقة عملائك."
-    [features]="['لوحة تحكم موحّدة لجميع القضايا', 'تفاصيل دقيقة لكل قضية وسجلاتها.', 'تنظيم تلقائي لمواعيد الجلسات القضائية']"
+    [title]="'PRODUCTS.CARD_QAYD_TITLE' | translate"
+    [description]="'PRODUCTS.CARD_QAYD_DESCRIPTION' | translate"
+    [features]="[
+      'PRODUCTS.CARD_QAYD_FEATURE_1' | translate,
+      'PRODUCTS.CARD_QAYD_FEATURE_2' | translate,
+      'PRODUCTS.CARD_QAYD_FEATURE_3' | translate
+    ]"
     logo="/ayd.svg"
     themeColor="#4c89d5">
   </app-product-card>
 
   <!-- Product 2 (Middle) -->
   <app-product-card
-    title="بوابتك الذكية للاستثمار الرقمي"
-    description="منصة متكاملة توفر أدوات وحلول الذكاء الاصطناعي للمؤسسات والشركات في قطاع الخدمات المالية والاستثمارية."
-    [features]="['سحابة متطورة عالية الأداء', 'امتثال تنظيمي موثوق', 'تكامل مرن مع الأنظمة']"
+    [title]="'PRODUCTS.CARD_SMART_GATEWAY_TITLE' | translate"
+    [description]="'PRODUCTS.CARD_SMART_GATEWAY_DESCRIPTION' | translate"
+    [features]="[
+      'PRODUCTS.CARD_SMART_GATEWAY_FEATURE_1' | translate,
+      'PRODUCTS.CARD_SMART_GATEWAY_FEATURE_2' | translate,
+      'PRODUCTS.CARD_SMART_GATEWAY_FEATURE_3' | translate
+    ]"
     logo="/captech.svg"
     themeColor="#62c4aa">
   </app-product-card>

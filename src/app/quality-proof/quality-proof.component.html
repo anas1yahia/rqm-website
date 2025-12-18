@@ -14,15 +14,15 @@
     
     <div class="logos-group">
       <div class="logo-wrapper iso-wrapper">
-        <img [src]="isoLogo" alt="ISO Logo" class="iso-img">
+        <img [src]="isoLogo" [alt]="'QUALITY_PROOF.ISO_LOGO_ALT' | translate" class="iso-img">
       </div>
       <div class="logo-wrapper sdaia-wrapper">
-        <img [src]="sdaiaLogo" alt="SDAIA Logo" class="sdaia-img">
+        <img [src]="sdaiaLogo" [alt]="'QUALITY_PROOF.SDAIA_LOGO_ALT' | translate" class="sdaia-img">
       </div>
     </div>
   </div>
 
   <div class="heading-section">
-    <h2>نطاق الامتثال</h2>
+    <h2>{{ 'QUALITY_PROOF.TITLE' | translate }}</h2>
   </div>
 </div>

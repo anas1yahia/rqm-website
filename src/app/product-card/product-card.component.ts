@@ -1,15 +1,17 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LucideAngularModule, ChevronLeft, ArrowUpLeft, ArrowLeft } from 'lucide-angular';
+import { LucideAngularModule, ChevronLeft, ChevronRight, ArrowUpLeft, ArrowLeft } from 'lucide-angular';
+import { TranslateModule, TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-product-card',
   standalone: true,
-  imports: [CommonModule, LucideAngularModule],
+  imports: [CommonModule, LucideAngularModule, TranslateModule],
   templateUrl: './product-card.component.html',
   styleUrls: ['./product-card.component.scss']
 })
-export class ProductCardComponent {
+export class ProductCardComponent implements OnInit, OnDestroy {
   @Input() title: string = '';
   @Input() subtitle: string = '';
   @Input() description: string = '';
@@ -21,8 +23,38 @@ export class ProductCardComponent {
   isLoading: boolean = true; // Added for skeleton loading
 
   readonly ChevronLeft = ChevronLeft;
+  readonly ChevronRight = ChevronRight;
   readonly ArrowUpLeft = ArrowUpLeft;
   readonly ArrowLeft = ArrowLeft;
+
+  currentIcon = ChevronLeft; // Default to Arabic direction (Left)
+  private langSub: Subscription | undefined;
+
+  constructor(private translate: TranslateService) {}
+
+  ngOnInit() {
+    // Set initial icon based on current language
+    this.updateIcon(this.translate.currentLang || this.translate.defaultLang || '');
+
+    // Listen for language changes
+    this.langSub = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.updateIcon(event.lang);
+    });
+  }
+
+  ngOnDestroy() {
+    if (this.langSub) {
+      this.langSub.unsubscribe();
+    }
+  }
+
+  private updateIcon(lang: string) {
+    if (lang === 'en') {
+      this.currentIcon = ChevronRight;
+    } else {
+      this.currentIcon = ChevronLeft;
+    }
+  }
 
   onImageLoad() {
     this.isLoading = false; // Set to false when the image loads

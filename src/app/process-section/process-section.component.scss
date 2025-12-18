@@ -50,12 +50,11 @@
 /* Content Body Wrapper */
 .content-body-wrapper {
   display: flex;
-  flex-direction: row-reverse;
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
   gap: 50px;
-
+  margin-inline-start: 60px; /* Offset for the header alignment */
 }
 
 /* Active Card Container */
@@ -71,8 +70,7 @@
 
 /* Values Card Wrapper */
 .values-card-wrapper {
-
-  margin-left: 40px;
+  /* margin-left: 40px; Handled by gap on content-body-wrapper */
   flex-shrink: 0;
 }
 

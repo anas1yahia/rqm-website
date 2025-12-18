@@ -54,5 +54,30 @@
     "TITLE": "قيمنا العالية",
     "DESCRIPTION": "هذه القيم تمثّل حجر أساس لكل أعمالنا مع الشركاء",
     "BUTTON_TEXT": "الخطوة “صفر” تبدأ من رقم"
+  },
+  "PRODUCT_CARD": {
+    "TRY_NOW": "جرب الان",
+    "DISCOVER_MORE": "اكتشف المزيد",
+    "LEARN_MORE_SOLUTIONS": "تعرف على المزيد من حلولنا",
+    "LEARN_OTHER_SOLUTIONS": "تعرف على حلولنا الاخرى"
+  },
+  "PRODUCTS": {
+    "TITLE": "منتجاتنا",
+    "CARD_QAYD_TITLE": "منصة قيد للاعمال القانونية",
+    "CARD_QAYD_DESCRIPTION": "أدر أعمالك بتقنيات مبتكرة لرفع كفاءة الأعمال القانونية والإدارية في منصة واحدة، تختصر الوقت وتوفر التكاليف وترفع من ثقة عملائك.",
+    "CARD_QAYD_FEATURE_1": "لوحة تحكم موحّدة لجميع القضايا",
+    "CARD_QAYD_FEATURE_2": "تفاصيل دقيقة لكل قضية وسجلاتها.",
+    "CARD_QAYD_FEATURE_3": "تنظيم تلقائي لمواعيد الجلسات القضائية",
+    "CARD_SMART_GATEWAY_TITLE": "بوابتك الذكية للاستثمار الرقمي",
+    "CARD_SMART_GATEWAY_DESCRIPTION": "منصة متكاملة توفر أدوات وحلول الذكاء الاصطناعي للمؤسسات والشركات في قطاع الخدمات المالية والاستثمارية.",
+    "CARD_SMART_GATEWAY_FEATURE_1": "سحابة متطورة عالية الأداء",
+    "CARD_SMART_GATEWAY_FEATURE_2": "امتثال تنظيمي موثوق",
+    "CARD_SMART_GATEWAY_FEATURE_3": "تكامل مرن مع الأنظمة",
+    "CARD_MORE_SOLUTIONS_PILL": "تعرف على المزيد من حلولنا"
+  },
+  "QUALITY_PROOF": {
+    "TITLE": "نطاق الامتثال",
+    "ISO_LOGO_ALT": "شعار الآيزو",
+    "SDAIA_LOGO_ALT": "شعار سدايا"
   }
 }

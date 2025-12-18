@@ -21,42 +21,35 @@
   border: 0.8px solid rgba(255, 255, 255, 0.2); /* Subtle border */
 }
 
+.decorative-bar {
+  width: 20px;
+  height: 67px;
+  background: rgba(0, 184, 219, 0.5);
+}
+
 .header-section {
   display: flex;
   gap: 16px;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start; /* Revert to original */
   position: relative;
   width: 100%;
   height: auto;
 }
 .header-section .title-wrapper {
-  width: 115.68px;
-  position: relative;
-  flex-shrink: 0;
+  width: fit-content;
+  /* ... existing styles ... */
 }
 .header-section .title-wrapper .section-title {
-  height: 100%;
-  font-family: "IBM Plex Sans Arabic", sans-serif;
-  font-weight: bold;
-  font-size: 38px;
-  color: #e8f2ff;
-  text-align: center;
-  line-height: normal;
-  font-style: normal;
-}
-.header-section .decorative-bar {
-  background-color: rgba(0, 184, 219, 0.5);
-  height: 67px;
-  width: 20px;
-  position: relative;
-  flex-shrink: 0;
+  /* ... */
+  text-align: center; /* Revert to original */
+  color: #C6CEDD;
 }
 
 .product-line {
   width: 100%;
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row; /* Revert to original */
   gap: 20px;
   flex-wrap: wrap;
   justify-content: center;
