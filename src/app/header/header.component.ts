@@ -45,9 +45,9 @@ import { ThemeService } from '../services/theme.service';
   ]
 })
 export class HeaderComponent {
-  logoDark = "footer/logowhite-footer.svg"; // Correct white SVG
-  logoLight = "header-logo-light.svg"; // Colored logo
-  backgroundBorder = "header/bg-border.svg";
+  logoDark = "./header/logo-white.svg"; // Corrected path
+  logoLight = "./header-logo-light.svg"; // Colored logo
+  backgroundBorder = "./header/bg-border.png"; // Corrected path
   
   isMenuOpen = false;
   isScrolled = false;
