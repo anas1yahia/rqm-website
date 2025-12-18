@@ -45,7 +45,7 @@ import { ThemeService } from '../services/theme.service';
   ]
 })
 export class HeaderComponent {
-  logoDark = "footer/logowhite-footer.svg"; // Use the footer logo which exists on gh-pages
+  logoDark = "footer/logowhite-footer.svg"; // Use working footer logo path
   logoLight = "header-logo-light.svg"; // Colored logo
   backgroundBorder = "header/bg-border.png";
 
