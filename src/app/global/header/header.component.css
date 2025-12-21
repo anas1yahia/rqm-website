@@ -53,6 +53,10 @@
 }
 
 /* Burger Button logic handled by app-button variant="burger" */
+.burger-btn {
+  display: none;
+}
+
 /* Contact CTA logic handled by app-button variant="contact" */
 /* Contact Text Color on Hover */
 app-button:hover .contact-wrapper p {
@@ -242,7 +246,7 @@ app-button:hover .contact-wrapper p {
     padding-inline: 10px; /* Logical padding */
   }
   .burger-btn {
-    display: block;
+    display: inline-flex; /* Show burger on mobile */
     order: -1; /* Make burger appear first (Right in RTL, Left in LTR) */
   }
   .contact-cta.hidden-mobile {

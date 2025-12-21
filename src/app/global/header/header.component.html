@@ -38,16 +38,16 @@
   </div>
 
   <!-- Mobile Burger Button -->
-  <app-button variant="burger" (onClick)="toggleMenu()" ariaLabel="Toggle menu">
+  <app-button variant="burger" class="burger-btn" (onClick)="toggleMenu()" ariaLabel="Toggle menu">
     <lucide-icon [img]="isMenuOpen ? XIcon : MenuIcon" [size]="24" strokeWidth="2" color="white"></lucide-icon>
   </app-button>
 
   <!-- Contact Us CTA (Visible on Desktop, maybe moved/hidden on mobile depending on space) -->
-  <div class="contact-cta hidden-mobile">
+  <app-button variant="contact" class="contact-cta hidden-mobile">
     <div class="contact-wrapper">
        <p>{{ 'HEADER.CONTACT_US' | translate }}</p>
     </div>
-  </div>
+  </app-button>
 </header>
 
 <!-- Mobile Menu Overlay -->
