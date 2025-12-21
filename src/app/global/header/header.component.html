@@ -4,21 +4,21 @@
     <!-- Language Switcher (First in Arabic/RTL) -->
     <div class="controls-wrapper hidden-mobile">
       <!-- Theme Switcher -->
-      <button class="theme-btn" (click)="themeService.toggleTheme()" aria-label="Toggle Theme">
+      <app-button variant="theme" (onClick)="themeService.toggleTheme()" ariaLabel="Toggle Theme">
         <lucide-icon [img]="themeService.currentTheme() === 'dark' ? SunIcon : MoonIcon" [size]="20" strokeWidth="1.5"></lucide-icon>
-      </button>
+      </app-button>
 
       <div class="lang-switcher">
         <div class="divider-bg">
           <img [src]="backgroundBorder" alt="">
         </div>
         <div class="toggle-container">
-          <button class="lang-btn" [class.active]="currentLang === 'ar'" (click)="switchLanguage('ar')">
+          <app-button variant="lang" [active]="currentLang === 'ar'" (onClick)="switchLanguage('ar')">
             <span>عربي</span>
-          </button>
-          <button class="lang-btn" [class.active]="currentLang === 'en'" (click)="switchLanguage('en')">
+          </app-button>
+          <app-button variant="lang" [active]="currentLang === 'en'" (onClick)="switchLanguage('en')">
             <span>EN</span>
-          </button>
+          </app-button>
         </div>
       </div>
     </div>
@@ -38,9 +38,9 @@
   </div>
 
   <!-- Mobile Burger Button -->
-  <button class="burger-btn" (click)="toggleMenu()" aria-label="Toggle menu">
+  <app-button variant="burger" (onClick)="toggleMenu()" ariaLabel="Toggle menu">
     <lucide-icon [img]="isMenuOpen ? XIcon : MenuIcon" [size]="24" strokeWidth="2" color="white"></lucide-icon>
-  </button>
+  </app-button>
 
   <!-- Contact Us CTA (Visible on Desktop, maybe moved/hidden on mobile depending on space) -->
   <div class="contact-cta hidden-mobile">
@@ -62,20 +62,20 @@
 
     <!-- Mobile Theme Switcher -->
     <div class="mobile-theme-switcher">
-      <button class="theme-btn" (click)="themeService.toggleTheme()" aria-label="Toggle Theme">
+      <app-button variant="theme" (onClick)="themeService.toggleTheme()" ariaLabel="Toggle Theme">
         <lucide-icon [img]="themeService.currentTheme() === 'dark' ? SunIcon : MoonIcon" [size]="24" strokeWidth="1.5"></lucide-icon>
 
-      </button>
+      </app-button>
     </div>
 
     <!-- Mobile Lang Switcher inside menu -->
     <div class="mobile-lang-switcher">
-        <button class="lang-btn" [class.active]="currentLang === 'ar'" (click)="switchLanguage('ar')">
+        <app-button variant="lang" [active]="currentLang === 'ar'" (onClick)="switchLanguage('ar')">
           <span>عربي</span>
-        </button>
-        <button class="lang-btn" [class.active]="currentLang === 'en'" (click)="switchLanguage('en')">
+        </app-button>
+        <app-button variant="lang" [active]="currentLang === 'en'" (onClick)="switchLanguage('en')">
           <span>EN</span>
-        </button>
+        </app-button>
     </div>
   </div>
 </div>

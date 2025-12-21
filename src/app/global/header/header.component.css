@@ -34,29 +34,6 @@
 .header-container.scrolled-light .nav-link:hover {
   color: #36c9cb;
 }
-.header-container.scrolled-light .theme-btn, .header-container.scrolled-light .lang-btn {
-  color: #0A0C1A;
-  border-color: rgba(0, 0, 0, 0.1);
-}
-.header-container.scrolled-light .theme-btn:hover, .header-container.scrolled-light .lang-btn:hover {
-  background: rgba(0, 0, 0, 0.05);
-}
-.header-container.scrolled-light .lang-btn.active {
-  background: rgba(0, 0, 0, 0.1);
-  color: #0A0C1A;
-}
-.header-container.scrolled-light .contact-cta {
-  border-color: #36c9cb;
-}
-.header-container.scrolled-light .contact-cta .contact-wrapper p {
-  color: #0A0C1A;
-}
-.header-container.scrolled-light .contact-cta:hover {
-  background: #36c9cb;
-}
-.header-container.scrolled-light .contact-cta:hover .contact-wrapper p {
-  color: white;
-}
 .header-container.scrolled-light .toggle-container {
   border-color: rgba(0, 0, 0, 0.1);
   background: rgba(0, 0, 0, 0.02);
@@ -65,53 +42,49 @@
   filter: invert(1); /* Invert the divider graphic to be visible on white */
   opacity: 0.2;
 }
-.header-container.scrolled-light .burger-btn {
-  color: #0A0C1A;
-}
 
-/* Burger Button */
-.burger-btn {
-  display: none; /* Hidden on desktop */
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  color: white;
-  z-index: 102;
-}
-
-/* Contact CTA */
-.contact-cta {
-  border: 1px solid #62c4aa;
-  border-radius: 37px;
-  padding: 11.25px 20px 12px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  /* Hover Slide Effect */
-  background: linear-gradient(to right, white 50%, transparent 50%);
-  background-size: 200% 100%;
-  background-position: 100% 0;
-  transition: background-position 0.4s ease-out, border-color 0.3s;
-}
-
-.contact-cta:hover {
-  background-position: 0 0;
-  border-color: white;
-}
-
-.contact-cta:hover .contact-wrapper p {
-  color: #0A0C1A; /* Dark text on white */
-  transition: color 0.3s;
-}
-
+/* Contact Wrapper (Inside Button) */
 .contact-wrapper p {
   margin: 0;
   font-size: 18.7px;
   color: white;
   line-height: 22.46px;
   white-space: nowrap;
+}
+
+/* Light Theme Scrolled State Overrides for Button Components */
+/* Since app-button uses :host-context(.header-container.scrolled-light), it should handle itself.
+   However, if we have specific overrides here that were targeting class names, we might need to check if they are covered.
+   In header.component.scss (old):
+     .theme-btn, .lang-btn { color: #0A0C1A; ... }
+   In button.component.scss:
+     :host-context(.header-container.scrolled-light) & { ... }
+   This should work fine.
+
+   The only thing is .contact-cta hover effect text color change.
+   In old SCSS:
+     .contact-cta:hover .contact-wrapper p { color: #0A0C1A; }
+
+   We need to ensure this still works.
+   app-button variant="contact"
+
+   If we use:
+   app-button:hover .contact-wrapper p { color: #0A0C1A; }
+*/
+app-button:hover .contact-wrapper p {
+  color: #0A0C1A;
+  transition: color 0.3s;
+}
+
+/* Scrolled Light State overrides for Contact Text */
+.header-container.scrolled-light app-button:hover .contact-wrapper p {
+  color: white; /* In light mode scrolled, hover bg is teal, text becomes white */
+}
+.header-container.scrolled-light {
+  /* Initial state in light scrolled */
+}
+.header-container.scrolled-light .contact-wrapper p {
+  color: #0A0C1A;
 }
 
 /* Right Section */
@@ -168,26 +141,6 @@
   gap: 12px;
 }
 
-/* Theme Button */
-.theme-btn {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  color: white;
-  transition: all 0.3s ease;
-}
-.theme-btn:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.3);
-  transform: rotate(15deg);
-}
-
 /* Lang Switcher */
 .lang-switcher {
   position: relative;
@@ -225,31 +178,6 @@
   height: 41.5px;
   width: 110.85px;
   box-sizing: border-box;
-}
-
-.lang-btn {
-  background: transparent;
-  border: none;
-  border-radius: 100px;
-  padding: 6px 0; /* Horizontal padding handled by flex */
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 13px;
-  font-family: inherit;
-  transition: all 0.3s;
-}
-
-.lang-btn.active {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-}
-
-.lang-btn span {
-  line-height: 19.5px;
 }
 
 /* Mobile Menu Overlay (Backdrop) */
@@ -311,9 +239,15 @@
   padding: 10px;
   border-radius: 30px;
   width: 140px;
+  /* app-button already handles font-size via button.component.scss if needed, 
+     or we can target it here if it's specific to mobile */
 }
-.mobile-lang-switcher .lang-btn {
-  font-size: 16px;
+.mobile-lang-switcher app-button {
+  flex: 1; /* Ensure buttons fill space */
+}
+
+.mobile-theme-switcher {
+  /* app-button handles styles */
 }
 
 /* Responsive Logic */

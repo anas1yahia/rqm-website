@@ -7,10 +7,12 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { UiService } from '../../services/ui.service';
 import { ThemeService } from '../../services/theme.service';
 
+import { ButtonComponent } from '../button/button.component';
+
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, RouterModule, LucideAngularModule, TranslateModule],
+  imports: [CommonModule, RouterModule, LucideAngularModule, TranslateModule, ButtonComponent],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   animations: [

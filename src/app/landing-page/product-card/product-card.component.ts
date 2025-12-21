@@ -4,10 +4,12 @@ import { LucideAngularModule, ChevronLeft, ChevronRight, ArrowUpLeft, ArrowLeft 
 import { TranslateModule, TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 
+import { ButtonComponent } from '../../global/button/button.component';
+
 @Component({
   selector: 'app-product-card',
   standalone: true,
-  imports: [CommonModule, LucideAngularModule, TranslateModule],
+  imports: [CommonModule, LucideAngularModule, TranslateModule, ButtonComponent],
   templateUrl: './product-card.component.html',
   styleUrls: ['./product-card.component.scss']
 })

@@ -5,10 +5,12 @@ import { ParallaxDirective } from '../../directives/parallax';
 import { TextDecodeDirective } from '../../directives/text-decode';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
+import { ButtonComponent } from '../../global/button/button.component';
+
 @Component({
   selector: 'app-hero-section',
   standalone: true,
-  imports: [CommonModule, LucideAngularModule, ParallaxDirective, TextDecodeDirective, TranslateModule],
+  imports: [CommonModule, LucideAngularModule, ParallaxDirective, TextDecodeDirective, TranslateModule, ButtonComponent],
   templateUrl: './hero-section.component.html',
   styleUrls: ['./hero-section.component.scss']
 })

@@ -355,43 +355,7 @@
   cursor: pointer;
 }
 
-.main-cta {
-  position: relative;
-
-  /* Hover Slide Effect */
-  background: linear-gradient(to right, white 50%, transparent 50%);
-  background-size: 200% 100%;
-  background-position: 100% 0;
-  transition: background-position 0.4s ease-out;
-
-  border-top: 3px solid #3a405e; /* Figma: 5735:7821 border */
-  border-inline-start: 3px solid #3a405e;
-  border-bottom: 3px solid #3a405e;
-  border-inline-end: 0;
-
-  border-start-start-radius: 99px; /* Figma: 5735:7821 rounded-tr-[99px] */
-  border-end-start-radius: 99px; /* Figma: 5735:7821 rounded-br-[99px] */
-
-  padding: 18px 37px 17.97px 37.44px; /* Figma padding values for content */
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  height: 59.69px; /* Figma: 5735:7820 height */
-  min-width: 274.88px; /* Figma: 5735:7820 width */
-  box-sizing: border-box;
-}
-
-.main-cta:hover {
-  background-position: 0 0;
-  border-color: white; /* Optional: brighten border */
-}
-
-.main-cta:hover .cta-text span,
-.main-cta:hover .binary-code .col {
-  color: #0A0C1A;
-  transition: color 0.3s;
-}
-
+/* Styles for content inside the button */
 .cta-text {
   flex: 1;
   text-align: start; /* Figma: 5735:7823 text-right */
@@ -418,6 +382,54 @@
   font-weight: 700; /* Bold */
   line-height: 1; /* Adjusted for better stacking */
   color: white;
+}
+
+/* Hover effects handled by app-button component styles,
+   but we need to ensure child elements react to parent hover if needed.
+   The app-button handles color changes on hover via :host styling in its own SCSS.
+   We might need to adjust these selectors if they rely on .main-cta class which is passed as className.
+*/
+
+/* Target the projected content when parent (host of app-button) is hovered.
+   Since we can't easily style ::ng-deep from here without ViewEncapsulation.None,
+   and we passed `className="main-cta"` to the app-button, we can try to rely on global styles
+   or ensuring the app-button styles handle the color change of projected content.
+   
+   Actually, looking at `button.component.scss`, I added:
+   .hero:hover { ... }
+   But I didn't add the specific color change for spans inside.
+   Wait, the user wants me to replace hardcoded components.
+   I should move the specific hover logic for inner spans to the `button.component.scss` or leave it here if it targets the content.
+   
+   If I leave it here:
+   ::ng-deep .main-cta:hover .cta-text span ... 
+   
+   But simpler is to let `button.component.scss` handle generic hover or just keep this structure if it works.
+   The `app-button` puts the class on the `<button>` element inside its shadow DOM? No, Angular components don't have shadow DOM by default unless specified.
+   Wait, `ButtonComponent` uses `ViewEncapsulation.Emulated` (default).
+   So styles in `ButtonComponent` won't affect content projected into it unless using `::ng-deep`.
+   
+   However, `HeroSection` styles CAN affect the content it passes to `app-button`.
+   So I need to target `.main-cta:hover` where `.main-cta` is the class passed to the button?
+   The `className` input on `ButtonComponent` adds the class to the native `<button>` element inside `ButtonComponent`.
+   That button is inside `ButtonComponent`'s view. `HeroSection` styles cannot easily target that inner button's hover state to change `HeroSection`'s content.
+   
+   Actually, the content is in `HeroSection` template.
+   Structure:
+   <app-button ...>
+      <div class="cta-text">...</div>
+   </app-button>
+   
+   When `app-button` is hovered, we want `cta-text` to change color.
+   We can listen to hover on `app-button` host.
+   
+   app-button:hover .cta-text span { color: ... }
+*/
+
+app-button:hover .cta-text span,
+app-button:hover .binary-code .col {
+  color: #0A0C1A;
+  transition: color 0.3s;
 }
 
 /* Responsive */
