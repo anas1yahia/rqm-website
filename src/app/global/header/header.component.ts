@@ -4,8 +4,8 @@ import { RouterModule, Router, ActivatedRoute } from '@angular/router';
 import { trigger, state, style, animate, transition, query, stagger } from '@angular/animations';
 import { LucideAngularModule, Menu, X, Sun, Moon } from 'lucide-angular';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { UiService } from '../services/ui.service';
-import { ThemeService } from '../services/theme.service';
+import { UiService } from '../../services/ui.service';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-header',

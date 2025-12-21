@@ -11,10 +11,10 @@ import { ProcessSectionComponent } from '../process-section/process-section.comp
 import { OurProductsComponent } from '../our-products/our-products.component';
 import { QualityProofComponent } from '../quality-proof/quality-proof.component';
 import { OurPartnersComponent } from '../our-partners/our-partners.component';
-import { FooterComponent } from '../footer/footer.component';
+import { FooterComponent } from '../../global/footer/footer.component';
 
 // Directives
-import { ScrollFadeDirective } from '../directives/scroll-fade';
+import { ScrollFadeDirective } from '../../directives/scroll-fade';
 
 @Component({
   selector: 'app-home',

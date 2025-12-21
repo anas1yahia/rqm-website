@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { UiService } from './services/ui.service';
 import { CommonModule } from '@angular/common';
-import { MatrixRainComponent } from './ui/matrix-rain/matrix-rain.component';
+import { MatrixRainComponent } from './landing-page/ui/matrix-rain/matrix-rain.component';
 
 @Component({
   selector: 'app-root',

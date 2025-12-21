@@ -1,8 +1,8 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LucideAngularModule, ChevronLeft } from 'lucide-angular';
-import { ParallaxDirective } from '../directives/parallax';
-import { TextDecodeDirective } from '../directives/text-decode';
+import { ParallaxDirective } from '../../directives/parallax';
+import { TextDecodeDirective } from '../../directives/text-decode';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({

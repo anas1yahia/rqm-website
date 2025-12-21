@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from '../header/header.component';
+import { HeaderComponent } from '../../global/header/header.component';
 import { HeroSectionComponent } from '../hero-section/hero-section.component';
 
 @Component({
