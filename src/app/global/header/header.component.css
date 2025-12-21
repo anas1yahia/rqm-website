@@ -34,6 +34,15 @@
 .header-container.scrolled-light .nav-link:hover {
   color: #36c9cb;
 }
+.header-container.scrolled-light {
+  /* Override contact text hover for light theme scrolled */
+}
+.header-container.scrolled-light app-button:hover .contact-wrapper p {
+  color: white;
+}
+.header-container.scrolled-light .contact-wrapper p {
+  color: #0A0C1A;
+}
 .header-container.scrolled-light .toggle-container {
   border-color: rgba(0, 0, 0, 0.1);
   background: rgba(0, 0, 0, 0.02);
@@ -43,48 +52,20 @@
   opacity: 0.2;
 }
 
-/* Contact Wrapper (Inside Button) */
+/* Burger Button logic handled by app-button variant="burger" */
+/* Contact CTA logic handled by app-button variant="contact" */
+/* Contact Text Color on Hover */
+app-button:hover .contact-wrapper p {
+  color: #0A0C1A; /* Dark text on white */
+  transition: color 0.3s;
+}
+
 .contact-wrapper p {
   margin: 0;
   font-size: 18.7px;
   color: white;
   line-height: 22.46px;
   white-space: nowrap;
-}
-
-/* Light Theme Scrolled State Overrides for Button Components */
-/* Since app-button uses :host-context(.header-container.scrolled-light), it should handle itself.
-   However, if we have specific overrides here that were targeting class names, we might need to check if they are covered.
-   In header.component.scss (old):
-     .theme-btn, .lang-btn { color: #0A0C1A; ... }
-   In button.component.scss:
-     :host-context(.header-container.scrolled-light) & { ... }
-   This should work fine.
-
-   The only thing is .contact-cta hover effect text color change.
-   In old SCSS:
-     .contact-cta:hover .contact-wrapper p { color: #0A0C1A; }
-
-   We need to ensure this still works.
-   app-button variant="contact"
-
-   If we use:
-   app-button:hover .contact-wrapper p { color: #0A0C1A; }
-*/
-app-button:hover .contact-wrapper p {
-  color: #0A0C1A;
-  transition: color 0.3s;
-}
-
-/* Scrolled Light State overrides for Contact Text */
-.header-container.scrolled-light app-button:hover .contact-wrapper p {
-  color: white; /* In light mode scrolled, hover bg is teal, text becomes white */
-}
-.header-container.scrolled-light {
-  /* Initial state in light scrolled */
-}
-.header-container.scrolled-light .contact-wrapper p {
-  color: #0A0C1A;
 }
 
 /* Right Section */
@@ -168,6 +149,7 @@ app-button:hover .contact-wrapper p {
   opacity: 0.5;
 }
 
+/* Toggle Container (Lang Switcher) */
 .toggle-container {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -178,6 +160,12 @@ app-button:hover .contact-wrapper p {
   height: 41.5px;
   width: 110.85px;
   box-sizing: border-box;
+  /* Ensure app-button fills space */
+}
+.toggle-container app-button {
+  flex: 1;
+  height: 100%;
+  /* Ensure inner button fills app-button (handled in button.component.scss) */
 }
 
 /* Mobile Menu Overlay (Backdrop) */
@@ -239,11 +227,9 @@ app-button:hover .contact-wrapper p {
   padding: 10px;
   border-radius: 30px;
   width: 140px;
-  /* app-button already handles font-size via button.component.scss if needed, 
-     or we can target it here if it's specific to mobile */
 }
 .mobile-lang-switcher app-button {
-  flex: 1; /* Ensure buttons fill space */
+  flex: 1;
 }
 
 .mobile-theme-switcher {
