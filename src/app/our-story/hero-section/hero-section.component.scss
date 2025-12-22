@@ -7,6 +7,21 @@
   box-sizing: border-box;
 }
 
+// Keyframes for Pixel Wipe Animation (from Landing Page)
+@keyframes pixel-wipe {
+  0% { clip-path: inset(0 100% 0 0); filter: grayscale(1) blur(10px); opacity: 0; }
+  10% { clip-path: inset(0 90% 0 0); opacity: 0.2; }
+  20% { clip-path: inset(0 80% 0 0); }
+  30% { clip-path: inset(0 70% 0 0); opacity: 0.4; }
+  40% { clip-path: inset(0 60% 0 0); }
+  50% { clip-path: inset(0 50% 0 0); opacity: 0.6; }
+  60% { clip-path: inset(0 40% 0 0); }
+  70% { clip-path: inset(0 30% 0 0); opacity: 0.8; }
+  80% { clip-path: inset(0 20% 0 0); }
+  90% { clip-path: inset(0 10% 0 0); }
+  100% { clip-path: inset(0 0 0 0); filter: grayscale(0) blur(0); opacity: 1; }
+}
+
 .hero-container {
   position: relative;
   width: 100%;
@@ -35,6 +50,9 @@
   overflow: hidden;
   z-index: 10;
   direction: rtl; // Internal content is RTL (Arabic)
+
+  // Consistent edge border from Landing Page Hero Content Wrapper
+  border: 0.8px solid rgba(255, 255, 255, 0.2);
 }
 
 // Blur Effect Gradient
@@ -65,9 +83,6 @@
   bottom: 0;
   left: 0.03%;
   border-width: 0 0 0.537px 0.537px; // Bottom, Left
-  // Corner radius isn't specified on this inner div but implied by design context?
-  // Since it's flush with the corner, it might need radius if the parent has it, 
-  // but parent has overflow:hidden, so simple square borders are fine, they get clipped.
 }
 
 .top-right {
@@ -90,7 +105,7 @@
   top: 70.69px;
   right: 664.79px;
   transform: translateY(-50%);
-  
+
   p {
     margin: 0;
     color: #94a6cc;
@@ -111,7 +126,7 @@
   width: 9.674px;
   height: 3.225px;
   transform: translateY(-50%);
-  
+
   img {
     width: 100%;
     height: 100%;
@@ -128,7 +143,7 @@
   transform: translateY(-50%);
   text-align: right;
   color: white;
-  
+
   p {
     margin: 0;
   }
@@ -167,12 +182,12 @@
   width: 20px;
   display: flex;
   justify-content: space-between;
-  
+
   .binary-col {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
     span {
       color: white;
       font-size: 13.357px;
@@ -196,24 +211,24 @@
 :host ::ng-deep .contact-custom-btn {
   width: 100%;
   padding: 17.97px 37.44px 18.72px 37.44px;
-  
+
   background: transparent;
   border: 3px solid #3a405e;
   border-left: 0;
-  
+
   // rounded-bl-[16px] rounded-br-[99px] rounded-tr-[99px]
   border-radius: 0 99px 99px 16px; // Standard syntax: TL TR BR BL
   // Top-Left: 0
   // Top-Right: 99px
   // Bottom-Right: 99px
   // Bottom-Left: 16px
-  
+
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  
+
   .btn-text {
     color: white;
     font-family: 'IBM Plex Sans', 'Noto Sans Arabic', sans-serif;
@@ -222,7 +237,7 @@
     line-height: 22.46px;
     white-space: nowrap;
   }
-  
+
   &:hover {
     background: rgba(58, 64, 94, 0.3);
   }
@@ -241,7 +256,7 @@
   left: 720.11px;
   width: 8.599px;
   height: 5.374px;
-  
+
   img {
     width: 100%;
     height: 100%;
@@ -256,7 +271,7 @@
   top: 472.61px;
   right: 34.57px;
   transform: translateY(-50%);
-  
+
   p {
     margin: 0;
     color: rgba(160, 186, 225, 0.7);
@@ -274,7 +289,7 @@
   bottom: 21.5px;
   left: 21.7px;
   text-align: right;
-  
+
   p {
     margin: 0;
     color: #8391a6;
@@ -290,9 +305,20 @@
   position: relative;
   // From previous context:
   width: 370px;
-  height: 467px;
-  opacity: 0.6;
-  
+  height: 100%;
+  opacity: 0.3;
+  border-radius: 30px;
+  // Consistent glass background (from Overlay Card + Landing Page consistency)
+  background: linear-gradient(to right, rgba(93, 95, 102, 0.2), rgba(93, 95, 102, 0.2));
+  backdrop-filter: blur(2.687px);
+  -webkit-backdrop-filter: blur(2.687px);
+  // border: 0.8px solid rgba(255, 255, 255, 0.2); // Adding consistent border to graphic container too?
+  // User asked for "same glass background as the overlay card" which we added.
+  // And "same animation as the graphic-container pixel-reveal".
+
+  // Apply Pixel Reveal Animation
+  animation: pixel-wipe 1.5s steps(10, end) forwards;
+
   img.illustration {
     width: 100%;
     height: 100%;
@@ -307,18 +333,18 @@
     height: auto;
     padding-top: 20px;
   }
-  
+
   .illustration-container {
     margin-top: -50px;
     z-index: 0;
   }
-  
+
   .overlay-card {
     max-width: 95vw;
     width: 100%;
     height: auto;
     min-height: 500px;
-    
+
     // Adjust scaling if needed for mobile
     transform-origin: top center;
   }

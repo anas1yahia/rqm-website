@@ -44,15 +44,14 @@
   left: 0;
   right: 0;
   width: 100%;
-  max-width: 1098px;
-  margin: 0 auto;
   z-index: 9999;
-  pointer-events: none; /* Let clicks pass through empty areas */
+  pointer-events: none;
   display: flex;
   justify-content: center;
 }
 .header-wrapper app-header {
   width: 100%;
+  max-width: 1084px;
   pointer-events: auto;
 }
 

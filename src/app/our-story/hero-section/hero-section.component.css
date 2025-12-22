@@ -6,6 +6,49 @@
   box-sizing: border-box;
 }
 
+@keyframes pixel-wipe {
+  0% {
+    clip-path: inset(0 100% 0 0);
+    filter: grayscale(1) blur(10px);
+    opacity: 0;
+  }
+  10% {
+    clip-path: inset(0 90% 0 0);
+    opacity: 0.2;
+  }
+  20% {
+    clip-path: inset(0 80% 0 0);
+  }
+  30% {
+    clip-path: inset(0 70% 0 0);
+    opacity: 0.4;
+  }
+  40% {
+    clip-path: inset(0 60% 0 0);
+  }
+  50% {
+    clip-path: inset(0 50% 0 0);
+    opacity: 0.6;
+  }
+  60% {
+    clip-path: inset(0 40% 0 0);
+  }
+  70% {
+    clip-path: inset(0 30% 0 0);
+    opacity: 0.8;
+  }
+  80% {
+    clip-path: inset(0 20% 0 0);
+  }
+  90% {
+    clip-path: inset(0 10% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    filter: grayscale(0) blur(0);
+    opacity: 1;
+  }
+}
 .hero-container {
   position: relative;
   width: 100%;
@@ -31,6 +74,7 @@
   overflow: hidden;
   z-index: 10;
   direction: rtl;
+  border: 0.8px solid rgba(255, 255, 255, 0.2);
 }
 
 .blur-effect {
@@ -227,8 +271,13 @@
 .illustration-container {
   position: relative;
   width: 370px;
-  height: 467px;
-  opacity: 0.6;
+  height: 100%;
+  opacity: 0.3;
+  border-radius: 30px;
+  background: linear-gradient(to right, rgba(93, 95, 102, 0.2), rgba(93, 95, 102, 0.2));
+  backdrop-filter: blur(2.687px);
+  -webkit-backdrop-filter: blur(2.687px);
+  animation: pixel-wipe 1.5s steps(10, end) forwards;
 }
 .illustration-container img.illustration {
   width: 100%;

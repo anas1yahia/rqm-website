@@ -1,6 +1,7 @@
 :host {
   display: block;
   width: 100%;
+
 }
 
 .main-layout-head {
@@ -10,7 +11,7 @@
   min-height: 100vh; // Ensure it covers screen
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow: hidden; // Prevent horizontal scrollbar
 }
 
 .background-layer {
@@ -47,18 +48,16 @@
   left: 0;
   right: 0;
   width: 100%;
-  max-width: 1098px;
-  margin: 0 auto;
+  // Remove max-width on wrapper to match landing page structure
   z-index: 9999;
-  pointer-events: none; /* Let clicks pass through empty areas */
+  pointer-events: none; 
 
-  // Center the app-header which acts as the actual content
   display: flex;
   justify-content: center;
 
-  // Ensure the header itself is clickable
   app-header {
     width: 100%;
+    max-width: 1084px; // Match landing page width exactly
     pointer-events: auto;
   }
 }
