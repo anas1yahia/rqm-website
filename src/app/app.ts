@@ -4,14 +4,15 @@ import { TranslateService } from '@ngx-translate/core';
 import { UiService } from './services/ui.service';
 import { CommonModule } from '@angular/common';
 import { MatrixRainComponent } from './landing-page/ui/matrix-rain/matrix-rain.component';
-import { fadeAnimation } from './route-animations';
+import { glitchAnimation } from './route-animations';
+import { HeaderComponent } from './global/header/header.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CommonModule, MatrixRainComponent],
+  imports: [RouterOutlet, CommonModule, MatrixRainComponent, HeaderComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss',
-  animations: [fadeAnimation]
+  animations: [glitchAnimation]
 })
 export class App {
   protected readonly title = signal('rqm-website');
