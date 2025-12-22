@@ -32,29 +32,29 @@ export class ProcessSectionComponent implements OnInit {
   cards: CardData[] = [
     {
       id: 'sustainability',
-      title: 'PROCESS.CARD_SUSTAINABILITY_TITLE',
-      description: 'PROCESS.CARD_SUSTAINABILITY_DESC',
+      title: 'LANDING.VALUES.SUSTAINABILITY_CARD_TITLE',
+      description: 'LANDING.VALUES.SUSTAINABILITY_CARD_DESC',
       icon: this.iconSustainability,
       bgImage: "value card/01.png"
     },
     {
       id: 'analysis',
-      title: 'PROCESS.CARD_ANALYSIS_TITLE',
-      description: 'PROCESS.CARD_ANALYSIS_DESC',
+      title: 'LANDING.VALUES.ANALYSIS_CARD_TITLE',
+      description: 'LANDING.VALUES.ANALYSIS_CARD_DESC',
       icon: this.iconAnalysis,
       bgImage: "value card/02.png"
     },
     {
       id: 'perfection',
-      title: 'PROCESS.CARD_PERFECTION_TITLE',
-      description: 'PROCESS.CARD_PERFECTION_DESC',
+      title: 'LANDING.VALUES.PERFECTION_CARD_TITLE',
+      description: 'LANDING.VALUES.PERFECTION_CARD_DESC',
       icon: this.iconPerfection,
       bgImage: "value card/03.png"
     },
     {
       id: 'commitment',
-      title: 'PROCESS.CARD_COMMITMENT_TITLE',
-      description: 'PROCESS.CARD_COMMITMENT_DESC',
+      title: 'LANDING.VALUES.COMMITMENT_CARD_TITLE',
+      description: 'LANDING.VALUES.COMMITMENT_CARD_DESC',
       icon: this.iconCommitment,
       bgImage: "value card/04.png"
     }
