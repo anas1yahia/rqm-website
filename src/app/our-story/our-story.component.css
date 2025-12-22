@@ -1,0 +1,29 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+}
+
+.our-story-container {
+  padding-top: 120px; /* Space for fixed/absolute header */
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+}
+.our-story-container .content {
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+}
+.our-story-container .content h1 {
+  font-size: 48px;
+  margin-bottom: 24px;
+  color: var(--text-color);
+}
+.our-story-container .content p {
+  font-size: 18px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/*# sourceMappingURL=our-story.component.css.map */

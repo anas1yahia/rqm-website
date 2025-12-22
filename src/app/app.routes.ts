@@ -4,6 +4,6 @@ import { OurStoryComponent } from './our-story/our-story.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'ar', pathMatch: 'full' },
-  { path: ':lang', component: HomeComponent },
-  { path: ':lang/our-story', component: OurStoryComponent }
+  { path: ':lang', component: HomeComponent, data: { animation: 'HomePage' } },
+  { path: ':lang/our-story', component: OurStoryComponent, data: { animation: 'OurStoryPage' } }
 ];

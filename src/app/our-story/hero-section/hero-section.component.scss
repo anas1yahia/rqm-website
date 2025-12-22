@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;700&display=swap');
+
+:host {
+  display: block;
+  width: 100%;
+  padding: 50px 0;
+  box-sizing: border-box;
+}
+
+.hero-container {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+  direction: ltr; // Physical layout: Card Left, Icon Right
+  font-family: 'IBM Plex Sans', 'Noto Sans Arabic', sans-serif;
+  gap: 26px;
+}
+
+// ---------------------------------------------------------
+// Overlay Card
+// ---------------------------------------------------------
+.overlay-card {
+  position: relative;
+  width: 750px;
+  height: 497px;
+  border-radius: 30px;
+  background: linear-gradient(to right, rgba(93, 95, 102, 0.2), rgba(93, 95, 102, 0.2));
+  backdrop-filter: blur(2.687px);
+  -webkit-backdrop-filter: blur(2.687px);
+  overflow: hidden;
+  z-index: 10;
+  direction: rtl; // Internal content is RTL (Arabic)
+}
+
+// Blur Effect Gradient
+.blur-effect {
+  position: absolute;
+  // inset-[9%_25.97%_85.6%_70.44%]
+  top: 9%;
+  right: 25.97%;
+  bottom: 85.6%;
+  left: 70.44%;
+  filter: blur(13.435px);
+  background: rgba(255, 255, 255, 0.1); // Assumed color based on context, Figma layer was 'Gradient+Blur'
+  z-index: 1;
+}
+
+// Corner Borders
+.corner-border {
+  position: absolute;
+  border-color: #36c9cb;
+  border-style: solid;
+  pointer-events: none;
+}
+
+.bottom-left {
+  // inset-[97.3%_98.18%_0_0.03%]
+  top: 97.3%;
+  right: 98.18%;
+  bottom: 0;
+  left: 0.03%;
+  border-width: 0 0 0.537px 0.537px; // Bottom, Left
+  // Corner radius isn't specified on this inner div but implied by design context?
+  // Since it's flush with the corner, it might need radius if the parent has it, 
+  // but parent has overflow:hidden, so simple square borders are fine, they get clipped.
+}
+
+.top-right {
+  // inset-[0_-0.03%_97.3%_98.24%]
+  top: 0;
+  right: -0.03%;
+  bottom: 97.3%;
+  left: 98.24%;
+  border-width: 0.537px 0.537px 0 0; // Top, Right
+}
+
+// ---------------------------------------------------------
+// Content Elements
+// ---------------------------------------------------------
+
+// "About RQM" Label
+.top-label {
+  position: absolute;
+  // right-[664.79px] top-[70.69px]
+  top: 70.69px;
+  right: 664.79px;
+  transform: translateY(-50%);
+  
+  p {
+    margin: 0;
+    color: #94a6cc;
+    font-size: 15.908px;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 15.924px;
+    white-space: nowrap;
+  }
+}
+
+// Decorative Image (Left Side)
+.deco-image-left {
+  position: absolute;
+  // right-[718.62px] top-[calc(50%-177.08px)]
+  top: calc(50% - 177.08px);
+  right: 718.62px;
+  width: 9.674px;
+  height: 3.225px;
+  transform: translateY(-50%);
+  
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}
+
+// Main Title
+.main-title {
+  position: absolute;
+  // right-[61.26px] top-[176.35px]
+  top: 176.35px;
+  right: 61.26px;
+  transform: translateY(-50%);
+  text-align: right;
+  color: white;
+  
+  p {
+    margin: 0;
+  }
+
+  .subtitle {
+    font-size: 65.296px;
+    font-weight: 700;
+    margin-bottom: 0;
+    line-height: normal;
+  }
+
+  .title {
+    font-size: 65.296px;
+    font-weight: 700;
+    line-height: normal;
+  }
+}
+
+// ---------------------------------------------------------
+// Contact Button Group
+// ---------------------------------------------------------
+.contact-group {
+  position: absolute;
+  // left-[523.21px] top-[309.47px]
+  top: 309.47px;
+  left: 523.21px;
+  width: 166px;
+  height: 60px; // inferred height approx
+}
+
+.binary-numbers {
+  position: absolute;
+  // left-[0] top-[13px]
+  top: 13px;
+  left: 0;
+  width: 20px;
+  display: flex;
+  justify-content: space-between;
+  
+  .binary-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    span {
+      color: white;
+      font-size: 13.357px;
+      font-weight: 700;
+      line-height: 16.043px;
+    }
+  }
+}
+
+.btn-wrapper {
+  position: absolute;
+  // left-[calc(50%+5.44px)] top-[calc(50%-0.16px)]
+  // relative to the 166px container
+  top: calc(50% - 0.16px);
+  left: calc(50% + 5.44px);
+  transform: translate(-50%, -50%);
+  width: 154.88px;
+}
+
+// Custom Styling for the Button Component
+:host ::ng-deep .contact-custom-btn {
+  width: 100%;
+  padding: 17.97px 37.44px 18.72px 37.44px;
+  
+  background: transparent;
+  border: 3px solid #3a405e;
+  border-left: 0;
+  
+  // rounded-bl-[16px] rounded-br-[99px] rounded-tr-[99px]
+  border-radius: 0 99px 99px 16px; // Standard syntax: TL TR BR BL
+  // Top-Left: 0
+  // Top-Right: 99px
+  // Bottom-Right: 99px
+  // Bottom-Left: 16px
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  .btn-text {
+    color: white;
+    font-family: 'IBM Plex Sans', 'Noto Sans Arabic', sans-serif;
+    font-size: 18.7px;
+    font-weight: 400;
+    line-height: 22.46px;
+    white-space: nowrap;
+  }
+  
+  &:hover {
+    background: rgba(58, 64, 94, 0.3);
+  }
+}
+
+
+// ---------------------------------------------------------
+// Other Elements
+// ---------------------------------------------------------
+
+// Vector Deco (Right Side)
+.vector-deco-right {
+  position: absolute;
+  // left-[720.11px] top-[470.61px]
+  top: 470.61px;
+  left: 720.11px;
+  width: 8.599px;
+  height: 5.374px;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}
+
+// RQM AI Label
+.rqm-ai-label {
+  position: absolute;
+  // right-[34.57px] top-[472.61px]
+  top: 472.61px;
+  right: 34.57px;
+  transform: translateY(-50%);
+  
+  p {
+    margin: 0;
+    color: rgba(160, 186, 225, 0.7);
+    font-size: 8px;
+    font-weight: 700; // SemiBold
+    line-height: 5.374px;
+    white-space: nowrap;
+  }
+}
+
+// Future Vision
+.future-vision {
+  position: absolute;
+  // bottom-[21.5px] left-[21.7px]
+  bottom: 21.5px;
+  left: 21.7px;
+  text-align: right;
+  
+  p {
+    margin: 0;
+    color: #8391a6;
+    font-size: 12.737px;
+    text-transform: uppercase;
+    line-height: 15.284px;
+    font-weight: 400;
+  }
+}
+
+// Illustration
+.illustration-container {
+  position: relative;
+  // From previous context:
+  width: 370px;
+  height: 467px;
+  opacity: 0.6;
+  
+  img.illustration {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+// Responsive
+@media (max-width: 1200px) {
+  .hero-container {
+    flex-direction: column;
+    height: auto;
+    padding-top: 20px;
+  }
+  
+  .illustration-container {
+    margin-top: -50px;
+    z-index: 0;
+  }
+  
+  .overlay-card {
+    max-width: 95vw;
+    width: 100%;
+    height: auto;
+    min-height: 500px;
+    
+    // Adjust scaling if needed for mobile
+    transform-origin: top center;
+  }
+}

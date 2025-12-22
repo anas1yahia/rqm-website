@@ -1,0 +1,74 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.main-layout-head {
+  position: relative;
+  width: 100%;
+  // height: 100vh; // Or min-height based on design. Figma node 5736:8918 doesn't explicitly state height but header+hero implies tall.
+  min-height: 100vh; // Ensure it covers screen
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.background-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  .bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center; // Adjust if needed
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(10, 12, 27, 0.8); // #0A0C1BCC
+  }
+}
+
+.content-layer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+}
+
+.header-wrapper {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 1098px;
+  margin: 0 auto;
+  z-index: 9999;
+  pointer-events: none; /* Let clicks pass through empty areas */
+
+  // Center the app-header which acts as the actual content
+  display: flex;
+  justify-content: center;
+
+  // Ensure the header itself is clickable
+  app-header {
+    width: 100%;
+    pointer-events: auto;
+  }
+}
+
+.hero-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // Increase padding top to compensate for the fixed header
+
+  padding-bottom: 50px;
+}

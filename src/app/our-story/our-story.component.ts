@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
-import { HeaderComponent } from '../global/header/header.component';
 import { FooterComponent } from '../global/footer/footer.component';
+import { MainLayoutHeadComponent } from './main-layout-head/main-layout-head.component';
 
 @Component({
   selector: 'app-our-story',
   standalone: true,
-  imports: [CommonModule, TranslateModule, HeaderComponent, FooterComponent],
+  imports: [CommonModule, TranslateModule, FooterComponent, MainLayoutHeadComponent],
   templateUrl: './our-story.component.html',
   styleUrls: ['./our-story.component.scss']
 })
