@@ -2,7 +2,16 @@
   <div class="cards-container">
     
     <!-- Vision Card (First in RTL context) -->
-    <div class="card vision-card">
+    <div class="card vision-card" #cardRef (mouseenter)="setHover('vision')" (mouseleave)="setHover(null)">
+      <div class="matrix-grid">
+        <div *ngFor="let square of matrixSquares" class="matrix-square" 
+             [style.width.px]="squareSize" 
+             [style.height.px]="squareSize" 
+             [class.active]="hoveredCard === 'vision'" 
+             [style.animation-delay.ms]="square.delay">
+        </div>
+      </div>
+      
       <div class="illustration-wrapper">
         <img src="vision.svg" alt="Vision Illustration">
       </div>
@@ -15,7 +24,16 @@
     </div>
 
     <!-- Message Card -->
-    <div class="card message-card">
+    <div class="card message-card" #cardRef (mouseenter)="setHover('message')" (mouseleave)="setHover(null)">
+      <div class="matrix-grid">
+        <div *ngFor="let square of matrixSquares" class="matrix-square" 
+             [style.width.px]="squareSize" 
+             [style.height.px]="squareSize" 
+             [class.active]="hoveredCard === 'message'" 
+             [style.animation-delay.ms]="square.delay">
+        </div>
+      </div>
+
       <div class="illustration-wrapper">
         <img src="value.svg" alt="Message Illustration">
       </div>
