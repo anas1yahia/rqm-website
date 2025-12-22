@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;700&family=Noto+Sans+Arabic:wght@300;400;700&display=swap');
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+.message-value-section {
+  width: 100%;
+  padding: 50px 0;
+  direction: rtl; // Arabic Layout
+  font-family: 'IBM Plex Sans', 'Noto Sans Arabic', sans-serif;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.card {
+  position: relative;
+  flex: 1;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(2, 7, 14, 0.1);
+  // border-radius? Figma screenshot shows sharp corners or very subtle.
+  // Code snippet says border-radius but didn't specify. Assuming slight or none based on look.
+  // The 'Group' in Figma has overflow-clip.
+  overflow: hidden;
+  min-height: 380px;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; // Text at bottom
+  align-items: flex-start; // RTL align right
+  padding: 27px;
+}
+
+.illustration-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0; 
+  width: 100%;
+  height: 80%; // Reduced height to avoid text overlap
+  overflow: hidden;
+  opacity: 0.3; // Faded background effect
+  pointer-events: none;
+  z-index: 0;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    // Align illustration to top or center?
+    // Figma 'vision' icon has bottom-[30%].
+    // Let's center it roughly.
+    object-position: center top;
+  }
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.title {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  line-height: 26px;
+}
+
+.description {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 300; // Light
+  color: white;
+  opacity: 0.9;
+  line-height: 48px;
+}
+
+// Specific adjustments for Message card image to match Figma crop/position if needed
+.message-card .illustration-wrapper img {
+  // Figma shows it on the left side (visually)
+  // Since RTL, left is 'end'.
+  // But visually in screenshot it's on the Left.
+  object-position: left top;
+  transform: scale(0.8) translateX(-5%); // Further reduced scale
+}
+
+.vision-card .illustration-wrapper img {
+  // Figma shows it on the right side (visually)
+  object-position: right top;
+  transform: scale(0.8) translateX(5%); // Further reduced scale
+}
+
+// Responsive
+@media (max-width: 992px) {
+  .cards-container {
+    flex-direction: column;
+  }
+  
+  .card {
+    min-height: 300px;
+  }
+  
+  .description {
+    font-size: 20px;
+    line-height: 32px;
+  }
+}

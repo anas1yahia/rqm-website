@@ -153,13 +153,13 @@
   margin: 0;
 }
 .main-title .subtitle {
-  font-size: 65.296px;
+  font-size: 3rem;
   font-weight: 700;
   margin-bottom: 0;
   line-height: normal;
 }
 .main-title .title {
-  font-size: 65.296px;
+  font-size: 3rem;
   font-weight: 700;
   line-height: normal;
 }
@@ -271,18 +271,17 @@
 .illustration-container {
   position: relative;
   width: 370px;
-  height: 100%;
-  opacity: 0.3;
-  border-radius: 30px;
+  height: 467px;
   background: linear-gradient(to right, rgba(93, 95, 102, 0.2), rgba(93, 95, 102, 0.2));
   backdrop-filter: blur(2.687px);
   -webkit-backdrop-filter: blur(2.687px);
-  animation: pixel-wipe 1.5s steps(10, end) forwards;
 }
 .illustration-container img.illustration {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  opacity: 0;
+  animation: pixel-wipe 1.5s steps(10, end) forwards;
 }
 
 @media (max-width: 1200px) {

@@ -149,14 +149,14 @@
   }
 
   .subtitle {
-    font-size: 65.296px;
+    font-size: 3rem;
     font-weight: 700;
     margin-bottom: 0;
     line-height: normal;
   }
 
   .title {
-    font-size: 65.296px;
+    font-size: 3rem;
     font-weight: 700;
     line-height: normal;
   }
@@ -305,24 +305,33 @@
   position: relative;
   // From previous context:
   width: 370px;
-  height: 100%;
-  opacity: 0.3;
-  border-radius: 30px;
-  // Consistent glass background (from Overlay Card + Landing Page consistency)
+  height: 467px;
+  // Remove opacity: 0.6 here if we want JS to control it fully, 
+  // or keep it as base. JS will override style.opacity.
+  // But initial CSS opacity might interfere if not handled carefully.
+  // Actually, opacity: 0.6 was static. 
+  // Let's rely on JS or set it here. JS sets it on scroll.
+  // On load (scroll=0), JS sets 1. 
+  // Wait, if base is 0.6, JS setting 1 makes it brighter.
+  // Figma said opacity 0.6.
+  // I should adjust JS to start at 0.6 or apply 0.6 via CSS and let JS multiply?
+  // JS `style.opacity = ...` overwrites CSS `opacity`.
+  // So I should calculate relative to 0.6 in JS or just let JS handle it.
+  // If I want it to be 0.6 max, JS should do `0.6 - ...`.
+  
+  // Consistent glass background
   background: linear-gradient(to right, rgba(93, 95, 102, 0.2), rgba(93, 95, 102, 0.2));
   backdrop-filter: blur(2.687px);
   -webkit-backdrop-filter: blur(2.687px);
-  // border: 0.8px solid rgba(255, 255, 255, 0.2); // Adding consistent border to graphic container too?
-  // User asked for "same glass background as the overlay card" which we added.
-  // And "same animation as the graphic-container pixel-reveal".
-
-  // Apply Pixel Reveal Animation
-  animation: pixel-wipe 1.5s steps(10, end) forwards;
-
+  
   img.illustration {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    // Apply Pixel Reveal Animation to the IMAGE, not the container
+    // This allows the container to be Parallaxed (Transform/Opacity) by JS without conflict.
+    opacity: 0; // Start invisible for animation
+    animation: pixel-wipe 1.5s steps(10, end) forwards;
   }
 }
 

@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;700&display=swap');
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+.about-rqm-section {
+  position: relative;
+  width: 100%;
+  padding: 100px 0;
+  direction: rtl; // Content is Arabic
+  font-family: 'IBM Plex Sans', 'Noto Sans Arabic', sans-serif;
+  color: white;
+}
+
+.container {
+  max-width: 1350px; // Match card width roughly
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+// ---------------------------------------------------------
+// Header Group
+// ---------------------------------------------------------
+.header-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; // Right in RTL
+  text-align: right;
+  padding-inline-start: 50px; // Adjust based on design indentation visual
+}
+
+.main-title {
+  margin: 0;
+  font-size: 38px;
+  font-weight: 700;
+  color: white;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 38px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #62C4AA 0%, #4C89D5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// ---------------------------------------------------------
+// Content Card
+// ---------------------------------------------------------
+.content-card {
+  position: relative;
+  width: 100%;
+  min-height: 254px;
+  border-radius: 0; // Rectangle in design? Design shows rectangular Link block but maybe inside a container.
+  // Figma node 5590:924 'Link' has border, bg.
+  // It looks like a simple box.
+
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(2, 7, 14, 0.05);
+  // Add a subtle border for visibility if dark on dark
+  // The design has very low opacity border.
+
+  padding: 33px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center; // Center vertically? Or top?
+  justify-content: space-between;
+
+  // Ensure text is on top of any deco
+  isolation: isolate;
+}
+
+.deco-image-container {
+  position: absolute;
+  // Position based on Figma layout or visual
+  // Figma: 'Container' 5590:925 inside Link.
+  // Inset: 40% top?
+  // It seems to be in the background or side.
+  // Let's place it absolutely.
+  bottom: 0;
+  right: 0; // Left in RTL?
+  // Actually in Figma it's on the left visual side (which is 'end' in LTR, or 'start' in LTR?)
+  // Arabic is RTL. The text is on the Right. The image is on the Left.
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 400px; // Approx
+  overflow: hidden;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: -1;
+
+  .sun-burst {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      max-width: none;
+      height: 100%;
+      // Adjust positioning to match the "cut off" look
+      transform: translateX(-20%) scale(0.9);
+    }
+  }
+}
+
+.text-content {
+  flex: 1;
+  // Push text to the right side
+  padding-inline-start: 33px; // Make space for the graphic if needed, or just align text right
+  // Figma: Text container width is fill but aligned.
+  // Actually text seems to span most width but maybe avoiding the graphic?
+  // Let's just use max-width or padding.
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  p {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 400; // Medium/Regular
+    line-height: 40px; // 200%
+    color: white;
+    
+    // Scroll Reveal Animation
+    &.scroll-reveal-text {
+      opacity: 0.1; // Start with low opacity
+      transform: translateY(20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      will-change: opacity, transform;
+      
+      &.in-view {
+        opacity: 0.9; // Target opacity (slightly dimmed as per original design)
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 992px) {
+  .text-content {
+    padding-inline-start: 0;
+  }
+
+  .deco-image-container {
+    opacity: 0.1; // Fade out more on mobile
+  }
+}

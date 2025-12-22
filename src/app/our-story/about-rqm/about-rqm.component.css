@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;700&display=swap");
+:host {
+  display: block;
+  width: 100%;
+}
+
+.about-rqm-section {
+  position: relative;
+  width: 100%;
+  padding: 100px 0;
+  direction: rtl;
+  font-family: "IBM Plex Sans", "Noto Sans Arabic", sans-serif;
+  color: white;
+}
+
+.container {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.header-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: right;
+  padding-inline-start: 50px;
+}
+
+.main-title {
+  margin: 0;
+  font-size: 38px;
+  font-weight: 700;
+  color: white;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 38px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #62C4AA 0%, #4C89D5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.content-card {
+  position: relative;
+  width: 100%;
+  min-height: 254px;
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(2, 7, 14, 0.05);
+  padding: 33px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  isolation: isolate;
+}
+
+.deco-image-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 400px;
+  overflow: hidden;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: -1;
+}
+.deco-image-container .sun-burst {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.deco-image-container .sun-burst img {
+  max-width: none;
+  height: 100%;
+  transform: translateX(-20%) scale(0.9);
+}
+
+.text-content {
+  flex: 1;
+  padding-inline-start: 33px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.text-content p {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 40px;
+  color: white;
+}
+.text-content p.scroll-reveal-text {
+  opacity: 0.1;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+.text-content p.scroll-reveal-text.in-view {
+  opacity: 0.9;
+  transform: translateY(0);
+}
+
+@media (max-width: 992px) {
+  .text-content {
+    padding-inline-start: 0;
+  }
+  .deco-image-container {
+    opacity: 0.1;
+  }
+}
+
+/*# sourceMappingURL=about-rqm.component.css.map */
