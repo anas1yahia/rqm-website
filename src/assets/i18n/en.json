@@ -6,11 +6,69 @@
     "CONTACT_US": "Contact Us"
   },
   "HERO": {
-    "BADGE": "Artificial Intelligence",
-    "TITLE_1": "From Zero to One",
-    "TITLE_2": "Meet RQM",
-    "DESCRIPTION": "A future vision driven by Artificial Intelligence in Arabic",
-    "CTA": "Contact Us"
+    "BADGE": "The Beginning",
+    "TITLE_1": "Artificial Intelligence",
+    "TITLE_2": "Your Digital Business Partner",
+    "DESCRIPTION": "We enhance your business efficiency with sustainable solutions driven by Artificial Intelligence to support the digital economy ecosystem.",
+    "CTA": "Step 'Zero' Starts With RQM"
+  },
+  "LANDING": {
+    "SERVICES": {
+      "HEADING_1": "At RQM, We Aspire to Build",
+      "HEADING_2": "Services That Shape the Future",
+      "CYBERSECURITY_TITLE": "Cybersecurity Services",
+      "CYBERSECURITY_DESC": "We offer advanced cybersecurity services including vulnerability testing and scanning, and security assessment for systems and applications using the latest technologies. We analyze risks and identify weaknesses, providing practical solutions to address them. We also provide integrated cyber infrastructure ensuring continuous protection and enhancing corporate readiness against digital threats.",
+      "SECURITY_LINK": "Enhance Your Business Security",
+      "AI_TITLE": "Building AI Solutions",
+      "AI_DESC": "We use integrated AI technologies to develop AI agents, machine learning applications, and business automation. We also work on improving natural language processing and big data analysis, providing integrated technical infrastructure to ensure solution sustainability and success.",
+      "SERVICES_LINK": "Our Services",
+      "DIGITAL_SOLUTIONS_TITLE": "Building Advanced Digital Solutions",
+      "DIGITAL_SOLUTIONS_DESC": "We build integrated digital solutions with our clients, including custom software development, business applications, and integration tools. We work on building and studying user interfaces and experience to improve interaction with systems. We also provide integrated technical infrastructure to ensure solution sustainability and success.",
+      "ABOUT_LINK": "About Us"
+    },
+    "PROCESS": {
+      "HEADING": "Turning Your Project Into Reality",
+      "SUBHEADING": "Methodical steps supported by experience and skill to achieve your goals",
+      "BUILD_TITLE": "Build",
+      "BUILD_DESC": "We establish the project and build its initial business model.",
+      "STUDY_TITLE": "Study",
+      "STUDY_DESC": "We research, study, and test the feasibility of the work.",
+      "ANALYSIS_TITLE": "Analysis",
+      "ANALYSIS_DESC": "We analyze business requirements with agile methodologies."
+    },
+    "VALUES": {
+      "HEADING": "The Zero We Start From at RQM",
+      "ANALYSIS_CARD_TITLE": "Analysis",
+      "ANALYSIS_CARD_DESC": "We wrap our work in transparency and prioritize ethical standards.",
+      "PERFECTION_CARD_TITLE": "Perfection",
+      "PERFECTION_CARD_DESC": "We pay attention to work details to meet client needs.",
+      "COMMITMENT_CARD_TITLE": "Commitment",
+      "COMMITMENT_CARD_DESC": "We measure our steps carefully and pledge our responsibility to the client.",
+      "SUSTAINABILITY_CARD_TITLE": "Sustainability",
+      "SUSTAINABILITY_CARD_DESC": "We maintain the sustainability of business efficiency and growth.",
+      "VALUES_HEADING": "Our High Values",
+      "VALUES_SUBHEADING": "These values represent the cornerstone of all our work with partners.",
+      "VALUES_CTA": "Step 'Zero' Starts With RQM"
+    },
+    "PRODUCTS": {
+      "HEADING": "Our Products",
+      "QAID_TITLE": "Qayd Platform for Legal Business",
+      "QAID_SUBTITLE": "Your Smart Gateway to Digital Investment",
+      "QAID_DESC": "An integrated platform providing AI tools and solutions for institutions and companies in the financial and investment services sector.",
+      "QAID_FEATURE_1": "Advanced High-Performance Cloud",
+      "QAID_FEATURE_2": "Reliable Regulatory Compliance",
+      "QAID_FEATURE_3": "Flexible System Integration",
+      "QAID_FEATURE_4": "Unified Dashboard for All Cases",
+      "QAID_FEATURE_5": "Precise Details for Each Case and Record",
+      "QAID_FEATURE_6": "Automatic Scheduling of Judicial Sessions",
+      "QAID_CTA_MORE": "Discover More",
+      "QAID_CTA_TRY": "Try Now",
+      "QAID_LINK_OTHER": "Explore Our Other Solutions",
+      "QAID_LINK_MORE_SOLUTIONS": "Learn More About Our Solutions"
+    },
+    "PARTNERS": {
+      "HEADING": "Success Partners"
+    }
   },
   "OUR_STORY": {
     "HERO": {
