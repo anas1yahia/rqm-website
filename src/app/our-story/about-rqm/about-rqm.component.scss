@@ -9,13 +9,13 @@
   position: relative;
   width: 100%;
   padding: 100px 0;
-  direction: rtl; // Content is Arabic
+  // direction: rtl; // REMOVED: Allow inheriting direction
   font-family: 'IBM Plex Sans', 'Noto Sans Arabic', sans-serif;
   color: white;
 }
 
 .container {
-  max-width: 1350px; // Match card width roughly
+  max-width: 1350px; 
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
@@ -29,9 +29,9 @@
 .header-group {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; // Right in RTL
-  text-align: right;
-  padding-inline-start: 50px; // Adjust based on design indentation visual
+  align-items: flex-start; // Start alignment (Right in RTL, Left in LTR)
+  text-align: start; // Logical align
+  padding-inline-start: 50px; 
 }
 
 .main-title {
@@ -58,41 +58,33 @@
   position: relative;
   width: 100%;
   min-height: 254px;
-  border-radius: 0; // Rectangle in design? Design shows rectangular Link block but maybe inside a container.
-  // Figma node 5590:924 'Link' has border, bg.
-  // It looks like a simple box.
+  border-radius: 0; 
 
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(2, 7, 14, 0.05);
-  // Add a subtle border for visibility if dark on dark
-  // The design has very low opacity border.
 
   padding: 33px;
   box-sizing: border-box;
 
   display: flex;
-  align-items: center; // Center vertically? Or top?
+  align-items: center; 
   justify-content: space-between;
 
-  // Ensure text is on top of any deco
   isolation: isolate;
 }
 
 .deco-image-container {
   position: absolute;
-  // Position based on Figma layout or visual
-  // Figma: 'Container' 5590:925 inside Link.
-  // Inset: 40% top?
-  // It seems to be in the background or side.
-  // Let's place it absolutely.
   bottom: 0;
-  right: 0; // Left in RTL?
-  // Actually in Figma it's on the left visual side (which is 'end' in LTR, or 'start' in LTR?)
-  // Arabic is RTL. The text is on the Right. The image is on the Left.
-  left: 0;
   top: 0;
+  // Position at the END (Left in RTL, Right in LTR)
+  // Wait, Figma visual (Arabic): Text Right, Image Left.
+  // Left is END in RTL.
+  // So we want Image at Inline-End.
+  inset-inline-end: 0; 
+  
   height: 100%;
-  width: 400px; // Approx
+  width: 400px; 
   overflow: hidden;
   opacity: 0.3;
   pointer-events: none;
@@ -108,19 +100,28 @@
     img {
       max-width: none;
       height: 100%;
-      // Adjust positioning to match the "cut off" look
       transform: translateX(-20%) scale(0.9);
+      
+      // In LTR, if Image is on Right, translateX(-20%) moves it Left (towards center).
+      // In RTL, Image is on Left. translateX(-20%) moves it Left (away from center/out of box?).
+      // Let's use logical transform if needed or just center it.
+      // Or check if transform needs flipping.
+      // Usually translateX is physical.
+      // If we want to "cut off" the outer edge:
+      // RTL (Image Left): TranslateX should move it Left (negative).
+      // LTR (Image Right): TranslateX should move it Right (positive)?
+      // For now keeping as is, but mirror might be needed.
+      // Let's rely on standard flow.
     }
   }
 }
 
 .text-content {
   flex: 1;
-  // Push text to the right side
-  padding-inline-start: 33px; // Make space for the graphic if needed, or just align text right
-  // Figma: Text container width is fill but aligned.
-  // Actually text seems to span most width but maybe avoiding the graphic?
-  // Let's just use max-width or padding.
+  // Padding to avoid overlap with image which is at END.
+  // So we need padding-inline-end.
+  padding-inline-end: 200px; // Adjust based on image width/position
+  padding-inline-start: 0;
 
   display: flex;
   flex-direction: column;
@@ -129,19 +130,19 @@
   p {
     margin: 0;
     font-size: 20px;
-    font-weight: 400; // Medium/Regular
-    line-height: 40px; // 200%
+    font-weight: 400; 
+    line-height: 40px; 
     color: white;
     
     // Scroll Reveal Animation
     &.scroll-reveal-text {
-      opacity: 0.1; // Start with low opacity
+      opacity: 0.1; 
       transform: translateY(20px);
       transition: opacity 0.8s ease-out, transform 0.8s ease-out;
       will-change: opacity, transform;
       
       &.in-view {
-        opacity: 0.9; // Target opacity (slightly dimmed as per original design)
+        opacity: 0.9; 
         transform: translateY(0);
       }
     }
@@ -151,10 +152,10 @@
 // Responsive
 @media (max-width: 992px) {
   .text-content {
-    padding-inline-start: 0;
+    padding-inline-end: 0;
   }
 
   .deco-image-container {
-    opacity: 0.1; // Fade out more on mobile
+    opacity: 0.1; 
   }
 }

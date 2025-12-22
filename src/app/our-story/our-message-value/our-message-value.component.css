@@ -7,7 +7,6 @@
 .message-value-section {
   width: 100%;
   padding: 50px 0;
-  direction: rtl;
   font-family: "IBM Plex Sans", "Noto Sans Arabic", sans-serif;
 }
 
@@ -57,7 +56,7 @@
   position: relative;
   z-index: 1;
   width: 100%;
-  text-align: right;
+  text-align: start;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -82,11 +81,21 @@
 }
 
 .message-card .illustration-wrapper img {
+  object-position: right top;
+  transform: scale(0.8) translateX(5%);
+}
+
+:host-context([dir=rtl]) .message-card .illustration-wrapper img {
   object-position: left top;
   transform: scale(0.8) translateX(-5%);
 }
 
 .vision-card .illustration-wrapper img {
+  object-position: left top;
+  transform: scale(0.8) translateX(-5%);
+}
+
+:host-context([dir=rtl]) .vision-card .illustration-wrapper img {
   object-position: right top;
   transform: scale(0.8) translateX(5%);
 }

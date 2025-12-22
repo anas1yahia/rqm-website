@@ -106,9 +106,23 @@ export class HeaderComponent {
 
     // Wait for fade in
     setTimeout(() => {
+      // Get current URL tree
+      const urlTree = this.router.parseUrl(this.router.url);
+      const segments = urlTree.root.children['primary'] ? urlTree.root.children['primary'].segments : [];
+      
+      // Construct new path array: [newLang, ...restOfPath]
+      const newSegments = [lang];
+      if (segments.length > 1) {
+        for (let i = 1; i < segments.length; i++) {
+          newSegments.push(segments[i].path);
+        }
+      }
+
       // Navigate to the new language route
-      // preserveFragment: true keeps the #hash (e.g. #about) if it exists
-      this.router.navigate([lang], { preserveFragment: true }).then(() => {
+      this.router.navigate(newSegments, { 
+        queryParams: urlTree.queryParams,
+        fragment: urlTree.fragment || undefined 
+      }).then(() => {
           this.currentLang = lang;
           // Wait a bit for layout to settle, then fade out
           setTimeout(() => {

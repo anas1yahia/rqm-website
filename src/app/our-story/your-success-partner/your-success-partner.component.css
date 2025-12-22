@@ -10,7 +10,6 @@
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  direction: rtl;
   font-family: "IBM Plex Sans", "Noto Sans Arabic", sans-serif;
   color: white;
 }
@@ -32,7 +31,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
-  text-align: right;
+  text-align: start;
   z-index: 2;
 }
 
@@ -71,15 +70,15 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  text-align: right;
+  text-align: start;
   gap: 16px;
-  min-height: fit-content;
+  min-height: 314px;
   box-sizing: border-box;
 }
 
 .card-title {
   margin: 0;
-  font-size: 1.6rem;
+  font-size: 34px;
   font-weight: 700;
   color: white;
   line-height: 1.2;
@@ -87,7 +86,7 @@
 
 .card-desc {
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 24px;
   font-weight: 400;
   color: white;
   line-height: 1.5;

@@ -1,7 +1,12 @@
 <div class="hero-container">
+  <!-- Illustration -->
+  <div class="illustration-container" #illustration>
+    <img src="header01.svg" alt="Illustration" class="illustration">
+  </div>
+
   <!-- Overlay Card -->
   <div class="overlay-card" #overlayCard>
-    
+
     <!-- Background Blur Gradient -->
     <div class="blur-effect"></div>
 
@@ -13,7 +18,7 @@
 
     <!-- Top Label: "About RQM" -->
     <div class="top-label">
-      <p>عن رقم</p>
+      <p>{{ 'OUR_STORY.HERO.LABEL' | translate }}</p>
     </div>
 
     <!-- Decorative Image (Left side) -->
@@ -23,8 +28,8 @@
 
     <!-- Main Title -->
     <div class="main-title">
-      <p class="subtitle" [appTextDecode]="'من الصفر الى الواحد'">من الصفر الى الواحد</p>
-      <p class="title" [appTextDecode]="'تعرف على رقم'">تعرف على رقم</p>
+      <p class="subtitle" [appTextDecode]="'OUR_STORY.HERO.TITLE_1' | translate">{{ 'OUR_STORY.HERO.TITLE_1' | translate }}</p>
+      <p class="title" [appTextDecode]="'OUR_STORY.HERO.TITLE_2' | translate">{{ 'OUR_STORY.HERO.TITLE_2' | translate }}</p>
     </div>
 
     <!-- Contact Button Group -->
@@ -40,12 +45,12 @@
           <span>0</span>
         </div>
       </div>
-      
+
       <!-- Contact Button -->
       <!-- We wrapper the app-button to position it exactly relative to the group -->
       <div class="btn-wrapper">
         <app-button variant="contact" className="contact-custom-btn">
-          <span class="btn-text">تواصل معنا</span>
+          <span class="btn-text">{{ 'OUR_STORY.HERO.CTA' | translate }}</span>
         </app-button>
       </div>
     </div>
@@ -57,20 +62,17 @@
 
     <!-- RQM AI Label -->
     <div class="rqm-ai-label">
-      <p>رقم Ai</p>
+      <p>{{ 'OUR_STORY.HERO.RQM_AI' | translate }}</p>
     </div>
 
     <!-- Future Vision Text -->
     <div class="future-vision">
-      <p>رؤية مستقبلية</p>
-      <p>انطلاقا من الذكاء الاصطناعي</p>
-      <p>باللغة العربية</p>
+      <p>{{ 'OUR_STORY.HERO.FUTURE_VISION_1' | translate }}</p>
+      <p>{{ 'OUR_STORY.HERO.FUTURE_VISION_2' | translate }}</p>
+      <p>{{ 'OUR_STORY.HERO.FUTURE_VISION_3' | translate }}</p>
     </div>
 
   </div>
 
-  <!-- Illustration -->
-  <div class="illustration-container" #illustration>
-    <img src="header01.svg" alt="Illustration" class="illustration">
-  </div>
+
 </div>

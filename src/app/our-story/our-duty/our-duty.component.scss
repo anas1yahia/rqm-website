@@ -11,7 +11,7 @@
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  direction: rtl; // Arabic Layout
+  // direction: rtl; // REMOVED: Allow inheriting direction
   font-family: 'IBM Plex Sans', 'Noto Sans Arabic', sans-serif;
   color: white;
 }
@@ -30,11 +30,11 @@
 .header-group {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; // Right in RTL
+  align-items: flex-start; // Start alignment (Right in RTL, Left in LTR)
   width: 100%;
   gap: 16px;
-  text-align: right;
-  padding-inline-start: 144px; // Match Figma padding px-[144px] roughly for alignment
+  text-align: start; // Logical align
+  padding-inline-start: 144px; // Logical padding start
 }
 
 .main-title {
@@ -69,10 +69,6 @@
   background: rgba(255, 255, 255, 0.08);
   height: 383px;
   overflow: hidden;
-  // No border radius specified in main container? 
-  // Figma group has overflow-clip but separate backgrounds.
-  // Let's add slight radius if it looks better, or square as per 'min-w-px'.
-  // Figma screenshot shows square-ish columns.
   
   display: flex;
   flex-direction: column;
@@ -82,9 +78,6 @@
   box-sizing: border-box;
   transition: background 0.3s ease;
 
-  // Active or Different style for the 3rd card in Figma (Automation)? 
-  // It has a darker background in React code `bg-[rgba(116,124,145,0.3)]` vs `bg-[rgba(255,255,255,0.08)]`.
-  // Let's implement that difference if marked.
   &.active-card {
     background: rgba(116, 124, 145, 0.3);
   }
@@ -111,7 +104,7 @@
 
 .card-content {
   width: 100%;
-  text-align: right;
+  text-align: start; // Logical align (Right in RTL, Left in LTR)
   display: flex;
   flex-direction: column;
   gap: 16px;

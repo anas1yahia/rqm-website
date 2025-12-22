@@ -8,7 +8,7 @@
 .message-value-section {
   width: 100%;
   padding: 50px 0;
-  direction: rtl; // Arabic Layout
+  // direction: rtl; // REMOVED: Allow inheriting direction
   font-family: 'IBM Plex Sans', 'Noto Sans Arabic', sans-serif;
 }
 
@@ -27,16 +27,13 @@
   flex: 1;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(2, 7, 14, 0.1);
-  // border-radius? Figma screenshot shows sharp corners or very subtle.
-  // Code snippet says border-radius but didn't specify. Assuming slight or none based on look.
-  // The 'Group' in Figma has overflow-clip.
   overflow: hidden;
   min-height: 380px;
   
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; // Text at bottom
-  align-items: flex-start; // RTL align right
+  justify-content: flex-end; 
+  align-items: flex-start; // Start alignment (Right in RTL, Left in LTR)
   padding: 27px;
 }
 
@@ -45,9 +42,9 @@
   top: 0;
   left: 0; 
   width: 100%;
-  height: 80%; // Reduced height to avoid text overlap
+  height: 80%; 
   overflow: hidden;
-  opacity: 0.3; // Faded background effect
+  opacity: 0.3; 
   pointer-events: none;
   z-index: 0;
   
@@ -55,9 +52,6 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
-    // Align illustration to top or center?
-    // Figma 'vision' icon has bottom-[30%].
-    // Let's center it roughly.
     object-position: center top;
   }
 }
@@ -66,7 +60,7 @@
   position: relative;
   z-index: 1;
   width: 100%;
-  text-align: right;
+  text-align: start; // Logical align
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -84,25 +78,57 @@
 .description {
   margin: 0;
   font-size: 28px;
-  font-weight: 300; // Light
+  font-weight: 300; 
   color: white;
   opacity: 0.9;
   line-height: 48px;
 }
 
-// Specific adjustments for Message card image to match Figma crop/position if needed
+// Specific adjustments for Message card image
 .message-card .illustration-wrapper img {
-  // Figma shows it on the left side (visually)
-  // Since RTL, left is 'end'.
-  // But visually in screenshot it's on the Left.
-  object-position: left top;
-  transform: scale(0.8) translateX(-5%); // Further reduced scale
+  // In RTL (Arabic), Message card is on Left. Image aligned Left (End).
+  // In LTR (English), Message card is on Right. Image aligned Right (End).
+  // So we want alignment to 'inline-end'.
+  // Unfortunately object-position doesn't support logical keywords fully across browsers yet without polyfills sometimes,
+  // but let's assume we want it to flip. 
+  // Or we can use percentage: 100% is Right (End in LTR, Start in RTL? No 100% x is always Right).
+  // RTL: Start=Right(100%), End=Left(0%).
+  // LTR: Start=Left(0%), End=Right(100%).
+  // Message Card (Visual): Text Right, Image Left (in Arabic). So Image at End (Left).
+  // Vision Card (Visual): Text Right, Image Right (in Arabic). So Image at Start (Right).
+  
+  // So:
+  // Message Card: Image at Inline-End.
+  // Vision Card: Image at Inline-Start.
+  
+  // To achieve this via object-position which is physical:
+  // We can use [dir="rtl"] selector or just center it if that's acceptable.
+  // Or stick to physical if we accept it won't flip perfectly, but the user asked to fix LTR layout.
+  // Let's use physical overrides based on direction or standard mirror.
+  
+  // Default (LTR):
+  // Message Card (Right side of grid): Image at End (Right).
+  object-position: right top; 
+  transform: scale(0.8) translateX(5%); 
+}
+
+// RTL Override
+:host-context([dir="rtl"]) .message-card .illustration-wrapper img {
+  object-position: left top; 
+  transform: scale(0.8) translateX(-5%);
 }
 
 .vision-card .illustration-wrapper img {
-  // Figma shows it on the right side (visually)
-  object-position: right top;
-  transform: scale(0.8) translateX(5%); // Further reduced scale
+  // Default (LTR):
+  // Vision Card (Left side of grid): Image at Start (Left).
+  object-position: left top;
+  transform: scale(0.8) translateX(-5%);
+}
+
+// RTL Override
+:host-context([dir="rtl"]) .vision-card .illustration-wrapper img {
+  object-position: right top; 
+  transform: scale(0.8) translateX(5%);
 }
 
 // Responsive

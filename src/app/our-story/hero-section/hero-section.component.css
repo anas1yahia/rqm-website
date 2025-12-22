@@ -58,7 +58,6 @@
   justify-content: center;
   align-items: center;
   min-height: 500px;
-  direction: ltr;
   font-family: "IBM Plex Sans", "Noto Sans Arabic", sans-serif;
   gap: 26px;
 }
@@ -73,16 +72,15 @@
   -webkit-backdrop-filter: blur(2.687px);
   overflow: hidden;
   z-index: 10;
-  direction: rtl;
   border: 0.8px solid rgba(255, 255, 255, 0.2);
 }
 
 .blur-effect {
   position: absolute;
   top: 9%;
-  right: 25.97%;
   bottom: 85.6%;
-  left: 70.44%;
+  inset-inline-end: 25.97%;
+  inset-inline-start: 70.44%;
   filter: blur(13.435px);
   background: rgba(255, 255, 255, 0.1);
   z-index: 1;
@@ -97,24 +95,31 @@
 
 .bottom-left {
   top: 97.3%;
-  right: 98.18%;
   bottom: 0;
-  left: 0.03%;
+  inset-inline-end: 0.03%;
+  inset-inline-start: 98.18%;
   border-width: 0 0 0.537px 0.537px;
+  border-block-end-width: 0.537px;
+  border-inline-end-width: 0.537px;
+  border-block-start-width: 0;
+  border-inline-start-width: 0;
 }
 
 .top-right {
   top: 0;
-  right: -0.03%;
   bottom: 97.3%;
-  left: 98.24%;
-  border-width: 0.537px 0.537px 0 0;
+  inset-inline-start: -0.03%;
+  inset-inline-end: 98.24%;
+  border-block-start-width: 0.537px;
+  border-inline-start-width: 0.537px;
+  border-block-end-width: 0;
+  border-inline-end-width: 0;
 }
 
 .top-label {
   position: absolute;
   top: 70.69px;
-  right: 664.79px;
+  inset-inline-end: 85.21px;
   transform: translateY(-50%);
 }
 .top-label p {
@@ -130,9 +135,7 @@
 .deco-image-left {
   position: absolute;
   top: calc(50% - 177.08px);
-  right: 718.62px;
-  width: 9.674px;
-  height: 3.225px;
+  inset-inline-end: 32px;
   transform: translateY(-50%);
 }
 .deco-image-left img {
@@ -144,9 +147,9 @@
 .main-title {
   position: absolute;
   top: 176.35px;
-  right: 61.26px;
+  inset-inline-start: 61.26px;
   transform: translateY(-50%);
-  text-align: right;
+  text-align: start;
   color: white;
 }
 .main-title p {
@@ -167,7 +170,7 @@
 .contact-group {
   position: absolute;
   top: 309.47px;
-  left: 523.21px;
+  inset-inline-start: 61px;
   width: 166px;
   height: 60px;
 }
@@ -175,7 +178,7 @@
 .binary-numbers {
   position: absolute;
   top: 13px;
-  left: 0;
+  inset-inline-end: 9px;
   width: 20px;
   display: flex;
   justify-content: space-between;
@@ -195,9 +198,13 @@
 .btn-wrapper {
   position: absolute;
   top: calc(50% - 0.16px);
-  left: calc(50% + 5.44px);
+  left: 50%;
   transform: translate(-50%, -50%);
   width: 154.88px;
+}
+.btn-wrapper app-button {
+  display: block;
+  width: 100%;
 }
 
 :host ::ng-deep .contact-custom-btn {
@@ -205,8 +212,11 @@
   padding: 17.97px 37.44px 18.72px 37.44px;
   background: transparent;
   border: 3px solid #3a405e;
-  border-left: 0;
-  border-radius: 0 99px 99px 16px;
+  border-start-start-radius: 99px;
+  border-end-start-radius: 99px;
+  border-end-end-radius: 16px;
+  border-start-end-radius: 0;
+  border-inline-end-width: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -228,7 +238,7 @@
 .vector-deco-right {
   position: absolute;
   top: 470.61px;
-  left: 720.11px;
+  inset-inline-start: 30px;
   width: 8.599px;
   height: 5.374px;
 }
@@ -241,7 +251,7 @@
 .rqm-ai-label {
   position: absolute;
   top: 472.61px;
-  right: 34.57px;
+  inset-inline-start: 34.57px;
   transform: translateY(-50%);
 }
 .rqm-ai-label p {
@@ -256,8 +266,8 @@
 .future-vision {
   position: absolute;
   bottom: 21.5px;
-  left: 21.7px;
-  text-align: right;
+  inset-inline-end: 21.7px;
+  text-align: end;
 }
 .future-vision p {
   margin: 0;

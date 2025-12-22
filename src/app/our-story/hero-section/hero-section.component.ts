@@ -1,12 +1,13 @@
 import { Component, ElementRef, ViewChild, HostListener, Inject, PLATFORM_ID, AfterViewInit } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 import { ButtonComponent } from '../../global/button/button.component';
 import { TextDecodeDirective } from '../../directives/text-decode';
 
 @Component({
   selector: 'app-hero-section',
   standalone: true,
-  imports: [CommonModule, ButtonComponent, TextDecodeDirective],
+  imports: [CommonModule, TranslateModule, ButtonComponent, TextDecodeDirective],
   templateUrl: './hero-section.component.html',
   styleUrls: ['./hero-section.component.scss']
 })

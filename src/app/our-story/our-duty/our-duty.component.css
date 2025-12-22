@@ -10,7 +10,6 @@
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  direction: rtl;
   font-family: "IBM Plex Sans", "Noto Sans Arabic", sans-serif;
   color: white;
 }
@@ -29,7 +28,7 @@
   align-items: flex-start;
   width: 100%;
   gap: 16px;
-  text-align: right;
+  text-align: start;
   padding-inline-start: 144px;
 }
 
@@ -93,7 +92,7 @@
 
 .card-content {
   width: 100%;
-  text-align: right;
+  text-align: start;
   display: flex;
   flex-direction: column;
   gap: 16px;
