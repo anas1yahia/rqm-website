@@ -11,7 +11,7 @@
   padding: 100px 0;
   // direction: rtl; // REMOVED: Allow inheriting direction
   font-family: 'IBM Plex Sans', 'Noto Sans Arabic', sans-serif;
-  color: white;
+  color: var(--text-color);
 }
 
 .container {
@@ -38,7 +38,7 @@
   margin: 0;
   font-size: 38px;
   font-weight: 700;
-  color: white;
+  color: var(--text-color);
 }
 
 .subtitle {
@@ -60,8 +60,8 @@
   min-height: 254px;
   border-radius: 0; 
 
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(2, 7, 14, 0.05);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
 
   padding: 33px;
   box-sizing: border-box;
@@ -77,16 +77,12 @@
   position: absolute;
   bottom: 0;
   top: 0;
-  // Position at the END (Left in RTL, Right in LTR)
-  // Wait, Figma visual (Arabic): Text Right, Image Left.
-  // Left is END in RTL.
-  // So we want Image at Inline-End.
   inset-inline-end: 0; 
   
   height: 100%;
   width: 400px; 
   overflow: hidden;
-  opacity: 0.3;
+  opacity: 0.3; // Default for dark mode
   pointer-events: none;
   z-index: -1;
 
@@ -101,26 +97,25 @@
       max-width: none;
       height: 100%;
       transform: translateX(-20%) scale(0.9);
+      transition: filter 0.3s ease;
       
-      // In LTR, if Image is on Right, translateX(-20%) moves it Left (towards center).
-      // In RTL, Image is on Left. translateX(-20%) moves it Left (away from center/out of box?).
-      // Let's use logical transform if needed or just center it.
-      // Or check if transform needs flipping.
-      // Usually translateX is physical.
-      // If we want to "cut off" the outer edge:
-      // RTL (Image Left): TranslateX should move it Left (negative).
-      // LTR (Image Right): TranslateX should move it Right (positive)?
-      // For now keeping as is, but mirror might be needed.
-      // Let's rely on standard flow.
+      // Theme aware filter if needed
+      filter: var(--illustration-filter);
     }
   }
 }
 
+// Light theme adjustment for deco opacity
+:host-context([data-theme="light"]) .deco-image-container {
+  opacity: 0.6; // Slightly more visible in light mode if needed, or keep 0.3
+  // If the image is white/light, in light mode (light bg) it might disappear.
+  // The filter above in styles.scss inverts illustrations for light mode.
+  // So it should become darkish.
+}
+
 .text-content {
   flex: 1;
-  // Padding to avoid overlap with image which is at END.
-  // So we need padding-inline-end.
-  padding-inline-end: 200px; // Adjust based on image width/position
+  padding-inline-end: 200px; 
   padding-inline-start: 0;
 
   display: flex;
@@ -132,7 +127,7 @@
     font-size: 20px;
     font-weight: 400; 
     line-height: 40px; 
-    color: white;
+    color: var(--text-color);
     
     // Scroll Reveal Animation
     &.scroll-reveal-text {

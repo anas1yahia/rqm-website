@@ -9,7 +9,7 @@
   width: 100%;
   padding: 100px 0;
   font-family: "IBM Plex Sans", "Noto Sans Arabic", sans-serif;
-  color: white;
+  color: var(--text-color);
 }
 
 .container {
@@ -33,7 +33,7 @@
   margin: 0;
   font-size: 38px;
   font-weight: 700;
-  color: white;
+  color: var(--text-color);
 }
 
 .subtitle {
@@ -51,8 +51,8 @@
   width: 100%;
   min-height: 254px;
   border-radius: 0;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(2, 7, 14, 0.05);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
   padding: 33px;
   box-sizing: border-box;
   display: flex;
@@ -84,6 +84,12 @@
   max-width: none;
   height: 100%;
   transform: translateX(-20%) scale(0.9);
+  transition: filter 0.3s ease;
+  filter: var(--illustration-filter);
+}
+
+:host-context([data-theme=light]) .deco-image-container {
+  opacity: 0.6;
 }
 
 .text-content {
@@ -99,7 +105,7 @@
   font-size: 20px;
   font-weight: 400;
   line-height: 40px;
-  color: white;
+  color: var(--text-color);
 }
 .text-content p.scroll-reveal-text {
   opacity: 0.1;
