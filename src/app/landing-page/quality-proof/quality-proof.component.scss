@@ -10,7 +10,7 @@
   flex-direction: row-reverse;
   justify-content: flex-start;
   align-items: center;
-  gap: 104px;
+  gap: 4%;
   padding: 0 132px;
   width: 100%;
   box-sizing: border-box;
@@ -120,7 +120,7 @@
     object-fit: contain;
     filter: grayscale(100%);
     opacity: 0.8;
-    
+
     :host-context([data-theme="light"]) & {
       filter: grayscale(100%) invert(1) brightness(0.2); /* Make it dark for light theme if it was white */
     }
