@@ -85,7 +85,7 @@
   .header-section {
     flex-direction: column-reverse;
     gap: 20px;
-    align-items: flex-end;
+    align-items: flex-start;
   }
 
   .controls {
@@ -94,7 +94,7 @@
   }
 
   .text-content {
-    align-items: flex-end;
+    align-items: flex-start;
     text-align: start;
   }
 
@@ -124,6 +124,6 @@
 
   app-transformation-card {
     flex-basis: 100%; /* Stack on mobile */
-    min-height: 300px;
+    min-height: fit-content;
   }
 }
