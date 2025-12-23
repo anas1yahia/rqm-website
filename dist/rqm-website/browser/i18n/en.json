@@ -1,94 +1,136 @@
 {
   "HEADER": {
-    "CONTACT_US": "Contact Us",
-    "SERVICES": "Services",
-    "ABOUT": "About RQM",
     "HOME": "Home",
-    "LIGHT_MODE": "Light Mode",
-    "DARK_MODE": "Dark Mode"
+    "ABOUT": "About RQM",
+    "SERVICES": "Services",
+    "CONTACT_US": "Contact Us"
   },
   "HERO": {
     "BADGE": "The Beginning",
     "TITLE_1": "Artificial Intelligence",
     "TITLE_2": "Your Digital Business Partner",
-    "DESCRIPTION": "We enhance your business efficiency with sustainable AI-driven solutions to support the digital economy ecosystem.",
-    "CTA": "Step \"Zero\" starts from RQM"
+    "DESCRIPTION": "We enhance your business efficiency with sustainable solutions driven by Artificial Intelligence to support the digital economy ecosystem.",
+    "CTA": "Step 'Zero' Starts With RQM"
   },
-  "MAIN_LAYOUT": {
-    "BACKGROUND_ALT": "Background"
+  "LANDING": {
+    "SERVICES": {
+
+      "HEADING_1": "At RQM, We Aspire to Build",
+      "HEADING_2": "Services That Shape the Future",
+      "CYBERSECURITY_TITLE": "Cybersecurity Services",
+      "CYBERSECURITY_DESC": "We offer advanced cybersecurity services including vulnerability testing and scanning, and security assessment for systems and applications using the latest technologies. We analyze risks and identify weaknesses, providing practical solutions to address them. We also provide integrated cyber infrastructure ensuring continuous protection and enhancing corporate readiness against digital threats.",
+      "SECURITY_LINK": "Enhance Your Business Security",
+      "AI_TITLE": "Building AI Solutions",
+      "AI_DESC": "We use integrated AI technologies to develop AI agents, machine learning applications, and business automation. We also work on improving natural language processing and big data analysis, providing integrated technical infrastructure to ensure solution sustainability and success.",
+      "SERVICES_LINK": "Our Services",
+      "DIGITAL_SOLUTIONS_TITLE": "Building Advanced Digital Solutions",
+      "DIGITAL_SOLUTIONS_DESC": "We build integrated digital solutions with our clients, including custom software development, business applications, and integration tools. We work on building and studying user interfaces and experience to improve interaction with systems. We also provide integrated technical infrastructure to ensure solution sustainability and success.",
+      "ABOUT_LINK": "About Us"
+    },
+    "PROCESS": {
+      "HEADING": "Turning Your Project Into Reality",
+      "SUBHEADING": "Methodical steps supported by experience and skill to achieve your goals",
+      "BUILD_TITLE": "Build",
+      "BUILD_DESC": "We establish the project and build its initial business model.",
+      "STUDY_TITLE": "Study",
+      "STUDY_DESC": "We research, study, and test the feasibility of the work.",
+      "ANALYSIS_TITLE": "Analysis",
+      "ANALYSIS_DESC": "We analyze business requirements with agile methodologies."
+    },
+    "VALUES": {
+      "HEADING": "The Zero We Start From at RQM",
+      "ANALYSIS_CARD_TITLE": "Analysis",
+      "ANALYSIS_CARD_DESC": "We wrap our work in transparency and prioritize ethical standards.",
+      "PERFECTION_CARD_TITLE": "Perfection",
+      "PERFECTION_CARD_DESC": "We pay attention to work details to meet client needs.",
+      "COMMITMENT_CARD_TITLE": "Commitment",
+      "COMMITMENT_CARD_DESC": "We measure our steps carefully and pledge our responsibility to the client.",
+      "SUSTAINABILITY_CARD_TITLE": "Sustainability",
+      "SUSTAINABILITY_CARD_DESC": "We maintain the sustainability of business efficiency and growth.",
+      "VALUES_HEADING": "Our High Values",
+      "VALUES_SUBHEADING": "These values represent the cornerstone of all our work with partners.",
+      "VALUES_CTA": "Step 'Zero' Starts With RQM"
+    },
+    "PRODUCTS": {
+      "HEADING": "Our Products",
+      "QAID_TITLE": "Qayd Platform for Legal Business",
+      "QAID_SUBTITLE": "Your Smart Gateway to Digital Investment",
+      "QAID_DESC": "An integrated platform providing AI tools and solutions for institutions and companies in the financial and investment services sector.",
+      "QAID_FEATURE_1": "Advanced High-Performance Cloud",
+      "QAID_FEATURE_2": "Reliable Regulatory Compliance",
+      "QAID_FEATURE_3": "Flexible System Integration",
+      "QAID_FEATURE_4": "Unified Dashboard for All Cases",
+      "QAID_FEATURE_5": "Precise Details for Each Case and Record",
+      "QAID_FEATURE_6": "Automatic Scheduling of Judicial Sessions",
+      "QAID_CTA_MORE": "Discover More",
+      "QAID_CTA_TRY": "Try Now",
+      "QAID_LINK_OTHER": "Explore Our Other Solutions",
+      "QAID_LINK_MORE_SOLUTIONS": "Learn More About Our Solutions"
+    },
+    "PARTNERS": {
+      "HEADING": "Success Partners"
+    },
+    "QUALITY_PROOF": {
+        "TITLE": "Compliance Scope"
+    }
   },
-  "INFO_SECTION": {
-    "SUBTITLE": "At RQM, we aspire to build",
-    "TITLE": "Services that shape the future",
-    "CARD_CYBER_TITLE": "Cybersecurity Services",
-    "CARD_CYBER_DESC": "We offer advanced cybersecurity services including vulnerability testing and scanning, and security assessment for systems and applications using the latest technologies. We work on risk analysis and vulnerability identification, providing practical solutions to address them. We also provide integrated cyber infrastructure ensuring continuous protection and enhancing corporate readiness against digital threats.",
-    "CARD_CYBER_FOOTER": "Enhance your business security",
-    "CARD_AI_TITLE": "Building AI Solutions",
-    "CARD_AI_DESC": "We use integrated AI technologies to develop AI agents, machine learning applications, and business automation. We also work on improving natural language processing, big data analysis, and providing integrated technical infrastructure ensuring sustainability and success of solutions.",
-    "CARD_AI_FOOTER": "Our Services",
-    "CARD_DIGITAL_TITLE": "Building Advanced Digital Solutions",
-    "CARD_DIGITAL_DESC": "We build integrated digital solutions with our clients, including custom software development, business applications, and integration tools. We work on building and studying user interfaces and experience to improve interaction with systems. We also provide integrated technical infrastructure ensuring sustainability and success of solutions.",
-    "CARD_DIGITAL_FOOTER": "Know Us"
-  },
-  "TRANSFORMATION": {
-    "TITLE": "Transforming your project into reality",
-    "SUBTITLE": "Systematic steps supported by experience and skill to achieve your goals",
-    "CARD_ANALYSIS_TITLE": "Analysis",
-    "CARD_ANALYSIS_DESC": "We analyze business requirements with agile methodologies.",
-    "CARD_STUDY_TITLE": "Study",
-    "CARD_STUDY_DESC": "We research, study, and test the feasibility of the work.",
-    "CARD_BUILD_TITLE": "Building",
-    "CARD_BUILD_DESC": "We establish the project and build its initial business model."
-  },
-  "PROCESS": {
-    "TITLE_LINE1": "The zero",
-    "TITLE_LINE2": "we start from at RQM",
-    "CARD_SUSTAINABILITY_TITLE": "Sustainability",
-    "CARD_SUSTAINABILITY_DESC": "We maintain the sustainability of business efficiency and growth.",
-    "CARD_ANALYSIS_TITLE": "Analysis",
-    "CARD_ANALYSIS_DESC": "We wrap our work in transparency and prioritize ethical standards.",
-    "CARD_PERFECTION_TITLE": "Perfection",
-    "CARD_PERFECTION_DESC": "We pay attention to work details to meet client needs.",
-    "CARD_COMMITMENT_TITLE": "Commitment",
-    "CARD_COMMITMENT_DESC": "We measure our steps precisely and pledge our responsibility towards the client."
-  },
-  "VALUES_CARD": {
-    "TITLE": "Our High Values",
-    "DESCRIPTION": "These values represent the cornerstone of all our work with partners",
-    "BUTTON_TEXT": "Step \"Zero\" starts from RQM"
-  },
-  "PRODUCT_CARD": {
-    "TRY_NOW": "Try Now",
-    "DISCOVER_MORE": "Discover More",
-    "LEARN_MORE_SOLUTIONS": "Learn more about our solutions",
-    "LEARN_OTHER_SOLUTIONS": "Learn about our other solutions"
-  },
-  "PRODUCTS": {
-    "TITLE": "Our Products",
-    "CARD_QAYD_TITLE": "Qayd Platform for Legal Affairs",
-    "CARD_QAYD_DESCRIPTION": "Manage your business with innovative technologies to enhance the efficiency of legal and administrative work in one platform, saving time, reducing costs, and boosting client confidence.",
-    "CARD_QAYD_FEATURE_1": "Unified dashboard for all cases",
-    "CARD_QAYD_FEATURE_2": "Accurate details for each case and its records.",
-    "CARD_QAYD_FEATURE_3": "Automatic organization of court session dates",
-    "CARD_SMART_GATEWAY_TITLE": "Your Smart Gateway for Digital Investment",
-    "CARD_SMART_GATEWAY_DESCRIPTION": "An integrated platform that provides AI tools and solutions for institutions and companies in the financial and investment services sector.",
-    "CARD_SMART_GATEWAY_FEATURE_1": "Advanced high-performance cloud",
-    "CARD_SMART_GATEWAY_FEATURE_2": "Reliable regulatory compliance",
-    "CARD_SMART_GATEWAY_FEATURE_3": "Flexible integration with systems",
-    "CARD_MORE_SOLUTIONS_PILL": "Learn about our other solutions"
-  },
-  "QUALITY_PROOF": {
-    "TITLE": "Compliance Scope",
-    "ISO_LOGO_ALT": "ISO Logo",
-    "SDAIA_LOGO_ALT": "SDAIA Logo"
-  },
-  "OUR_PARTNERS": {
-    "TITLE": "Success Partners"
+  "OUR_STORY": {
+    "HERO": {
+      "LABEL": "About RQM",
+      "TITLE_1": "From Zero to One",
+      "TITLE_2": "Meet RQM",
+      "CTA": "Contact Us",
+      "RQM_AI": "RQM Ai",
+      "FUTURE_VISION_1": "Future Vision",
+      "FUTURE_VISION_2": "Driven by Artificial Intelligence",
+      "FUTURE_VISION_3": "In Arabic"
+    },
+    "ABOUT": {
+      "TITLE": "RQM Story",
+      "SUBTITLE": "How We Started?",
+      "DESC_1": "RQM launched as a specialized technology company to support government entities and the business sector in building a reliable digital ecosystem based on Artificial Intelligence, Cybersecurity, and Digital Infrastructure.",
+      "DESC_2": "We focus on providing practical, applicable solutions that improve operational efficiency, reduce risks, and support business continuity in a data-driven environment.",
+      "DESC_3": "Through a national engineering team and operational expertise in government and private projects, we design and implement digital business solutions with clearly measurable impact, building long-term partnerships that make RQM a trusted partner in the digital future journey."
+    },
+    "MESSAGE_VALUE": {
+      "VISION_TITLE": "The Vision",
+      "VISION_DESC": "To lead a smarter and safer digital future through technologies and infrastructure that create an effective impact on business efficiency and sustainability.",
+      "MESSAGE_TITLE": "The Mission",
+      "MESSAGE_DESC": "We provide advanced digital solutions that enable businesses to raise operational efficiency, enhance security, and support decision-making with high reliability."
+    },
+    "DUTY": {
+      "TITLE": "Our Mission",
+      "SUBTITLE": "We keep these goals in mind to achieve our vision",
+      "CARD_1_TITLE": "Digital Empowerment for Businesses",
+      "CARD_1_DESC": "Designing and implementing digital solutions that serve a real need and achieve a clear return on investment.",
+      "CARD_2_TITLE": "Measurable Operational Efficiency",
+      "CARD_2_DESC": "Using automation and artificial intelligence to improve workflows, reduce errors, and cut costs.",
+      "CARD_3_TITLE": "Reliable Digital Infrastructure",
+      "CARD_3_DESC": "Local data centers and cloud solutions that support business continuity and provide high availability.",
+      "CARD_4_TITLE": "Aligning Global Trends with Local Market",
+      "CARD_4_DESC": "Following the latest global technologies and applying what suits the regulatory and economic environment in the Kingdom and the region."
+    },
+    "PARTNER": {
+      "TITLE": "Your Sustainable Success Partner",
+      "SUBTITLE": "Competitive advantages that enhance your business efficiency",
+      "CARD_1_TITLE": "Deep Experience in Modern Technologies",
+      "CARD_1_DESC": "A national team with advanced expertise in Artificial Intelligence, Cybersecurity, Cloud Systems, and Digital Transformation—supporting you with real operational knowledge, not just theoretical consulting.",
+      "CARD_2_TITLE": "Integrated and Reliable Tech Infrastructure",
+      "CARD_2_DESC": "Integrated solutions based on the latest standards of digital infrastructure, encryption, and data governance, ensuring the stability of your services and business continuity.",
+      "CARD_3_TITLE": "Hosting Compatible with National Requirements",
+      "CARD_3_DESC": "All systems and services are hostable within the Kingdom in compliance with local regulations, with the ability to deploy on cloud or local environments as needed.",
+      "CARD_4_TITLE": "High Operational Flexibility",
+      "CARD_4_DESC": "We adopt agile methodologies that enable us to adapt quickly to your needs and market changes, ensuring continuous improvement at every stage of work.",
+      "CARD_5_TITLE": "Project Managers and Specialized Teams",
+      "CARD_5_DESC": "Precise operational management led by specialized project and account managers to ensure projects are executed with high efficiency and delivered according to the highest standards.",
+      "CARD_6_TITLE": "Professional Technical Support and Continuous Service",
+      "CARD_6_DESC": "We provide professional support channels and continuous operational monitoring to ensure your solutions are ready and your team and end client are satisfied."
+    }
   },
   "FOOTER": {
     "FOLLOW_US": "Follow Us",
     "OUR_LOCATION": "Our Location",
-    "LOCATION_TEXT": "Riyadh, As Sahafah 13315",
+    "LOCATION_TEXT": "Riyadh, Kingdom of Saudi Arabia",
     "USEFUL_LINKS": "Useful Links",
     "PRIVACY_POLICY": "Privacy Policy",
     "CONTACT_US": "Contact Us",
@@ -96,7 +138,7 @@
     "HOME": "Home",
     "WHO_WE_ARE": "Who We Are",
     "SERVICES": "Services",
-    "SLOGAN": "Your gateway to the digital future",
-    "COPYRIGHT": "All rights reserved to RQM © 2025"
+    "SLOGAN": "Your Trusted Digital Partner",
+    "COPYRIGHT": "All rights reserved RQM © 2024"
   }
 }
