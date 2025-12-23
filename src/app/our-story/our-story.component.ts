@@ -7,11 +7,22 @@ import { AboutRqmComponent } from './about-rqm/about-rqm.component';
 import { OurMessageValueComponent } from './our-message-value/our-message-value.component';
 import { YourSuccessPartnerComponent } from './your-success-partner/your-success-partner.component';
 import { OurDutyComponent } from './our-duty/our-duty.component';
+import { ScrollFadeDirective } from '../directives/scroll-fade';
 
 @Component({
   selector: 'app-our-story',
   standalone: true,
-  imports: [CommonModule, TranslateModule, FooterComponent, MainLayoutHeadComponent, AboutRqmComponent, OurMessageValueComponent, YourSuccessPartnerComponent, OurDutyComponent],
+  imports: [
+    CommonModule, 
+    TranslateModule, 
+    FooterComponent, 
+    MainLayoutHeadComponent, 
+    AboutRqmComponent, 
+    OurMessageValueComponent, 
+    YourSuccessPartnerComponent, 
+    OurDutyComponent,
+    ScrollFadeDirective
+  ],
   templateUrl: './our-story.component.html',
   styleUrls: ['./our-story.component.scss']
 })
