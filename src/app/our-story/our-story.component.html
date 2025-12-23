@@ -1,10 +1,33 @@
 <app-main-layout-head></app-main-layout-head>
 
 <main class="our-story-content">
-  <app-about-rqm appScrollFade class="fade-in-section"></app-about-rqm>
-  <app-our-message-value appScrollFade class="fade-in-section"></app-our-message-value>
-  <app-your-success-partner appScrollFade class="fade-in-section"></app-your-success-partner>
-  <app-our-duty appScrollFade class="fade-in-section"></app-our-duty>
+  @defer (on viewport) {
+    <app-about-rqm appScrollFade class="fade-in-section"></app-about-rqm>
+  } @placeholder {
+    <div style="min-height: 500px"></div>
+  }
+
+  @defer (on viewport) {
+    <app-our-message-value appScrollFade class="fade-in-section"></app-our-message-value>
+  } @placeholder {
+    <div style="min-height: 400px"></div>
+  }
+
+  @defer (on viewport) {
+    <app-your-success-partner appScrollFade class="fade-in-section"></app-your-success-partner>
+  } @placeholder {
+    <div style="min-height: 600px"></div>
+  }
+
+  @defer (on viewport) {
+    <app-our-duty appScrollFade class="fade-in-section"></app-our-duty>
+  } @placeholder {
+    <div style="min-height: 500px"></div>
+  }
 </main>
 
-<app-footer appScrollFade class="fade-in-section"></app-footer>
+@defer (on viewport) {
+  <app-footer appScrollFade class="fade-in-section"></app-footer>
+} @placeholder {
+  <div style="min-height: 400px"></div>
+}
