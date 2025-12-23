@@ -1,0 +1,130 @@
+:host {
+  display: block;
+  width: 100%;
+  height: 100vh;
+}
+
+.not-found-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.background-elements {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  
+  .gradient-bg {
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(54, 201, 203, 0.1) 0%, rgba(10, 12, 26, 0) 70%);
+    filter: blur(100px);
+  }
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  text-align: center;
+  padding: 20px;
+}
+
+.illustration-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  
+  .glow-effect {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    background: radial-gradient(circle, rgba(54, 201, 203, 0.2) 0%, transparent 70%);
+    filter: blur(40px);
+    z-index: -1;
+  }
+  
+  .illustration {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    // Add floating animation
+    animation: float 6s ease-in-out infinite;
+  }
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.error-code {
+  font-size: 120px;
+  font-weight: 700;
+  line-height: 1;
+  margin: 0;
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 185%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0.1;
+  position: absolute;
+  top: -60px;
+  z-index: -1;
+}
+
+.error-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-color);
+}
+
+.error-desc {
+  font-size: 18px;
+  color: var(--text-muted);
+  max-width: 500px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.action-btn {
+  margin-top: 24px;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+// Light Theme overrides
+:host-context([data-theme="light"]) {
+  .error-code {
+    background: linear-gradient(180deg, #0A0C1A 0%, rgba(10, 12, 26, 0) 185%);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  
+  .illustration {
+    filter: invert(1) hue-rotate(180deg); // Or specific adjustment for 404 svg colors
+  }
+}

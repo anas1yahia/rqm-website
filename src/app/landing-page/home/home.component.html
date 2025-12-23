@@ -1,12 +1,47 @@
 <div class="home-container">
   <app-main-layout id="home"></app-main-layout>
-  <app-info-section id="about" appScrollFade class="fade-in-section"></app-info-section>
-  <app-transformation-project appScrollFade class="fade-in-section delay-100"></app-transformation-project>
-  <app-process-section appScrollFade class="fade-in-section"></app-process-section>
-  <app-our-products id="services" appScrollFade class="fade-in-section"></app-our-products>
-  <app-quality-proof appScrollFade class="fade-in-section"></app-quality-proof>
-  <app-our-partners appScrollFade class="fade-in-section"></app-our-partners>
-  <app-footer id="contact" appScrollFade class="fade-in-section"></app-footer>
+
+  @defer (on viewport) {
+    <app-info-section id="about" appScrollFade class="fade-in-section"></app-info-section>
+  } @placeholder {
+    <div style="min-height: 500px"></div>
+  }
+
+  @defer (on viewport) {
+    <app-transformation-project appScrollFade class="fade-in-section delay-100"></app-transformation-project>
+  } @placeholder {
+    <div style="min-height: 600px"></div>
+  }
+
+  @defer (on viewport) {
+    <app-process-section appScrollFade class="fade-in-section"></app-process-section>
+  } @placeholder {
+    <div style="min-height: 600px"></div>
+  }
+
+  @defer (on viewport) {
+    <app-our-products id="services" appScrollFade class="fade-in-section"></app-our-products>
+  } @placeholder {
+    <div style="min-height: 600px"></div>
+  }
+
+  @defer (on viewport) {
+    <app-quality-proof appScrollFade class="fade-in-section"></app-quality-proof>
+  } @placeholder {
+    <div style="min-height: 300px"></div>
+  }
+
+  @defer (on viewport) {
+    <app-our-partners appScrollFade class="fade-in-section"></app-our-partners>
+  } @placeholder {
+    <div style="min-height: 300px"></div>
+  }
+
+  @defer (on viewport) {
+    <app-footer id="contact" appScrollFade class="fade-in-section"></app-footer>
+  } @placeholder {
+    <div style="min-height: 400px"></div>
+  }
   <!-- Future content sections will go here -->
 
 </div>

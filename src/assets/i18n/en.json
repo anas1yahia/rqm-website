@@ -138,5 +138,10 @@
     "SERVICES": "Services",
     "SLOGAN": "Your Trusted Digital Partner",
     "COPYRIGHT": "All rights reserved RQM © 2024"
+  },
+  "NOT_FOUND": {
+    "TITLE": "Page Not Found",
+    "DESCRIPTION": "Sorry, the page you are looking for does not exist or has been moved.",
+    "BACK_HOME": "Back to Home"
   }
 }

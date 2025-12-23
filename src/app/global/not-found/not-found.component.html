@@ -1,0 +1,29 @@
+<div class="not-found-container">
+  <!-- Background Elements -->
+  <div class="background-elements">
+    <div class="gradient-bg"></div>
+    <!-- <img src="assets/grid-bg.png" alt="" class="grid-bg"> --> <!-- Optional if you have a grid bg -->
+  </div>
+
+  <div class="content-wrapper">
+    <!-- 404 Illustration -->
+    <div class="illustration-container">
+      <div class="glow-effect"></div>
+      <img src="404.svg" alt="404 Not Found" class="illustration">
+    </div>
+
+    <!-- Text Content -->
+    <div class="text-content">
+      <h1 class="error-code">404</h1>
+      <h2 class="error-title">{{ 'NOT_FOUND.TITLE' | translate }}</h2>
+      <p class="error-desc">{{ 'NOT_FOUND.DESCRIPTION' | translate }}</p>
+      
+      <!-- Action Button -->
+      <div class="action-btn">
+        <app-button variant="action" routerLink="/">
+          <span class="btn-text">{{ 'NOT_FOUND.BACK_HOME' | translate }}</span>
+        </app-button>
+      </div>
+    </div>
+  </div>
+</div>

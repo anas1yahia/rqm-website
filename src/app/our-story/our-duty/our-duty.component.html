@@ -11,7 +11,15 @@
     <div class="cards-grid">
       
       <!-- Card 1: Digital Empowerment -->
-      <div class="duty-card">
+      <div class="duty-card" #cardRef (mouseenter)="setHover(0)" (mouseleave)="setHover(null)">
+        <div class="matrix-grid">
+          <div *ngFor="let square of matrixSquares" class="matrix-square" 
+               [style.width.px]="squareSize" 
+               [style.height.px]="squareSize" 
+               [class.active]="hoveredCardIndex === 0" 
+               [style.animation-delay.ms]="square.delay">
+          </div>
+        </div>
         <div class="icon-wrapper">
           <img src="DigitalTransformIllustration.svg" alt="Digital Transformation">
         </div>
@@ -24,7 +32,15 @@
       </div>
 
       <!-- Card 2: Efficiency -->
-      <div class="duty-card active-card">
+      <div class="duty-card active-card" #cardRef (mouseenter)="setHover(1)" (mouseleave)="setHover(null)">
+        <div class="matrix-grid">
+          <div *ngFor="let square of matrixSquares" class="matrix-square" 
+               [style.width.px]="squareSize" 
+               [style.height.px]="squareSize" 
+               [class.active]="hoveredCardIndex === 1" 
+               [style.animation-delay.ms]="square.delay">
+          </div>
+        </div>
         <div class="icon-wrapper">
           <img src="AutomationIllustration.svg" alt="Automation">
         </div>
@@ -37,7 +53,15 @@
       </div>
 
       <!-- Card 3: Infrastructure -->
-      <div class="duty-card">
+      <div class="duty-card" #cardRef (mouseenter)="setHover(2)" (mouseleave)="setHover(null)">
+        <div class="matrix-grid">
+          <div *ngFor="let square of matrixSquares" class="matrix-square" 
+               [style.width.px]="squareSize" 
+               [style.height.px]="squareSize" 
+               [class.active]="hoveredCardIndex === 2" 
+               [style.animation-delay.ms]="square.delay">
+          </div>
+        </div>
         <div class="icon-wrapper">
           <img src="DataCenterIllustration.svg" alt="Data Center">
         </div>
@@ -50,7 +74,15 @@
       </div>
 
       <!-- Card 4: Global Alignment -->
-      <div class="duty-card">
+      <div class="duty-card" #cardRef (mouseenter)="setHover(3)" (mouseleave)="setHover(null)">
+        <div class="matrix-grid">
+          <div *ngFor="let square of matrixSquares" class="matrix-square" 
+               [style.width.px]="squareSize" 
+               [style.height.px]="squareSize" 
+               [class.active]="hoveredCardIndex === 3" 
+               [style.animation-delay.ms]="square.delay">
+          </div>
+        </div>
         <div class="icon-wrapper">
           <!-- Using AnalysisIllustration as placeholder for Global Network -->
           <img src="AnalysisIllustration.svg" alt="Global Alignment">

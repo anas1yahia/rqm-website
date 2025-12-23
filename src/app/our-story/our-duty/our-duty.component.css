@@ -69,6 +69,21 @@
   box-sizing: border-box;
   transition: background 0.3s ease;
 }
+.duty-card .matrix-grid {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 0;
+  pointer-events: none;
+}
+.duty-card .matrix-square {
+  background-color: rgba(182, 204, 248, 0.05);
+  opacity: 0;
+}
+.duty-card .matrix-square.active {
+  animation: appear 0.1s forwards;
+}
 .duty-card.active-card {
   background: rgba(116, 124, 145, 0.3);
 }
@@ -76,6 +91,7 @@
   background: #fafafa;
 }
 .duty-card:hover {
+  animation: glitch-shake 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   background: rgba(255, 255, 255, 0.15);
 }
 :host-context([data-theme=light]) .duty-card:hover {
@@ -88,6 +104,31 @@
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
+@keyframes appear {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes glitch-shake {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
 .icon-wrapper {
   width: 200px;
   height: 200px;
@@ -95,6 +136,7 @@
   align-items: center;
   justify-content: center;
   margin-top: 20px;
+  z-index: 1;
 }
 .icon-wrapper img {
   width: 100%;
