@@ -9,7 +9,7 @@
   max-width: 407px;
   height: auto;
   min-height: 464px;
-  border-radius: 0px;
+  border-radius: 0;
   background: var(--card-bg);
   overflow: hidden;
   display: flex;
@@ -213,7 +213,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start; /* RTL */
-  text-align: right;
+  text-align: start;
   flex: 1;
 }
 
