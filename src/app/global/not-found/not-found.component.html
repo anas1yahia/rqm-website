@@ -9,7 +9,11 @@
     <!-- 404 Illustration -->
     <div class="illustration-container">
       <div class="glow-effect"></div>
-      <img src="404.svg" alt="404 Not Found" class="illustration">
+      <div class="glitch-wrapper">
+        <img src="404.svg" alt="404 Not Found" class="illustration glitch-base">
+        <img src="404.svg" aria-hidden="true" class="illustration glitch-layer glitch-layer-1">
+        <img src="404.svg" aria-hidden="true" class="illustration glitch-layer glitch-layer-2">
+      </div>
     </div>
 
     <!-- Text Content -->
@@ -17,7 +21,7 @@
       <h1 class="error-code">404</h1>
       <h2 class="error-title">{{ 'NOT_FOUND.TITLE' | translate }}</h2>
       <p class="error-desc">{{ 'NOT_FOUND.DESCRIPTION' | translate }}</p>
-      
+
       <!-- Action Button -->
       <div class="action-btn">
         <app-button variant="action" routerLink="/">
