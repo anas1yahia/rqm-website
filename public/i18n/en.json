@@ -14,7 +14,9 @@
   },
   "LANDING": {
     "SERVICES": {
-      "HEADING": "At RQM, We Aspire to Build Services That Shape the Future",
+
+      "HEADING_1": "At RQM, We Aspire to Build",
+      "HEADING_2": "Services That Shape the Future",
       "CYBERSECURITY_TITLE": "Cybersecurity Services",
       "CYBERSECURITY_DESC": "We offer advanced cybersecurity services including vulnerability testing and scanning, and security assessment for systems and applications using the latest technologies. We analyze risks and identify weaknesses, providing practical solutions to address them. We also provide integrated cyber infrastructure ensuring continuous protection and enhancing corporate readiness against digital threats.",
       "SECURITY_LINK": "Enhance Your Business Security",
