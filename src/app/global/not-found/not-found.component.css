@@ -27,14 +27,15 @@
 }
 .background-layer .bg-main {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: -5%;
+  left: -5%;
+  width: 110%;
+  height: 110%;
   object-fit: cover;
   object-position: center;
   opacity: 1;
   z-index: 0;
+  transition: transform 0.1s ease-out;
 }
 .background-layer .bg-overlay {
   position: absolute;
@@ -850,6 +851,67 @@
     clip-path: polygon(0 0, 0 0, 0 0, 0 0);
     transform: translate(0, 0);
   }
+}
+/* --- Button Styling --- */
+::ng-deep .not-found-cta {
+  background: transparent !important;
+  border: 3px solid #7f7f7f !important;
+  border-radius: 0 99px 99px 16px !important;
+  padding: 0 36px !important;
+  height: 60px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  color: white !important;
+  transition: all 0.3s ease;
+  min-width: 275px;
+  position: relative;
+  overflow: hidden;
+  pointer-events: auto;
+}
+::ng-deep .not-found-cta:hover {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: #fff !important;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+:host-context([dir=rtl]) ::ng-deep .not-found-cta {
+  border-radius: 99px 0 16px 99px !important;
+}
+:host-context([dir=rtl]) .cta-content {
+  flex-direction: row-reverse;
+}
+
+.cta-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.cta-text {
+  font-family: "IBM Plex Sans Arabic", "Noto Sans Arabic", sans-serif;
+  font-size: 18.7px;
+  font-weight: 400;
+  color: white;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.binary-code {
+  display: flex;
+  gap: 12px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 13.4px;
+  font-weight: 700;
+  color: white;
+}
+.binary-code .col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.2;
 }
 
 /*# sourceMappingURL=not-found.component.css.map */
