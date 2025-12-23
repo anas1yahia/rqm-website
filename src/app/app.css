@@ -3,7 +3,7 @@
   position: fixed;
   inset: 0;
   background-color: #0A0C1A; /* Match body bg */
-  z-index: 999999; /* Highest possible */
+  z-index: 99990; /* High, but below header */
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.8s ease-in-out;
@@ -21,7 +21,7 @@
   left: 0;
   right: 0;
   width: 100%;
-  z-index: 9999;
+  z-index: 99999; /* Higher than overlay */
   pointer-events: none; /* Allow clicks through empty space */
   display: flex;
   justify-content: center;
