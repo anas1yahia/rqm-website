@@ -26,6 +26,20 @@
   background: rgba(10, 12, 26, 0.4);
 }
 
+:host-context([data-theme=light]) .section-border-container {
+  background: linear-gradient(180deg, rgba(76, 137, 213, 0.83) -16.72%, rgba(62, 124, 200, 0.83) 60.81%), url("/Section4.png") lightgray 50%/cover no-repeat;
+  border: 2px solid #0D99FF;
+  border-radius: 28px;
+}
+
+:host-context([data-theme=light]) .main-title, :host-context([data-theme=light]) .subtitle, :host-context([data-theme=light]) .card-title, :host-context([data-theme=light]) .card-desc {
+  color: white !important;
+}
+:host-context([data-theme=light]) .feature-card {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
 .header-group {
   display: flex;
   flex-direction: column;

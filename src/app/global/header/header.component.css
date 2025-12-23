@@ -58,9 +58,9 @@
 }
 
 /* Contact CTA logic handled by app-button variant="contact" */
-/* Contact Text Color on Hover */
-app-button:hover .contact-wrapper p {
-  color: #0A0C1A; /* Dark text on white */
+/* Default Hover (Dark Theme / Top of page) */
+.contact-cta:hover .contact-wrapper p {
+  color: #0A0C1A !important; /* Force Dark text on White hover */
   transition: color 0.3s;
 }
 
@@ -70,9 +70,56 @@ app-button:hover .contact-wrapper p {
   color: white;
   line-height: 22.46px;
   white-space: nowrap;
+  transition: color 0.3s;
 }
 
-/* Right Section */
+/* Light Theme Scrolled State Overrides */
+.header-container.scrolled-light {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+.header-container.scrolled-light .nav-link {
+  color: #0A0C1A;
+}
+.header-container.scrolled-light .nav-link:hover {
+  color: #36c9cb;
+}
+.header-container.scrolled-light {
+  /* Contact Button in Scrolled State */
+}
+.header-container.scrolled-light .contact-cta {
+  /* Target internal button to change hover fill color to Teal for better contrast against white header */
+}
+.header-container.scrolled-light .contact-cta ::ng-deep button.contact {
+  border-color: #62c4aa;
+  /* Override gradient to fill with Teal instead of White */
+  background-image: linear-gradient(to right, #62c4aa 50%, transparent 50%);
+}
+.header-container.scrolled-light .contact-cta ::ng-deep button.contact:hover {
+  border-color: #62c4aa;
+}
+.header-container.scrolled-light .contact-cta {
+  /* Text Color Normal */
+}
+.header-container.scrolled-light .contact-cta .contact-wrapper p {
+  color: #0A0C1A;
+}
+.header-container.scrolled-light .contact-cta {
+  /* Text Color Hover (White on Teal) */
+}
+.header-container.scrolled-light .contact-cta:hover .contact-wrapper p {
+  color: white !important;
+}
+.header-container.scrolled-light .toggle-container {
+  border-color: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.02);
+}
+.header-container.scrolled-light .divider-bg {
+  filter: invert(1);
+  opacity: 0.2;
+}
+
 .right-section {
   display: flex;
   gap: 32px;

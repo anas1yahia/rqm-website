@@ -63,10 +63,12 @@
 
 /* Contact CTA logic handled by app-button variant="contact" */
 
-/* Contact Text Color on Hover */
-app-button:hover .contact-wrapper p {
-  color: #0A0C1A; /* Dark text on white */
-  transition: color 0.3s;
+/* Default Hover (Dark Theme / Top of page) */
+.contact-cta {
+  &:hover .contact-wrapper p {
+    color: #0A0C1A !important; /* Force Dark text on White hover */
+    transition: color 0.3s;
+  }
 }
 
 .contact-wrapper p {
@@ -75,9 +77,57 @@ app-button:hover .contact-wrapper p {
   color: white;
   line-height: 22.46px;
   white-space: nowrap;
+  transition: color 0.3s;
 }
 
-/* Right Section */
+/* Light Theme Scrolled State Overrides */
+.header-container.scrolled-light {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+
+  .nav-link {
+    color: #0A0C1A;
+    
+    &:hover {
+      color: #36c9cb;
+    }
+  }
+
+  /* Contact Button in Scrolled State */
+  .contact-cta {
+    /* Target internal button to change hover fill color to Teal for better contrast against white header */
+    ::ng-deep button.contact {
+      border-color: #62c4aa;
+      /* Override gradient to fill with Teal instead of White */
+      background-image: linear-gradient(to right, #62c4aa 50%, transparent 50%);
+      
+      &:hover {
+        border-color: #62c4aa;
+      }
+    }
+
+    /* Text Color Normal */
+    .contact-wrapper p {
+      color: #0A0C1A;
+    }
+
+    /* Text Color Hover (White on Teal) */
+    &:hover .contact-wrapper p {
+      color: white !important;
+    }
+  }
+  
+  .toggle-container {
+    border-color: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.02);
+  }
+  
+  .divider-bg {
+    filter: invert(1);
+    opacity: 0.2;
+  }
+}
 .right-section {
   display: flex;
   gap: 32px;

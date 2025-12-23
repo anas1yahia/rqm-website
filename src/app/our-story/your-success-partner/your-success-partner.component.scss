@@ -25,7 +25,28 @@
   display: flex;
   flex-direction: column;
   gap: 66px;
-  background: rgba(10, 12, 26, 0.4);
+  background: rgba(10, 12, 26, 0.4); 
+}
+
+// Light Theme Background Override
+:host-context([data-theme="light"]) .section-border-container {
+  background: 
+    linear-gradient(180deg, rgba(76, 137, 213, 0.83) -16.72%, rgba(62, 124, 200, 0.83) 60.81%),
+    url('/Section4.png') lightgray 50% / cover no-repeat;
+  border: 2px solid #0D99FF;
+  border-radius: 28px;
+}
+
+// Ensure text stays white even in light theme due to dark background
+:host-context([data-theme="light"]) {
+  .main-title, .subtitle, .card-title, .card-desc {
+    color: white !important;
+  }
+  
+  .feature-card {
+    background: rgba(255, 255, 255, 0.15); // Slightly more opaque glass for better contrast on blue
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
 }
 
 // ---------------------------------------------------------

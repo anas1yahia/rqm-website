@@ -8,6 +8,7 @@
   width: 100%;
   padding: 50px 0;
   font-family: "IBM Plex Sans", "Noto Sans Arabic", sans-serif;
+  color: var(--text-color);
 }
 
 .cards-container {
@@ -23,8 +24,8 @@
 .card {
   position: relative;
   flex: 1;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(2, 7, 14, 0.1);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
   overflow: hidden;
   min-height: 380px;
   display: flex;
@@ -64,6 +65,7 @@
 }
 .card:hover {
   animation: glitch-shake 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  background: var(--glass-bg);
 }
 .card:hover::after {
   display: block;
@@ -140,6 +142,8 @@
   height: 100%;
   object-fit: contain;
   object-position: center top;
+  filter: var(--illustration-filter);
+  transition: filter 0.3s ease;
 }
 
 .content-wrapper {
@@ -156,7 +160,7 @@
   margin: 0;
   font-size: 32px;
   font-weight: 700;
-  color: white;
+  color: var(--text-color);
   text-transform: uppercase;
   line-height: 26px;
 }
@@ -165,7 +169,7 @@
   margin: 0;
   font-size: 28px;
   font-weight: 300;
-  color: white;
+  color: var(--text-color);
   opacity: 0.9;
   line-height: 48px;
 }
