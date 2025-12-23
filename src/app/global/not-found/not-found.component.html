@@ -23,13 +23,12 @@
     <!-- Global flash overlay -->
     <div class="lightning-flash"></div>
     
-    <!-- Bolt Group 1: Top Left -->
+    <!-- Bolt Group 1 -->
     <div class="bolt-container group-1">
       <svg class="lightning-bolt" viewBox="0 0 100 500" preserveAspectRatio="none">
         <path d="M40 0 L 60 0 L 45 150 L 70 140 L 20 350 L 45 340 L 10 500 L 35 320 L 15 330 L 55 120 L 30 130 Z" />
       </svg>
       <div class="impact-site"></div>
-      <!-- Welding Sparks / Molten Droplets -->
       <div class="sparks-container">
         <span class="shard s1"></span><span class="shard s2"></span><span class="shard s3"></span>
         <span class="shard s4"></span><span class="shard s5"></span><span class="shard s6"></span>
@@ -37,7 +36,7 @@
       </div>
     </div>
 
-    <!-- Bolt Group 2: Top Right -->
+    <!-- Bolt Group 2 -->
     <div class="bolt-container group-2">
       <svg class="lightning-bolt" viewBox="0 0 100 500" preserveAspectRatio="none">
         <path d="M45 0 L 65 0 L 75 120 L 35 140 L 85 300 L 55 320 L 95 500 L 65 300 L 95 280 L 45 120 L 85 100 Z" />
@@ -50,7 +49,7 @@
       </div>
     </div>
 
-    <!-- Bolt Group 3: Center -->
+    <!-- Bolt Group 3 -->
     <div class="bolt-container group-3">
       <svg class="lightning-bolt" viewBox="0 0 100 300" preserveAspectRatio="none">
         <path d="M50 0 L 70 0 L 40 80 L 80 70 L 30 200 L 60 190 L 20 300 L 45 170 L 15 180 L 55 60 L 25 70 Z" />
@@ -62,7 +61,7 @@
       </div>
     </div>
 
-    <!-- Bolt Group 4: Far Left -->
+    <!-- Bolt Group 4 -->
     <div class="bolt-container group-4">
       <svg class="lightning-bolt" viewBox="0 0 100 400" preserveAspectRatio="none">
         <path d="M55 0 L 45 100 L 65 90 L 30 250 L 50 240 L 20 400 L 40 260 L 60 270 L 35 110 Z" />
@@ -73,7 +72,7 @@
       </div>
     </div>
 
-    <!-- Bolt Group 5: Far Right -->
+    <!-- Bolt Group 5 -->
     <div class="bolt-container group-5">
       <svg class="lightning-bolt" viewBox="0 0 100 400" preserveAspectRatio="none">
         <path d="M45 0 L 55 120 L 35 110 L 60 280 L 40 270 L 70 400 L 50 290 L 30 300 L 55 130 Z" />
@@ -89,36 +88,78 @@
   <div class="tv-noise-overlay"></div>
 
   <div class="content-wrapper">
-    <!-- 404 Illustration with Glitch Animation -->
+    <!-- 404 Illustration -->
     <div class="illustration-container">
       <div class="glow-effect"></div>
+      
+      <!-- SVG Filter Definition for Realistic Shock -->
+      <svg style="position: absolute; width: 0; height: 0; overflow: hidden;">
+        <defs>
+          <filter id="shock-filter" x="-20%" y="-20%" width="140%" height="140%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.02 0.1" numOctaves="3" result="noise" seed="0">
+              <animate attributeName="seed" values="0;100" dur="0.1s" repeatCount="indefinite" />
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="10" xChannelSelector="R" yChannelSelector="G" result="distorted" />
+            <feMorphology operator="dilate" radius="2" in="distorted" result="thick" />
+            <feFlood flood-color="#00FFFF" result="color" />
+            <feComposite in="color" in2="thick" operator="in" result="glow" />
+            <feGaussianBlur in="glow" stdDeviation="4" result="softGlow" />
+            <feMerge>
+              <feMergeNode in="softGlow" />
+              <feMergeNode in="distorted" />
+            </feMerge>
+          </filter>
+        </defs>
+      </svg>
+
       <div class="glitch-wrapper">
-        <img src="404.svg" alt="404" class="illustration glitch-base">
+        <img src="404.svg" alt="404" class="illustration shock-target">
         <img src="404.svg" aria-hidden="true" class="illustration glitch-layer glitch-layer-1">
         <img src="404.svg" aria-hidden="true" class="illustration glitch-layer glitch-layer-2">
       </div>
+
+      <svg class="electric-overlay" viewBox="0 0 400 200" preserveAspectRatio="none">
+        <path class="arc-bolt a1" d="M20,100 L40,80 L60,110 L80,70 L100,120 L120,90" vector-effect="non-scaling-stroke" />
+        <path class="arc-bolt a2" d="M280,50 L300,80 L320,40 L340,90 L360,60" vector-effect="non-scaling-stroke" />
+        <path class="arc-bolt a3" d="M150,150 L170,130 L190,160 L210,140 L230,170" vector-effect="non-scaling-stroke" />
+      </svg>
     </div>
 
     <!-- Text Content -->
     <div class="text-content">
       <h1 class="error-title">{{ 'NOT_FOUND.TITLE' | translate }}</h1>
 
-      <!-- Action Button -->
-      <app-button variant="hero" routerLink="/" className="not-found-cta">
-        <div class="cta-content">
-          <div class="binary-code">
-            <div class="col">
-              <span>0</span>
-              <span>1</span>
+      <!-- Action Button Area with Striker Bolt -->
+      <div class="button-container">
+        <!-- Striker Bolt -->
+        <svg class="striker-bolt" viewBox="0 0 100 300" preserveAspectRatio="none">
+          <path d="M50 0 L 65 0 L 40 80 L 70 70 L 20 200 L 55 180 L 40 280 L 60 270 L 50 300 Z" />
+        </svg>
+        
+        <app-button variant="hero" routerLink="/" className="not-found-cta">
+          <div class="cta-content">
+            <div class="binary-code">
+              <div class="col">
+                <span>0</span>
+                <span>1</span>
+              </div>
+              <div class="col">
+                <span>1</span>
+                <span>0</span>
+              </div>
             </div>
-            <div class="col">
-              <span>1</span>
-              <span>0</span>
-            </div>
+            <span class="cta-text">{{ 'NOT_FOUND.BACK_HOME' | translate }}</span>
           </div>
-          <span class="cta-text">{{ 'NOT_FOUND.BACK_HOME' | translate }}</span>
-        </div>
-      </app-button>
+          
+          <!-- Shards for Button Break Effect -->
+          <div class="button-shards">
+            <span class="shard p1"></span><span class="shard p2"></span><span class="shard p3"></span>
+            <span class="shard p4"></span><span class="shard p5"></span><span class="shard p6"></span>
+            <span class="shard p7"></span><span class="shard p8"></span><span class="shard p9"></span>
+            <span class="shard p10"></span><span class="shard p11"></span><span class="shard p12"></span>
+          </div>
+        </app-button>
+      </div>
     </div>
   </div>
 </div>
