@@ -111,10 +111,11 @@
 .lightning-flash {
   position: absolute;
   inset: 0;
-  background-color: rgba(255, 255, 255, 0.3); // Increased intensity
+  background-color: rgba(255, 255, 255, 0.3);
   opacity: 0;
   mix-blend-mode: overlay;
-  animation: global-flash 5s infinite; // Faster loop
+  animation: global-flash 5s infinite;
+  pointer-events: none;
 }
 
 .bolt-container {
@@ -124,14 +125,48 @@
   flex-direction: column;
   align-items: center;
   opacity: 0;
+  pointer-events: auto;
+  
+  // HOVER INTERACTION:
+  // 1. Bolt becomes visible immediately (caught).
+  // 2. Bolt vibrates violently ("Shock").
+  // 3. Bolt shatters (Disappears).
+  // 4. Shards fall.
+  // 5. Bolt reforms nearby ("Reborn").
+  &:hover {
+    opacity: 1 !important;
+    animation: none !important; // Override global visibility loop
+    z-index: 50;
+
+    .lightning-bolt {
+      opacity: 1; 
+      clip-path: inset(0 0 0 0) !important;
+      animation: shock-break-reborn 1.2s infinite !important;
+      // High voltage look
+      stroke: #fff;
+      stroke-width: 2px;
+      filter: drop-shadow(0 0 10px #fff) drop-shadow(0 0 20px #00FFFF);
+    }
+
+    .impact-site {
+      animation: impact-shock-reborn 1.2s infinite !important;
+    }
+
+    .sparks-container {
+      opacity: 1;
+      .shard {
+        animation: debris-fall 1.2s infinite !important;
+      }
+    }
+  }
 }
 
 .lightning-bolt {
   display: block;
   fill: #FFFFFF;
-  // Intense glow
-  filter: drop-shadow(0 0 20px rgba(88, 194, 195, 1)) drop-shadow(0 0 50px rgba(88, 194, 195, 0.8));
+  filter: drop-shadow(0 0 20px rgba(88, 194, 195, 1)) drop-shadow(0 0 50px rgba(88, 194, 195, 0.8)); 
   clip-path: inset(0 0 100% 0);
+  transition: opacity 0.1s;
 }
 
 .impact-site {
@@ -146,106 +181,179 @@
   transform-origin: center bottom;
 }
 
-// Group 1: Top Left (Heavy Hitter)
+.sparks-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 6;
+}
+
+.shard {
+  position: absolute;
+  background-color: #FFF;
+  width: 3px;
+  height: 8px;
+  border-radius: 2px;
+  box-shadow: 0 0 5px #00FFFF, 0 0 10px #FFF; // Electric sparks
+  opacity: 0;
+  
+  &.s1 { top: 10%; left: 45%; animation-delay: 0.05s; }
+  &.s2 { top: 30%; left: 55%; width: 4px; height: 6px; animation-delay: 0.1s; }
+  &.s3 { top: 50%; left: 40%; animation-delay: 0.15s; }
+  &.s4 { top: 20%; left: 50%; width: 2px; height: 5px; animation-delay: 0.05s; }
+  &.s5 { top: 60%; left: 60%; animation-delay: 0.2s; }
+  &.s6 { top: 40%; left: 35%; width: 3px; height: 7px; animation-delay: 0.1s; }
+  &.s7 { top: 80%; left: 50%; width: 5px; height: 5px; animation-delay: 0.25s; }
+  &.s8 { top: 15%; left: 60%; width: 2px; height: 10px; animation-delay: 0.05s; }
+}
+
+// Group definitions (Placement)
 .group-1 {
-  top: 5%;
-  left: 10%;
-  width: 140px;
-  height: 70%;
+  top: 5%; left: 10%; width: 140px; height: 70%;
   transform: rotate(-8deg);
   animation: bolt-visibility 4s infinite 1s;
-
-  .lightning-bolt {
-    width: 100%;
-    height: 100%;
-    animation: bolt-fall-intense 4s infinite 1s;
-  }
-  .impact-site {
-    animation: impact-splash 4s infinite 1s;
-  }
+  .lightning-bolt { width: 100%; height: 100%; animation: bolt-fall-intense 4s infinite 1s; }
+  .impact-site { animation: impact-splash 4s infinite 1s; }
 }
-
-// Group 2: Top Right (Heavy Hitter)
 .group-2 {
-  top: 2%;
-  right: 12%;
-  width: 160px;
-  height: 75%;
+  top: 2%; right: 12%; width: 160px; height: 75%; 
   transform: rotate(10deg);
   animation: bolt-visibility 5s infinite 2.5s;
-
-  .lightning-bolt {
-    width: 100%;
-    height: 100%;
-    animation: bolt-fall-intense 5s infinite 2.5s;
-  }
-  .impact-site {
-    animation: impact-splash 5s infinite 2.5s;
-  }
+  .lightning-bolt { width: 100%; height: 100%; animation: bolt-fall-intense 5s infinite 2.5s; }
+  .impact-site { animation: impact-splash 5s infinite 2.5s; }
 }
-
-// Group 3: Center (Fast striker)
 .group-3 {
-  top: 15%;
-  left: 45%;
-  width: 100px;
-  height: 55%;
+  top: 15%; left: 45%; width: 100px; height: 55%;
   transform: rotate(-2deg);
   animation: bolt-visibility 3.5s infinite 0.5s;
-
-  .lightning-bolt {
-    width: 100%;
-    height: 100%;
-    animation: bolt-fall-intense 3.5s infinite 0.5s;
-  }
-  .impact-site {
-    animation: impact-splash 3.5s infinite 0.5s;
-  }
+  .lightning-bolt { width: 100%; height: 100%; animation: bolt-fall-intense 3.5s infinite 0.5s; }
+  .impact-site { animation: impact-splash 3.5s infinite 0.5s; }
 }
-
-// Group 4: Far Left (Background ambiance)
 .group-4 {
-  top: 20%;
-  left: -2%;
-  width: 80px;
-  height: 40%;
-  transform: rotate(5deg);
-  opacity: 0.6; // Slightly dimmer
+  top: 20%; left: -2%; width: 80px; height: 40%;
+  transform: rotate(5deg); opacity: 0.6;
   animation: bolt-visibility 6s infinite 3s;
-
-  .lightning-bolt {
-    width: 100%;
-    height: 100%;
-    animation: bolt-fall-intense 6s infinite 3s;
-  }
-  .impact-site {
-    animation: impact-splash 6s infinite 3s;
-  }
+  .lightning-bolt { width: 100%; height: 100%; animation: bolt-fall-intense 6s infinite 3s; }
+  .impact-site { animation: impact-splash 6s infinite 3s; }
 }
-
-// Group 5: Far Right (Background ambiance)
 .group-5 {
-  top: 10%;
-  right: 2%;
-  width: 90px;
-  height: 50%;
-  transform: rotate(-5deg);
-  opacity: 0.6;
+  top: 10%; right: 2%; width: 90px; height: 50%;
+  transform: rotate(-5deg); opacity: 0.6;
   animation: bolt-visibility 7s infinite 0s;
-
-  .lightning-bolt {
-    width: 100%;
-    height: 100%;
-    animation: bolt-fall-intense 7s infinite 0s;
-  }
-  .impact-site {
-    animation: impact-splash 7s infinite 0s;
-  }
+  .lightning-bolt { width: 100%; height: 100%; animation: bolt-fall-intense 7s infinite 0s; }
+  .impact-site { animation: impact-splash 7s infinite 0s; }
 }
 
-/* --- Animations --- */
+/* --- Interaction Keyframes --- */
 
-// Shaking effect applied to the content to simulate thunder impact
+// The "Shock -> Break -> Reborn" Cycle
+@keyframes shock-break-reborn {
+  // 0-10%: SHOCK (Iron stick touched)
+  0% { opacity: 1; transform: translate(0,0) scale(1); clip-path: inset(0 0 0 0); }
+  2% { transform: translate(-3px, 2px); }
+  4% { transform: translate(3px, -2px); }
+  6% { transform: translate(-3px, 2px); }
+  8% { transform: translate(3px, -2px); }
+  10% { opacity: 1; transform: scale(1.1); filter: drop-shadow(0 0 20px #fff); } // Overload peak
+
+  // 11%: BREAK (Shatter)
+  11% { opacity: 0; transform: scale(2); filter: blur(10px); } // Poof
+
+  // 12-60%: GONE (Debris falls during this time)
+  12% { opacity: 0; }
+  60% { opacity: 0; transform: translate(30px, 0); } // Move position for rebirth
+
+  // 61%: REBORN (Strike nearby)
+  61% { opacity: 1; transform: translate(30px, 0) scale(1); clip-path: inset(0 0 100% 0); }
+  65% { clip-path: inset(0 0 0 0); } // Fast strike down
+  
+  // 70%: Fade out reborn bolt
+  80% { opacity: 1; }
+  90% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+// Impact sync for interaction
+@keyframes impact-shock-reborn {
+  0%, 10% { opacity: 1; transform: scale(1.5); } // Sustained burn
+  11% { opacity: 0; transform: scale(2); } // Explosion
+  60% { opacity: 0; transform: translate(30px, 0); } // Move
+  65% { opacity: 1; transform: translate(30px, 0) scale(1); } // Reborn impact
+  90% { opacity: 0; }
+}
+
+// Debris Falling (Triggered at break)
+@keyframes debris-fall {
+  0%, 10% { opacity: 0; transform: translateY(0); } // Wait for break
+  11% { opacity: 1; transform: translateY(0) rotate(0deg); } // Spawn
+  15% { opacity: 1; }
+  50% { opacity: 0; transform: translateY(400px) rotate(180deg); } // Fall
+  100% { opacity: 0; }
+}
+
+/* --- Global Animations --- */
+@keyframes bolt-visibility {
+  0% { opacity: 0; }
+  1% { opacity: 1; }
+  8% { opacity: 1; } 
+  8.1% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes bolt-fall-intense {
+  0% { clip-path: inset(0 0 100% 0); }
+  0.5% { clip-path: inset(0 0 0 0); } 
+  1.5% { opacity: 0; }
+  2% { opacity: 1; }
+  2.5% { opacity: 0.2; }
+  3% { opacity: 1; }
+  4% { opacity: 0; }
+  4.5% { opacity: 1; }
+  5% { clip-path: inset(0 0 0 0); } 
+  100% { clip-path: inset(0 0 100% 0); }
+}
+
+@keyframes impact-splash {
+  0% { transform: scale(0); opacity: 0; }
+  0.5% { transform: scale(1.5); opacity: 1; }
+  1% { transform: scale(2.5); opacity: 0.8; }
+  3% { transform: scale(3); opacity: 0; }
+  100% { transform: scale(0); opacity: 0; }
+}
+
+@keyframes thunder-shake {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(0, 0); }
+  10.5% { transform: translate(-3px, 3px); }
+  11% { transform: translate(3px, -3px); }
+  11.5% { transform: translate(-2px, 2px); }
+  12% { transform: translate(0, 0); }
+  50% { transform: translate(0, 0); }
+  50.5% { transform: translate(4px, 4px); }
+  51% { transform: translate(-4px, -4px); }
+  51.5% { transform: translate(2px, -2px); }
+  52% { transform: translate(0, 0); }
+}
+
+@keyframes global-flash {
+  0% { opacity: 0; }
+  10% { opacity: 0; }
+  10.2% { opacity: 0.3; } 
+  10.5% { opacity: 0; }
+  20% { opacity: 0; }
+  20.2% { opacity: 0.1; } 
+  20.5% { opacity: 0; }
+  50% { opacity: 0; }
+  50.2% { opacity: 0.4; } 
+  50.5% { opacity: 0.1; }
+  51% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
 .content-wrapper {
   position: relative;
   z-index: 20;
@@ -255,84 +363,16 @@
   gap: 56px;
   text-align: center;
   padding: 20px;
-  animation: thunder-shake 5s infinite 2.5s; // Sync with biggest bolts roughly
+  pointer-events: none; 
+  animation: thunder-shake 5s infinite 2.5s;
+  
+  .illustration-container, .text-content, .action-btn { pointer-events: auto; }
 }
 
-@keyframes thunder-shake {
-  0%, 100% { transform: translate(0, 0); }
-  // Shake triggered at potential impact times
-  10% { transform: translate(0, 0); }
-  10.5% { transform: translate(-3px, 3px); }
-  11% { transform: translate(3px, -3px); }
-  11.5% { transform: translate(-2px, 2px); }
-  12% { transform: translate(0, 0); }
-
-  50% { transform: translate(0, 0); }
-  50.5% { transform: translate(4px, 4px); }
-  51% { transform: translate(-4px, -4px); }
-  51.5% { transform: translate(2px, -2px); }
-  52% { transform: translate(0, 0); }
-}
-
-@keyframes bolt-visibility {
-  0% { opacity: 0; }
-  1% { opacity: 1; }
-  8% { opacity: 1; }
-  8.1% { opacity: 0; }
-  100% { opacity: 0; }
-}
-
-@keyframes bolt-fall-intense {
-  0% { clip-path: inset(0 0 100% 0); }
-
-  // Strike down VERY fast
-  0.5% { clip-path: inset(0 0 0 0); }
-
-  // Violent Flickering
-  1.5% { opacity: 0; }
-  2% { opacity: 1; }
-  2.5% { opacity: 0.2; }
-  3% { opacity: 1; }
-  4% { opacity: 0; }
-  4.5% { opacity: 1; }
-
-  // End of sequence
-  5% { clip-path: inset(0 0 0 0); }
-  100% { clip-path: inset(0 0 100% 0); }
-}
-
-@keyframes impact-splash {
-  0% { transform: scale(0); opacity: 0; }
-  0.5% { transform: scale(1.5); opacity: 1; } // Explosion
-  1% { transform: scale(2.5); opacity: 0.8; }
-  3% { transform: scale(3); opacity: 0; }
-  100% { transform: scale(0); opacity: 0; }
-}
-
-@keyframes global-flash {
-  0% { opacity: 0; }
-  // Random strobe flashes syncing with various bolt hits
-  10% { opacity: 0; }
-  10.2% { opacity: 0.3; } // Sync with bolt 1
-  10.5% { opacity: 0; }
-
-  20% { opacity: 0; }
-  20.2% { opacity: 0.1; } // Sync with bolt 3
-  20.5% { opacity: 0; }
-
-  50% { opacity: 0; }
-  50.2% { opacity: 0.4; } // Sync with bolt 2 (Big)
-  50.5% { opacity: 0.1; }
-  51% { opacity: 0; }
-
-  100% { opacity: 0; }
-}
-
-/* --- Content Styling --- */
 .illustration-container {
   position: relative;
   width: 100%;
-  max-width: 600px;
+  max-width: 600px; /* Restored to 600px */
 
   .glow-effect {
     position: absolute;
@@ -385,138 +425,7 @@
   }
 }
 
-.text-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 48px;
-}
-
-.error-title {
-  font-family: 'IBM Plex Sans Arabic', 'Noto Sans Arabic', sans-serif;
-  font-size: 32px;
-  font-weight: 700;
-  color: #cdcdcd;
-  margin: 0;
-  line-height: 1.6;
-  text-shadow: 0 0 20px rgba(54, 201, 203, 0.3);
-}
-
-/* --- Noise --- */
-.tv-noise-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 10;
-  opacity: 0.08;
-
-  background:
-    repeating-linear-gradient(
-      0deg,
-      rgba(100, 100, 100, 0.2) 0px,
-      rgba(100, 100, 100, 0.2) 1px,
-      transparent 1px,
-      transparent 3px
-    ),
-    repeating-linear-gradient(
-      0deg,
-      rgba(0, 255, 120, 0.1) 0px,
-      transparent 2px,
-      rgba(0, 255, 120, 0.1) 4px
-    );
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Ffilter id='noiseFilter'%3E%3FfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    opacity: 0.2;
-    animation: noise-anim 0.2s infinite steps(4);
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      rgba(18, 16, 16, 0) 50%,
-      rgba(0, 0, 0, 0.1) 50%
-    );
-    animation: tv-flicker 0.1s infinite;
-  }
-}
-
-/* --- Button Styling --- */
-::ng-deep .not-found-cta {
-  background: transparent !important;
-  border: 3px solid #7f7f7f !important;
-  border-radius: 0 99px 99px 16px !important;
-  padding: 18px 38px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  color: white !important;
-  transition: all 0.3s ease;
-  min-width: 275px;
-  position: relative;
-  overflow: hidden;
-
-  &:hover {
-    background: rgba(255, 255, 255, 0.05) !important;
-    border-color: #fff !important;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-  }
-}
-
-:host-context([dir="rtl"]) {
-  ::ng-deep .not-found-cta {
-     border-radius: 99px 0 16px 99px !important;
-  }
-  .cta-content {
-    flex-direction: row-reverse;
-  }
-}
-
-.cta-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.cta-text {
-  font-family: 'IBM Plex Sans Arabic', 'Noto Sans Arabic', sans-serif;
-  font-size: 18.7px;
-  font-weight: 400;
-  color: white;
-  
-}
-
-.binary-code {
-  display: flex;
-  gap: 12px;
-  font-family: 'IBM Plex Sans', sans-serif;
-  font-size: 13.4px;
-  font-weight: 700;
-  color: white;
-
-  .col {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    line-height: 1.2;
-  }
-}
-
+/* Animations noise/float/flicker/glitch kept same as before */
 @keyframes noise-anim {
   0% { transform: translate(0,0); }
   10% { transform: translate(-5%,-5%); }
