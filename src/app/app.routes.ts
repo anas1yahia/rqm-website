@@ -1,11 +1,25 @@
-import { Routes } from '@angular/router';
+import { Routes, UrlSegment } from '@angular/router';
 import { HomeComponent } from './landing-page/home/home.component';
 import { OurStoryComponent } from './our-story/our-story.component';
 import { NotFoundComponent } from './global/not-found/not-found.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'ar', pathMatch: 'full' },
-  { path: ':lang', component: HomeComponent, data: { animation: 'HomePage' } },
-  { path: ':lang/our-story', component: OurStoryComponent, data: { animation: 'OurStoryPage' } },
-  { path: '**', component: NotFoundComponent } // Wildcard route for 404
+  {
+    // Matcher for valid languages (ar/en)
+    matcher: (url) => {
+      if (url.length > 0 && ['en', 'ar'].includes(url[0].path)) {
+        return {
+          consumed: [url[0]],
+          posParams: { lang: url[0] }
+        };
+      }
+      return null;
+    },
+    children: [
+      { path: '', component: HomeComponent, data: { animation: 'HomePage' } },
+      { path: 'our-story', component: OurStoryComponent, data: { animation: 'OurStoryPage' } }
+    ]
+  },
+  { path: '**', component: NotFoundComponent } // Catch-all for invalid routes
 ];
