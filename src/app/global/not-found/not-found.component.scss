@@ -2,20 +2,105 @@
   display: block;
   width: 100%;
   height: 100vh;
+  background-color: #0A0C1A;
+  overflow: hidden;
 }
 
 .not-found-container {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  background-color: var(--bg-color);
-  color: var(--text-color);
 }
 
+/* --- Background Layers --- */
+.background-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  .bg-main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 1;
+    z-index: 0;
+  }
+
+  /* ADDED: Dark overlay to improve 404 visibility against bg404.svg */
+  .bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 12, 26, 0.75); // Dark theme color with high opacity
+    z-index: 0; // Sits on top of bg-main (same index context in DOM order)
+  }
+
+  .grid-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+
+    .grid-1 {
+      position: absolute;
+      top: 30%;
+      left: 55%;
+      width: 40%;
+      height: auto;
+      object-fit: contain;
+      opacity: 0.6;
+      mix-blend-mode: screen;
+    }
+
+    .grid-2 {
+      position: absolute;
+      top: 53%;
+      left: 0;
+      width: 40%;
+      height: auto;
+      object-fit: contain;
+      opacity: 0.6;
+      mix-blend-mode: screen;
+    }
+  }
+
+  .blur-img {
+    position: absolute;
+    pointer-events: none;
+    z-index: 2;
+    filter: blur(49px);
+  }
+
+  .blur-top {
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: auto;
+    opacity: 0.8;
+  }
+
+  .blur-bottom {
+    top: auto;
+    bottom: -20%;
+    left: -10%;
+    width: 120%;
+    height: 60vh;
+    object-fit: cover;
+    opacity: 0.9;
+  }
+}
+
+/* --- Animations --- */
 .tv-noise-overlay {
   position: fixed;
   top: 0;
@@ -23,11 +108,10 @@
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 100; // Above everything
-  opacity: 0.15;
-  
-  // Mixed Gray and Green scanlines
-  background: 
+  z-index: 10;
+  opacity: 0.08;
+
+  background:
     repeating-linear-gradient(
       0deg,
       rgba(100, 100, 100, 0.2) 0px,
@@ -41,7 +125,7 @@
       transparent 2px,
       rgba(0, 255, 120, 0.1) 4px
     );
-  
+
   &::before {
     content: "";
     position: absolute;
@@ -62,43 +146,20 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(
-      rgba(18, 16, 16, 0) 50%, 
+      rgba(18, 16, 16, 0) 50%,
       rgba(0, 0, 0, 0.1) 50%
-    ), linear-gradient(
-      90deg, 
-      rgba(255, 0, 0, 0.02), 
-      rgba(0, 255, 0, 0.02), 
-      rgba(0, 0, 255, 0.02)
     );
-    background-size: 100% 2px, 3px 100%;
     animation: tv-flicker 0.1s infinite;
-  }
-}
-
-.background-elements {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  
-  .gradient-bg {
-    position: absolute;
-    top: -50%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(54, 201, 203, 0.1) 0%, rgba(10, 12, 26, 0) 70%);
-    filter: blur(100px);
   }
 }
 
 .content-wrapper {
   position: relative;
-  z-index: 1;
+  z-index: 20;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 56px;
   text-align: center;
   padding: 20px;
 }
@@ -106,8 +167,8 @@
 .illustration-container {
   position: relative;
   width: 100%;
-  max-width: 600px;
-  
+  max-width: 500px;
+
   .glow-effect {
     position: absolute;
     top: 50%;
@@ -119,11 +180,10 @@
     filter: blur(40px);
     z-index: -1;
   }
-  
+
   .glitch-wrapper {
     position: relative;
     width: 100%;
-    // Move floating animation here so all layers move together
     animation: float 6s ease-in-out infinite;
   }
 
@@ -153,13 +213,93 @@
 
   .glitch-layer-2 {
     opacity: 0.8;
-    filter: sepia(100%) hue-rotate(90deg) saturate(200%); // Greenish
+    filter: sepia(100%) hue-rotate(90deg) saturate(200%);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     animation: glitch-anim-2 2.5s infinite linear alternate-reverse;
     mix-blend-mode: color-dodge;
   }
 }
 
+.text-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.error-title {
+  font-family: 'IBM Plex Sans Arabic', 'Noto Sans Arabic', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #cdcdcd;
+  margin: 0;
+  line-height: 1.6;
+  text-shadow: 0 0 20px rgba(54, 201, 203, 0.3);
+}
+
+/* --- Button Styling --- */
+::ng-deep .not-found-cta {
+  background: transparent !important;
+  border: 3px solid #7f7f7f !important;
+  border-radius: 0 99px 99px 16px !important;
+  padding: 18px 38px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: white !important;
+  transition: all 0.3s ease;
+  min-width: 275px;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: #fff !important;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  }
+}
+
+:host-context([dir="rtl"]) {
+  ::ng-deep .not-found-cta {
+     border-radius: 99px 0 16px 99px !important;
+  }
+  .cta-content {
+    flex-direction: row-reverse;
+  }
+}
+
+.cta-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.cta-text {
+  font-family: 'IBM Plex Sans Arabic', 'Noto Sans Arabic', sans-serif;
+  font-size: 18.7px;
+  font-weight: 400;
+  color: white;
+  margin-inline-start: auto;
+}
+
+.binary-code {
+  display: flex;
+  gap: 12px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 13.4px;
+  font-weight: 700;
+  color: white;
+
+  .col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.2;
+  }
+}
+
+/* --- Keyframes --- */
 @keyframes glitch-anim-1 {
   0% { clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%); transform: translate(-2px, 0); }
   2% { clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%); transform: translate(2px, 0); }
@@ -193,102 +333,6 @@
   43% { clip-path: polygon(0 50%, 100% 50%, 100% 55%, 0 55%); transform: translate(-2px, 0); }
   45% { clip-path: polygon(0 60%, 100% 60%, 100% 70%, 0 70%); transform: translate(2px, 0); }
   100% { clip-path: polygon(0 0, 0 0, 0 0, 0 0); transform: translate(0,0); }
-}
-
-.text-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-}
-
-.error-code {
-  font-size: 120px;
-  font-weight: 700;
-  line-height: 1;
-  margin: 0;
-  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 185%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  opacity: 0.1;
-  position: absolute;
-  top: -60px;
-  z-index: -1;
-}
-
-.error-title {
-  font-size: 32px;
-  font-weight: 700;
-  margin: 0;
-  color: var(--text-color);
-}
-
-.error-desc {
-  font-size: 18px;
-  color: var(--text-muted);
-  max-width: 500px;
-  margin: 0;
-  line-height: 1.6;
-}
-
-.action-btn {
-  margin-top: 24px;
-}
-
-/* CTA Section */
-.cta-section {
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-  gap: 16px;
-  justify-content: center;
-}
-
-.cta-icon-btn {
-  width: 38.485px;
-  height: 38.485px;
-  border-radius: 50%;
-  border: 0.802px solid rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-
-.cta-text {
-  flex: 1;
-  text-align: start;
-  margin-inline-end: 15px;
-}
-
-.cta-text span {
-  color: white;
-  font-size: 18.7px;
-  font-family: 'IBM Plex Sans Arabic', sans-serif;
-  white-space: nowrap;
-}
-
-.binary-code {
-  display: flex;
-  flex-direction: row;
-  gap: 6px;
-}
-
-.binary-code .col {
-  display: flex;
-  flex-direction: column;
-  font-size: 13.357px;
-  font-weight: 700;
-  line-height: 1;
-  color: white;
-}
-
-app-button:hover .cta-text span,
-app-button:hover .binary-code .col {
-  color: #0A0C1A;
-  transition: color 0.3s;
 }
 
 @keyframes noise-anim {
@@ -332,17 +376,4 @@ app-button:hover .binary-code .col {
   90% { opacity: 0.35; }
   95% { opacity: 0.2; }
   100% { opacity: 0.27; }
-}
-
-// Light Theme overrides
-:host-context([data-theme="light"]) {
-  .error-code {
-    background: linear-gradient(180deg, #0A0C1A 0%, rgba(10, 12, 26, 0) 185%);
-    -webkit-background-clip: text;
-    background-clip: text;
-  }
-  
-  .illustration {
-    filter: invert(1) hue-rotate(180deg); // Or specific adjustment for 404 svg colors
-  }
 }
