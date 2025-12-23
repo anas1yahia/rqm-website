@@ -36,9 +36,6 @@
   opacity: 1;
   z-index: 0;
 }
-.background-layer {
-  /* ADDED: Dark overlay to improve 404 visibility against bg404.svg */
-}
 .background-layer .bg-overlay {
   position: absolute;
   inset: 0;
@@ -92,6 +89,58 @@
   height: 60vh;
   object-fit: cover;
   opacity: 0.9;
+}
+
+/* --- Storm & Lightning Layer --- */
+.storm-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.lightning-flash {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.15);
+  opacity: 0;
+  mix-blend-mode: overlay;
+  animation: flash-screen 10s infinite;
+}
+
+.lightning-bolt {
+  position: absolute;
+  fill: #FFFFFF;
+  filter: drop-shadow(0 0 15px rgba(88, 194, 195, 0.9)) drop-shadow(0 0 30px rgba(88, 194, 195, 0.6));
+  opacity: 0;
+}
+
+.bolt-1 {
+  top: 15%;
+  left: 15%;
+  width: 120px;
+  height: 450px;
+  animation: lightning-strike-complex 8s infinite 1.5s;
+  transform: rotate(-5deg);
+}
+
+.bolt-2 {
+  top: 10%;
+  right: 18%;
+  width: 140px;
+  height: 550px;
+  animation: lightning-strike-complex 12s infinite 5s;
+  transform: rotate(8deg);
+}
+
+.bolt-3 {
+  top: 20%;
+  left: 48%;
+  width: 80px;
+  height: 350px;
+  animation: lightning-strike-complex 6s infinite 0s;
+  transform: rotate(-2deg);
 }
 
 /* --- Animations --- */
@@ -265,6 +314,46 @@
 }
 
 /* --- Keyframes --- */
+@keyframes lightning-strike-complex {
+  0% {
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  3% {
+    opacity: 0;
+  }
+  4% {
+    opacity: 0.8;
+  }
+  6% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes flash-screen {
+  0% {
+    opacity: 0;
+  }
+  1% {
+    opacity: 0.2;
+  }
+  2% {
+    opacity: 0;
+  }
+  6% {
+    opacity: 0.1;
+  }
+  7% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 @keyframes glitch-anim-1 {
   0% {
     clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);

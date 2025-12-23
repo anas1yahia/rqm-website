@@ -4,7 +4,7 @@
     <!-- Main Background Illustration -->
     <img src="bg404.svg" class="bg-main" alt="" aria-hidden="true">
     
-    <!-- Dark Overlay to dim the background so foreground pops -->
+    <!-- Dark Overlay to dim the background -->
     <div class="bg-overlay"></div>
 
     <!-- Grid Overlays -->
@@ -13,9 +13,30 @@
       <img src="grid2.svg" class="grid-2" alt="" aria-hidden="true">
     </div>
 
-    <!-- Blur Images (Pixel Perfect from Figma) -->
+    <!-- Blur Images -->
     <img src="blur-top.png" class="blur-img blur-top" alt="" aria-hidden="true">
     <img src="blur-bottom.png" class="blur-img blur-bottom" alt="" aria-hidden="true">
+  </div>
+
+  <!-- Storm & Lightning Layer -->
+  <div class="storm-layer">
+    <!-- Global flash overlay -->
+    <div class="lightning-flash"></div>
+    
+    <!-- Bolt 1: Top Left - Thick start, tapered end -->
+    <svg class="lightning-bolt bolt-1" viewBox="0 0 100 500" preserveAspectRatio="none">
+      <path d="M40 0 L 60 0 L 45 150 L 70 140 L 20 350 L 45 340 L 10 500 L 35 320 L 15 330 L 55 120 L 30 130 Z" />
+    </svg>
+
+    <!-- Bolt 2: Top Right - Sharp and fast -->
+    <svg class="lightning-bolt bolt-2" viewBox="0 0 100 500" preserveAspectRatio="none">
+      <path d="M45 0 L 65 0 L 75 120 L 35 140 L 85 300 L 55 320 L 95 500 L 65 300 L 95 280 L 45 120 L 85 100 Z" />
+    </svg>
+
+    <!-- Bolt 3: Center/Random - Smaller fragments -->
+    <svg class="lightning-bolt bolt-3" viewBox="0 0 100 300" preserveAspectRatio="none">
+      <path d="M50 0 L 70 0 L 40 80 L 80 70 L 30 200 L 60 190 L 20 300 L 45 170 L 15 180 L 55 60 L 25 70 Z" />
+    </svg>
   </div>
 
   <!-- Noise Overlay -->
