@@ -14,7 +14,6 @@
   },
   "LANDING": {
     "SERVICES": {
-
       "HEADING_1": "At RQM, We Aspire to Build",
       "HEADING_2": "Services That Shape the Future",
       "CYBERSECURITY_TITLE": "Cybersecurity Services",
@@ -130,7 +129,7 @@
   "FOOTER": {
     "FOLLOW_US": "Follow Us",
     "OUR_LOCATION": "Our Location",
-    "LOCATION_TEXT": "Riyadh, Press 13315",
+    "LOCATION_TEXT": "Riyadh, Kingdom of Saudi Arabia",
     "USEFUL_LINKS": "Useful Links",
     "PRIVACY_POLICY": "Privacy Policy",
     "CONTACT_US": "Contact Us",
@@ -140,5 +139,10 @@
     "SERVICES": "Services",
     "SLOGAN": "Your Trusted Digital Partner",
     "COPYRIGHT": "All rights reserved RQM © 2024"
+  },
+  "NOT_FOUND": {
+    "TITLE": "Page Not Found",
+    "DESCRIPTION": "Sorry, the page you are looking for does not exist or has been moved.",
+    "BACK_HOME": "Back to Home"
   }
 }
