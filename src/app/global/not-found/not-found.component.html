@@ -25,9 +25,26 @@
 
       <!-- Action Button -->
       <div class="action-btn">
-        <app-button variant="action" routerLink="/">
-          <span class="btn-text">{{ 'NOT_FOUND.BACK_HOME' | translate }}</span>
-        </app-button>
+        <div class="cta-section">
+          <div class="cta-icon-btn">
+            <lucide-icon [img]="ChevronLeft" [size]="19" strokeWidth="1.5" color="white"></lucide-icon>
+          </div>
+          <app-button variant="hero" routerLink="/" className="main-cta">
+            <div class="cta-text">
+              <span>{{ 'NOT_FOUND.BACK_HOME' | translate }}</span>
+            </div>
+            <div class="binary-code">
+              <div class="col">
+                <span>0</span>
+                <span>1</span>
+              </div>
+              <div class="col">
+                <span>1</span>
+                <span>0</span>
+              </div>
+            </div>
+          </app-button>
+        </div>
       </div>
     </div>
   </div>
