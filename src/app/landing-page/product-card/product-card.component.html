@@ -11,7 +11,7 @@
     <div class="card-header">
       <div class="status-badge">
         <div class="status-dot"></div>
-        <span class="status-text">{{ 'PRODUCT_CARD.TRY_NOW' | translate }}</span>
+        <span class="status-text">{{ 'LANDING.PRODUCTS.QAID_CTA_TRY' | translate }}</span>
       </div>
       <div class="logo-container">
         <img [src]="logo" alt="Product Logo" class="product-logo">
@@ -42,7 +42,7 @@
     <!-- Footer: Action Button -->
     <div class="card-footer">
       <app-button variant="action">
-        <span class="btn-text">{{ 'PRODUCT_CARD.DISCOVER_MORE' | translate }}</span>
+        <span class="btn-text">{{ 'LANDING.PRODUCTS.QAID_CTA_MORE' | translate }}</span>
         <div class="btn-icon">
            <!-- Lucide Icon -->
            <lucide-icon [img]="currentIcon" [size]="16" strokeWidth="2"></lucide-icon>
@@ -61,7 +61,7 @@
       
       <div class="small-card-footer">
          <div class="more-link">
-           <span>{{ 'PRODUCT_CARD.LEARN_MORE_SOLUTIONS' | translate }}</span>
+           <span>{{ 'LANDING.PRODUCTS.QAID_LINK_MORE_SOLUTIONS' | translate }}</span>
            <div class="arrow-icon">
              <!-- Arrow Icon -->
              <lucide-icon [img]="ArrowUpLeft" [size]="20" strokeWidth="2" color="white"></lucide-icon>
@@ -71,7 +71,7 @@
       
       <!-- List of bubbles/pills from design -->
       <div class="pills-container">
-        <div class="pill">{{ 'PRODUCT_CARD.LEARN_OTHER_SOLUTIONS' | translate }}</div>
+        <div class="pill">{{ 'LANDING.PRODUCTS.QAID_LINK_OTHER' | translate }}</div>
       </div>
     </div>
   }
