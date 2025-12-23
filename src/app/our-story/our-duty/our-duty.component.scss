@@ -41,7 +41,7 @@
   margin: 0;
   font-size: 52px;
   font-weight: 700;
-  color: white;
+  color: var(--text-color);
   line-height: 1.5;
 }
 
@@ -49,7 +49,7 @@
   margin: 0;
   font-size: 24px;
   font-weight: 400;
-  color: white;
+  color: var(--text-color); // Use theme color
   line-height: 1.5;
   max-width: 624px;
 }
@@ -66,7 +66,7 @@
 
 .duty-card {
   position: relative;
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--card-bg); // Use variable
   height: 383px;
   overflow: hidden;
   
@@ -80,10 +80,30 @@
 
   &.active-card {
     background: rgba(116, 124, 145, 0.3);
+    
+    // Light mode active card override
+    :host-context([data-theme="light"]) & {
+      background: #fafafa; // Match Figma image light bg
+    }
   }
   
   &:hover {
     background: rgba(255, 255, 255, 0.15);
+    
+    :host-context([data-theme="light"]) & {
+      background: #f0f0f0;
+    }
+  }
+  
+  // Light Mode Card Background
+  :host-context([data-theme="light"]) & {
+    background: rgba(255, 255, 255, 0.08); // Or specific light bg if var isn't enough
+    // Figma screenshot shows very light/white cards.
+    background: #ffffff; // White cards? Or transparent on white?
+    // Figma frame "Container" has bg-[#fafafa] for some.
+    // Let's set default card to transparent/white-ish.
+    background: rgba(255, 255, 255, 0.5); 
+    border: 1px solid rgba(0, 0, 0, 0.05);
   }
 }
 
@@ -99,6 +119,13 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
+    
+    // Light Theme: Blur Gray Filter
+    :host-context([data-theme="light"]) & {
+      // Make it more visible gray: grayscale + reduced contrast/brightness to darken if white, or just opacity.
+      // If original is white, we need to invert it to make it black. Then opacity/grayscale.
+      filter: invert(1) grayscale(100%) opacity(0.5); 
+    }
   }
 }
 
@@ -116,7 +143,7 @@
   font-size: 19px;
   font-weight: 700;
   line-height: 26px;
-  color: white;
+  color: var(--text-color);
 }
 
 .card-desc {
@@ -124,7 +151,7 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 26px;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--text-muted);
 }
 
 // Responsive
