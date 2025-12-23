@@ -4,7 +4,7 @@
     <!-- Main Background Illustration -->
     <img src="bg404.svg" class="bg-main" alt="" aria-hidden="true">
     
-    <!-- Dark Overlay to dim the background -->
+    <!-- Dark Overlay to dim the background so foreground pops -->
     <div class="bg-overlay"></div>
 
     <!-- Grid Overlays -->
@@ -23,20 +23,45 @@
     <!-- Global flash overlay -->
     <div class="lightning-flash"></div>
     
-    <!-- Bolt 1: Top Left - Thick start, tapered end -->
-    <svg class="lightning-bolt bolt-1" viewBox="0 0 100 500" preserveAspectRatio="none">
-      <path d="M40 0 L 60 0 L 45 150 L 70 140 L 20 350 L 45 340 L 10 500 L 35 320 L 15 330 L 55 120 L 30 130 Z" />
-    </svg>
+    <!-- Bolt Group 1: Top Left (Big) -->
+    <div class="bolt-container group-1">
+      <svg class="lightning-bolt" viewBox="0 0 100 500" preserveAspectRatio="none">
+        <path d="M40 0 L 60 0 L 45 150 L 70 140 L 20 350 L 45 340 L 10 500 L 35 320 L 15 330 L 55 120 L 30 130 Z" />
+      </svg>
+      <div class="impact-site"></div>
+    </div>
 
-    <!-- Bolt 2: Top Right - Sharp and fast -->
-    <svg class="lightning-bolt bolt-2" viewBox="0 0 100 500" preserveAspectRatio="none">
-      <path d="M45 0 L 65 0 L 75 120 L 35 140 L 85 300 L 55 320 L 95 500 L 65 300 L 95 280 L 45 120 L 85 100 Z" />
-    </svg>
+    <!-- Bolt Group 2: Top Right (Big) -->
+    <div class="bolt-container group-2">
+      <svg class="lightning-bolt" viewBox="0 0 100 500" preserveAspectRatio="none">
+        <path d="M45 0 L 65 0 L 75 120 L 35 140 L 85 300 L 55 320 L 95 500 L 65 300 L 95 280 L 45 120 L 85 100 Z" />
+      </svg>
+      <div class="impact-site"></div>
+    </div>
 
-    <!-- Bolt 3: Center/Random - Smaller fragments -->
-    <svg class="lightning-bolt bolt-3" viewBox="0 0 100 300" preserveAspectRatio="none">
-      <path d="M50 0 L 70 0 L 40 80 L 80 70 L 30 200 L 60 190 L 20 300 L 45 170 L 15 180 L 55 60 L 25 70 Z" />
-    </svg>
+    <!-- Bolt Group 3: Center (Fast) -->
+    <div class="bolt-container group-3">
+      <svg class="lightning-bolt" viewBox="0 0 100 300" preserveAspectRatio="none">
+        <path d="M50 0 L 70 0 L 40 80 L 80 70 L 30 200 L 60 190 L 20 300 L 45 170 L 15 180 L 55 60 L 25 70 Z" />
+      </svg>
+      <div class="impact-site"></div>
+    </div>
+
+    <!-- Bolt Group 4: Far Left (Background) -->
+    <div class="bolt-container group-4">
+      <svg class="lightning-bolt" viewBox="0 0 100 400" preserveAspectRatio="none">
+        <path d="M55 0 L 45 100 L 65 90 L 30 250 L 50 240 L 20 400 L 40 260 L 60 270 L 35 110 Z" />
+      </svg>
+      <div class="impact-site"></div>
+    </div>
+
+    <!-- Bolt Group 5: Far Right (Background) -->
+    <div class="bolt-container group-5">
+      <svg class="lightning-bolt" viewBox="0 0 100 400" preserveAspectRatio="none">
+        <path d="M45 0 L 55 120 L 35 110 L 60 280 L 40 270 L 70 400 L 50 290 L 30 300 L 55 130 Z" />
+      </svg>
+      <div class="impact-site"></div>
+    </div>
   </div>
 
   <!-- Noise Overlay -->

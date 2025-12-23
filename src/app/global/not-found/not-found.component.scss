@@ -111,102 +111,141 @@
 .lightning-flash {
   position: absolute;
   inset: 0;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.3); // Increased intensity
   opacity: 0;
   mix-blend-mode: overlay;
-  animation: flash-screen 10s infinite;
+  animation: global-flash 5s infinite; // Faster loop
+}
+
+.bolt-container {
+  position: absolute;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
 }
 
 .lightning-bolt {
-  position: absolute;
+  display: block;
   fill: #FFFFFF;
-  filter: drop-shadow(0 0 15px rgba(88, 194, 195, 0.9)) drop-shadow(0 0 30px rgba(88, 194, 195, 0.6));
+  // Intense glow
+  filter: drop-shadow(0 0 20px rgba(88, 194, 195, 1)) drop-shadow(0 0 50px rgba(88, 194, 195, 0.8));
+  clip-path: inset(0 0 100% 0);
+}
+
+.impact-site {
+  position: absolute;
+  bottom: 0;
+  width: 200px;
+  height: 80px;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 0%, rgba(88, 194, 195, 0.9) 20%, transparent 70%);
+  transform: scale(0);
   opacity: 0;
+  filter: blur(10px);
+  transform-origin: center bottom;
 }
 
-// Bolt 1: Top Left
-.bolt-1 {
-  top: 15%;
-  left: 15%;
-  width: 120px;
-  height: 450px;
-  animation: lightning-strike-complex 8s infinite 1.5s;
-  transform: rotate(-5deg);
-}
-
-// Bolt 2: Top Right
-.bolt-2 {
-  top: 10%;
-  right: 18%;
+// Group 1: Top Left (Heavy Hitter)
+.group-1 {
+  top: 5%;
+  left: 10%;
   width: 140px;
-  height: 550px;
-  animation: lightning-strike-complex 12s infinite 5s;
-  transform: rotate(8deg);
+  height: 70%;
+  transform: rotate(-8deg);
+  animation: bolt-visibility 4s infinite 1s;
+
+  .lightning-bolt {
+    width: 100%;
+    height: 100%;
+    animation: bolt-fall-intense 4s infinite 1s;
+  }
+  .impact-site {
+    animation: impact-splash 4s infinite 1s;
+  }
 }
 
-// Bolt 3: Center-ish
-.bolt-3 {
-  top: 20%;
-  left: 48%;
-  width: 80px;
-  height: 350px;
-  animation: lightning-strike-complex 6s infinite 0s;
+// Group 2: Top Right (Heavy Hitter)
+.group-2 {
+  top: 2%;
+  right: 12%;
+  width: 160px;
+  height: 75%;
+  transform: rotate(10deg);
+  animation: bolt-visibility 5s infinite 2.5s;
+
+  .lightning-bolt {
+    width: 100%;
+    height: 100%;
+    animation: bolt-fall-intense 5s infinite 2.5s;
+  }
+  .impact-site {
+    animation: impact-splash 5s infinite 2.5s;
+  }
+}
+
+// Group 3: Center (Fast striker)
+.group-3 {
+  top: 15%;
+  left: 45%;
+  width: 100px;
+  height: 55%;
   transform: rotate(-2deg);
+  animation: bolt-visibility 3.5s infinite 0.5s;
+
+  .lightning-bolt {
+    width: 100%;
+    height: 100%;
+    animation: bolt-fall-intense 3.5s infinite 0.5s;
+  }
+  .impact-site {
+    animation: impact-splash 3.5s infinite 0.5s;
+  }
+}
+
+// Group 4: Far Left (Background ambiance)
+.group-4 {
+  top: 20%;
+  left: -2%;
+  width: 80px;
+  height: 40%;
+  transform: rotate(5deg);
+  opacity: 0.6; // Slightly dimmer
+  animation: bolt-visibility 6s infinite 3s;
+
+  .lightning-bolt {
+    width: 100%;
+    height: 100%;
+    animation: bolt-fall-intense 6s infinite 3s;
+  }
+  .impact-site {
+    animation: impact-splash 6s infinite 3s;
+  }
+}
+
+// Group 5: Far Right (Background ambiance)
+.group-5 {
+  top: 10%;
+  right: 2%;
+  width: 90px;
+  height: 50%;
+  transform: rotate(-5deg);
+  opacity: 0.6;
+  animation: bolt-visibility 7s infinite 0s;
+
+  .lightning-bolt {
+    width: 100%;
+    height: 100%;
+    animation: bolt-fall-intense 7s infinite 0s;
+  }
+  .impact-site {
+    animation: impact-splash 7s infinite 0s;
+  }
 }
 
 /* --- Animations --- */
-.tv-noise-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 10;
-  opacity: 0.08;
 
-  background:
-    repeating-linear-gradient(
-      0deg,
-      rgba(100, 100, 100, 0.2) 0px,
-      rgba(100, 100, 100, 0.2) 1px,
-      transparent 1px,
-      transparent 3px
-    ),
-    repeating-linear-gradient(
-      0deg,
-      rgba(0, 255, 120, 0.1) 0px,
-      transparent 2px,
-      rgba(0, 255, 120, 0.1) 4px
-    );
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Ffilter id='noiseFilter'%3E%3FfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    opacity: 0.2;
-    animation: noise-anim 0.2s infinite steps(4);
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      rgba(18, 16, 16, 0) 50%,
-      rgba(0, 0, 0, 0.1) 50%
-    );
-    animation: tv-flicker 0.1s infinite;
-  }
-}
-
+// Shaking effect applied to the content to simulate thunder impact
 .content-wrapper {
   position: relative;
   z-index: 20;
@@ -216,12 +255,84 @@
   gap: 56px;
   text-align: center;
   padding: 20px;
+  animation: thunder-shake 5s infinite 2.5s; // Sync with biggest bolts roughly
 }
 
+@keyframes thunder-shake {
+  0%, 100% { transform: translate(0, 0); }
+  // Shake triggered at potential impact times
+  10% { transform: translate(0, 0); }
+  10.5% { transform: translate(-3px, 3px); }
+  11% { transform: translate(3px, -3px); }
+  11.5% { transform: translate(-2px, 2px); }
+  12% { transform: translate(0, 0); }
+
+  50% { transform: translate(0, 0); }
+  50.5% { transform: translate(4px, 4px); }
+  51% { transform: translate(-4px, -4px); }
+  51.5% { transform: translate(2px, -2px); }
+  52% { transform: translate(0, 0); }
+}
+
+@keyframes bolt-visibility {
+  0% { opacity: 0; }
+  1% { opacity: 1; }
+  8% { opacity: 1; }
+  8.1% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes bolt-fall-intense {
+  0% { clip-path: inset(0 0 100% 0); }
+
+  // Strike down VERY fast
+  0.5% { clip-path: inset(0 0 0 0); }
+
+  // Violent Flickering
+  1.5% { opacity: 0; }
+  2% { opacity: 1; }
+  2.5% { opacity: 0.2; }
+  3% { opacity: 1; }
+  4% { opacity: 0; }
+  4.5% { opacity: 1; }
+
+  // End of sequence
+  5% { clip-path: inset(0 0 0 0); }
+  100% { clip-path: inset(0 0 100% 0); }
+}
+
+@keyframes impact-splash {
+  0% { transform: scale(0); opacity: 0; }
+  0.5% { transform: scale(1.5); opacity: 1; } // Explosion
+  1% { transform: scale(2.5); opacity: 0.8; }
+  3% { transform: scale(3); opacity: 0; }
+  100% { transform: scale(0); opacity: 0; }
+}
+
+@keyframes global-flash {
+  0% { opacity: 0; }
+  // Random strobe flashes syncing with various bolt hits
+  10% { opacity: 0; }
+  10.2% { opacity: 0.3; } // Sync with bolt 1
+  10.5% { opacity: 0; }
+
+  20% { opacity: 0; }
+  20.2% { opacity: 0.1; } // Sync with bolt 3
+  20.5% { opacity: 0; }
+
+  50% { opacity: 0; }
+  50.2% { opacity: 0.4; } // Sync with bolt 2 (Big)
+  50.5% { opacity: 0.1; }
+  51% { opacity: 0; }
+
+  100% { opacity: 0; }
+}
+
+/* --- Content Styling --- */
 .illustration-container {
   position: relative;
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
 
   .glow-effect {
     position: absolute;
@@ -291,6 +402,59 @@
   text-shadow: 0 0 20px rgba(54, 201, 203, 0.3);
 }
 
+/* --- Noise --- */
+.tv-noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0.08;
+
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(100, 100, 100, 0.2) 0px,
+      rgba(100, 100, 100, 0.2) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 255, 120, 0.1) 0px,
+      transparent 2px,
+      rgba(0, 255, 120, 0.1) 4px
+    );
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Ffilter id='noiseFilter'%3E%3FfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.2;
+    animation: noise-anim 0.2s infinite steps(4);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      rgba(18, 16, 16, 0) 50%,
+      rgba(0, 0, 0, 0.1) 50%
+    );
+    animation: tv-flicker 0.1s infinite;
+  }
+}
+
 /* --- Button Styling --- */
 ::ng-deep .not-found-cta {
   background: transparent !important;
@@ -334,7 +498,7 @@
   font-size: 18.7px;
   font-weight: 400;
   color: white;
-  margin-inline-start: auto;
+  
 }
 
 .binary-code {
@@ -351,61 +515,6 @@
     align-items: center;
     line-height: 1.2;
   }
-}
-
-/* --- Keyframes --- */
-// More realistic "flickering" strike
-@keyframes lightning-strike-complex {
-  0% { opacity: 0; }
-  1% { opacity: 1; }
-  3% { opacity: 0; }
-  4% { opacity: 0.8; }
-  6% { opacity: 0; }
-  100% { opacity: 0; }
-}
-
-@keyframes flash-screen {
-  0% { opacity: 0; }
-  1% { opacity: 0.2; }
-  2% { opacity: 0; }
-  6% { opacity: 0.1; }
-  7% { opacity: 0; }
-  100% { opacity: 0; }
-}
-
-@keyframes glitch-anim-1 {
-  0% { clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%); transform: translate(-2px, 0); }
-  2% { clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%); transform: translate(2px, 0); }
-  4% { clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%); transform: translate(-2px, 0); }
-  6% { clip-path: polygon(0 1%, 100% 1%, 100% 2%, 0 2%); transform: translate(2px, 0); }
-  8% { clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%); transform: translate(-1px, 0); }
-  10% { clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%); transform: translate(1px, 0); }
-  12% { clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%); transform: translate(-2px, 0); }
-  14% { clip-path: polygon(0 70%, 100% 70%, 100% 70%, 0 70%); transform: translate(2px, 0); }
-  16% { clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%); transform: translate(-2px, 0); }
-  18% { clip-path: polygon(0 50%, 100% 50%, 100% 55%, 0 55%); transform: translate(2px, 0); }
-  20% { clip-path: polygon(0 60%, 100% 60%, 100% 70%, 0 70%); transform: translate(-2px, 0); }
-  21.9% { opacity: 0.8; transform: translate(0,0); }
-  22% { opacity: 0; }
-  100% { opacity: 0; }
-}
-
-@keyframes glitch-anim-2 {
-  0% { opacity: 0; }
-  23% { opacity: 0; }
-  23.1% { opacity: 0.8; transform: translate(0,0); }
-  25% { clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%); transform: translate(2px, 0); }
-  27% { clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%); transform: translate(-2px, 0); }
-  29% { clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%); transform: translate(2px, 0); }
-  31% { clip-path: polygon(0 1%, 100% 1%, 100% 2%, 0 2%); transform: translate(-2px, 0); }
-  33% { clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%); transform: translate(1px, 0); }
-  35% { clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%); transform: translate(-1px, 0); }
-  37% { clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%); transform: translate(2px, 0); }
-  39% { clip-path: polygon(0 70%, 100% 70%, 100% 70%, 0 70%); transform: translate(-2px, 0); }
-  41% { clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%); transform: translate(2px, 0); }
-  43% { clip-path: polygon(0 50%, 100% 50%, 100% 55%, 0 55%); transform: translate(-2px, 0); }
-  45% { clip-path: polygon(0 60%, 100% 60%, 100% 70%, 0 70%); transform: translate(2px, 0); }
-  100% { clip-path: polygon(0 0, 0 0, 0 0, 0 0); transform: translate(0,0); }
 }
 
 @keyframes noise-anim {
@@ -449,4 +558,39 @@
   90% { opacity: 0.35; }
   95% { opacity: 0.2; }
   100% { opacity: 0.27; }
+}
+
+@keyframes glitch-anim-1 {
+  0% { clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%); transform: translate(-2px, 0); }
+  2% { clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%); transform: translate(2px, 0); }
+  4% { clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%); transform: translate(-2px, 0); }
+  6% { clip-path: polygon(0 1%, 100% 1%, 100% 2%, 0 2%); transform: translate(2px, 0); }
+  8% { clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%); transform: translate(-1px, 0); }
+  10% { clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%); transform: translate(1px, 0); }
+  12% { clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%); transform: translate(-2px, 0); }
+  14% { clip-path: polygon(0 70%, 100% 70%, 100% 70%, 0 70%); transform: translate(2px, 0); }
+  16% { clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%); transform: translate(-2px, 0); }
+  18% { clip-path: polygon(0 50%, 100% 50%, 100% 55%, 0 55%); transform: translate(2px, 0); }
+  20% { clip-path: polygon(0 60%, 100% 60%, 100% 70%, 0 70%); transform: translate(-2px, 0); }
+  21.9% { opacity: 0.8; transform: translate(0,0); }
+  22% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes glitch-anim-2 {
+  0% { opacity: 0; }
+  23% { opacity: 0; }
+  23.1% { opacity: 0.8; transform: translate(0,0); }
+  25% { clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%); transform: translate(2px, 0); }
+  27% { clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%); transform: translate(-2px, 0); }
+  29% { clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%); transform: translate(2px, 0); }
+  31% { clip-path: polygon(0 1%, 100% 1%, 100% 2%, 0 2%); transform: translate(-2px, 0); }
+  33% { clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%); transform: translate(1px, 0); }
+  35% { clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%); transform: translate(-1px, 0); }
+  37% { clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%); transform: translate(2px, 0); }
+  39% { clip-path: polygon(0 70%, 100% 70%, 100% 70%, 0 70%); transform: translate(-2px, 0); }
+  41% { clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%); transform: translate(2px, 0); }
+  43% { clip-path: polygon(0 50%, 100% 50%, 100% 55%, 0 55%); transform: translate(-2px, 0); }
+  45% { clip-path: polygon(0 60%, 100% 60%, 100% 70%, 0 70%); transform: translate(2px, 0); }
+  100% { clip-path: polygon(0 0, 0 0, 0 0, 0 0); transform: translate(0,0); }
 }
