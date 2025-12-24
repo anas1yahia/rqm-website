@@ -144,5 +144,30 @@
     "TITLE": "الصفحة المقصودة غير موجودة!",
     "DESCRIPTION": "عذراً، الصفحة التي تبحث عنها غير موجودة أو تم نقلها.",
     "BACK_HOME": "العودة للرئيسية"
+  },
+  "CONTACT_US": {
+    "TITLE": "تواصل معنا",
+    "FORM": {
+      "TITLE": "أرسل لنا رسالة",
+      "FULL_NAME": "الاسم الكامل",
+      "FULL_NAME_PLACEHOLDER": "الاسم الثلاثي",
+      "EMAIL": "عنوان البريد الإلكتروني",
+      "EMAIL_PLACEHOLDER": "example@domain.com",
+      "PHONE": "رقم الهاتف",
+      "PHONE_PLACEHOLDER": "+966 5x xxx xxxx",
+      "SUBJECT": "الموضوع",
+      "SUBJECT_PLACEHOLDER": "كيف يمكننا مساعدتك؟",
+      "MESSAGE": "الرسالة",
+      "MESSAGE_PLACEHOLDER": "أخبرنا عن مشروعك...",
+      "SEND": "إرسال الرسالة"
+    },
+    "INFO": {
+      "EMAIL_LABEL": "عنوان البريد الإلكتروني",
+      "PHONE_LABEL": "رقم الهاتف",
+      "LOCATION_LABEL": "موقع المكتب",
+      "LOCATION_VALUE": "الرياض، الصحافة - شارع العليا",
+      "HOURS_LABEL": "ساعات العمل",
+      "HOURS_VALUE": "الأحد - الخميس: 9:00 - 18:00"
+    }
   }
 }
