@@ -11,7 +11,7 @@
 .badge-container {
   width: 100%;
   display: flex;
-  justify-content: flex-end; /* Align right as per Figma RTL */
+  justify-content: flex-start; /* Align right as per Figma RTL */
 }
 
 .badge {
