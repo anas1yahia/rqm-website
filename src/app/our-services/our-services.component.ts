@@ -7,11 +7,12 @@ import { MainLayoutHeadComponent } from './main-layout-head/main-layout-head.com
 import { MainServicesComponent } from './main-services/main-services.component';
 import { AiServicesComponent } from './ai-services/ai-services.component';
 import { TasksComponent } from './tasks/tasks.component';
+import { ScrollFadeDirective } from '../directives/scroll-fade';
 
 @Component({
   selector: 'app-our-services',
   standalone: true,
-  imports: [CommonModule, TranslateModule, FooterComponent, MainLayoutHeadComponent, MainServicesComponent, AiServicesComponent, TasksComponent],
+  imports: [CommonModule, TranslateModule, FooterComponent, MainLayoutHeadComponent, MainServicesComponent, AiServicesComponent, TasksComponent, ScrollFadeDirective],
   templateUrl: './our-services.component.html',
   styleUrls: ['./our-services.component.scss']
 })
