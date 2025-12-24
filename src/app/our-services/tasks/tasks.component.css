@@ -1,5 +1,6 @@
 .tasks-section {
-  width: 100%;
+  width: calc(100% + 40px); /* Slightly wider to give cards more breathing room */
+  margin-inline: -20px;
   padding: 80px 0;
   display: flex;
   flex-direction: column;
@@ -9,10 +10,11 @@
 
 .headline {
   width: 100%;
+  padding-inline: 20px; /* Align headline back with original margins */
   display: flex;
   flex-direction: column;
   gap: 16px;
-  align-items: flex-start; /* Correct for RTL/LTR standard */
+  align-items: flex-start;
   text-align: start;
 }
 .headline h2 {
@@ -32,19 +34,21 @@
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
+  gap: 12px; /* Increased gap for better separation */
   width: 100%;
+  padding-inline: 10px;
 }
 
 .task-card {
-  background: rgba(255, 255, 255, 0.08);
-  height: 383px;
+  background: rgba(255, 255, 255, 0.05);
+  height: auto;
+  min-height: 420px; /* Increased to fit content better */
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 55px 20px 40px 20px;
+  padding: 35px 15px 40px 15px; /* Tighter side padding, more top/bottom */
   box-sizing: border-box;
   transition: transform 0.3s ease, background 0.3s ease;
 }
@@ -62,9 +66,9 @@
 .task-card .illustration {
   position: relative;
   z-index: 1;
-  width: 200px;
-  height: 200px;
-  margin-bottom: -2px; /* Adjust based on Figma top positioning */
+  width: 180px;
+  height: 180px;
+  margin-bottom: 10px;
 }
 .task-card .illustration img {
   width: 100%;
@@ -79,25 +83,25 @@
   gap: 16px;
   text-align: center;
   width: 100%;
-  max-width: 268px;
+  max-width: 100%; /* Allow it to use full card width */
 }
 .task-card .text-content h3 {
-  font-size: 19px;
+  font-size: 18px; /* Slightly smaller to fit lines better */
   font-weight: 700;
   color: white;
   margin: 0;
-  line-height: 1.35;
+  line-height: 1.4;
 }
 .task-card .text-content p {
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 400;
   color: white;
   margin: 0;
-  line-height: 1.85;
+  line-height: 1.6;
   opacity: 0.9;
 }
 
-/* Specific card backgrounds/variants if needed from Figma nodes */
+/* Specific card backgrounds/variants */
 .task-card:nth-child(3) {
   background: rgba(116, 124, 145, 0.3);
 }
@@ -124,8 +128,16 @@
 
 /* Responsive */
 @media (max-width: 1200px) {
+  .tasks-section {
+    width: 100%;
+    margin-inline: 0;
+  }
   .cards-grid {
     grid-template-columns: repeat(2, 1fr);
+    padding-inline: 20px;
+  }
+  .task-card {
+    min-height: auto;
   }
 }
 @media (max-width: 768px) {

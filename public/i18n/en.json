@@ -214,17 +214,16 @@
                       "UI_UX": "UI/UX Design and Development"
                     }
                   },
-                  "TASKS": {
-                    "HEADING": "Our Mission",
-                    "SUBHEADING": "We keep these goals in mind to achieve our vision",
-                    "CARD_1_TITLE": "Digital Empowerment for Businesses",
-                    "CARD_1_DESC": "Designing and implementing digital solutions that serve a real need and achieve a clear return on investment.",
-                    "CARD_2_TITLE": "Measurable Operational Efficiency",
-                    "CARD_2_DESC": "Using automation and artificial intelligence to improve workflows, reduce errors, and cut costs.",
-                    "CARD_3_TITLE": "Reliable Digital Infrastructure",
-                    "CARD_3_DESC": "Local data centers and cloud solutions that support business continuity and provide high availability.",
-                    "CARD_4_TITLE": "Aligning Global Trends with Local Market",
-                    "CARD_4_DESC": "Following the latest global technologies and applying what suits the regulatory and economic environment in the Kingdom and the region."
-                  }
-                }
+                      "TASKS": {
+                        "HEADING": "Cybersecurity Services",
+                        "SUBHEADING": "We secure your business with a solid digital fence against accelerating cyber threats",
+                        "CARD_1_TITLE": "Continuous Attack Simulation Services",
+                        "CARD_1_DESC": "We simulate advanced attack methods to test your systems' resilience against threats and evaluate the effectiveness of response and recovery strategies.",
+                        "CARD_2_TITLE": "Cyber Attack Simulation Services",
+                        "CARD_2_DESC": "We predict advanced cyber attack scenarios to simulate actual attacks, aiming to test security defense readiness and the company's ability to counter them.",
+                        "CARD_3_TITLE": "Vulnerability Assessment Services",
+                        "CARD_3_DESC": "We provide a comprehensive analysis of systems and networks to detect security vulnerabilities and assess their severity, providing recommendations for remediation.",
+                        "CARD_4_TITLE": "Penetration Testing Services",
+                        "CARD_4_DESC": "We simulate real cyber attacks to test the strength of protection systems and identify security vulnerabilities before hackers exploit them."
+                      }                }
               }}
