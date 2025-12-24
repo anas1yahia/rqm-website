@@ -108,19 +108,34 @@
 /* Light Theme Overrides */
 :host-context([data-theme="light"]) {
   .ai-services-container {
-    background: #ffffff;
+    background-image: url('/Section4.png');
+    background-size: cover;
+    background-position: center;
     border-color: #0d99ff;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+    box-shadow: none;
   }
 
-  .section-header h2, .section-header p, .ai-card h3, .ai-card p {
-    color: var(--text-color);
+  .bg-glow {
+    display: none; /* Background image already provides the visual context */
+  }
+
+  .section-header h2 {
+    color: #0a0707;
+  }
+  
+  .section-header p {
+    color: #0a0707;
   }
 
   .ai-card {
-    background: rgba(13, 153, 255, 0.05);
-    border-color: rgba(13, 153, 255, 0.1);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(20px);
+    border-color: rgba(13, 153, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    
+    h3, p {
+      color: #0a0707;
+    }
   }
 }
 
