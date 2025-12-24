@@ -164,43 +164,60 @@
   justify-content: center;
 }
 
-.btn-container {
-  position: relative;
-  width: 275px;
+/* CTA Section */
+.cta-section {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
 }
 
-.binary-decor {
-  position: absolute;
-  top: 13px;
-  inset-inline-start: 0;
+.cta-icon-btn {
+  width: 38.485px;
+  height: 38.485px;
+  border-radius: 50%;
+  border: 0.802px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
   display: flex;
-  gap: 10px;
-  font-family: "IBM Plex Sans", sans-serif;
-  font-weight: 700;
-  font-size: 13.3px;
-  color: white;
-  z-index: 5;
-}
-.binary-decor .col {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.2;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
-:host ::ng-deep .services-hero-btn {
-  width: 100%;
-  padding: 18px 37px;
-  background: transparent;
-  border: 3px solid #3a405e;
-  border-radius: 16px 99px 99px 16px; /* Adjust based on RTL/LTR if needed */
-  border-inline-start-width: 0;
+/* Styles for content inside the button */
+.cta-text {
+  flex: 1;
+  text-align: start;
+  margin-inline-end: 15px;
 }
-:host ::ng-deep .services-hero-btn .btn-text {
+
+.cta-text span {
   color: white;
   font-size: 18.7px;
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  white-space: nowrap;
 }
-:host ::ng-deep .services-hero-btn:hover {
-  background: rgba(58, 64, 94, 0.3);
+
+.binary-code {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+}
+
+.binary-code .col {
+  display: flex;
+  flex-direction: column;
+  font-size: 13.357px;
+  font-weight: 700;
+  line-height: 1;
+  color: white;
+}
+
+app-button:hover .cta-text span,
+app-button:hover .binary-code .col {
+  color: #0A0C1A;
+  transition: color 0.3s;
 }
 
 @media (max-width: 1100px) {

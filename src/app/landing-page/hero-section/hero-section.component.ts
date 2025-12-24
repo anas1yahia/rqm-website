@@ -16,19 +16,19 @@ import { ButtonComponent } from '../../global/button/button.component';
   styleUrls: ['./hero-section.component.scss']
 })
 export class HeroSectionComponent implements OnInit {
-  imgIcon = "hero/icon.png";
-  imgVector = "hero/vector0.svg";
-  imgVector1 = "hero/vector1.svg";
-  imgVector2 = "hero/vector2.svg";
-  imgVector3 = "hero/vector3.svg";
-  imgVector4 = "hero/vector4.svg";
-  imgVector5 = "hero/vector5.svg";
-  imgVector6 = "hero/vector6.svg";
-  imgVector7 = "hero/vector7.svg";
-  imgVector8 = "hero/vector8.svg";
-  imgVector9 = "hero/vector9.svg";
-  imgVector10 = "hero/vector10.svg";
-  imgVector11 = "hero/vector11.svg";
+  imgIcon = "/hero/icon.png";
+  imgVector = "/hero/vector0.svg";
+  imgVector1 = "/hero/vector1.svg";
+  imgVector2 = "/hero/vector2.svg";
+  imgVector3 = "/hero/vector3.svg";
+  imgVector4 = "/hero/vector4.svg";
+  imgVector5 = "/hero/vector5.svg";
+  imgVector6 = "/hero/vector6.svg";
+  imgVector7 = "/hero/vector7.svg";
+  imgVector8 = "/hero/vector8.svg";
+  imgVector9 = "/hero/vector9.svg";
+  imgVector10 = "/hero/vector10.svg";
+  imgVector11 = "/hero/vector11.svg";
 
   // For button icon
   readonly ChevronLeft = ChevronLeft;

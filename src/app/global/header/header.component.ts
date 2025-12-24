@@ -48,9 +48,9 @@ import { ButtonComponent } from '../button/button.component';
   ]
 })
 export class HeaderComponent implements OnInit {
-  logoDark = "footer/logowhite-footer.svg"; // Use working footer logo path
-  logoLight = "header-logo-light.svg"; // Colored logo
-  backgroundBorder = "header/bg-border.png";
+  logoDark = "/footer/logowhite-footer.svg"; // Use working footer logo path
+  logoLight = "/header-logo-light.svg"; // Colored logo
+  backgroundBorder = "/header/bg-border.png";
 
   isMenuOpen = false;
   isScrolled = false;

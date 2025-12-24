@@ -1,0 +1,10 @@
+.main-services-section {
+  width: 100%;
+  min-height: 200px; /* Placeholder height */
+  padding: 80px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*# sourceMappingURL=main-services.component.css.map */

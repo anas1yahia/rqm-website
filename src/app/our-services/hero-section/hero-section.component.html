@@ -14,7 +14,7 @@
       <div class="card-content">
         <h2>{{ 'SERVICES_PAGE.HERO.SECURITY_TITLE' | translate }}</h2>
         <p>{{ 'SERVICES_PAGE.HERO.SECURITY_DESC' | translate }}</p>
-        
+
         <div class="tags-row">
           <span class="tag">{{ 'SERVICES_PAGE.HERO.TAG_ENCRYPTION' | translate }}</span>
           <span class="tag">{{ 'SERVICES_PAGE.HERO.TAG_AI_PROTECTION' | translate }}</span>
@@ -44,21 +44,22 @@
 
   <!-- CTA Button Section -->
   <div class="cta-wrapper">
-    <div class="btn-container">
-      <!-- Binary Decorations -->
-      <div class="binary-decor">
-        <div class="col">
-          <span>0</span>
-          <span>1</span>
+    <div class="cta-section">
+
+      <app-button variant="hero" className="main-cta" [routerLink]="['/', currentLang, 'contact-us']">
+        <div class="cta-text">
+          <span>{{ 'SERVICES_PAGE.HERO.CTA' | translate }}</span>
         </div>
-        <div class="col">
-          <span>1</span>
-          <span>0</span>
+        <div class="binary-code">
+          <div class="col">
+            <span>0</span>
+            <span>1</span>
+          </div>
+          <div class="col">
+            <span>1</span>
+            <span>0</span>
+          </div>
         </div>
-      </div>
-      
-      <app-button variant="contact" className="services-hero-btn" [routerLink]="['/', currentLang, 'contact-us']">
-        <span class="btn-text">{{ 'SERVICES_PAGE.HERO.CTA' | translate }}</span>
       </app-button>
     </div>
   </div>
