@@ -67,15 +67,16 @@
 /* Light Theme Overrides */
 :host-context([data-theme=light]) .info-card {
   background: #ffffff;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 4px 0 rgba(249, 244, 244, 0.8);
+  border: 2px solid #747c91;
 }
 :host-context([data-theme=light]) .icon-wrapper {
-  background: var(--primary-color);
-  box-shadow: 4px 4px 10px rgba(43, 166, 168, 0.2);
+  background: transparent;
+  border: 1px solid #0D0D0D;
+  box-shadow: none;
 }
 :host-context([data-theme=light]) .icon-wrapper lucide-icon {
-  color: white;
+  color: #0D0D0D;
 }
 :host-context([data-theme=light]) .text-content h3 {
   color: var(--text-color);
