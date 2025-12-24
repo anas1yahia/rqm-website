@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { LucideAngularModule, ChevronLeft, ChevronRight, ArrowUpLeft, ArrowLeft } from 'lucide-angular';
 import { TranslateModule, TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
@@ -9,7 +10,7 @@ import { ButtonComponent } from '../../global/button/button.component';
 @Component({
   selector: 'app-product-card',
   standalone: true,
-  imports: [CommonModule, LucideAngularModule, TranslateModule, ButtonComponent],
+  imports: [CommonModule, RouterModule, LucideAngularModule, TranslateModule, ButtonComponent],
   templateUrl: './product-card.component.html',
   styleUrls: ['./product-card.component.scss']
 })
@@ -31,6 +32,10 @@ export class ProductCardComponent implements OnInit, OnDestroy {
 
   currentIcon = ChevronLeft; // Default to Arabic direction (Left)
   private langSub: Subscription | undefined;
+
+  get currentLang(): string {
+    return this.translate.currentLang || this.translate.defaultLang || 'ar';
+  }
 
   constructor(private translate: TranslateService) {}
 
