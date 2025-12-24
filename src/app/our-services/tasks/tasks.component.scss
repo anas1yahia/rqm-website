@@ -78,6 +78,11 @@
       width: 100%;
       height: 100%;
       object-fit: contain;
+      
+      :host-context([data-theme="light"]) & {
+        /* Matching src/app/our-story/our-duty/our-duty.component.scss */
+        filter: invert(1) grayscale(100%) opacity(0.5);
+      }
     }
   }
 

@@ -75,6 +75,10 @@
   height: 100%;
   object-fit: contain;
 }
+:host-context([data-theme=light]) .task-card .illustration img {
+  /* Matching src/app/our-story/our-duty/our-duty.component.scss */
+  filter: invert(1) grayscale(100%) opacity(0.5);
+}
 .task-card .text-content {
   position: relative;
   z-index: 1;
