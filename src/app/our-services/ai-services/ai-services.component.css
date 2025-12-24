@@ -1,0 +1,141 @@
+.ai-services-container {
+  position: relative;
+  width: 100%;
+  border: 2px solid #0d99ff;
+  border-radius: 28px;
+  padding: 64px 117px;
+  display: flex;
+  flex-direction: column;
+  gap: 66px;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin: 40px 0;
+}
+
+.bg-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 387px;
+  height: 531px;
+  background: linear-gradient(126deg, rgba(43, 127, 255, 0.2) 0%, rgba(13, 153, 255, 0.22) 100%);
+  filter: blur(80px);
+  border-radius: 100px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: start;
+}
+.section-header h2 {
+  font-size: 38px;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+}
+.section-header p {
+  font-size: 24px;
+  color: white;
+  line-height: 1.5;
+  max-width: 1112px;
+  margin: 0;
+}
+
+.cards-grid {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+}
+
+.top-row {
+  display: flex;
+  gap: 18px;
+  width: 100%;
+}
+
+.bottom-row {
+  width: 100%;
+}
+
+.ai-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(52px);
+  border-radius: 16px;
+  padding: 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0px 5px 41px 0px rgba(63, 61, 61, 0.16);
+  flex: 1;
+  text-align: start;
+}
+.ai-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+  line-height: 1.6;
+}
+.ai-card p {
+  font-size: 24px;
+  font-weight: 400;
+  color: white;
+  line-height: 1.5;
+  margin: 0;
+}
+.ai-card.full-width p {
+  max-width: 1040px;
+}
+
+/* Light Theme Overrides */
+:host-context([data-theme=light]) .ai-services-container {
+  background: #ffffff;
+  border-color: #0d99ff;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+:host-context([data-theme=light]) .section-header h2, :host-context([data-theme=light]) .section-header p, :host-context([data-theme=light]) .ai-card h3, :host-context([data-theme=light]) .ai-card p {
+  color: var(--text-color);
+}
+:host-context([data-theme=light]) .ai-card {
+  background: rgba(13, 153, 255, 0.05);
+  border-color: rgba(13, 153, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .ai-services-container {
+    padding: 40px;
+  }
+  .top-row {
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  .section-header h2 {
+    font-size: 28px;
+  }
+  .section-header p, .ai-card p {
+    font-size: 18px;
+  }
+  .ai-card {
+    padding: 30px 20px;
+  }
+  .ai-services-container {
+    gap: 40px;
+    padding: 30px 20px;
+  }
+}
+
+/*# sourceMappingURL=ai-services.component.css.map */

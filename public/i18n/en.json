@@ -188,11 +188,22 @@
         "TAG_AI_PROTECTION": "AI Protection",
         "TAG_MONITORING": "Continuous Monitoring",
               "AI_TITLE": "AI-Powered",
-              "AI_DESC": "Explore how RQM contributes to enhancing AI capabilities in the market and developing smart solutions for various fields",
-              "CTA": "Step 'Zero' for Digital Transformation"
-            },
-            "MAIN": {
-              "HEADING": "Building the Digital Transformation Journey",
+                    "AI_DESC": "Explore how RQM contributes to enhancing AI capabilities in the market and developing smart solutions for various fields",
+                    "CTA": "Step 'Zero' for Digital Transformation"
+                  },
+                  "AI_SECTION": {
+                    "HEADING": "Building AI Solutions",
+                    "DESCRIPTION": "We help entities adopt AI by developing integrated solutions to enhance interaction with advanced systems, increase business efficiency, and provide advanced technical infrastructure ensuring sustainability and quality in the digital transformation journey.",
+                    "CARDS": {
+                      "AGENTS_TITLE": "AI Agents Development",
+                      "AGENTS_DESC": "A team of competencies with years of digital experience in leading fields such as technology, business management, and more.",
+                      "AUTOMATION_TITLE": "AI Business Automation",
+                      "AUTOMATION_DESC": "We provide advanced solutions for automating business processes using AI, reducing manual effort, increasing efficiency, and contributing to improved institutional performance.",
+                      "ML_TITLE": "Machine Learning and Data Analysis",
+                      "ML_DESC": "We help companies build strong machine learning models to analyze data, predict trends, and make strategic decisions based on artificial intelligence."
+                    }
+                  },
+                  "MAIN": {              "HEADING": "Building the Digital Transformation Journey",
               "LABEL": "Our Services",
               "SUBHEADING": "Services that support your digital success",
               "LIST": {
