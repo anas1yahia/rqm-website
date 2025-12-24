@@ -217,18 +217,32 @@
 }
 
 @media (max-width: 1100px) {
+  .main-services-section {
+    padding: 40px 0;
+  }
+
   .layout-container {
-    flex-direction: column;
+    flex-direction: column !important; /* Force stack */
     align-items: center;
+    gap: 20px;
   }
 
   .visual-box, .content-box {
-    width: 100%;
-    max-width: 675px;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
   }
 
   .visual-box {
-    height: 400px;
+    height: 350px !important;
+    order: 2; /* Move visual below content on mobile for better flow? Or keep order 1? 
+                Figma has it Left (visual) and Right (content). In RTL, Visual is Left. 
+                Usually content is more important. Let's keep content top. */
+  }
+  
+  .content-box {
+    order: 1;
   }
 }
 
@@ -238,15 +252,39 @@
   }
 
   .content-box {
-    padding: 30px 20px;
+    padding: 40px 24px;
 
     .subheading {
-      font-size: 32px;
+      font-size: 28px;
       margin-bottom: 30px;
     }
   }
 
   .service-text {
-    font-size: 18px;
+    font-size: 16px;
+  }
+
+  .service-item {
+    gap: 20px;
+  }
+
+  :host ::ng-deep .services-visual-contact-btn {
+    width: 90%;
+    text-align: center;
+    justify-content: center;
+    
+    .btn-text {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .visual-box {
+    height: 280px !important;
+  }
+  
+  .content-box .subheading {
+    font-size: 24px;
   }
 }
