@@ -1,6 +1,7 @@
 import { Routes, UrlSegment } from '@angular/router';
 import { HomeComponent } from './landing-page/home/home.component';
 import { OurStoryComponent } from './our-story/our-story.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 import { NotFoundComponent } from './global/not-found/not-found.component';
 
 export const routes: Routes = [
@@ -18,7 +19,8 @@ export const routes: Routes = [
     },
     children: [
       { path: '', component: HomeComponent, data: { animation: 'HomePage' } },
-      { path: 'our-story', component: OurStoryComponent, data: { animation: 'OurStoryPage' } }
+      { path: 'our-story', component: OurStoryComponent, data: { animation: 'OurStoryPage' } },
+      { path: 'contact-us', component: ContactUsComponent, data: { animation: 'ContactUsPage' } }
     ]
   },
   { path: '**', component: NotFoundComponent } // Catch-all for invalid routes
