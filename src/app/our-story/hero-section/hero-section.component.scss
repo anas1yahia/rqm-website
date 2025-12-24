@@ -353,19 +353,108 @@
   .hero-container {
     flex-direction: column;
     height: auto;
-    padding-top: 20px;
+    padding: 20px;
+    gap: 40px;
   }
   
   .illustration-container {
-    margin-top: -50px;
-    z-index: 0;
+    width: 100%;
+    max-width: 370px;
+    margin-top: 0;
+    order: 2;
   }
   
   .overlay-card {
-    max-width: 95vw;
+    order: 1;
+    max-width: 100%;
     width: 100%;
     height: auto;
-    min-height: 500px;
-    transform-origin: top center;
+    min-height: 450px;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  // Convert absolute to relative/flexible for responsive card
+  .top-label, .main-title, .contact-group, .rqm-ai-label, .vector-deco-right, .future-vision, .deco-image-left {
+    position: relative;
+    inset: auto !important;
+    transform: none !important;
+    margin: 0;
+  }
+
+  .top-label {
+    margin-bottom: 20px;
+  }
+
+  .deco-image-left {
+    display: none; // Hide purely decorative large image on smaller screens
+  }
+
+  .main-title {
+    margin-bottom: 30px;
+    .subtitle, .title {
+      font-size: 2.5rem;
+    }
+  }
+
+  .contact-group {
+    margin-bottom: 40px;
+    width: auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .binary-numbers {
+      position: relative;
+      top: auto;
+      inset-inline-end: auto;
+    }
+
+    .btn-wrapper {
+      position: relative;
+      top: auto;
+      left: auto;
+      transform: none;
+    }
+  }
+
+  .rqm-ai-label {
+    margin-top: auto;
+    margin-bottom: 10px;
+  }
+
+  .vector-deco-right {
+    margin-bottom: 5px;
+  }
+
+  .future-vision {
+    text-align: start;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-title {
+    .subtitle, .title {
+      font-size: 2rem;
+    }
+  }
+
+  .overlay-card {
+    padding: 30px 20px;
+    min-height: auto;
+  }
+
+  .contact-group {
+    flex-direction: column;
+    align-items: flex-start;
+    
+    .btn-wrapper {
+      width: 100%;
+      max-width: 200px;
+    }
   }
 }
