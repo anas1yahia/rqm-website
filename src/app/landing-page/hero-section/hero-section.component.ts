@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { LucideAngularModule, ChevronLeft } from 'lucide-angular';
 import { ParallaxDirective } from '../../directives/parallax';
 import { TextDecodeDirective } from '../../directives/text-decode';
@@ -10,7 +11,7 @@ import { ButtonComponent } from '../../global/button/button.component';
 @Component({
   selector: 'app-hero-section',
   standalone: true,
-  imports: [CommonModule, LucideAngularModule, ParallaxDirective, TextDecodeDirective, TranslateModule, ButtonComponent],
+  imports: [CommonModule, RouterModule, LucideAngularModule, ParallaxDirective, TextDecodeDirective, TranslateModule, ButtonComponent],
   templateUrl: './hero-section.component.html',
   styleUrls: ['./hero-section.component.scss']
 })
@@ -37,6 +38,10 @@ export class HeroSectionComponent implements OnInit {
   squareSize: number = 20; // Default square size, can be adjusted
   private numRows: number = 0;
   private numCols: number = 0;
+
+  get currentLang(): string {
+    return this.translate.currentLang || this.translate.defaultLang || 'ar';
+  }
 
   constructor(private el: ElementRef, private translate: TranslateService) {}
 

@@ -49,7 +49,7 @@
       <!-- Contact Button -->
       <!-- We wrapper the app-button to position it exactly relative to the group -->
       <div class="btn-wrapper">
-        <app-button variant="contact" className="contact-custom-btn">
+        <app-button variant="contact" className="contact-custom-btn" [routerLink]="['/', currentLang, 'contact-us']">
           <span class="btn-text">{{ 'OUR_STORY.HERO.CTA' | translate }}</span>
         </app-button>
       </div>

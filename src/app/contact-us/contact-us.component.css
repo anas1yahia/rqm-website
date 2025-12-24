@@ -1,0 +1,13 @@
+.contact-us-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--background-color, #f8f9fa); /* Default light bg */
+}
+
+.content-placeholder {
+  flex-grow: 1;
+}
+
+/*# sourceMappingURL=contact-us.component.css.map */

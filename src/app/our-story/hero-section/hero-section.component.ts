@@ -1,13 +1,14 @@
 import { Component, ElementRef, ViewChild, HostListener, Inject, PLATFORM_ID, AfterViewInit } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { TranslateModule } from '@ngx-translate/core';
+import { RouterModule } from '@angular/router';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ButtonComponent } from '../../global/button/button.component';
 import { TextDecodeDirective } from '../../directives/text-decode';
 
 @Component({
   selector: 'app-hero-section',
   standalone: true,
-  imports: [CommonModule, TranslateModule, ButtonComponent, TextDecodeDirective],
+  imports: [CommonModule, RouterModule, TranslateModule, ButtonComponent, TextDecodeDirective],
   templateUrl: './hero-section.component.html',
   styleUrls: ['./hero-section.component.scss']
 })
@@ -15,7 +16,14 @@ export class HeroSectionComponent implements AfterViewInit {
   @ViewChild('illustration', { static: false }) illustrationRef!: ElementRef;
   @ViewChild('overlayCard', { static: false }) overlayCardRef!: ElementRef;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  get currentLang(): string {
+    return this.translate.currentLang || this.translate.defaultLang || 'ar';
+  }
+
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private translate: TranslateService
+  ) {}
 
   ngAfterViewInit() {
     this.onWindowScroll();

@@ -39,8 +39,8 @@
       <div class="column links-column">
         <h3>{{ 'FOOTER.USEFUL_LINKS' | translate }}</h3>
         <nav>
-          <a href="#">{{ 'FOOTER.PRIVACY_POLICY' | translate }}</a>
-          <a href="#">{{ 'FOOTER.CONTACT_US' | translate }}</a>
+          <a [routerLink]="['/', currentLang]">{{ 'FOOTER.PRIVACY_POLICY' | translate }}</a>
+          <a [routerLink]="['/', currentLang, 'contact-us']">{{ 'FOOTER.CONTACT_US' | translate }}</a>
         </nav>
       </div>
 
@@ -48,9 +48,9 @@
       <div class="column links-column">
         <h3>{{ 'FOOTER.ABOUT_RQM' | translate }}</h3>
         <nav>
-          <a href="#">{{ 'FOOTER.HOME' | translate }}</a>
-          <a href="#">{{ 'FOOTER.WHO_WE_ARE' | translate }}</a>
-          <a href="#">{{ 'FOOTER.SERVICES' | translate }}</a>
+          <a [routerLink]="['/', currentLang]" fragment="home">{{ 'FOOTER.HOME' | translate }}</a>
+          <a [routerLink]="['/', currentLang, 'our-story']">{{ 'FOOTER.WHO_WE_ARE' | translate }}</a>
+          <a [routerLink]="['/', currentLang]" fragment="services">{{ 'FOOTER.SERVICES' | translate }}</a>
         </nav>
       </div>
 
