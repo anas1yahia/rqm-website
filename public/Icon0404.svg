@@ -1,0 +1,13 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.1">
+<path d="M100 40L140 55V95C140 118.333 126.667 140 100 160C73.3333 140 60 118.333 60 95V55L100 40Z" stroke="white" stroke-width="8"/>
+<path opacity="0.6" d="M30 70C36.6667 66.6667 43.3333 66.6667 50 70" stroke="white" stroke-width="6"/>
+<path opacity="0.6" d="M25 85C31.6667 81.6667 38.3333 81.6667 45 85" stroke="white" stroke-width="6"/>
+<path opacity="0.6" d="M30 100C36.6667 96.6667 43.3333 96.6667 50 100" stroke="white" stroke-width="6"/>
+<path opacity="0.6" d="M150 70C156.667 66.6667 163.333 66.6667 170 70" stroke="white" stroke-width="6"/>
+<path opacity="0.6" d="M155 85C161.667 81.6667 168.333 81.6667 175 85" stroke="white" stroke-width="6"/>
+<path opacity="0.6" d="M150 100C156.667 96.6667 163.333 96.6667 170 100" stroke="white" stroke-width="6"/>
+<path d="M100 115C111.046 115 120 106.046 120 95C120 83.9543 111.046 75 100 75C88.9543 75 80 83.9543 80 95C80 106.046 88.9543 115 100 115Z" fill="white"/>
+<path d="M100 85V95M100 103V105" stroke="#F5F5F5" stroke-width="4" stroke-linecap="round"/>
+</g>
+</svg>

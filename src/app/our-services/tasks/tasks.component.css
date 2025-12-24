@@ -1,0 +1,147 @@
+.tasks-section {
+  width: 100%;
+  padding: 80px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 44px;
+}
+
+.headline {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start; /* Correct for RTL/LTR standard */
+  text-align: start;
+}
+.headline h2 {
+  font-size: 52px;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+}
+.headline p {
+  font-size: 24px;
+  font-weight: 400;
+  color: white;
+  max-width: 624px;
+  margin: 0;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  width: 100%;
+}
+
+.task-card {
+  background: rgba(255, 255, 255, 0.08);
+  height: 383px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 55px 20px 40px 20px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.task-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.12);
+}
+.task-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(116, 124, 145, 0.3);
+  z-index: 0;
+}
+.task-card .illustration {
+  position: relative;
+  z-index: 1;
+  width: 200px;
+  height: 200px;
+  margin-bottom: -2px; /* Adjust based on Figma top positioning */
+}
+.task-card .illustration img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.task-card .text-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: center;
+  width: 100%;
+  max-width: 268px;
+}
+.task-card .text-content h3 {
+  font-size: 19px;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+  line-height: 1.35;
+}
+.task-card .text-content p {
+  font-size: 14px;
+  font-weight: 400;
+  color: white;
+  margin: 0;
+  line-height: 1.85;
+  opacity: 0.9;
+}
+
+/* Specific card backgrounds/variants if needed from Figma nodes */
+.task-card:nth-child(3) {
+  background: rgba(116, 124, 145, 0.3);
+}
+
+.task-card:nth-child(4) {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* Light Theme Overrides */
+:host-context([data-theme=light]) .headline h2, :host-context([data-theme=light]) .headline p {
+  color: var(--text-color);
+}
+:host-context([data-theme=light]) .task-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+:host-context([data-theme=light]) .task-card::before {
+  background: rgba(116, 124, 145, 0.05);
+}
+:host-context([data-theme=light]) .task-card .text-content h3, :host-context([data-theme=light]) .task-card .text-content p {
+  color: var(--text-color);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .headline h2 {
+    font-size: 36px;
+  }
+  .headline p {
+    font-size: 18px;
+  }
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .task-card {
+    height: auto;
+    padding: 40px 20px;
+  }
+}
+
+/*# sourceMappingURL=tasks.component.css.map */

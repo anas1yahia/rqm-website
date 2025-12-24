@@ -3,7 +3,7 @@
   width: 100%;
   border: 2px solid #0d99ff;
   border-radius: 28px;
-  padding: 64px 117px;
+  padding: 64px 64px;
   display: flex;
   flex-direction: column;
   gap: 66px;
@@ -35,14 +35,14 @@
   text-align: start;
 
   h2 {
-    font-size: 38px;
+    font-size: 1.8rem;
     font-weight: 700;
     color: white;
     margin: 0;
   }
 
   p {
-    font-size: 24px;
+    font-size: 1rem;
     color: white;
     line-height: 1.5;
     max-width: 1112px;
@@ -91,7 +91,7 @@
   }
 
   p {
-    font-size: 24px;
+    font-size: 1rem;
     font-weight: 400;
     color: white;
     line-height: 1.5;
@@ -129,7 +129,7 @@
   .ai-services-container {
     padding: 40px;
   }
-  
+
   .top-row {
     flex-direction: column;
   }
@@ -147,7 +147,7 @@
   .ai-card {
     padding: 30px 20px;
   }
-  
+
   .ai-services-container {
     gap: 40px;
     padding: 30px 20px;

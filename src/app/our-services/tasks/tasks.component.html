@@ -1,0 +1,20 @@
+<section class="tasks-section">
+  <div class="headline">
+    <h2>{{ 'SERVICES_PAGE.TASKS.HEADING' | translate }}</h2>
+    <p>{{ 'SERVICES_PAGE.TASKS.SUBHEADING' | translate }}</p>
+  </div>
+
+  <div class="cards-grid">
+    @for (task of tasks; track task.title) {
+      <div class="task-card">
+        <div class="illustration">
+          <img [src]="task.icon" alt="Task Illustration">
+        </div>
+        <div class="text-content">
+          <h3>{{ task.title | translate }}</h3>
+          <p>{{ task.desc | translate }}</p>
+        </div>
+      </div>
+    }
+  </div>
+</section>

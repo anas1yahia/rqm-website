@@ -3,7 +3,7 @@
   width: 100%;
   border: 2px solid #0d99ff;
   border-radius: 28px;
-  padding: 64px 117px;
+  padding: 64px 64px;
   display: flex;
   flex-direction: column;
   gap: 66px;
@@ -35,13 +35,13 @@
   text-align: start;
 }
 .section-header h2 {
-  font-size: 38px;
+  font-size: 1.8rem;
   font-weight: 700;
   color: white;
   margin: 0;
 }
 .section-header p {
-  font-size: 24px;
+  font-size: 1rem;
   color: white;
   line-height: 1.5;
   max-width: 1112px;
@@ -88,7 +88,7 @@
   line-height: 1.6;
 }
 .ai-card p {
-  font-size: 24px;
+  font-size: 1rem;
   font-weight: 400;
   color: white;
   line-height: 1.5;
