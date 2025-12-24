@@ -1,0 +1,100 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.main-layout-head-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.background-wrapper {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.background-image-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 12, 27, 0.8);
+}
+
+.bottom-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 250px;
+  background: linear-gradient(to bottom, rgba(10, 12, 26, 0) 0%, #0A0C1A 100%);
+  backdrop-filter: blur(4px);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.content-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  align-items: center;
+  padding-top: 140px;
+  padding-bottom: 50px;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.hero-offset {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.projected-content {
+  width: 100%;
+  position: relative;
+  z-index: 0;
+}
+
+app-hero-section {
+  width: 100%;
+  max-width: 1098px; /* Matching the header width we established */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content-wrapper {
+    gap: 2rem;
+    padding-top: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+/*# sourceMappingURL=main-layout-head.component.css.map */

@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { FooterComponent } from '../global/footer/footer.component';
 import { HeroSectionComponent } from './hero-section/hero-section.component';
+import { MainLayoutHeadComponent } from './main-layout-head/main-layout-head.component';
 
 @Component({
   selector: 'app-our-services',
   standalone: true,
-  imports: [CommonModule, TranslateModule, FooterComponent, HeroSectionComponent],
+  imports: [CommonModule, TranslateModule, FooterComponent, MainLayoutHeadComponent],
   templateUrl: './our-services.component.html',
   styleUrls: ['./our-services.component.scss']
 })
