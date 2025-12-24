@@ -1,0 +1,24 @@
+<section class="your-solutions-section">
+  <!-- Decorative background elements -->
+  <div class="bg-decoration">
+    <div class="shapes-border"></div>
+    <div class="radial-glow"></div>
+  </div>
+
+  <!-- Main Content Box -->
+  <div class="content-box">
+    <div class="text-group">
+      <h2>{{ 'SERVICES_PAGE.YOUR_SOLUTIONS.HEADING' | translate }}</h2>
+      <p>{{ 'SERVICES_PAGE.YOUR_SOLUTIONS.SUBHEADING' | translate }}</p>
+    </div>
+
+    <div class="cta-container">
+      <app-button 
+        variant="contact" 
+        className="solutions-cta-btn" 
+        [routerLink]="['/', currentLang, 'contact-us']">
+        <span class="btn-text">{{ 'SERVICES_PAGE.YOUR_SOLUTIONS.CTA' | translate }}</span>
+      </app-button>
+    </div>
+  </div>
+</section>
