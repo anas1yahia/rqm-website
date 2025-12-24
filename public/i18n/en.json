@@ -187,10 +187,21 @@
         "TAG_ENCRYPTION": "Advanced Encryption",
         "TAG_AI_PROTECTION": "AI Protection",
         "TAG_MONITORING": "Continuous Monitoring",
-        "AI_TITLE": "AI-Powered",
-        "AI_DESC": "Explore how RQM contributes to enhancing AI capabilities in the market and developing smart solutions for various fields",
-        "CTA": "Step 'Zero' for Digital Transformation"
-      }
-    }
-  }
-}
+              "AI_TITLE": "AI-Powered",
+              "AI_DESC": "Explore how RQM contributes to enhancing AI capabilities in the market and developing smart solutions for various fields",
+              "CTA": "Step 'Zero' for Digital Transformation"
+            },
+            "MAIN": {
+              "HEADING": "Building the Digital Transformation Journey",
+              "LABEL": "Our Services",
+              "SUBHEADING": "Services that support your digital success",
+              "LIST": {
+                "WEB_MOBILE": "Web Platforms and Mobile App Development",
+                "INTERNAL_PLATFORMS": "Internal Business Platforms Development",
+                "INTEGRATION": "Digital Integration Services and Business Linking",
+                "ANALYSIS": "Business Requirements Analysis and Process Engineering",
+                "UI_UX": "UI/UX Design and Development"
+              }
+            }
+          }
+        }}

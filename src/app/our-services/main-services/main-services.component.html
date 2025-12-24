@@ -1,3 +1,36 @@
 <section class="main-services-section">
-  <!-- Content will be implemented here -->
+  <!-- Section Title -->
+  <div class="section-title">
+    <h2>{{ 'SERVICES_PAGE.MAIN.HEADING' | translate }}</h2>
+  </div>
+
+  <div class="layout-container">
+    <!-- Visual/Illustration Box (Left in RTL) -->
+    <div class="visual-box">
+      <div class="mask-container">
+        <img [src]="imgService" alt="Service Illustration" class="service-img">
+      </div>
+      <!-- Decorative Border elements could be added here if needed to match the complex Figma layers -->
+    </div>
+
+    <!-- Services List Box (Right in RTL) -->
+    <div class="content-box">
+      <div class="label">{{ 'SERVICES_PAGE.MAIN.LABEL' | translate }}</div>
+      <h3 class="subheading">{{ 'SERVICES_PAGE.MAIN.SUBHEADING' | translate }}</h3>
+
+      <div class="services-list">
+        @for (service of services; track service) {
+          <div class="service-item">
+            <div class="item-content">
+              <span class="service-text">{{ service | translate }}</span>
+              <div class="icon-wrapper">
+                <lucide-icon [img]="ChevronLeft" [size]="16" class="chevron"></lucide-icon>
+              </div>
+            </div>
+            <div class="divider"></div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
 </section>
