@@ -4,6 +4,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { LucideAngularModule, ChevronLeft } from 'lucide-angular';
 import { RouterModule } from '@angular/router';
 import { ButtonComponent } from '../../global/button/button.component';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-main-services',
@@ -14,7 +15,6 @@ import { ButtonComponent } from '../../global/button/button.component';
 })
 export class MainServicesComponent {
   readonly ChevronLeft = ChevronLeft;
-  imgService = '/01Service.svg';
 
   services = [
     'SERVICES_PAGE.MAIN.LIST.WEB_MOBILE',
@@ -24,9 +24,16 @@ export class MainServicesComponent {
     'SERVICES_PAGE.MAIN.LIST.UI_UX'
   ];
 
+  get imgService(): string {
+    return this.themeService.currentTheme() === 'light' ? '/01ServicesLight.svg' : '/01Service.svg';
+  }
+
   get currentLang(): string {
     return this.translate.currentLang || this.translate.defaultLang || 'ar';
   }
 
-  constructor(private translate: TranslateService) {}
+  constructor(
+    private translate: TranslateService,
+    private themeService: ThemeService
+  ) {}
 }

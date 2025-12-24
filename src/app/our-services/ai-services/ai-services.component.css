@@ -100,17 +100,44 @@
 
 /* Light Theme Overrides */
 :host-context([data-theme=light]) .ai-services-container {
-  background: #ffffff;
+  background-image: url("/Section4.png");
+  background-size: cover;
+  background-position: center;
   border-color: #0d99ff;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  box-shadow: none;
+  position: relative;
+  /* Add the blue gradient overlay from Figma */
 }
-:host-context([data-theme=light]) .section-header h2, :host-context([data-theme=light]) .section-header p, :host-context([data-theme=light]) .ai-card h3, :host-context([data-theme=light]) .ai-card p {
-  color: var(--text-color);
+:host-context([data-theme=light]) .ai-services-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(76, 137, 213, 0.83) 16.73%, rgba(62, 124, 200, 0.83) 60.81%);
+  border-radius: 28px;
+  z-index: 0;
+}
+:host-context([data-theme=light]) .bg-glow {
+  /* Central glow from Figma node 5698:10032 */
+  display: block;
+  background: linear-gradient(126deg, rgba(43, 127, 255, 0.2) 0%, rgba(13, 153, 255, 0.22) 100%);
+  filter: blur(80px);
+  z-index: 1;
+}
+:host-context([data-theme=light]) .section-header, :host-context([data-theme=light]) .cards-grid {
+  position: relative;
+  z-index: 2;
+}
+:host-context([data-theme=light]) .section-header h2, :host-context([data-theme=light]) .section-header p {
+  color: white; /* Matches Figma node 5698:10014 text-white */
 }
 :host-context([data-theme=light]) .ai-card {
-  background: rgba(13, 153, 255, 0.05);
-  border-color: rgba(13, 153, 255, 0.1);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.08); /* Matches Figma node 5698:10019 */
+  backdrop-filter: blur(52px);
+  border-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0px 5.5px 41.5px 0px rgba(63, 61, 61, 0.16);
+}
+:host-context([data-theme=light]) .ai-card h3, :host-context([data-theme=light]) .ai-card p {
+  color: white; /* Matches Figma node 5698:10020/10024/10028 text-white */
 }
 
 /* Responsive */
