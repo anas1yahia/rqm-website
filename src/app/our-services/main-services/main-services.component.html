@@ -10,7 +10,12 @@
       <div class="mask-container">
         <img [src]="imgService" alt="Service Illustration" class="service-img">
       </div>
-      <!-- Decorative Border elements could be added here if needed to match the complex Figma layers -->
+      
+      <div class="contact-btn-wrapper">
+        <app-button variant="contact" className="services-visual-contact-btn" [routerLink]="['/', currentLang, 'contact-us']">
+          <span class="btn-text">{{ 'HEADER.CONTACT_US' | translate }}</span>
+        </app-button>
+      </div>
     </div>
 
     <!-- Services List Box (Right in RTL) -->

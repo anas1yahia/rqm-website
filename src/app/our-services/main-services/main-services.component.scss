@@ -10,7 +10,7 @@
 .section-title {
   width: 100%;
   text-align: start;
-  
+
   h2 {
     font-size: 38px;
     font-weight: 700;
@@ -22,6 +22,7 @@
 .layout-container {
   display: flex;
   gap: 10px;
+  flex-direction: row-reverse;
   width: 100%;
   justify-content: center;
 }
@@ -55,6 +56,38 @@
     object-fit: cover;
     opacity: 0.8;
   }
+
+  .contact-btn-wrapper {
+    position: absolute;
+    bottom: 13.43%; /* Figma spec */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    width: auto;
+  }
+}
+
+:host ::ng-deep .services-visual-contact-btn {
+    border-radius: 999px !important;
+    padding: 11.25px 20px 12px 20px !important;
+    background: linear-gradient(to right, #62c4aa, #4c89d5) !important;
+    border: 1px solid #62c4aa !important;
+    white-space: nowrap;
+    
+    /* Reset hover transition if needed to match design simplicity */
+    background-image: linear-gradient(to right, #62c4aa, #4c89d5) !important;
+    background-size: 100% 100% !important;
+
+    .btn-text {
+        color: white;
+        font-size: 18.7px;
+        font-weight: 400;
+    }
+
+    &:hover {
+        opacity: 0.9;
+        transform: scale(1.05);
+    }
 }
 
 .content-box {
@@ -76,7 +109,7 @@
   }
 
   .subheading {
-    font-size: 42px;
+    font-size: 2rem;
     font-weight: 500;
     color: white;
     line-height: 1.15;
@@ -111,7 +144,7 @@
   }
 
   .service-text {
-    font-size: 23px;
+    font-size: 1rem;
     font-weight: 300;
     color: white;
     line-height: 1.1;
@@ -153,7 +186,7 @@
   .section-title h2, .content-box .subheading, .service-text {
     color: var(--text-color);
   }
-  
+
   .visual-box {
     background: #f8f9fa;
     border-color: #e2e8f0;
@@ -163,7 +196,7 @@
     background: #ffffff;
     border-color: #e2e8f0;
     box-shadow: 0 10px 40px rgba(0,0,0,0.05);
-    
+
     .label { color: var(--text-color); }
     .subheading { color: var(--text-color); }
   }
@@ -193,7 +226,7 @@
     width: 100%;
     max-width: 675px;
   }
-  
+
   .visual-box {
     height: 400px;
   }
@@ -206,7 +239,7 @@
 
   .content-box {
     padding: 30px 20px;
-    
+
     .subheading {
       font-size: 32px;
       margin-bottom: 30px;
