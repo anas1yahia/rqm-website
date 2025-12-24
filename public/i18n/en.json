@@ -138,7 +138,7 @@
     "WHO_WE_ARE": "Who We Are",
     "SERVICES": "Services",
     "SLOGAN": "Your Trusted Digital Partner",
-    "COPYRIGHT": "All rights reserved RQM © 2024"
+    "COPYRIGHT": "All rights reserved RQM © 2025"
   },
   "NOT_FOUND": {
     "TITLE": "Page Not Found",
@@ -175,6 +175,11 @@
       "MEDIUM": "Medium",
       "X": "X",
       "LINKEDIN": "LinkedIn"
+    },
+    "SERVICES_PAGE": {
+      "TITLE": "Our Services",
+      "SUBTITLE": "We provide innovative and comprehensive digital solutions to support digital transformation and enhance business efficiency.",
+      "COMING_SOON": "Detailed service information will be added soon..."
     }
   }
 }

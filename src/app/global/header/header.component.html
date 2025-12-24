@@ -31,7 +31,7 @@
       <nav class="navigation desktop-nav">
         <a [routerLink]="['/', currentLang]" fragment="home" class="nav-link">{{ 'HEADER.HOME' | translate }}</a>
         <a [routerLink]="['/', currentLang, 'our-story']" class="nav-link">{{ 'HEADER.ABOUT' | translate }}</a>
-        <a [routerLink]="['/', currentLang]" fragment="services" class="nav-link">{{ 'HEADER.SERVICES' | translate }}</a>
+        <a [routerLink]="['/', currentLang, 'services']" class="nav-link">{{ 'HEADER.SERVICES' | translate }}</a>
         <a [routerLink]="['/', currentLang, 'contact-us']" class="nav-link">{{ 'HEADER.CONTACT_US' | translate }}</a>
       </nav>
     </div>
@@ -56,7 +56,7 @@
     <nav class="mobile-nav">
       <a [routerLink]="['/', currentLang]" fragment="home" class="mobile-nav-link" (click)="toggleMenu()">{{ 'HEADER.HOME' | translate }}</a>
       <a [routerLink]="['/', currentLang, 'our-story']" class="mobile-nav-link" (click)="toggleMenu()">{{ 'HEADER.ABOUT' | translate }}</a>
-      <a [routerLink]="['/', currentLang]" fragment="services" class="mobile-nav-link" (click)="toggleMenu()">{{ 'HEADER.SERVICES' | translate }}</a>
+      <a [routerLink]="['/', currentLang, 'services']" class="mobile-nav-link" (click)="toggleMenu()">{{ 'HEADER.SERVICES' | translate }}</a>
       <a [routerLink]="['/', currentLang, 'contact-us']" class="mobile-nav-link" (click)="toggleMenu()">{{ 'HEADER.CONTACT_US' | translate }}</a>
     </nav>
 
