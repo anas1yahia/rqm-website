@@ -15,15 +15,18 @@
   flex-direction: column;
   align-items: center;
   gap: 60px;
-  padding: 40px 5%;
-  max-width: 1400px;
+  /* Match Header Width: 1084px */
+  max-width: 1084px;
+  padding: 40px 0; /* Remove horizontal padding to align exactly with header edges */
   margin: 0 auto;
   width: 100%;
 }
 
 .page-title {
   width: 100%;
-  text-align: start; /* Or center depending on design preference, design seems RTL aligned */
+  /* Ensure title aligns with the container edge (RTL/LTR aware) */
+  text-align: start;
+  padding: 0 16px; /* Optional: Match header internal padding if needed, or keeping it flush */
 }
 .page-title h1 {
   font-size: 64px;
@@ -36,12 +39,12 @@
 .main-section {
   width: 100%;
   display: flex;
-  justify-content: center; /* Center the form for now */
+  justify-content: center;
 }
 
 .form-section {
   width: 100%;
-  max-width: 1066px; /* Match design width constraint */
+  /* No max-width here, let it fill the wrapper (1084px) */
   display: flex;
   justify-content: center;
 }
@@ -51,13 +54,19 @@
 }
 
 /* Responsive */
+@media (max-width: 1100px) {
+  /* Add padding when screen is smaller than the fixed width */
+  .contact-content-wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
 @media (max-width: 768px) {
   .page-title h1 {
     font-size: 42px;
   }
   .contact-content-wrapper {
     gap: 40px;
-    padding: 20px;
   }
 }
 
