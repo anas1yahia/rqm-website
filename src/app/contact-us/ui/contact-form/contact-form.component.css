@@ -1,0 +1,123 @@
+.contact-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 32px;
+  background: var(--card-bg); /* Use CSS variable from styles.scss */
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  box-shadow: 0px 0px 8px 0px rgba(13, 153, 255, 0.4);
+  width: 100%;
+  max-width: 600px; /* Based on typical form width */
+}
+
+.form-header h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-color);
+  opacity: 0.6;
+  margin: 0;
+}
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.form-group label {
+  font-size: 16px;
+  color: var(--text-color);
+  font-weight: 400;
+}
+.form-group .input-wrapper {
+  background: rgba(203, 200, 199, 0.06);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 0 24px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  transition: border-color 0.3s ease;
+}
+.form-group .input-wrapper:focus-within {
+  border-color: var(--primary-color);
+}
+.form-group .input-wrapper input, .form-group .input-wrapper textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 16px;
+  color: var(--text-color);
+}
+.form-group .input-wrapper input::placeholder, .form-group .input-wrapper textarea::placeholder {
+  color: var(--text-muted);
+}
+.form-group .input-wrapper.textarea-wrapper {
+  height: 178px;
+  padding: 16px 24px;
+  align-items: flex-start;
+}
+.form-group .input-wrapper.textarea-wrapper textarea {
+  resize: none;
+  height: 100%;
+}
+
+.submit-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+  /* Target the app-button wrapper or the internal button via ::ng-deep if encapsulated, 
+     but ButtonComponent adds classes to the button element itself.
+     We passed className="submit-btn-custom". 
+     Since ButtonComponent encapsulates styles, we might need :host ::ng-deep 
+     OR relying on ButtonComponent's variants. 
+     The 'contact' variant is likely what we want.
+  */
+}
+.submit-btn-wrapper .btn-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.submit-btn-wrapper .btn-content span {
+  font-weight: 500;
+}
+
+/* Light Theme Overrides if specific adjustment needed beyond vars */
+:host-context([data-theme=light]) .contact-form-container {
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.05);
+}
+:host-context([data-theme=light]) .form-header h3 {
+  opacity: 1;
+  color: var(--primary-color);
+}
+:host-context([data-theme=light]) .form-group .input-wrapper {
+  background: #f8f9fa;
+  border-color: #e2e8f0;
+}
+:host-context([data-theme=light]) .form-group .input-wrapper:focus-within {
+  border-color: var(--primary-color);
+  background: #ffffff;
+}
+:host-context([data-theme=light]) .submit-btn-wrapper .submit-btn {
+  background: var(--primary-color);
+  box-shadow: 0 4px 14px rgba(43, 166, 168, 0.3);
+}
+:host-context([data-theme=light]) .submit-btn-wrapper .submit-btn span, :host-context([data-theme=light]) .submit-btn-wrapper .submit-btn lucide-icon {
+  color: #ffffff;
+}
+:host-context([data-theme=light]) .submit-btn-wrapper .submit-btn:hover {
+  background: var(--secondary-color);
+}
+
+/*# sourceMappingURL=contact-form.component.css.map */

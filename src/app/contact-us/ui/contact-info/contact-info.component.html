@@ -1,0 +1,45 @@
+<div class="contact-info-grid">
+  <!-- Email -->
+  <div class="info-card">
+    <div class="icon-wrapper">
+      <lucide-icon [img]="Mail" [size]="28" strokeWidth="1.5"></lucide-icon>
+    </div>
+    <div class="text-content">
+      <h3>{{ 'CONTACT_US.INFO.EMAIL_LABEL' | translate }}</h3>
+      <p>info@rqm.sa</p>
+    </div>
+  </div>
+
+  <!-- Phone -->
+  <div class="info-card">
+    <div class="icon-wrapper">
+      <lucide-icon [img]="Phone" [size]="28" strokeWidth="1.5"></lucide-icon>
+    </div>
+    <div class="text-content">
+      <h3>{{ 'CONTACT_US.INFO.PHONE_LABEL' | translate }}</h3>
+      <p>+ (996) 554-404-688</p>
+    </div>
+  </div>
+
+  <!-- Location -->
+  <div class="info-card">
+    <div class="icon-wrapper">
+      <lucide-icon [img]="MapPin" [size]="28" strokeWidth="1.5"></lucide-icon>
+    </div>
+    <div class="text-content">
+      <h3>{{ 'CONTACT_US.INFO.LOCATION_LABEL' | translate }}</h3>
+      <p>{{ 'CONTACT_US.INFO.LOCATION_VALUE' | translate }}</p>
+    </div>
+  </div>
+
+  <!-- Working Hours -->
+  <div class="info-card">
+    <div class="icon-wrapper">
+      <lucide-icon [img]="Clock" [size]="28" strokeWidth="1.5"></lucide-icon>
+    </div>
+    <div class="text-content">
+      <h3>{{ 'CONTACT_US.INFO.HOURS_LABEL' | translate }}</h3>
+      <p>{{ 'CONTACT_US.INFO.HOURS_VALUE' | translate }}</p>
+    </div>
+  </div>
+</div>

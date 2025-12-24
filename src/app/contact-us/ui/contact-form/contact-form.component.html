@@ -1,0 +1,59 @@
+<div class="contact-form-container">
+  <div class="form-header">
+    <h3>{{ 'CONTACT_US.FORM.TITLE' | translate }}</h3>
+  </div>
+
+  <form class="form-content">
+    
+    <!-- Full Name -->
+    <div class="form-group">
+      <label>{{ 'CONTACT_US.FORM.FULL_NAME' | translate }}</label>
+      <div class="input-wrapper">
+        <input type="text" [placeholder]="'CONTACT_US.FORM.FULL_NAME_PLACEHOLDER' | translate">
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div class="form-group">
+      <label>{{ 'CONTACT_US.FORM.EMAIL' | translate }}</label>
+      <div class="input-wrapper">
+        <input type="email" [placeholder]="'CONTACT_US.FORM.EMAIL_PLACEHOLDER' | translate">
+      </div>
+    </div>
+
+    <!-- Phone -->
+    <div class="form-group">
+      <label>{{ 'CONTACT_US.FORM.PHONE' | translate }}</label>
+      <div class="input-wrapper">
+        <input type="tel" [placeholder]="'CONTACT_US.FORM.PHONE_PLACEHOLDER' | translate">
+      </div>
+    </div>
+
+    <!-- Subject -->
+    <div class="form-group">
+      <label>{{ 'CONTACT_US.FORM.SUBJECT' | translate }}</label>
+      <div class="input-wrapper">
+        <input type="text" [placeholder]="'CONTACT_US.FORM.SUBJECT_PLACEHOLDER' | translate">
+      </div>
+    </div>
+
+    <!-- Message -->
+    <div class="form-group full-width">
+      <label>{{ 'CONTACT_US.FORM.MESSAGE' | translate }}</label>
+      <div class="input-wrapper textarea-wrapper">
+        <textarea [placeholder]="'CONTACT_US.FORM.MESSAGE_PLACEHOLDER' | translate"></textarea>
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="submit-btn-wrapper">
+      <app-button variant="contact" className="submit-btn-custom">
+         <div class="btn-content">
+           <lucide-icon [img]="Send" [size]="20"></lucide-icon>
+           <span>{{ 'CONTACT_US.FORM.SEND' | translate }}</span>
+         </div>
+      </app-button>
+    </div>
+
+  </form>
+</div>

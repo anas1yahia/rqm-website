@@ -1,11 +1,37 @@
 <div class="contact-us-container">
-  <!-- Content will go here -->
-  <div style="height: 100px;"></div> 
-  <!-- Spacer to ensure header doesn't overlap content if fixed, though currently empty. 
-       Also acts as the 'Header' presence visual check since the real header is in App root. -->
   
-  <div class="content-placeholder">
-    <!-- Temporary placeholder for Contact Us form -->
+  <div class="contact-content-wrapper">
+    <!-- Page Title -->
+    <div class="page-title">
+      <h1>{{ 'CONTACT_US.TITLE' | translate }}</h1>
+    </div>
+
+    <!-- Main Content Area: Form & Illustration/Map placeholder -->
+    <div class="main-section">
+      <!-- Form Section -->
+      <div class="form-section">
+         <app-contact-form></app-contact-form>
+      </div>
+      
+      <!-- Illustration/Visual placeholder (Right side on Desktop) -->
+      <!-- In the design, the form is on the left (RTL) or right? 
+           Based on design node 5670:1012, it looks like just the form is prominent.
+           Wait, looking at 5670:1009, there is a big title "Contact Us" and then the form container.
+           The info cards are BELOW the form in 5670:1141 context within the full page?
+           Let's re-check the design structure from the context provided.
+           Context for 5670:1009 says: "Container" -> "ContactPageFuturistic" -> ...
+           It seems the page has the Title, then a horizontal flex container (Form + something else?).
+           Actually, the form component context 5670:1013 is inside 5670:1011 which is "Form".
+           And the Info component 5670:1141 is a row of 4 cards.
+           
+           Let's stack them: Title -> Form -> Info Cards -> Footer.
+      -->
+    </div>
+
+    <!-- Contact Info Cards -->
+    <div class="info-section">
+      <app-contact-info></app-contact-info>
+    </div>
   </div>
 
   <app-footer></app-footer>

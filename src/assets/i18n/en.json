@@ -143,5 +143,30 @@
     "TITLE": "Page Not Found",
     "DESCRIPTION": "Sorry, the page you are looking for does not exist or has been moved.",
     "BACK_HOME": "Back to Home"
+  },
+  "CONTACT_US": {
+    "TITLE": "Contact Us",
+    "FORM": {
+      "TITLE": "Send us a message",
+      "FULL_NAME": "Full Name",
+      "FULL_NAME_PLACEHOLDER": "John Doe",
+      "EMAIL": "Email Address",
+      "EMAIL_PLACEHOLDER": "john@example.com",
+      "PHONE": "Phone Number",
+      "PHONE_PLACEHOLDER": "+ (996) 123-4567",
+      "SUBJECT": "Subject",
+      "SUBJECT_PLACEHOLDER": "How can we help you?",
+      "MESSAGE": "Message",
+      "MESSAGE_PLACEHOLDER": "Tell us about your project...",
+      "SEND": "Send Message"
+    },
+    "INFO": {
+      "EMAIL_LABEL": "Email Address",
+      "PHONE_LABEL": "Phone Number",
+      "LOCATION_LABEL": "Office Location",
+      "LOCATION_VALUE": "Riyadh, Al Sahafa - Olaya St.",
+      "HOURS_LABEL": "Working Hours",
+      "HOURS_VALUE": "Sun - Thu: 9:00 - 18:00"
+    }
   }
 }
