@@ -19,7 +19,7 @@
   font-weight: 700;
   color: rgba(255, 255, 255, 0.6); /* Figma: text-[rgba(255,255,255,0.6)] */
   margin: 0;
-  text-align: right; /* RTL default */
+  text-align: start; /* RTL default */
 }
 
 .form-content {
@@ -37,7 +37,7 @@
   font-size: 16px;
   color: #ffffff; /* Figma: text-white */
   font-weight: 400;
-  text-align: right;
+  text-align: start;
 }
 .form-group .input-wrapper {
   background: rgba(203, 200, 199, 0.06); /* Figma */
@@ -61,7 +61,7 @@
   font-family: inherit;
   font-size: 16px;
   color: #6a7282; /* Figma: text-[#6a7282] */
-  text-align: right; /* RTL default */
+  text-align: start; /* RTL default */
 }
 .form-group .input-wrapper input::placeholder, .form-group .input-wrapper textarea::placeholder {
   color: #6a7282;
@@ -79,14 +79,14 @@
 
 .submit-btn-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   margin-top: 8px;
   /* The button itself is styled by app-button variant="contact" */
   /* Figma button has huge padding: px-[161px] py-[16px] */
   /* We might need to override the variant padding or let it stretch? */
   /* Let's try to target the internal button via a global class or just rely on the variant being close enough.
      The variant has: padding: 11.25px 20px 12px 20px; which is much smaller.
-     We passed className="submit-btn-custom". 
+     We passed className="submit-btn-custom".
      We can use ::ng-deep to override it from here for this specific instance.
   */
 }
@@ -94,7 +94,7 @@
   padding: 16px 161px !important; /* Force Figma padding */
   border-radius: 30px !important;
   background: #fafafa !important; /* Figma: bg-[#fafafa] */
-  box-shadow: 0px 0px 12px 0px rgba(249, 244, 244, 0.8) !important;
+  box-shadow: 0 0 12px 0 rgba(249, 244, 244, 0.8) !important;
   border: none !important;
   /* Reset gradient from contact variant */
   background-image: none !important;
@@ -104,7 +104,7 @@
 }
 .submit-btn-wrapper ::ng-deep .submit-btn-custom:hover {
   transform: translateY(-2px);
-  box-shadow: 0px 4px 16px 0px rgba(249, 244, 244, 0.9) !important;
+  box-shadow: 0 4px 16px 0 rgba(249, 244, 244, 0.9) !important;
 }
 
 /* Light Theme Overrides */
