@@ -15,11 +15,12 @@
 }
 
 .background-wrapper {
-  position: absolute;
+  position: fixed; /* Keep background fixed for true parallax reveal */
   inset: 0;
   pointer-events: none;
   overflow: hidden;
   z-index: -1; /* Send to back */
+  will-change: transform, opacity;
 }
 
 .background-image-container {
@@ -30,10 +31,10 @@
 
 .background-image {
   width: 100%;
-  height: 113.29%; /* Figma spec */
+  height: 120%; /* Increased for more vertical travel room */
   object-fit: cover;
   position: absolute;
-  top: 0.02%;
+  top: 0;
   left: 0;
 }
 
@@ -41,6 +42,7 @@
   position: absolute;
   inset: 0;
   background: rgba(10, 12, 27, 0.8);
+  z-index: 1;
 }
 
 .bottom-fade {
@@ -48,7 +50,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 250px;
+  height: 350px; /* Increased fade area */
   background: linear-gradient(to bottom, rgba(10, 12, 26, 0) 0%, #0A0C1A 100%);
   backdrop-filter: blur(4px);
   pointer-events: none;
@@ -61,13 +63,15 @@
   flex-direction: column;
   gap: 5rem;
   align-items: center;
-  padding-top: 140px; /* Consistent with Landing Page */
+  padding-top: 140px;
   padding-bottom: 50px;
   width: 100%;
   padding-left: 20px;
   padding-right: 20px;
   box-sizing: border-box;
   z-index: 1;
+  will-change: transform, opacity;
+  transform-style: preserve-3d;
 }
 
 .hero-offset {

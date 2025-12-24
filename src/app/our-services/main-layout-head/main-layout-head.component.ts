@@ -27,20 +27,21 @@ export class MainLayoutHeadComponent implements AfterViewInit {
     
     if (!this.backgroundRef || !this.contentRef) return;
 
-    const scrollY = window.scrollY;
-    
-    // Background: Moves slower, fades out
-    const bgTransY = scrollY * 0.2;
-    const bgOpacity = Math.max(0, 1 - scrollY * 0.001);
-    
-    this.backgroundRef.nativeElement.style.transform = `translateY(${bgTransY}px)`;
-    this.backgroundRef.nativeElement.style.opacity = bgOpacity;
-
-    // Content (Hero): Moves faster (parallax effect), fades out differently
-    const contentTransY = scrollY * 0.4;
-    const contentOpacity = Math.max(0, 1 - scrollY * 0.002);
-    
-    this.contentRef.nativeElement.style.transform = `translateY(-${contentTransY}px)`;
-    this.contentRef.nativeElement.style.opacity = contentOpacity;
+    // Use requestAnimationFrame for smoother performance
+    window.requestAnimationFrame(() => {
+      const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+      
+      // Background: Slow subtle move to create depth
+      const bgTransY = scrollY * 0.15;
+      this.backgroundRef.nativeElement.style.transform = `translate3d(0, ${bgTransY}px, 0)`;
+      
+      // Content (Hero): Moves up faster than scroll to create "sliding under" or "lifting" effect
+      // and fades out as it leaves the top area
+      const contentTransY = scrollY * 0.3;
+      const contentOpacity = Math.max(0, 1 - (scrollY / 600)); // Fade out over 600px of scroll
+      
+      this.contentRef.nativeElement.style.transform = `translate3d(0, -${contentTransY}px, 0)`;
+      this.contentRef.nativeElement.style.opacity = contentOpacity.toString();
+    });
   }
 }
