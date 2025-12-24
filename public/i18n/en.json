@@ -179,7 +179,18 @@
     "SERVICES_PAGE": {
       "TITLE": "Our Services",
       "SUBTITLE": "We provide innovative and comprehensive digital solutions to support digital transformation and enhance business efficiency.",
-      "COMING_SOON": "Detailed service information will be added soon..."
+      "COMING_SOON": "Detailed service information will be added soon...",
+      "HERO": {
+        "BADGE": "Our Services",
+        "SECURITY_TITLE": "Data Protection",
+        "SECURITY_DESC": "Explore how RQM contributes to enhancing AI capabilities in the market and developing smart solutions for various fields",
+        "TAG_ENCRYPTION": "Advanced Encryption",
+        "TAG_AI_PROTECTION": "AI Protection",
+        "TAG_MONITORING": "Continuous Monitoring",
+        "AI_TITLE": "AI-Powered",
+        "AI_DESC": "Explore how RQM contributes to enhancing AI capabilities in the market and developing smart solutions for various fields",
+        "CTA": "Step 'Zero' for Digital Transformation"
+      }
     }
   }
 }

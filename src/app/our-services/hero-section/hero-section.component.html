@@ -1,0 +1,65 @@
+<section class="hero-section">
+  <!-- Services Badge -->
+  <div class="badge-container">
+    <div class="badge">
+      <div class="dot"></div>
+      <span>{{ 'SERVICES_PAGE.HERO.BADGE' | translate }}</span>
+    </div>
+  </div>
+
+  <!-- Feature Cards Container -->
+  <div class="cards-container">
+    <!-- Security Card (Green) -->
+    <div class="feature-card security-card">
+      <div class="card-content">
+        <h2>{{ 'SERVICES_PAGE.HERO.SECURITY_TITLE' | translate }}</h2>
+        <p>{{ 'SERVICES_PAGE.HERO.SECURITY_DESC' | translate }}</p>
+        
+        <div class="tags-row">
+          <span class="tag">{{ 'SERVICES_PAGE.HERO.TAG_ENCRYPTION' | translate }}</span>
+          <span class="tag">{{ 'SERVICES_PAGE.HERO.TAG_AI_PROTECTION' | translate }}</span>
+          <span class="tag">{{ 'SERVICES_PAGE.HERO.TAG_MONITORING' | translate }}</span>
+        </div>
+      </div>
+      <!-- Decorative Glows/Borders -->
+      <div class="corner-accents">
+        <div class="accent-line top-edge"></div>
+        <div class="accent-line right-edge"></div>
+      </div>
+    </div>
+
+    <!-- AI Card (Blue) -->
+    <div class="feature-card ai-card">
+      <div class="card-content">
+        <h2>{{ 'SERVICES_PAGE.HERO.AI_TITLE' | translate }}</h2>
+        <p>{{ 'SERVICES_PAGE.HERO.AI_DESC' | translate }}</p>
+      </div>
+      <!-- Decorative Glows/Borders -->
+      <div class="corner-accents">
+        <div class="accent-line bottom-edge"></div>
+        <div class="accent-line left-edge"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA Button Section -->
+  <div class="cta-wrapper">
+    <div class="btn-container">
+      <!-- Binary Decorations -->
+      <div class="binary-decor">
+        <div class="col">
+          <span>0</span>
+          <span>1</span>
+        </div>
+        <div class="col">
+          <span>1</span>
+          <span>0</span>
+        </div>
+      </div>
+      
+      <app-button variant="contact" className="services-hero-btn" [routerLink]="['/', currentLang, 'contact-us']">
+        <span class="btn-text">{{ 'SERVICES_PAGE.HERO.CTA' | translate }}</span>
+      </app-button>
+    </div>
+  </div>
+</section>

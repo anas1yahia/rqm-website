@@ -1,0 +1,218 @@
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.badge-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end; /* Align right as per Figma RTL */
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(148, 166, 204, 0.3);
+  padding: 12px 25px;
+  border-radius: 100px;
+  
+  .dot {
+    width: 8px;
+    height: 8px;
+    background: #36c9cb;
+    border-radius: 50%;
+    opacity: 0.976;
+  }
+
+  span {
+    color: #94a6cc;
+    font-size: 15px;
+    font-weight: 400;
+  }
+}
+
+.cards-container {
+  display: flex;
+  gap: 18px;
+  width: 100%;
+  justify-content: center;
+}
+
+.feature-card {
+  position: relative;
+  height: 260px;
+  border-radius: 8px;
+  border: 0.75px solid rgba(255, 255, 255, 0.25);
+  overflow: hidden;
+  padding: 42px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+
+  .card-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    text-align: start; /* Respects direction: rtl/ltr */
+  }
+
+  h2 {
+    font-size: 39px;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: rgba(198, 206, 221, 0.9);
+    margin: 0;
+    max-width: 400px;
+  }
+}
+
+.security-card {
+  width: 491px;
+  background: linear-gradient(152deg, rgba(98, 196, 170, 0.2) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(0, 0, 0, 0) 100%);
+  
+  h2 { font-size: 39px; }
+}
+
+.ai-card {
+  width: 580px;
+  background: linear-gradient(155deg, rgba(13, 153, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(0, 0, 0, 0) 100%);
+  
+  h2 { font-size: 48px; }
+}
+
+.tags-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: rgba(255, 255, 255, 0.1);
+  border: 0.75px solid rgba(255, 255, 255, 0.2);
+  padding: 6px 12px;
+  border-radius: 100px;
+  font-size: 10.5px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+// Corner Accents
+.corner-accents {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.accent-line {
+  position: absolute;
+  background: linear-gradient(to bottom, #62c4aa, transparent);
+  border-radius: 25px;
+  z-index: 3;
+}
+
+.security-card .accent-line {
+  background: linear-gradient(to bottom, #62c4aa, transparent);
+}
+
+.ai-card .accent-line {
+  background: linear-gradient(to bottom, #0d99ff, transparent);
+}
+
+.top-edge { top: -6px; right: 100px; width: 96px; height: 1.5px; }
+.right-edge { top: -6px; right: 3px; width: 1.5px; height: 96px; }
+
+.bottom-edge { bottom: -1px; left: 0; width: 128px; height: 2px; background: linear-gradient(to right, #0d99ff, transparent); }
+.left-edge { bottom: -1px; left: 0; width: 2px; height: 128px; }
+
+// CTA Wrapper
+.cta-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-container {
+  position: relative;
+  width: 275px;
+}
+
+.binary-decor {
+  position: absolute;
+  top: 13px;
+  inset-inline-start: 0;
+  display: flex;
+  gap: 10px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 700;
+  font-size: 13.3px;
+  color: white;
+  z-index: 5;
+
+  .col {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+}
+
+:host ::ng-deep .services-hero-btn {
+  width: 100%;
+  padding: 18px 37px;
+  background: transparent;
+  border: 3px solid #3a405e;
+  border-radius: 16px 99px 99px 16px; /* Adjust based on RTL/LTR if needed */
+  border-inline-start-width: 0;
+  
+  .btn-text {
+    color: white;
+    font-size: 18.7px;
+  }
+
+  &:hover {
+    background: rgba(58, 64, 94, 0.3);
+  }
+}
+
+// Responsive
+@media (max-width: 1100px) {
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .feature-card {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    min-height: 260px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    gap: 40px;
+  }
+
+  .feature-card h2 {
+    font-size: 28px;
+  }
+
+  .ai-card h2 {
+    font-size: 32px;
+  }
+}
