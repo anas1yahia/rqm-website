@@ -158,8 +158,8 @@
 
   /* Light theme button overrides if needed, but the white/grey button above looks like the design intention for the form specifically. */
   .submit-btn-wrapper ::ng-deep .submit-btn-custom {
-      background: var(--primary-color) !important;
-      box-shadow: 0 4px 14px rgba(43, 166, 168, 0.3) !important;
+      background: #0d0d0d !important; /* Dark/Black button in Light Theme */
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3) !important;
 
        .btn-content {
           span, lucide-icon {

@@ -1,11 +1,12 @@
-import { Component, Inject, PLATFORM_ID, HostListener } from '@angular/core';
+import { Component, Inject, PLATFORM_ID, HostListener, OnInit } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { RouterModule, Router, ActivatedRoute } from '@angular/router';
+import { RouterModule, Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { trigger, state, style, animate, transition, query, stagger } from '@angular/animations';
 import { LucideAngularModule, Menu, X, Sun, Moon } from 'lucide-angular';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { UiService } from '../../services/ui.service';
 import { ThemeService } from '../../services/theme.service';
+import { filter } from 'rxjs/operators';
 
 import { ButtonComponent } from '../button/button.component';
 
@@ -46,13 +47,14 @@ import { ButtonComponent } from '../button/button.component';
     ])
   ]
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   logoDark = "footer/logowhite-footer.svg"; // Use working footer logo path
   logoLight = "header-logo-light.svg"; // Colored logo
   backgroundBorder = "header/bg-border.png";
 
   isMenuOpen = false;
   isScrolled = false;
+  isContactPage = false;
   readonly MenuIcon = Menu;
   readonly XIcon = X;
   readonly SunIcon = Sun;
@@ -77,6 +79,19 @@ export class HeaderComponent {
     });
   }
 
+  ngOnInit() {
+    this.checkIfContactPage(this.router.url);
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe((event: any) => {
+      this.checkIfContactPage(event.urlAfterRedirects || event.url);
+    });
+  }
+
+  private checkIfContactPage(url: string) {
+    this.isContactPage = url.includes('contact-us');
+  }
+
   @HostListener('window:scroll', [])
   onWindowScroll() {
     if (isPlatformBrowser(this.platformId)) {
@@ -85,12 +100,16 @@ export class HeaderComponent {
     }
   }
 
+  get isLightHeader(): boolean {
+    // Show light header (white bg, dark text) if:
+    // 1. Theme is Light AND (Scrolled OR It's Contact Page which has no dark hero)
+    return this.themeService.currentTheme() === 'light' && (this.isScrolled || this.isContactPage);
+  }
+
   get currentLogo(): string {
-    // If scrolled past hero AND in light mode, use the colored logo
-    if (this.isScrolled && this.themeService.currentTheme() === 'light') {
+    if (this.isLightHeader) {
       return this.logoLight;
     }
-    // Otherwise (Top of page OR Dark Mode) use the White logo
     return this.logoDark;
   }
 
