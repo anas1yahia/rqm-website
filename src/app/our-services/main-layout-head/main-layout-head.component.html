@@ -1,5 +1,5 @@
 <div class="main-layout-head-container">
-  <div aria-hidden="true" class="background-wrapper">
+  <div aria-hidden="true" class="background-wrapper" #background>
     <div class="background-image-container">
       <img [src]="imgHeaderBackground" alt="Background" class="background-image">
     </div>
@@ -7,7 +7,7 @@
     <div class="bottom-fade"></div>
   </div>
 
-  <div class="content-wrapper">
+  <div class="content-wrapper" #content>
     <div class="hero-offset">
       <app-hero-section></app-hero-section>
     </div>

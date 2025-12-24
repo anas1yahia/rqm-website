@@ -20,6 +20,7 @@
   pointer-events: none;
   overflow: hidden;
   z-index: -1; /* Send to back */
+  will-change: transform, opacity;
 }
 
 .background-image-container {
@@ -68,6 +69,7 @@
   padding-right: 20px;
   box-sizing: border-box;
   z-index: 1;
+  will-change: transform, opacity;
 }
 
 .hero-offset {
