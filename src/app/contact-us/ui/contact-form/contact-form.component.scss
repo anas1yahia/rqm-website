@@ -3,21 +3,23 @@
   flex-direction: column;
   gap: 24px;
   padding: 32px;
-  background: var(--card-bg); /* Use CSS variable from styles.scss */
-  border: 1px solid var(--card-border);
+  background: rgba(255, 255, 255, 0.05); /* Figma: bg-[rgba(255,255,255,0.05)] */
+  border: none; /* Figma doesn't explicitly show border on container, but has shadow */
   border-radius: 20px;
   box-shadow: 0px 0px 8px 0px rgba(13, 153, 255, 0.4);
   width: 100%;
-  max-width: 600px; /* Based on typical form width */
+  max-width: 1066px; /* Figma: w-[1066px] */
+  margin: 0 auto;
 }
 
 .form-header {
+  width: 100%;
   h3 {
     font-size: 24px;
     font-weight: 700;
-    color: var(--text-color);
-    opacity: 0.6;
+    color: rgba(255, 255, 255, 0.6); /* Figma: text-[rgba(255,255,255,0.6)] */
     margin: 0;
+    text-align: right; /* RTL default */
   }
 }
 
@@ -34,19 +36,21 @@
 
   label {
     font-size: 16px;
-    color: var(--text-color);
+    color: #ffffff; /* Figma: text-white */
     font-weight: 400;
+    text-align: right;
   }
 
   .input-wrapper {
-    background: rgba(203, 200, 199, 0.06);
-    border: 1px solid var(--card-border);
+    background: rgba(203, 200, 199, 0.06); /* Figma */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Figma */
     border-radius: 14px;
     padding: 0 24px;
     height: 58px;
     display: flex;
     align-items: center;
     transition: border-color 0.3s ease;
+    overflow: hidden;
 
     &:focus-within {
       border-color: var(--primary-color);
@@ -59,10 +63,12 @@
       outline: none;
       font-family: inherit;
       font-size: 16px;
-      color: var(--text-color);
+      color: #6a7282; /* Figma: text-[#6a7282] */
+      text-align: right; /* RTL default */
       
       &::placeholder {
-        color: var(--text-muted);
+        color: #6a7282;
+        opacity: 0.7;
       }
     }
 
@@ -83,47 +89,84 @@
   display: flex;
   justify-content: center;
   margin-top: 8px;
-
-  /* Target the app-button wrapper or the internal button via ::ng-deep if encapsulated, 
-     but ButtonComponent adds classes to the button element itself.
-     We passed className="submit-btn-custom". 
-     Since ButtonComponent encapsulates styles, we might need :host ::ng-deep 
-     OR relying on ButtonComponent's variants. 
-     The 'contact' variant is likely what we want.
-  */
   
-  .btn-content {
-      display: flex;
-      align-items: center;
-      gap: 12px;
+  /* The button itself is styled by app-button variant="contact" */
+  /* Figma button has huge padding: px-[161px] py-[16px] */
+  /* We might need to override the variant padding or let it stretch? */
+  
+  /* Let's try to target the internal button via a global class or just rely on the variant being close enough.
+     The variant has: padding: 11.25px 20px 12px 20px; which is much smaller.
+     We passed className="submit-btn-custom". 
+     We can use ::ng-deep to override it from here for this specific instance.
+  */
+  ::ng-deep .submit-btn-custom {
+      padding: 16px 161px !important; /* Force Figma padding */
+      border-radius: 30px !important;
+      background: #fafafa !important; /* Figma: bg-[#fafafa] */
+      box-shadow: 0px 0px 12px 0px rgba(249, 244, 244, 0.8) !important;
+      border: none !important;
       
-      span {
-          font-weight: 500;
+      /* Reset gradient from contact variant */
+      background-image: none !important;
+
+      .btn-content {
+          span, lucide-icon {
+              color: #0d0d0d !important; /* Figma: text-[#0d0d0d] */
+          }
+      }
+
+      &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0px 4px 16px 0px rgba(249, 244, 244, 0.9) !important;
       }
   }
 }
 
 
-/* Light Theme Overrides if specific adjustment needed beyond vars */
+/* Light Theme Overrides */
 :host-context([data-theme="light"]) {
   .contact-form-container {
-      box-shadow: 0px 10px 40px rgba(0,0,0,0.1);
       background: #ffffff;
-      border-color: rgba(0,0,0,0.05);
+      box-shadow: 0px 10px 40px rgba(0,0,0,0.1);
   }
   
   .form-header h3 {
-      opacity: 1;
       color: var(--primary-color);
   }
 
-  .form-group .input-wrapper {
-      background: #f8f9fa;
-      border-color: #e2e8f0;
+  .form-group {
+      label {
+          color: var(--text-color);
+      }
+      
+      .input-wrapper {
+          background: #f8f9fa;
+          border-color: #e2e8f0;
 
-      &:focus-within {
-          border-color: var(--primary-color);
-          background: #ffffff;
+          input, textarea {
+               color: var(--text-color);
+               &::placeholder {
+                   color: var(--text-muted);
+               }
+          }
+
+          &:focus-within {
+              border-color: var(--primary-color);
+              background: #ffffff;
+          }
+      }
+  }
+  
+  /* Light theme button overrides if needed, but the white/grey button above looks like the design intention for the form specifically. */
+  .submit-btn-wrapper ::ng-deep .submit-btn-custom {
+      background: var(--primary-color) !important;
+      box-shadow: 0 4px 14px rgba(43, 166, 168, 0.3) !important;
+      
+       .btn-content {
+          span, lucide-icon {
+              color: #ffffff !important;
+          }
       }
   }
 }
+
