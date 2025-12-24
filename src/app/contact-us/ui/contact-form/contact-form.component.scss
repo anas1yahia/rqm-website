@@ -126,17 +126,4 @@
           background: #ffffff;
       }
   }
-
-  .submit-btn-wrapper .submit-btn {
-      background: var(--primary-color);
-      box-shadow: 0 4px 14px rgba(43, 166, 168, 0.3);
-      
-      span, lucide-icon {
-          color: #ffffff;
-      }
-
-      &:hover {
-          background: var(--secondary-color);
-      }
-  }
 }

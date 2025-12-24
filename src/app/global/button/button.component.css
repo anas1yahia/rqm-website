@@ -152,17 +152,34 @@ button:disabled {
   background: linear-gradient(to right, white 50%, transparent 50%);
   background-size: 200% 100%;
   background-position: 100% 0;
-  transition: background-position 0.4s ease-out, border-color 0.3s;
+  transition: background-position 0.4s ease-out, border-color 0.3s, color 0.3s;
   color: white;
 }
-.contact:hover {
+:host-context([data-theme=light]) .contact {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  /* In light mode, the gradient white part (hover state) is fine, 
+     but the transparent part (default state) sits on white bg.
+     So default text must be colored.
+
+     On hover, background becomes white. Text should probably be dark/primary.
+  */
+  background: linear-gradient(to right, var(--primary-color) 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+}
+:host-context([data-theme=light]) .contact:hover {
   background-position: 0 0;
-  border-color: white;
+  color: white; /* White text on Primary bg */
+  border-color: var(--primary-color);
 }
 .contact {
-  /* Handle inner text color on hover via ::ng-deep or content style */
-  /* This is tricky with ng-content. The parent uses .contact-wrapper p */
-  /* We can try to target it if it's passed in */
+  /* Default (Dark Theme) Hover */
+}
+.contact:not(:host-context([data-theme=light]) .contact):hover {
+  background-position: 0 0;
+  border-color: white;
+  color: #0A0C1A;
 }
 
 /*# sourceMappingURL=button.component.css.map */
