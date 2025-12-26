@@ -182,7 +182,12 @@
       "CARD_3_DESC": "We provide a comprehensive analysis of systems and networks to detect security vulnerabilities and assess their severity, providing recommendations for remediation.",
       "CARD_4_TITLE": "Penetration Testing Services",
       "CARD_4_DESC": "We simulate real cyber attacks to test the strength of protection systems and identify security vulnerabilities before hackers exploit them."
-    }                }
+    },
+    "SOLUTIONS_BANNER": {
+      "MAIN_HEADING": "Your Business Solutions are One Step Away",
+      "SUB_HEADING": "Take your business to a new level of innovation with modern technologies and AI, and get ready to be part of the upcoming digital future.",
+      "BTN_TEXT": "Contact Us"
+    }}
 ,
   "FOOTER": {
     "FOLLOW_US": "Follow Us",

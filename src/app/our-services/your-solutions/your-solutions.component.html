@@ -23,20 +23,16 @@
   <!-- Content Layer -->
   <div class="content-overlay">
     <div class="text-block">
-      <h2 class="main-heading">حلول أعمالك على بُعد خطوة​</h2>
-      <p class="sub-heading">
-        انقل أعمالك إلى مستوى جديد من الابتكار بالتقنيات الحديثة
-        <br>
-        والذكاء الاصطناعي واستعد لتكون جزءاً من المستقبل الرقمي القادم
-      </p>
+      <h2 class="main-heading">{{ 'SOLUTIONS_BANNER.MAIN_HEADING' | translate }}</h2>
+      <p class="sub-heading">{{ 'SOLUTIONS_BANNER.SUB_HEADING' | translate }}</p>
     </div>
 
     <div class="action-btn">
-      <app-button 
-        variant="contact" 
-        className="solutions-contact-btn" 
+      <app-button
+        variant="contact"
+        className="solutions-contact-btn"
         [routerLink]="['/', currentLang, 'contact-us']">
-        <span class="btn-txt">تواصل معنا</span>
+        <span class="btn-txt">{{ 'SOLUTIONS_BANNER.BTN_TEXT' | translate }}</span>
       </app-button>
     </div>
   </div>

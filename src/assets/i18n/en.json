@@ -280,5 +280,10 @@
       "SDAIA": "Saudi Data and Artificial Intelligence Authority (sdaia.gov.sa)",
       "NDMO": "National Data Governance Platform (dgp.sdaia.gov.sa)"
     }
+  },
+  "SOLUTIONS_BANNER": {
+    "MAIN_HEADING": "Your Business Solutions are One Step Away",
+    "SUB_HEADING": "Take your business to a new level of innovation with modern technologies and AI, and get ready to be part of the upcoming digital future.",
+    "BTN_TEXT": "Contact Us"
   }
 }
