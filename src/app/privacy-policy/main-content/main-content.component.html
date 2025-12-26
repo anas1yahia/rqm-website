@@ -1,0 +1,169 @@
+<section class="main-content">
+  <div class="content-container">
+    
+    <!-- Header Info -->
+    <h1 class="main-title">{{ 'PRIVACY_POLICY.TITLE' | translate }}</h1>
+    
+    <div class="intro-block">
+      <h3>{{ 'PRIVACY_POLICY.INTRO_TITLE' | translate }}</h3>
+      <p>{{ 'PRIVACY_POLICY.INTRO_TEXT' | translate }}</p>
+    </div>
+
+    <div class="last-updated">
+      <h3>{{ 'PRIVACY_POLICY.LAST_UPDATE_LABEL' | translate }}</h3>
+      <p>{{ 'PRIVACY_POLICY.LAST_UPDATE_DATE' | translate }}</p>
+    </div>
+
+    <!-- Introduction -->
+    <div class="section-block">
+      <h2>{{ 'PRIVACY_POLICY.INTRODUCTION.TITLE' | translate }}</h2>
+      <p>{{ 'PRIVACY_POLICY.INTRODUCTION.TEXT' | translate }}</p>
+    </div>
+
+    <!-- Data Protection -->
+    <div class="section-block">
+      <h2>{{ 'PRIVACY_POLICY.DATA_PROTECTION.TITLE' | translate }}</h2>
+      <p>{{ 'PRIVACY_POLICY.DATA_PROTECTION.TEXT_1' | translate }}</p>
+      <p>{{ 'PRIVACY_POLICY.DATA_PROTECTION.TEXT_2' | translate }}</p>
+    </div>
+
+    <!-- Legal Basis -->
+    <div class="section-block">
+      <h2>{{ 'PRIVACY_POLICY.LEGAL_BASIS.TITLE' | translate }}</h2>
+      <p class="subtitle">{{ 'PRIVACY_POLICY.LEGAL_BASIS.SUBTITLE' | translate }}</p>
+      <ul>
+        <li [innerHTML]="'PRIVACY_POLICY.LEGAL_BASIS.LIST.CONSENT' | translate"></li>
+        <li [innerHTML]="'PRIVACY_POLICY.LEGAL_BASIS.LIST.CONTRACTUAL' | translate"></li>
+        <li [innerHTML]="'PRIVACY_POLICY.LEGAL_BASIS.LIST.LEGITIMATE_INTEREST' | translate"></li>
+        <li [innerHTML]="'PRIVACY_POLICY.LEGAL_BASIS.LIST.LEGAL_OBLIGATION' | translate"></li>
+      </ul>
+    </div>
+
+    <!-- Data Collection -->
+    <div class="section-block">
+      <h2>{{ 'PRIVACY_POLICY.DATA_COLLECTION.TITLE' | translate }}</h2>
+      <p class="subtitle">{{ 'PRIVACY_POLICY.DATA_COLLECTION.SUBTITLE' | translate }}</p>
+      
+      <div class="sub-section">
+        <h3>{{ 'PRIVACY_POLICY.DATA_COLLECTION.DIRECT.TITLE' | translate }}</h3>
+        <ul>
+          <li [innerHTML]="'PRIVACY_POLICY.DATA_COLLECTION.DIRECT.METHOD' | translate"></li>
+          <li>{{ 'PRIVACY_POLICY.DATA_COLLECTION.DIRECT.PURPOSES_LABEL' | translate }}
+            <ul class="nested-list">
+              <li>{{ 'PRIVACY_POLICY.DATA_COLLECTION.DIRECT.PURPOSES_LIST.0' | translate }}</li>
+              <li>{{ 'PRIVACY_POLICY.DATA_COLLECTION.DIRECT.PURPOSES_LIST.1' | translate }}</li>
+              <li>{{ 'PRIVACY_POLICY.DATA_COLLECTION.DIRECT.PURPOSES_LIST.2' | translate }}</li>
+              <li>{{ 'PRIVACY_POLICY.DATA_COLLECTION.DIRECT.PURPOSES_LIST.3' | translate }}</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sub-section">
+        <h3>{{ 'PRIVACY_POLICY.DATA_COLLECTION.INDIRECT.TITLE' | translate }}</h3>
+        <ul>
+          <li [innerHTML]="'PRIVACY_POLICY.DATA_COLLECTION.INDIRECT.SOURCE' | translate"></li>
+          <li>{{ 'PRIVACY_POLICY.DATA_COLLECTION.INDIRECT.PURPOSES_LABEL' | translate }}
+            <ul class="nested-list">
+              <li>{{ 'PRIVACY_POLICY.DATA_COLLECTION.INDIRECT.PURPOSES_LIST.0' | translate }}</li>
+              <li>{{ 'PRIVACY_POLICY.DATA_COLLECTION.INDIRECT.PURPOSES_LIST.1' | translate }}</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- What Data -->
+    <div class="section-block">
+      <h2>{{ 'PRIVACY_POLICY.WHAT_DATA.TITLE' | translate }}</h2>
+      <p>{{ 'PRIVACY_POLICY.WHAT_DATA.TEXT' | translate }}</p>
+      <ul>
+        <li [innerHTML]="'PRIVACY_POLICY.WHAT_DATA.LIST.0' | translate"></li>
+        <li [innerHTML]="'PRIVACY_POLICY.WHAT_DATA.LIST.1' | translate"></li>
+        <li [innerHTML]="'PRIVACY_POLICY.WHAT_DATA.LIST.2' | translate"></li>
+        <li [innerHTML]="'PRIVACY_POLICY.WHAT_DATA.LIST.3' | translate"></li>
+      </ul>
+    </div>
+
+    <!-- Storage -->
+    <div class="section-block">
+      <h2>{{ 'PRIVACY_POLICY.STORAGE.TITLE' | translate }}</h2>
+      <p [innerHTML]="'PRIVACY_POLICY.STORAGE.LOCATION' | translate"></p>
+      <p>{{ 'PRIVACY_POLICY.STORAGE.RETENTION' | translate }}</p>
+      <p class="note">{{ 'PRIVACY_POLICY.STORAGE.NOTE' | translate }}</p>
+    </div>
+
+    <!-- Protection & Disclosure -->
+    <div class="section-block">
+      <h2>{{ 'PRIVACY_POLICY.PROTECTION.TITLE' | translate }}</h2>
+      
+      <div class="sub-section">
+        <h3>{{ 'PRIVACY_POLICY.PROTECTION.SEC_1_TITLE' | translate }}</h3>
+        <p>{{ 'PRIVACY_POLICY.PROTECTION.SEC_1_TEXT' | translate }}</p>
+        <ul>
+          <li>{{ 'PRIVACY_POLICY.PROTECTION.SEC_1_LIST.0' | translate }}</li>
+          <li>{{ 'PRIVACY_POLICY.PROTECTION.SEC_1_LIST.1' | translate }}</li>
+          <li>{{ 'PRIVACY_POLICY.PROTECTION.SEC_1_LIST.2' | translate }}</li>
+          <li>{{ 'PRIVACY_POLICY.PROTECTION.SEC_1_LIST.3' | translate }}</li>
+          <li>{{ 'PRIVACY_POLICY.PROTECTION.SEC_1_LIST.4' | translate }}</li>
+          <li>{{ 'PRIVACY_POLICY.PROTECTION.SEC_1_LIST.5' | translate }}</li>
+        </ul>
+      </div>
+
+      <div class="sub-section">
+        <h3>{{ 'PRIVACY_POLICY.PROTECTION.SEC_2_TITLE' | translate }}</h3>
+        <p>{{ 'PRIVACY_POLICY.PROTECTION.SEC_2_TEXT' | translate }}</p>
+      </div>
+    </div>
+
+    <!-- Rights -->
+    <div class="section-block">
+      <h2>{{ 'PRIVACY_POLICY.RIGHTS.TITLE' | translate }}</h2>
+      <p>{{ 'PRIVACY_POLICY.RIGHTS.TEXT' | translate }}</p>
+      <ul>
+        <li [innerHTML]="'PRIVACY_POLICY.RIGHTS.LIST.0' | translate"></li>
+        <li [innerHTML]="'PRIVACY_POLICY.RIGHTS.LIST.1' | translate"></li>
+        <li [innerHTML]="'PRIVACY_POLICY.RIGHTS.LIST.2' | translate"></li>
+        <li [innerHTML]="'PRIVACY_POLICY.RIGHTS.LIST.3' | translate"></li>
+        <li [innerHTML]="'PRIVACY_POLICY.RIGHTS.LIST.4' | translate"></li>
+        <li [innerHTML]="'PRIVACY_POLICY.RIGHTS.LIST.5' | translate"></li>
+      </ul>
+      <p class="note">{{ 'PRIVACY_POLICY.RIGHTS.NOTE' | translate }}</p>
+    </div>
+
+    <!-- Complaints -->
+    <div class="section-block">
+      <h2>{{ 'PRIVACY_POLICY.COMPLAINTS.TITLE' | translate }}</h2>
+      
+      <div class="sub-section">
+        <h3>{{ 'PRIVACY_POLICY.COMPLAINTS.SEC_1_TITLE' | translate }}</h3>
+        <p>{{ 'PRIVACY_POLICY.COMPLAINTS.SEC_1_TEXT' | translate }}</p>
+      </div>
+
+      <div class="sub-section">
+        <h3>{{ 'PRIVACY_POLICY.COMPLAINTS.SEC_2_TITLE' | translate }}</h3>
+        <p>{{ 'PRIVACY_POLICY.COMPLAINTS.SEC_2_TEXT' | translate }}</p>
+      </div>
+
+      <div class="sub-section">
+        <h3>{{ 'PRIVACY_POLICY.COMPLAINTS.SEC_3_TITLE' | translate }}</h3>
+        <p>{{ 'PRIVACY_POLICY.COMPLAINTS.SEC_3_TEXT' | translate }}</p>
+        <div class="contact-info">
+          <p>{{ 'PRIVACY_POLICY.COMPLAINTS.CONTACT_INFO.ADDRESS' | translate }}</p>
+          <p>{{ 'PRIVACY_POLICY.COMPLAINTS.CONTACT_INFO.PHONE' | translate }}</p>
+          <p>{{ 'PRIVACY_POLICY.COMPLAINTS.CONTACT_INFO.EMAIL' | translate }}</p>
+          <p>{{ 'PRIVACY_POLICY.COMPLAINTS.CONTACT_INFO.LICENSE' | translate }}</p>
+        </div>
+      </div>
+
+      <div class="sub-section">
+        <p>{{ 'PRIVACY_POLICY.COMPLAINTS.AUTHORITY_NOTE' | translate }}</p>
+        <ul class="authority-links">
+          <li><a href="https://sdaia.gov.sa/" target="_blank">{{ 'PRIVACY_POLICY.COMPLAINTS.SDAIA' | translate }}</a></li>
+          <li><a href="https://dgp.sdaia.gov.sa/" target="_blank">{{ 'PRIVACY_POLICY.COMPLAINTS.NDMO' | translate }}</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>

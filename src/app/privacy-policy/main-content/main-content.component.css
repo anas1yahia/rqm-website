@@ -1,0 +1,143 @@
+:host {
+  display: block;
+}
+
+.main-content {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  padding: 80px 20px;
+  direction: rtl; /* Default to RTL for Arabic content focus */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  /* Handle LTR if lang is en */
+}
+:host-context([dir=ltr]) .main-content {
+  direction: ltr;
+  text-align: left;
+}
+
+.content-container {
+  max-width: 1000px; /* Constrain width for readability, close to Figma's content area */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.main-title {
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.intro-block h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 8px;
+}
+.intro-block p {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.last-updated h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 8px;
+}
+.last-updated p {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text-color);
+}
+
+.section-block {
+  margin-top: 24px;
+}
+.section-block h2 {
+  font-size: 24px; /* Figma uses 24px for section titles too */
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+.section-block p {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text-color);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  white-space: pre-wrap; /* Preserve line breaks */
+}
+.section-block .subtitle {
+  margin-bottom: 12px;
+}
+.section-block ul {
+  list-style-type: disc;
+  padding-inline-start: 30px;
+  margin-bottom: 16px;
+}
+.section-block ul li {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+  color: var(--text-color);
+}
+.section-block .sub-section {
+  margin-top: 24px;
+}
+.section-block .sub-section h3 {
+  font-size: 20px; /* Slightly smaller or same as text but bold? Figma uses 24px usually. Keeping consistent. */
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 12px;
+}
+.section-block .sub-section .nested-list {
+  list-style-type: circle;
+  margin-top: 8px;
+  padding-inline-start: 30px;
+}
+.section-block .contact-info {
+  margin-top: 16px;
+}
+.section-block .contact-info p {
+  margin-bottom: 8px;
+}
+.section-block .authority-links {
+  list-style: none;
+  padding: 0;
+}
+.section-block .authority-links li {
+  margin-bottom: 8px;
+}
+.section-block .authority-links li a {
+  color: var(--primary-color);
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+.section-block .authority-links li a:hover {
+  color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 40px 20px;
+  }
+  .main-title {
+    font-size: 32px;
+  }
+  .section-block h2 {
+    font-size: 22px;
+  }
+  .section-block p, .section-block li {
+    font-size: 16px;
+  }
+}
+
+/*# sourceMappingURL=main-content.component.css.map */
