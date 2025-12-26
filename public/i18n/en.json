@@ -231,6 +231,15 @@
       "LOCATION_VALUE": "Riyadh, Al Sahafa - Olaya St.",
       "HOURS_LABEL": "Working Hours",
       "HOURS_VALUE": "Sun - Thu: 9:00 - 18:00"
+    },
+    "SOCIAL": {
+      "FOLLOW_US": "Follow Us:",
+      "BEHANCE": "behance",
+      "MEDIUM": "MEDIUM",
+      "INSTAGRAM": "instagram",
+      "X": "X/Twitter",
+      "LINKEDIN": "LINKEDIN"
+
     }
   },
   "PRIVACY_POLICY": {
