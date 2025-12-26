@@ -126,6 +126,64 @@
       "CARD_6_DESC": "We provide professional support channels and continuous operational monitoring to ensure your solutions are ready and your team and end client are satisfied."
     }
   },
+  "SOCIAL": {
+    "FOLLOW_US": "Follow Us:",
+    "BEHANCE": "Behance",
+    "MEDIUM": "Medium",
+    "X": "X",
+    "LINKEDIN": "LinkedIn"
+  },
+  "SERVICES_PAGE": {
+    "TITLE": "Our Services",
+    "SUBTITLE": "We provide innovative and comprehensive digital solutions to support digital transformation and enhance business efficiency.",
+    "COMING_SOON": "Detailed service information will be added soon...",
+    "HERO": {
+      "BADGE": "Our Services",
+      "SECURITY_TITLE": "Data Protection",
+      "SECURITY_DESC": "Explore how RQM contributes to enhancing AI capabilities in the market and developing smart solutions for various fields",
+      "TAG_ENCRYPTION": "Advanced Encryption",
+      "TAG_AI_PROTECTION": "AI Protection",
+      "TAG_MONITORING": "Continuous Monitoring",
+      "AI_TITLE": "AI-Powered",
+      "AI_DESC": "Explore how RQM contributes to enhancing AI capabilities in the market and developing smart solutions for various fields",
+      "CTA": "Step 'Zero' for Digital Transformation"
+    },
+    "AI_SECTION": {
+      "HEADING": "Building AI Solutions",
+      "DESCRIPTION": "We help entities adopt AI by developing integrated solutions to enhance interaction with advanced systems, increase business efficiency, and provide advanced technical infrastructure ensuring sustainability and quality in the digital transformation journey.",
+      "CARDS": {
+        "AGENTS_TITLE": "AI Agents Development",
+        "AGENTS_DESC": "A team of competencies with years of digital experience in leading fields such as technology, business management, and more.",
+        "AUTOMATION_TITLE": "AI Business Automation",
+        "AUTOMATION_DESC": "We provide advanced solutions for automating business processes using AI, reducing manual effort, increasing efficiency, and contributing to improved institutional performance.",
+        "ML_TITLE": "Machine Learning and Data Analysis",
+        "ML_DESC": "We help companies build strong machine learning models to analyze data, predict trends, and make strategic decisions based on artificial intelligence."
+      }
+    },
+    "MAIN": {              "HEADING": "Building the Digital Transformation Journey",
+      "LABEL": "Our Services",
+      "SUBHEADING": "Services that support your digital success",
+      "LIST": {
+        "WEB_MOBILE": "Web Platforms and Mobile App Development",
+        "INTERNAL_PLATFORMS": "Internal Business Platforms Development",
+        "INTEGRATION": "Digital Integration Services and Business Linking",
+        "ANALYSIS": "Business Requirements Analysis and Process Engineering",
+        "UI_UX": "UI/UX Design and Development"
+      }
+    },
+    "TASKS": {
+      "HEADING": "Cybersecurity Services",
+      "SUBHEADING": "We secure your business with a solid digital fence against accelerating cyber threats",
+      "CARD_1_TITLE": "Continuous Attack Simulation Services",
+      "CARD_1_DESC": "We simulate advanced attack methods to test your systems' resilience against threats and evaluate the effectiveness of response and recovery strategies.",
+      "CARD_2_TITLE": "Cyber Attack Simulation Services",
+      "CARD_2_DESC": "We predict advanced cyber attack scenarios to simulate actual attacks, aiming to test security defense readiness and the company's ability to counter them.",
+      "CARD_3_TITLE": "Vulnerability Assessment Services",
+      "CARD_3_DESC": "We provide a comprehensive analysis of systems and networks to detect security vulnerabilities and assess their severity, providing recommendations for remediation.",
+      "CARD_4_TITLE": "Penetration Testing Services",
+      "CARD_4_DESC": "We simulate real cyber attacks to test the strength of protection systems and identify security vulnerabilities before hackers exploit them."
+    }                }
+,
   "FOOTER": {
     "FOLLOW_US": "Follow Us",
     "OUR_LOCATION": "Our Location",
@@ -138,7 +196,7 @@
     "WHO_WE_ARE": "Who We Are",
     "SERVICES": "Services",
     "SLOGAN": "Your Trusted Digital Partner",
-    "COPYRIGHT": "All rights reserved RQM © 2025"
+    "COPYRIGHT": "All rights reserved RQM © 2024"
   },
   "NOT_FOUND": {
     "TITLE": "Page Not Found",
@@ -168,62 +226,118 @@
       "LOCATION_VALUE": "Riyadh, Al Sahafa - Olaya St.",
       "HOURS_LABEL": "Working Hours",
       "HOURS_VALUE": "Sun - Thu: 9:00 - 18:00"
+    }
+  },
+  "PRIVACY_POLICY": {
+    "TITLE": "Privacy Policy - RQM",
+    "INTRO_TITLE": "We are RQM for Information and Communication Technology",
+    "INTRO_TEXT": "A limited liability company with Commercial Registration No. 1010803732. Our services target government entities, semi-government entities, companies, and service providers for the government and private sectors. We provide services including but not limited to: software services, building integrated digital solutions, and cybersecurity services.",
+    "LAST_UPDATE_LABEL": "Last Updated",
+    "LAST_UPDATE_DATE": "The privacy policy was last updated on [2/02/2025].",
+    "INTRODUCTION": {
+      "TITLE": "Introduction",
+      "TEXT": "We place great importance on your privacy and strive to ensure the protection of your personal data with the highest security standards. This privacy policy aims to clarify how your data is collected, used, and processed in a manner that preserves your rights and respects your privacy. Our commitment is based on transparency and trust to ensure a safe and comfortable experience for all users. Your trust is our focus, and we are committed to protecting your privacy by all possible means."
     },
-    "SOCIAL": {
-      "FOLLOW_US": "Follow Us:",
-      "BEHANCE": "Behance",
-      "MEDIUM": "Medium",
-      "X": "X",
-      "LINKEDIN": "LinkedIn"
+    "DATA_PROTECTION": {
+      "TITLE": "Personal Data Protection (The Pillar of Trust in the Digital World)",
+      "TEXT_1": "It is the system concerned with protecting individuals' personal data, ensuring their rights, and defining the obligations of controllers to ensure the application of its provisions.",
+      "TEXT_2": "In light of digital expansion, protecting personal data has become a necessity to enhance trust between individuals and institutions. Policies and agreements aim to regulate the collection and use of data while ensuring individuals' privacy and rights, achieving a balance between innovation and respect for privacy."
     },
-    "SERVICES_PAGE": {
-      "TITLE": "Our Services",
-      "SUBTITLE": "We provide innovative and comprehensive digital solutions to support digital transformation and enhance business efficiency.",
-      "COMING_SOON": "Detailed service information will be added soon...",
-      "HERO": {
-        "BADGE": "Our Services",
-        "SECURITY_TITLE": "Data Protection",
-        "SECURITY_DESC": "Explore how RQM contributes to enhancing AI capabilities in the market and developing smart solutions for various fields",
-        "TAG_ENCRYPTION": "Advanced Encryption",
-        "TAG_AI_PROTECTION": "AI Protection",
-        "TAG_MONITORING": "Continuous Monitoring",
-              "AI_TITLE": "AI-Powered",
-                    "AI_DESC": "Explore how RQM contributes to enhancing AI capabilities in the market and developing smart solutions for various fields",
-                    "CTA": "Step 'Zero' for Digital Transformation"
-                  },
-                  "AI_SECTION": {
-                    "HEADING": "Building AI Solutions",
-                    "DESCRIPTION": "We help entities adopt AI by developing integrated solutions to enhance interaction with advanced systems, increase business efficiency, and provide advanced technical infrastructure ensuring sustainability and quality in the digital transformation journey.",
-                    "CARDS": {
-                      "AGENTS_TITLE": "AI Agents Development",
-                      "AGENTS_DESC": "A team of competencies with years of digital experience in leading fields such as technology, business management, and more.",
-                      "AUTOMATION_TITLE": "AI Business Automation",
-                      "AUTOMATION_DESC": "We provide advanced solutions for automating business processes using AI, reducing manual effort, increasing efficiency, and contributing to improved institutional performance.",
-                      "ML_TITLE": "Machine Learning and Data Analysis",
-                      "ML_DESC": "We help companies build strong machine learning models to analyze data, predict trends, and make strategic decisions based on artificial intelligence."
-                    }
-                  },
-                  "MAIN": {              "HEADING": "Building the Digital Transformation Journey",
-              "LABEL": "Our Services",
-              "SUBHEADING": "Services that support your digital success",
-                    "LIST": {
-                      "WEB_MOBILE": "Web Platforms and Mobile App Development",
-                      "INTERNAL_PLATFORMS": "Internal Business Platforms Development",
-                      "INTEGRATION": "Digital Integration Services and Business Linking",
-                      "ANALYSIS": "Business Requirements Analysis and Process Engineering",
-                      "UI_UX": "UI/UX Design and Development"
-                    }
-                  },
-                      "TASKS": {
-                        "HEADING": "Cybersecurity Services",
-                        "SUBHEADING": "We secure your business with a solid digital fence against accelerating cyber threats",
-                        "CARD_1_TITLE": "Continuous Attack Simulation Services",
-                        "CARD_1_DESC": "We simulate advanced attack methods to test your systems' resilience against threats and evaluate the effectiveness of response and recovery strategies.",
-                        "CARD_2_TITLE": "Cyber Attack Simulation Services",
-                        "CARD_2_DESC": "We predict advanced cyber attack scenarios to simulate actual attacks, aiming to test security defense readiness and the company's ability to counter them.",
-                        "CARD_3_TITLE": "Vulnerability Assessment Services",
-                        "CARD_3_DESC": "We provide a comprehensive analysis of systems and networks to detect security vulnerabilities and assess their severity, providing recommendations for remediation.",
-                        "CARD_4_TITLE": "Penetration Testing Services",
-                        "CARD_4_DESC": "We simulate real cyber attacks to test the strength of protection systems and identify security vulnerabilities before hackers exploit them."
-                      }                }
-              }}
+    "LEGAL_BASIS": {
+      "TITLE": "Legal Basis for Collecting Personal Data",
+      "SUBTITLE": "The legal basis we rely on at RQM to collect and process your personal data is:",
+      "LIST": {
+        "CONSENT": "<strong>Consent:</strong> Obtaining your explicit consent, including your consent to this policy, to process your personal data for the purposes referred to in this policy, such as: consenting to receive marketing information, sales offers, participating in surveys or research studies, or applying for jobs. You may withdraw your consent at any time, unless there is another legal basis that allows us to continue processing your data.",
+        "CONTRACTUAL": "<strong>Contractual:</strong> We may process your personal data to fulfill our contractual obligations to you, including using your data to execute the contract concluded between us and provide the agreed services.",
+        "LEGITIMATE_INTEREST": "<strong>Legitimate Interest:</strong> We may process your personal data to achieve our legitimate interests in various fields, provided that such processing does not override your rights and freedoms, such as but not limited to: direct marketing of certain services, detecting fraud, protecting network and information security, and improving and developing services based on data analysis.",
+        "LEGAL_OBLIGATION": "<strong>Legal Obligation:</strong> We may process your data to comply with legal and regulatory requirements."
+      }
+    },
+    "DATA_COLLECTION": {
+      "TITLE": "How is your personal data collected and what is the purpose of collecting it?",
+      "SUBTITLE": "We may collect your personal data for several purposes aimed at improving the services provided by us, including but not limited to:",
+      "DIRECT": {
+        "TITLE": "Data collected directly:",
+        "METHOD": "<strong>Collection Method:</strong> Entering data via the website upon registration, contacting us, or through direct communication.",
+        "PURPOSES_LABEL": "Purposes:",
+        "PURPOSES_LIST": [
+          "Communicating regarding support, updates, or marketing.",
+          "Issuing invoices and completing payment transactions.",
+          "Operating, providing, and improving customer services.",
+          "Complying with legal and regulatory requirements."
+        ]
+      },
+      "INDIRECT": {
+        "TITLE": "Data collected indirectly:",
+        "SOURCE": "<strong>Source:</strong> Cookies and similar technologies.",
+        "PURPOSES_LABEL": "Purposes:",
+        "PURPOSES_LIST": [
+          "Improving user experience.",
+          "Analyzing performance and usage."
+        ]
+      }
+    },
+    "WHAT_DATA": {
+      "TITLE": "What personal data is collected?",
+      "TEXT": "We may collect and process the following personal data when using any of our services, including but not limited to:",
+      "LIST": [
+        "<strong>Basic Data:</strong> Full name, ID number, or Commercial Registration.",
+        "<strong>Contact Data:</strong> Email, phone number, national address, direct chats, and any other correspondence.",
+        "<strong>Usage Data:</strong> Login information, interactions within the system including your IP address, device type, operating system, and browser type.",
+        "<strong>Financial Data:</strong> Payment and billing data (in case of payments and related transactions)."
+      ]
+    },
+    "STORAGE": {
+      "TITLE": "How do we store and retain personal data?",
+      "LOCATION": "<strong>Storage Location:</strong> Data is stored securely using cloud computing services approved by RQM within the Kingdom of Saudi Arabia, which comply with the standards of the National Cybersecurity Authority and other relevant standards.",
+      "RETENTION": "We retain your personal data as long as necessary to achieve the purposes set out in this policy, unless relevant regulations require or allow it to be retained for a longer period. When the purpose of collecting and processing it ends, we will take reasonable measures to erase it from our systems and external systems that process data on our behalf, or remove everything that leads to linking it to you, unless there is a legal justification requiring its retention for a longer period or if it is closely related to a case pending before a judicial authority.",
+      "NOTE": "Please note that requesting the deletion or modification of your data may affect your use of some of the services provided by us or terminate them, and we may not be able to restore them after deletion."
+    },
+    "PROTECTION": {
+      "TITLE": "How do we protect and disclose your personal data?",
+      "SEC_1_TITLE": "1. Protection of your personal data and disclosure",
+      "SEC_1_TEXT": "We confirm that the confidentiality and security of your personal data are priorities for RQM, and we take a set of measures to ensure the protection of your data from unauthorized access or disclosure, except in cases required by law or where disclosure is necessary to provide services, technical support, or for analytical purposes. We take a set of reasonable technical, organizational, and technical measures to protect your data, including encryption, two-factor authentication, and continuous security software updates. However, please note that there is no completely secure way to transmit or store data over the Internet.\nWe pledge not to disclose your personal data for commercial purposes or share it with any third party other than as stated in this policy, except in the cases provided for in Article Fifteen of the Personal Data Protection Law, and we may share your information with a third party in the following cases:",
+      "SEC_1_LIST": [
+        "If we obtain your consent.",
+        "Sharing it with subsidiaries and companies within our group.",
+        "Sharing it with service providers who provide services on our behalf.",
+        "Sharing it with external partners and service providers who provide services to us.",
+        "Sharing it with banks, financial institutions, and payment technology and service providers.",
+        "Sharing it with another party in cases of corporate activities such as acquisition, merger, or restructuring (including during due diligence and negotiation); sale of most of our shares and/or assets; financial transactions related to the purchase, liquidation, or dissolution of our business in whole or in part; or any other major corporate changes, and sharing it in implementation of a legal obligation in accordance with the laws and regulations in the Kingdom of Saudi Arabia."
+      ],
+      "SEC_2_TITLE": "2. Transfer of data outside the Kingdom",
+      "SEC_2_TEXT": "RQM may have operations, administrative structures, and technical systems outside the Kingdom of Saudi Arabia, and accordingly, we may transfer your personal data outside the Kingdom for processing and storage purposes by a third party abroad and to support our efforts to provide services efficiently. We are committed to ensuring that personal data transferred to a third party is subject to the same level of protection provided by RQM, in accordance with the laws and regulations applicable in the Kingdom.\nIn the event of data transfer outside the Kingdom, we are keen to take all necessary measures to ensure the protection of your data, including concluding contractual agreements with the third party ensuring their commitment to protection and privacy standards similar to those we apply and in accordance with the Personal Data Protection Law."
+    },
+    "RIGHTS": {
+      "TITLE": "Your rights regarding the processing of your personal data:",
+      "TEXT": "You can exercise the following rights under the Personal Data Protection Law:",
+      "LIST": [
+        "<strong>Right to be Informed:</strong> You have the right to know how we collect your personal data, the legal basis for its collection and processing, how it is processed, stored, destroyed, and to whom it will be disclosed. You can view all details through this policy or contact us through official communication channels.",
+        "<strong>Right to Access:</strong> You have the right to access your personal data stored with us when you log in to your account in any of our services, or by contacting us. Access shall be limited to your personal data only, without prejudice to the data of others, in accordance with the controls and procedures specified in the relevant law and regulations.",
+        "<strong>Right to Request Personal Data:</strong> You have the right to request a copy of your personal data in a readable and clear format whenever technically possible, by contacting us via official communication channels.",
+        "<strong>Right to Correction:</strong> You have the right to request correction, completion, or update of your personal data through any of our services or by contacting us via official communication channels.",
+        "<strong>Right to Destruction:</strong> You have the right to request the destruction of your personal data when there is no future need for it, unless there are legal justifications requiring or allowing its retention for a longer period.",
+        "<strong>Right to Withdraw Consent:</strong> You have the right to withdraw your consent to the processing of your data at any time unless there are legal justifications requiring otherwise."
+      ],
+      "NOTE": "When exercising one or more of the rights mentioned above or provided for in the Personal Data Protection Law, we are committed to implementing your requests within a period not exceeding thirty (30) days from the date of submitting the request. In the event that execution requires unexpected or unusual additional effort, we reserve the right to extend this period provided that the extension does not exceed an additional thirty (30) days, noting that some or all of these rights may be covered by specific exceptions and exemptions provided for in relevant regulations, and each request will be evaluated separately."
+    },
+    "COMPLAINTS": {
+      "TITLE": "How to file a complaint or objection?",
+      "SEC_1_TITLE": "1. Changes to the Privacy Policy",
+      "SEC_1_TEXT": "We reserve the right to update this policy from time to time. When we make material changes to the policy, we will update the policy on our website, and we may notify you through appropriate means of communication such as sending the policy via email. We urge you to review the privacy policy periodically on our website to stay informed of updates and how to protect your personal data. Your continued use of any of the services provided by us after posting any changes to this policy means your acceptance of those changes, and the date of the last update of this policy will be clarified at the top of the page.",
+      "SEC_2_TITLE": "2. Approved Language",
+      "SEC_2_TEXT": "This policy has been prepared in both Arabic and English. The English version is a translation of the Arabic version, and in case of conflict between the two versions, the Arabic version is the approved one.",
+      "SEC_3_TITLE": "3. Contact Information",
+      "SEC_3_TEXT": "If you have any questions, concerns, or complaints regarding this policy or your data that we hold, or if you wish to exercise any of your rights, we invite you to contact us through the Help Center (Contact Us) or via the communication channels below:",
+      "CONTACT_INFO": {
+        "ADDRESS": "Address: Riyadh - King Abdullah Road, Postal Code: 12481",
+        "PHONE": "WhatsApp: Phone Number: 0554404688",
+        "EMAIL": "Email: Info@rqm.sa",
+        "LICENSE": "License or Commercial Registration: 1010803732"
+      },
+      "AUTHORITY_NOTE": "If you are not satisfied with our handling of the complaint or if we do not respond within thirty days from the date of receiving your request, you can file a complaint with the competent authority:",
+      "SDAIA": "Saudi Data and Artificial Intelligence Authority (sdaia.gov.sa)",
+      "NDMO": "National Data Governance Platform (dgp.sdaia.gov.sa)"
+    }
+  }
+}
