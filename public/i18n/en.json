@@ -346,5 +346,86 @@
       "SDAIA": "Saudi Data and Artificial Intelligence Authority (sdaia.gov.sa)",
       "NDMO": "National Data Governance Platform (dgp.sdaia.gov.sa)"
     }
+  },
+  "SCROLL_STORY": {
+    "HERO": {
+      "TITLE": "Your Technology Story — Written in the Language of Execution",
+      "DESCRIPTION": "At RQM, we don’t promise digital transformation. We open the gate to the digital future — and turn your story into secure, intelligent execution.",
+      "CTA": "Start Your Tech Story",
+      "SCROLL_HINT": "Scroll to enter your story"
+    },
+    "SECTION_1": {
+      "TITLE": "Why This Page?",
+      "QUESTION_WRONG": "What system do we need?",
+      "QUESTION_RIGHT": "What story do we want to end successfully?",
+      "TEXT": "Technology doesn't fail, but the wrong story always fails."
+    },
+    "SECTION_2": {
+      "TITLE": "You Are the Hero",
+      "AS_A": "Business Owner / Entity / Leadership Team looking to build an effective digital system",
+      "I_WANT": "A technical solution that understands my operational reality, respects security and compliance, and produces reliable data",
+      "SO_THAT": "I manage my business with confidence, make smart decisions, and build a sustainable digital future"
+    },
+    "SECTION_3": {
+      "TITLE": "From Story… To System",
+      "STEP_1": {
+        "TITLE": "Discovery & Direction",
+        "DESC": "We start from reality, not tools: We understand your goals, analyze operational challenges, read the regulatory environment, and determine the right digital direction.",
+        "NOTE": "Where you should be digitally — not what to buy"
+      },
+      "STEP_2": {
+        "TITLE": "Enablement & Build",
+        "DESC": "We turn vision into working architecture: Smart operation design, data readiness, built-in cybersecurity, and integration with your existing systems.",
+        "NOTE": "Here, technical trust is built"
+      },
+      "STEP_3": {
+        "TITLE": "Activation & Impact",
+        "DESC": "We activate technology… and measure the result: Actual operation, faster decisions, higher security, and measurable impact.",
+        "NOTE": "Value is not said — it is measured"
+      }
+    },
+    "SECTION_4": {
+      "TITLE": "Acceptance Criteria",
+      "CHECKLIST": [
+        "System works within operational reality",
+        "Data is accurate and reliable",
+        "Decision is based on correct information",
+        "Security is part of the design, not an afterthought"
+      ],
+      "RESULT": "If all passed → Ready for scale"
+    },
+    "SECTION_5": {
+      "TITLE": "We Don’t Run From Complexity — We Design For It",
+      "EDGE_CASES": [
+        "Sudden legislative change",
+        "Unexpected user growth",
+        "Integration with legacy systems",
+        "Differences in permissions and governance"
+      ],
+      "NOTE": "The real system is tested here"
+    },
+    "SECTION_6": {
+      "TITLE": "Smart Decisions Start With Data",
+      "DESC": "We design our solutions so that: Data is clean, structures are clear, permissions are set, and analysis is possible at any time.",
+      "NOTE": "Without reliable data, there is no real intelligence"
+    },
+    "SECTION_7": {
+      "TITLE": "Transparency Is Not an Option — It’s Security",
+      "DESC": "Everything executed is: Recorded, Reviewed, and Traceable.",
+      "NOTE": "Because trust is built on clarity"
+    },
+    "SECTION_8": {
+      "TITLE": "This Is How Your Tech Story Ends",
+      "OUTCOMES": [
+        "Smart and secure operation",
+        "Clearer decisions",
+        "Real readiness for the future",
+        "A partner who understands you before selling to you"
+      ]
+    },
+    "FINAL": {
+      "TEXT": "At RQM, we don’t promise digital transformation, but we open the gate to the digital future, and write your technical story in the language of execution.",
+      "CTA": "Start Your Tech Story Now"
+    }
   }
 }
