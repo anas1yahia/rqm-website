@@ -86,7 +86,7 @@
 
   <!-- Mobile Burger Button -->
   <app-button variant="burger" class="burger-btn" (onClick)="toggleMenu()" ariaLabel="Toggle menu">
-    <lucide-icon [img]="isMenuOpen ? XIcon : MenuIcon" [size]="24" strokeWidth="2" color="white"></lucide-icon>
+    <lucide-icon [img]="isMenuOpen ? XIcon : MenuIcon" [size]="24" strokeWidth="2" [color]="burgerColor"></lucide-icon>
   </app-button>
 
   <!-- Contact Us CTA (Visible on Desktop, maybe moved/hidden on mobile depending on space) -->

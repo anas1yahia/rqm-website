@@ -132,6 +132,11 @@ export class HeaderComponent implements OnInit {
     return this.logoDark;
   }
 
+  get burgerColor(): string {
+    // If light header (white bg), use dark icon. Else white.
+    return this.isLightHeader ? '#0A0C1A' : 'white';
+  }
+
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
     if (this.isMenuOpen) {

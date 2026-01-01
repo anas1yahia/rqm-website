@@ -86,6 +86,13 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 
+  /* Fix burger menu color in light mode scrolled */
+  .burger-btn {
+    ::ng-deep lucide-icon {
+      stroke: #0A0C1A !important; /* Force dark stroke */
+    }
+  }
+
   .nav-link, .products-btn {
     color: #0A0C1A;
     
