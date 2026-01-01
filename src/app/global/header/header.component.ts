@@ -9,11 +9,12 @@ import { ThemeService } from '../../services/theme.service';
 import { filter } from 'rxjs/operators';
 
 import { ButtonComponent } from '../button/button.component';
+import { ProductCardComponent } from '../../landing-page/product-card/product-card.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, RouterModule, LucideAngularModule, TranslateModule, ButtonComponent],
+  imports: [CommonModule, RouterModule, LucideAngularModule, TranslateModule, ButtonComponent, ProductCardComponent],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   animations: [
@@ -44,6 +45,22 @@ import { ButtonComponent } from '../button/button.component';
           ])
         ], { optional: true })
       ])
+    ]),
+    trigger('megaMenuState', [
+      state('closed', style({ 
+        opacity: 0, 
+        transform: 'translateY(-10px)', 
+        pointerEvents: 'none',
+        visibility: 'hidden'
+      })),
+      state('open', style({ 
+        opacity: 1, 
+        transform: 'translateY(0)', 
+        pointerEvents: 'auto',
+        visibility: 'visible'
+      })),
+      transition('closed => open', animate('0.3s cubic-bezier(0.16, 1, 0.3, 1)')),
+      transition('open => closed', animate('0.2s cubic-bezier(0.7, 0, 0.84, 0)'))
     ])
   ]
 })
@@ -53,6 +70,7 @@ export class HeaderComponent implements OnInit {
   backgroundBorder = "/header/bg-border.png";
 
   isMenuOpen = false;
+  isProductsMenuOpen = false;
   isScrolled = false;
   isContactPage = false;
   readonly MenuIcon = Menu;
@@ -115,6 +133,17 @@ export class HeaderComponent implements OnInit {
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
+    if (this.isMenuOpen) {
+      this.isProductsMenuOpen = false; // Close mega menu if mobile menu opens
+    }
+  }
+
+  toggleProductsMenu(state?: boolean) {
+    if (state !== undefined) {
+      this.isProductsMenuOpen = state;
+    } else {
+      this.isProductsMenuOpen = !this.isProductsMenuOpen;
+    }
   }
 
   switchLanguage(lang: string) {

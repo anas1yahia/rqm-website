@@ -31,6 +31,53 @@
       <nav class="navigation desktop-nav">
         <a [routerLink]="['/', currentLang]" fragment="home" class="nav-link">{{ 'HEADER.HOME' | translate }}</a>
         <a [routerLink]="['/', currentLang, 'our-story']" class="nav-link">{{ 'HEADER.ABOUT' | translate }}</a>
+        
+        <!-- Products Mega Menu Trigger -->
+        <div class="nav-item-wrapper" (mouseenter)="toggleProductsMenu(true)" (mouseleave)="toggleProductsMenu(false)">
+          <button class="nav-link products-btn" [class.active]="isProductsMenuOpen">
+            {{ 'HEADER.PRODUCTS' | translate }}
+            <lucide-icon name="chevron-down" [size]="16" class="chevron-icon"></lucide-icon>
+          </button>
+          
+          <!-- Mega Menu Dropdown -->
+          <div class="mega-menu-container" [@megaMenuState]="isProductsMenuOpen ? 'open' : 'closed'">
+             <div class="mega-menu-content">
+                <!-- Product 1 -->
+                <app-product-card
+                  [title]="'LANDING.PRODUCTS.QAID_TITLE' | translate"
+                  [description]="'LANDING.PRODUCTS.QAID_DESC' | translate"
+                  [features]="[
+                    'LANDING.PRODUCTS.QAID_FEATURE_1' | translate,
+                    'LANDING.PRODUCTS.QAID_FEATURE_2' | translate,
+                    'LANDING.PRODUCTS.QAID_FEATURE_3' | translate
+                  ]"
+                  logo="ayd.svg"
+                  themeColor="#4c89d5">
+                </app-product-card>
+
+                <!-- Product 2 -->
+                <app-product-card
+                  [title]="'LANDING.PRODUCTS.QAID_SUBTITLE' | translate"
+                  [description]="'LANDING.PRODUCTS.QAID_DESC' | translate"
+                  [features]="[
+                    'LANDING.PRODUCTS.QAID_FEATURE_4' | translate,
+                    'LANDING.PRODUCTS.QAID_FEATURE_5' | translate,
+                    'LANDING.PRODUCTS.QAID_FEATURE_6' | translate
+                  ]"
+                  logo="captech.svg"
+                  themeColor="#62c4aa">
+                </app-product-card>
+
+                <!-- Product 3 -->
+                <app-product-card
+                  [isSmall]="true"
+                  logo="more.svg"
+                  themeColor="#756cea">
+                </app-product-card>
+             </div>
+          </div>
+        </div>
+
         <a [routerLink]="['/', currentLang, 'services']" class="nav-link">{{ 'HEADER.SERVICES' | translate }}</a>
         <a [routerLink]="['/', currentLang, 'contact-us']" class="nav-link">{{ 'HEADER.CONTACT_US' | translate }}</a>
       </nav>

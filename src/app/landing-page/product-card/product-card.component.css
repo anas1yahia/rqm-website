@@ -19,6 +19,19 @@
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
   border: 1px solid var(--card-border);
   margin: 0 auto;
+  /* Transparent variant for Mega Menu */
+}
+:host-context(.mega-menu-content) .product-card {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  /* Optional: Maintain hover effects or disable them? 
+     Usually hover effects are nice, but if we want it to blend completely, maybe just subtle.
+     Let's keep hover but ensure base state is transparent. 
+  */
+  /* Ensure text colors are correct against header bg (which is similar to body bg) */
+}
+.product-card {
   /* Glitch Effect on Hover */
 }
 .product-card:hover {

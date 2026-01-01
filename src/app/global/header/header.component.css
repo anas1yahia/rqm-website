@@ -28,10 +28,10 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
-.header-container.scrolled-light .nav-link {
+.header-container.scrolled-light .nav-link, .header-container.scrolled-light .products-btn {
   color: #0A0C1A;
 }
-.header-container.scrolled-light .nav-link:hover {
+.header-container.scrolled-light .nav-link:hover, .header-container.scrolled-light .nav-link.active, .header-container.scrolled-light .products-btn:hover, .header-container.scrolled-light .products-btn.active {
   color: #36c9cb;
 }
 .header-container.scrolled-light {
@@ -79,10 +79,10 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
-.header-container.scrolled-light .nav-link {
+.header-container.scrolled-light .nav-link, .header-container.scrolled-light .products-btn {
   color: #0A0C1A;
 }
-.header-container.scrolled-light .nav-link:hover {
+.header-container.scrolled-light .nav-link:hover, .header-container.scrolled-light .nav-link.active, .header-container.scrolled-light .products-btn:hover, .header-container.scrolled-light .products-btn.active {
   color: #36c9cb;
 }
 .header-container.scrolled-light {
@@ -154,10 +154,75 @@
   color: white;
   text-decoration: none;
   font-weight: 700;
-  transition: opacity 0.2s;
+  transition: opacity 0.2s, color 0.2s;
 }
 .nav-link:hover {
   opacity: 0.8;
+}
+
+.nav-item-wrapper {
+  /* position: relative; Removed to allow mega menu to center relative to header */
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.products-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: inherit; /* Inherit font family */
+}
+.products-btn .chevron-icon {
+  transition: transform 0.3s ease;
+}
+.products-btn.active .chevron-icon {
+  transform: rotate(180deg);
+}
+
+.mega-menu-container {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%; /* Span full width of the header */
+  display: flex;
+  justify-content: center; /* Center the content */
+  padding-top: 20px;
+  z-index: 1002;
+  pointer-events: auto; /* Ensure hover/click works in the full strip */
+}
+
+/* RTL Adjustment for Menu */
+:host-context([dir=rtl]) .mega-menu-container {
+  /* Ensure it's centered relative to parent if parent is small, 
+     but actually standard CSS translateX(-50%) works for centering regardless of dir usually, 
+     UNLESS offsetParent creates issues. 
+     Let's try standard centering first. */
+}
+
+.mega-menu-content {
+  background: #0A0C1A; /* Dark background as per theme */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  gap: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(20px);
+  /* Flex direction row for cards side-by-side */
+  flex-direction: row;
+  align-items: stretch;
+}
+
+/* Light Theme Mega Menu */
+:host-context([data-theme=light]) .mega-menu-content {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
 
 .navigation {
@@ -179,11 +244,6 @@
   display: flex;
   align-items: center;
   padding: 7px 7px 7px 8px;
-  /* Removed border-inline-end from here as it might look weird next to theme button if we change structure.
-     If keeping original design of vertical divider, we might need to adjust.
-     Let's keep it simple for now or check if divider was critical. 
-     Original: border-inline-end: 1px solid rgba(119, 145, 196, 0.2); 
-  */
   border-inline-end: 1px solid rgba(119, 145, 196, 0.2);
 }
 

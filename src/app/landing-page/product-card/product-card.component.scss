@@ -21,6 +21,20 @@
   border: 1px solid var(--card-border);
   margin: 0 auto;
 
+  /* Transparent variant for Mega Menu */
+  :host-context(.mega-menu-content) & {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    
+    /* Optional: Maintain hover effects or disable them? 
+       Usually hover effects are nice, but if we want it to blend completely, maybe just subtle.
+       Let's keep hover but ensure base state is transparent. 
+    */
+    
+    /* Ensure text colors are correct against header bg (which is similar to body bg) */
+  }
+
   /* Glitch Effect on Hover */
   &:hover {
     /* Keep shake */
