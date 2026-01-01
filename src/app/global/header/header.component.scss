@@ -216,7 +216,7 @@
 }
 
 .mega-menu-content {
-  background: #0A0C1A; /* Dark background as per theme */
+  background: rgba(10, 12, 26, 0.85); /* Dark glass for contrast & theme match */
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   padding: 24px;
@@ -343,6 +343,43 @@
   
   &:hover {
     color: #36c9cb;
+  }
+}
+
+.products-mobile-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: inherit;
+  
+  .chevron-icon {
+    transition: transform 0.3s ease;
+  }
+  
+  &.active .chevron-icon {
+    transform: rotate(180deg);
+  }
+}
+
+.mobile-products-accordion {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 10px 0;
+  align-items: center;
+  
+  /* Override card styles for mobile accordion specific context if needed, 
+     but ProductCardComponent handles most. 
+     We might want to force them to be 100% width of the container. 
+  */
+  app-product-card {
+    width: 100%;
+    max-width: 350px; /* Limit width */
   }
 }
 

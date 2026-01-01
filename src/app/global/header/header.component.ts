@@ -71,6 +71,7 @@ export class HeaderComponent implements OnInit {
 
   isMenuOpen = false;
   isProductsMenuOpen = false;
+  isMobileProductsOpen = false; // New state for mobile accordion
   isScrolled = false;
   isContactPage = false;
   readonly MenuIcon = Menu;
@@ -135,6 +136,7 @@ export class HeaderComponent implements OnInit {
     this.isMenuOpen = !this.isMenuOpen;
     if (this.isMenuOpen) {
       this.isProductsMenuOpen = false; // Close mega menu if mobile menu opens
+      this.isMobileProductsOpen = false; // Reset mobile accordion
     }
   }
 
@@ -144,6 +146,10 @@ export class HeaderComponent implements OnInit {
     } else {
       this.isProductsMenuOpen = !this.isProductsMenuOpen;
     }
+  }
+
+  toggleMobileProducts() {
+    this.isMobileProductsOpen = !this.isMobileProductsOpen;
   }
 
   switchLanguage(lang: string) {

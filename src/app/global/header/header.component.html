@@ -103,6 +103,36 @@
     <nav class="mobile-nav">
       <a [routerLink]="['/', currentLang]" fragment="home" class="mobile-nav-link" (click)="toggleMenu()">{{ 'HEADER.HOME' | translate }}</a>
       <a [routerLink]="['/', currentLang, 'our-story']" class="mobile-nav-link" (click)="toggleMenu()">{{ 'HEADER.ABOUT' | translate }}</a>
+      
+      <!-- Mobile Products Toggle -->
+      <button class="mobile-nav-link products-mobile-btn" (click)="toggleMobileProducts()" [class.active]="isMobileProductsOpen">
+        {{ 'HEADER.PRODUCTS' | translate }}
+        <lucide-icon name="chevron-down" [size]="20" class="chevron-icon"></lucide-icon>
+      </button>
+      
+      <!-- Mobile Products Accordion Content -->
+      <div class="mobile-products-accordion" *ngIf="isMobileProductsOpen" @menuState>
+          <app-product-card
+            [title]="'LANDING.PRODUCTS.QAID_TITLE' | translate"
+            [description]="'LANDING.PRODUCTS.QAID_DESC' | translate"
+            [features]="[]" 
+            logo="ayd.svg"
+            themeColor="#4c89d5"
+            [isSmall]="true">
+          </app-product-card>
+
+          <app-product-card
+            [title]="'LANDING.PRODUCTS.QAID_SUBTITLE' | translate"
+            [description]="'LANDING.PRODUCTS.QAID_DESC' | translate"
+            [features]="[]"
+            logo="captech.svg"
+            themeColor="#62c4aa"
+            [isSmall]="true">
+          </app-product-card>
+          
+          <!-- Removed More Solutions card for mobile to save space or keep it simple? Let's exclude for now or user can request -->
+      </div>
+
       <a [routerLink]="['/', currentLang, 'services']" class="mobile-nav-link" (click)="toggleMenu()">{{ 'HEADER.SERVICES' | translate }}</a>
       <a [routerLink]="['/', currentLang, 'contact-us']" class="mobile-nav-link" (click)="toggleMenu()">{{ 'HEADER.CONTACT_US' | translate }}</a>
     </nav>
