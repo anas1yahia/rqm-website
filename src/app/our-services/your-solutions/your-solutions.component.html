@@ -1,23 +1,7 @@
 <section class="your-solutions-section">
   <!-- Background Decoration Layer -->
   <div class="bg-layer">
-    <div class="shapes-frame">
-      <div class="border-box">
-        <div class="mask-fill" [style.mask-image]="'url(' + imgContainer + ')'">
-           <div class="vectors-stack">
-              <div class="v-layer layer-1" [style.mask-image]="'url(' + imgVector + '), url(' + imgVector1 + ')'">
-                 <img [src]="imgVector2" alt="">
-              </div>
-              <div class="v-layer layer-2" [style.mask-image]="'url(' + imgVector + '), url(' + imgVector1 + '), url(' + imgVector3 + ')'">
-                 <img [src]="imgVector4" alt="">
-              </div>
-              <div class="v-layer layer-3" [style.mask-image]="'url(' + imgVector + '), url(' + imgVector1 + '), url(' + imgVector3 + ')'">
-                 <img [src]="imgVector5" alt="">
-              </div>
-           </div>
-        </div>
-      </div>
-    </div>
+    <img [src]="bgImage" alt="Digital Solutions Background" class="bg-illustration">
   </div>
 
   <!-- Content Layer -->

@@ -5,63 +5,25 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  overflow: hidden; /* Important for containment */
+  overflow: hidden;
   box-sizing: border-box;
 }
 
 .bg-layer {
   position: absolute;
-  top: -159.5px;
-  left: -146px;
-  width: 1440px;
-  height: 836px;
+  inset: 0;
   z-index: 0;
   pointer-events: none;
-}
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-.shapes-frame {
-  width: 100%;
-  height: 100%;
-}
-
-.border-box {
-  width: 100%;
-  height: 100%;
-
-  position: relative;
-  overflow: hidden;
-}
-
-.mask-fill {
-  position: absolute;
-  inset: 0;
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-size: cover;
-}
-
-.vectors-stack {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.v-layer {
-  position: absolute;
-  inset: 0;
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-size: cover;
-
-  img {
+  .bg-illustration {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.3;
+    opacity: 1; /* Adjust if needed, but SVG has internal opacity */
   }
-
-  &.layer-2 img { opacity: 0.2; }
-  &.layer-3 img { opacity: 0.15; }
 }
 
 .content-overlay {
@@ -73,6 +35,8 @@
   max-width: 1000px;
   width: 100%;
   text-align: start;
+  /* Add padding to ensure text doesn't hit edge on smaller screens */
+  padding-right: 5%; 
 }
 
 .text-block {
@@ -123,10 +87,10 @@
     .main-heading { color: #0A0C1A; }
     .sub-heading { color: #5D6B82; }
   }
-
-  .border-box {
-    border-color: rgba(0, 0, 0, 0.1);
-  }
+  
+  /* In light theme, maybe make the background slightly more visible if it was white-on-white? 
+     But the SVG uses colored strokes, so it should be fine. 
+  */
 }
 
 /* Responsive */
@@ -136,16 +100,10 @@
     padding: 100px 20px;
   }
 
-  .bg-layer {
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: 1000px;
-  }
-
   .content-overlay {
     align-items: center;
     text-align: center;
+    padding-right: 0;
   }
 
   .main-heading {
