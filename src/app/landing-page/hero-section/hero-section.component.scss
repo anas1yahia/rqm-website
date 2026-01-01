@@ -314,7 +314,7 @@
   font-size: 51.314px; /* Figma: 5735:7811 */
   font-weight: 700; /* Bold */
   color: white;
-  text-wrap: nowrap;
+  text-wrap: wrap;
   line-height: 1.2; /* Calculated from 61.576px / 51.314px */
 }
 
@@ -394,35 +394,35 @@
    Since we can't easily style ::ng-deep from here without ViewEncapsulation.None,
    and we passed `className="main-cta"` to the app-button, we can try to rely on global styles
    or ensuring the app-button styles handle the color change of projected content.
-   
+
    Actually, looking at `button.component.scss`, I added:
    .hero:hover { ... }
    But I didn't add the specific color change for spans inside.
    Wait, the user wants me to replace hardcoded components.
    I should move the specific hover logic for inner spans to the `button.component.scss` or leave it here if it targets the content.
-   
+
    If I leave it here:
-   ::ng-deep .main-cta:hover .cta-text span ... 
-   
+   ::ng-deep .main-cta:hover .cta-text span ...
+
    But simpler is to let `button.component.scss` handle generic hover or just keep this structure if it works.
    The `app-button` puts the class on the `<button>` element inside its shadow DOM? No, Angular components don't have shadow DOM by default unless specified.
    Wait, `ButtonComponent` uses `ViewEncapsulation.Emulated` (default).
    So styles in `ButtonComponent` won't affect content projected into it unless using `::ng-deep`.
-   
+
    However, `HeroSection` styles CAN affect the content it passes to `app-button`.
    So I need to target `.main-cta:hover` where `.main-cta` is the class passed to the button?
    The `className` input on `ButtonComponent` adds the class to the native `<button>` element inside `ButtonComponent`.
    That button is inside `ButtonComponent`'s view. `HeroSection` styles cannot easily target that inner button's hover state to change `HeroSection`'s content.
-   
+
    Actually, the content is in `HeroSection` template.
    Structure:
    <app-button ...>
       <div class="cta-text">...</div>
    </app-button>
-   
+
    When `app-button` is hovered, we want `cta-text` to change color.
    We can listen to hover on `app-button` host.
-   
+
    app-button:hover .cta-text span { color: ... }
 */
 

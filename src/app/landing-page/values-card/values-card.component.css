@@ -101,6 +101,7 @@
   padding: 72px 32px;
   height: 100%;
   min-height: 393px; /* Ensure visual balance */
+  min-width: 400px;
   box-sizing: border-box;
   position: relative;
   gap: 30px; /* Gap between text and button if height grows */
