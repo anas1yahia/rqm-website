@@ -8,6 +8,7 @@
 .partners-section {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 61px;
   padding-bottom: 120px;
   position: relative;
@@ -17,10 +18,13 @@
 
 .header-container {
   display: flex;
-  justify-content: flex-start; /* Align start based on dir (Left for LTR, Right for RTL) */
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
   padding: 0 132px;
   width: 100%;
   box-sizing: border-box;
+  text-align: center;
 
   h2 {
     font-family: 'IBM Plex Sans Arabic', sans-serif;
@@ -30,13 +34,25 @@
     margin: 0;
     transition: color 0.3s ease;
   }
-  
+
+  p {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin: 0;
+    max-width: 700px;
+    line-height: 1.6;
+  }
+
   @media (max-width: 768px) {
     padding: 0 20px;
-    justify-content: center;
     h2 {
-      text-align: center;
       font-size: 32px;
+    }
+    p {
+      font-size: 16px;
     }
   }
 }
@@ -83,7 +99,7 @@
   flex-shrink: 0;
   cursor: pointer; /* Indicate interactivity */
   transition: all 0.3s ease;
-  
+
   /* Default state: Grayscale and slightly dimmed */
   filter: grayscale(100%);
   opacity: 0.5;
@@ -97,14 +113,14 @@
     opacity: 1;
     transform: scale(1.1); /* Scale up from base size on hover */
   }
-  
+
   img {
     /* Controlled small size to fit website */
     height: 32px;
     width: auto;
     object-fit: contain;
   }
-  
+
   &.composite {
     gap: 12px;
     img {
@@ -119,7 +135,7 @@
   align-items: center;
   height: 32px; /* Base height for the group */
   gap: 8px;
-  
+
   img {
     height: 24px; /* Consistent with other composite logos */
     width: auto;
@@ -132,7 +148,7 @@
   .partners-container {
     gap: 40px;
   }
-  
+
   .marquee-content {
     gap: 40px;
     padding-left: 40px;

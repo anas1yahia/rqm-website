@@ -79,10 +79,12 @@
       "QAID_LINK_MORE_SOLUTIONS": "Learn More About Our Solutions"
     },
     "PARTNERS": {
-      "HEADING": "We Succeed with Partners Who Understand the Path"
+      "HEADING": "We Succeed with Partners Who Understand the Path",
+      "DESCRIPTION": "We work with leading technology and compliance partners to provide integrated solutions that meet the highest standards of security and reliability."
     },
     "QUALITY_PROOF": {
-        "TITLE": "Compliance Scope"
+        "TITLE": "Compliance Scope",
+        "DESCRIPTION": "We operate within a framework of high digital compliance to ensure the security and sustainability of your business."
     }
   },
   "OUR_STORY": {

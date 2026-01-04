@@ -8,6 +8,7 @@
 .partners-section {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 61px;
   padding-bottom: 120px;
   position: relative;
@@ -17,10 +18,13 @@
 
 .header-container {
   display: flex;
-  justify-content: flex-start; /* Align start based on dir (Left for LTR, Right for RTL) */
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
   padding: 0 132px;
   width: 100%;
   box-sizing: border-box;
+  text-align: center;
 }
 .header-container h2 {
   font-family: "IBM Plex Sans Arabic", sans-serif;
@@ -30,14 +34,25 @@
   margin: 0;
   transition: color 0.3s ease;
 }
+.header-container p {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--text-color);
+  opacity: 0.8;
+  margin: 0;
+  max-width: 700px;
+  line-height: 1.6;
+}
 @media (max-width: 768px) {
   .header-container {
     padding: 0 20px;
-    justify-content: center;
   }
   .header-container h2 {
-    text-align: center;
     font-size: 32px;
+  }
+  .header-container p {
+    font-size: 16px;
   }
 }
 
