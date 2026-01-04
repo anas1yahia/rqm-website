@@ -92,8 +92,8 @@
       </div>
 
       <div class="titles">
-        <h1>{{ 'HERO.TITLE_1' | translate }}</h1>
-        <h2>{{ 'HERO.TITLE_2' | translate }}</h2>
+        <h1 [appTextDecode]="'HERO.TITLE_1' | translate"></h1>
+        <h2 [appTextDecode]="'HERO.TITLE_2' | translate"></h2>
       </div>
 
       <p class="description">
