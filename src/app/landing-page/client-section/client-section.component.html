@@ -13,19 +13,19 @@
     <div class="slider-container" dir="ltr">
       <div class="slider-track">
         <!-- Set 1 -->
-        <div class="slide" *ngFor="let client of clients">
+        <div class="slide" *ngFor="let client of currentClients()">
           <img [src]="client" alt="Client Logo">
         </div>
         <!-- Set 2 -->
-        <div class="slide" *ngFor="let client of clients">
+        <div class="slide" *ngFor="let client of currentClients()">
           <img [src]="client" alt="Client Logo">
         </div>
-        <!-- Set 3 (Extra buffer for wide screens) -->
-        <div class="slide" *ngFor="let client of clients">
+        <!-- Set 3 -->
+        <div class="slide" *ngFor="let client of currentClients()">
           <img [src]="client" alt="Client Logo">
         </div>
-        <!-- Set 4 (Extra buffer for wide screens) -->
-        <div class="slide" *ngFor="let client of clients">
+        <!-- Set 4 -->
+        <div class="slide" *ngFor="let client of currentClients()">
           <img [src]="client" alt="Client Logo">
         </div>
       </div>

@@ -1,0 +1,157 @@
+.statistic-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.content-container {
+  display: flex;
+  width: 100%;
+  max-width: 1350px;
+  min-height: 280px;
+  /* Removed fixed height constraint to allow content to flow if needed, 
+     but keeping min-height for consistency with design feel */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+@media (max-width: 1024px) {
+  .content-container {
+    flex-direction: column;
+    height: auto;
+    border: none;
+    gap: 20px;
+    align-items: center;
+  }
+}
+
+/* Description Panel (Title) */
+.description-panel {
+  flex: 0 0 350px; /* Reduced width slightly as title is short */
+  position: relative;
+  background-color: var(--bg-color);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center title vertically */
+  padding: 33px;
+  background-image: linear-gradient(243deg, rgba(102, 153, 255, 0) 0%, rgba(102, 153, 255, 0.04) 49%, rgba(102, 153, 255, 0) 100%);
+}
+@media (max-width: 1024px) {
+  .description-panel {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    min-height: 150px;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.panel-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* RTL Default */
+  text-align: right;
+}
+:host-context([dir=ltr]) .panel-content {
+  align-items: flex-start;
+  text-align: left;
+}
+@media (max-width: 1024px) {
+  .panel-content {
+    align-items: center;
+    text-align: center;
+  }
+}
+.panel-content h2 {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-weight: 700;
+  font-size: 32px; /* Larger title */
+  line-height: 1.4;
+  color: #fff;
+  margin: 0;
+}
+
+/* Stats Grid */
+.awards-grid {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap; /* Allow wrapping for 5 items */
+}
+@media (max-width: 1024px) {
+  .awards-grid {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.award-card {
+  flex: 1;
+  min-width: 160px; /* Adjust min width for 5 items */
+  min-height: 280px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  position: relative;
+  transition: background 0.3s ease;
+}
+.award-card:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+.award-card:hover .stat-value {
+  color: var(--primary-color);
+  transform: scale(1.05);
+}
+@media (max-width: 768px) {
+  .award-card {
+    min-width: 140px;
+    min-height: 200px;
+  }
+}
+
+.card-header {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.award-id {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-weight: 600;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}
+
+.stat-value {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 1;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.stat-label {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 120px; /* Prevent text from getting too wide */
+}
+
+/*# sourceMappingURL=statistic-section.component.css.map */

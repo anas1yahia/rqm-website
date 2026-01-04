@@ -26,14 +26,15 @@
       "ABOUT_LINK": "About Us"
     },
     "PROCESS": {
-      "HEADING": "Turning Your Project Into Reality",
-      "SUBHEADING": "Methodical steps supported by experience and skill to achieve your goals",
-      "BUILD_TITLE": "Build",
-      "BUILD_DESC": "We establish the project and build its initial business model.",
-      "STUDY_TITLE": "Study",
-      "STUDY_DESC": "We research, study, and test the feasibility of the work.",
-      "ANALYSIS_TITLE": "Analysis",
-      "ANALYSIS_DESC": "We analyze business requirements with agile methodologies."
+      "HEADING": "Why Digital Leaders Choose Us?",
+      "CARD_1_TITLE": "Because you don't need a product... but a right decision",
+      "CARD_1_DESC": "We help you make the right technical decision before building.",
+      "CARD_2_TITLE": "Because execution is more important than proposals",
+      "CARD_2_DESC": "We focus on what actually works, not what looks good in presentations.",
+      "CARD_3_TITLE": "Because security and sustainability are not add-ons",
+      "CARD_3_DESC": "We build the solution from the start to be secure, scalable, and compliant.",
+      "CARD_4_TITLE": "Because success is measured",
+      "CARD_4_DESC": "Everything we execute is linked to clear KPIs, so you know what you gained and how you are progressing."
     },
     "VALUES": {
       "HEADING": "The Zero We Start From at RQM",
@@ -70,6 +71,14 @@
     },
     "CLIENTS": {
       "TITLE": "Businesses Chose to Cross with Us to the Digital Future"
+    },
+    "STATISTICS": {
+      "TITLE": "RQM Ecosystem in Numbers",
+      "PROJECTS": "Executed Digital Projects",
+      "SECTORS": "Served Sectors",
+      "CLIENTS": "Businesses Chose Us",
+      "PARTNERS": "Compliance & Tech Partners",
+      "PRODUCTS": "Specialized Digital Products"
     },
     "QUALITY_PROOF": {
         "TITLE": "Compliance Scope"

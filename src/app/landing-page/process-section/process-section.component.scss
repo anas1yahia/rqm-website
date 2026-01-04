@@ -1,133 +1,97 @@
-:host {
-  display: block;
+.process-section {
   width: 100%;
-  position: relative;
-  z-index: 0;
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
+  overflow: visible; /* Needed for sticky to work if parent overflows */
 }
 
-.process-section-container {
-  z-index: 1;
+.content-container {
   display: flex;
-  padding: 64px 117px 0 117px;
-  flex-direction: column;
-  align-items: flex-start; /* Logical start */
-  gap: 66px;
-  border-radius: 28px;
-  border: 2px solid #0D99FF;
-  box-sizing: border-box;
-  margin: 0 auto;
-  max-width: 1350px;
   width: 100%;
-  position: relative;
-  overflow: hidden;
-  min-height: 600px;
+  max-width: 1200px;
+  gap: 60px; /* Increased gap */
+  padding: 0 20px;
+  position: relative; /* Context for sticky */
   
-  /* Theme-specific background */
-  background: transparent; /* Default Dark Theme */
-  transition: background 0.3s ease, border-color 0.3s ease;
-
-  :host-context([data-theme="light"]) & {
-    background: linear-gradient(180deg, rgba(76, 137, 213, 0.83) -16.72%, rgba(62, 124, 200, 0.83) 60.81%), 
-                url('../../../../public/Section4.png') lightgray 50% / cover no-repeat;
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
   }
 }
 
-/* Header Container */
-.header-container {
-  width: 100%;
+.title-panel {
+  flex: 0 0 350px;
+  /* Sticky positioning */
+  position: sticky;
+  top: 120px; /* Adjust based on header height */
+  height: fit-content;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Logical start */
-  margin-bottom: 20px;
+  justify-content: flex-start;
+  align-self: flex-start; /* Important for sticky in flex item */
+  
+  @media (max-width: 1024px) {
+    position: relative;
+    top: 0;
+    flex: 0 0 auto;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
 }
 
-.section-title {
-  font-family: 'IBM Plex Sans Arabic', sans-serif;
-  font-weight: 700;
-  font-size: 2.4rem;
-  color: #e8f2ff;
-  margin: 0;
-  text-align: start; /* Logical start */
-  line-height: 1.2;
-}
-
-.block {
-  display: block;
-  width: 100%;
-}
-
-/* Content Body Wrapper */
-.content-body-wrapper {
+.title-content {
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 100%;
-  gap: 50px;
-
-}
-
-/* Active Card Container */
-.active-card-container {
-
-  min-width: 0; /* Allow it to shrink below its content size */
-}
-
-.card-slot {
+  flex-direction: column;
+  gap: 24px;
   position: relative;
-  min-height: 400px; /* Ensure space for card animation */
-}
-
-/* Values Card Wrapper */
-.values-card-wrapper {
-  /* margin-left: 40px; Handled by gap on content-body-wrapper */
-  flex-shrink: 0;
-}
-
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-  .process-section-container {
-    padding: 40px 20px 40px 20px;
-    align-items: center;
+  align-items: flex-end; /* RTL: Align right */
+  text-align: right;
+  
+  :host-context([dir="ltr"]) & {
+    align-items: flex-start;
+    text-align: left;
   }
-
-  .header-container {
-    width: 100%;
+  
+  @media (max-width: 1024px) {
     align-items: center;
     text-align: center;
   }
 
-  .section-title {
-    font-size: 32px;
-    text-align: center;
-  }
-
-  .content-body-wrapper {
-    flex-direction: column-reverse;
-    gap: 40px;
-    margin-left: 0;
-  }
-
-  .values-card-wrapper {
-    margin-left: 0;
-    width: 100%;
-  }
-
-  .active-card-container {
-    width: 100%;
+  h2 {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-weight: 700;
+    font-size: 42px; /* Increased size */
+    line-height: 1.2;
+    color: #fff;
+    margin: 0;
+    
+    @media (max-width: 768px) {
+      font-size: 32px;
+    }
   }
 }
 
-@media (max-width: 768px) {
-  .section-title {
-    font-size: 28px;
+.title-line {
+  /* Vertical line next to title */
+  width: 1px;
+  height: 140px; /* Shorter line */
+  background: rgba(255, 255, 255, 0.1); /* Subtle color */
+  margin-top: 10px;
+  
+  @media (max-width: 1024px) {
+    width: 100px;
+    height: 1px;
+    margin-top: 0;
   }
+}
 
-  .content-body-wrapper {
-    gap: 30px;
-  }
-
-  .values-card-wrapper {
-    width: 100%;
-  }
+.cards-grid {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
 }

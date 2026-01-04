@@ -13,20 +13,10 @@
       </div>
     </div>
 
-    <!-- Controls (Left side in RTL, Right in LTR) -->
+    <!-- CTA (Left side in RTL, Right in LTR) -->
     <div class="controls">
-      <!-- Next Slide Button -->
-      <app-button variant="control" ariaLabel="Next Slide">
-        <div class="icon-wrapper rotate-225">
-          <lucide-icon [img]="ArrowUp" [size]="14" strokeWidth="2" color="white"></lucide-icon>
-        </div>
-      </app-button>
-
-      <!-- Previous Slide Button -->
-      <app-button variant="control" ariaLabel="Previous Slide">
-        <div class="icon-wrapper rotate-45">
-          <lucide-icon [img]="ArrowUp" [size]="14" strokeWidth="2" color="white"></lucide-icon>
-        </div>
+      <app-button variant="action" [routerLink]="['/', currentLang, 'contact-us']">
+        {{ 'LANDING.PROCESS.REQUEST_EVALUATION' | translate }}
       </app-button>
     </div>
   </div>

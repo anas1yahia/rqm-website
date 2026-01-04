@@ -26,6 +26,12 @@
   }
 
   @defer (on viewport) {
+    <app-statistic-section appScrollFade class="fade-in-section"></app-statistic-section>
+  } @placeholder {
+    <div style="min-height: 300px"></div>
+  }
+
+  @defer (on viewport) {
     <app-quality-proof appScrollFade class="fade-in-section"></app-quality-proof>
   } @placeholder {
     <div style="min-height: 300px"></div>

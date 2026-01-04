@@ -15,6 +15,14 @@
   },
   "LANDING": {
     "CLIENTS": "Businesses Chose to Cross with Us to the Digital Future",
+    "STATISTICS": {
+      "TITLE": "RQM System in Numbers",
+      "PRODUCTS": "Specialized Digital Products",
+      "PARTNERS": "Compliance and Technology Partners",
+      "CLIENTS": "Businesses that have chosen to transition with us",
+      "SECTORS": "Served Sectors",
+      "PROJECTS": "Implemented Digital Projects"
+    },
     "SERVICES": {
       "HEADING_1": "At RQM, We Aspire to Build",
       "HEADING_2": " Services That Shape the Future",
@@ -36,7 +44,8 @@
       "STUDY_TITLE": "Enablement",
       "STUDY_DESC": "We build the foundation that is unseen: technical infrastructure, cybersecurity, and data readiness.",
       "ANALYSIS_TITLE": "Activation",
-      "ANALYSIS_DESC": "We activate value within operations: smart solutions and process automation."
+      "ANALYSIS_DESC": "We activate value within operations: smart solutions and process automation.",
+      "REQUEST EVALUATION": "Request a consultation of your facility"
     },
     "VALUES": {
       "HEADING": "Why Digital Leaders Choose Us?",

@@ -1,0 +1,25 @@
+<section class="statistic-section">
+  <div class="content-container">
+    
+    <!-- Title Panel -->
+    <div class="description-panel">
+      <div class="panel-content">
+        <h2>{{ 'LANDING.STATISTICS.TITLE' | translate }}</h2>
+      </div>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="awards-grid">
+      <div class="award-card" *ngFor="let stat of stats">
+        <div class="card-header">
+          <span class="award-id">{{ stat.id }}</span>
+        </div>
+        <div class="card-content">
+          <span class="stat-value">{{ stat.value }}</span>
+          <span class="stat-label">{{ stat.label | translate }}</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

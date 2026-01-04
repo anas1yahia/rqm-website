@@ -1,150 +1,138 @@
-:host {
-  display: block;
-  /* Removed direction: rtl */
-  width: 100%; /* Ensure host allows shrinking */
+.process-card {
+  position: relative;
+  width: 100%;
+  min-height: 250px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center; /* Center horizontally */
+  transition: all 0.3s ease;
+  overflow: visible; /* Needed for negative margin decorations if any */
+}
+.process-card:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.process-card:hover .corner-accent {
+  opacity: 1;
+  transform: scale(1);
 }
 
-.card-container {
+.card-top {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center; /* Center icon */
+  margin-bottom: 24px;
+}
+
+/* ID absolute positioned top-start */
+.card-id {
+  position: absolute;
+  top: -10px;
+  /* RTL: Left is End, Right is Start. ID is usually on Left (LTR) or Right (RTL)?
+     Screenshot shows "001" on top-left.
+     So regardless of dir, let's pin it to the left side (LTR start, RTL end).
+  */
+  inset-inline-end: auto; /* Reset */
+  left: 0; /* Force left */
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-weight: 300;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.5);
+  /* In RTL mode, if we want it on the left still: */
+}
+:host-context([dir=rtl]) .card-id {
+  left: 0;
+  right: auto;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-circle {
+  width: 56px;
+  height: 56px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  /* Design shows square-ish container or circle? Icon is inside a box in design analysis "size-[48px]". 
+     Let's keep it square with slight border radius? Or fully square?
+     Screenshot shows icon inside a square box. */
+  border-radius: 0;
+}
+
+.card-content {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  width: 100%;
-  max-width: 380px; /* Use max-width */
-  height: 356px;
-  padding: 24px;
-  border-radius: 20px;
-  box-shadow: 0px 0px 4px 0px rgba(249, 244, 244, 0.8);
-  box-sizing: border-box;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.5s ease;
-  align-items: flex-start; /* Logical Start (Right in RTL) */
-  margin: 0 auto; /* Center if container is wider */
-}
-
-.card-container.active {
-  background: rgba(116, 124, 145, 0.12);
-}
-
-.card-container.inactive {
-  background: rgba(16, 16, 16, 0.77);
-  opacity: 0.8;
-}
-
-/* Header */
-.card-header {
-  display: flex;
-  gap: 12px;
+  text-align: center;
   align-items: center;
-  justify-content: flex-start; /* Logical Start (Right in RTL, Left in LTR) */
-  width: 100%;
-  z-index: 2;
+  max-width: 80%;
 }
-
-.card-title-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex: 1;
-}
-
-.card-title {
-  margin: 0;
+.card-content h3 {
   font-family: "IBM Plex Sans Arabic", sans-serif;
-  font-weight: 700;
-  font-size: 20px;
-  color: white;
-  text-align: start; /* Logical start */
-  white-space: nowrap;
-  letter-spacing: -0.01em;
-}
-
-.card-icon {
-  width: 36px;
-  height: 36px;
-  flex-shrink: 0;
-}
-
-.icon-img {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-/* Body */
-.card-body {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  z-index: 2;
-  text-align: start; /* Logical start */
-}
-
-.card-desc {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.4;
+  color: #fff;
   margin: 0;
+}
+.card-content p {
   font-family: "IBM Plex Sans Arabic", sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  color: #cbc8c7;
-  line-height: 20px;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
   white-space: pre-wrap;
 }
 
-/* Background/Illustration */
-.card-bg-wrapper {
+/* Corner Accents - Green borders */
+.corner-accent {
   position: absolute;
-  top: 123px;
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%);
-  width: 202px;
-  height: 194px;
-  border-radius: 97px;
-  box-shadow: 0px 0px 4px 0px rgba(249, 244, 244, 0.8);
-  z-index: 1;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #0eefb2; /* Green from design */
+  opacity: 0;
+  transition: all 0.3s ease;
   pointer-events: none;
+  z-index: 10;
 }
-
-.card-bg-mask {
-  position: absolute;
-  inset: 0;
-  border-radius: 97px;
-  overflow: hidden;
+.corner-accent.top-start {
+  top: -1px;
+  left: -1px; /* Always left? Or start? Design shows corners on hover usually match layout. */
+  /* Let's stick to Left-Top and Right-Bottom as typical diagonal */
+  left: -1px;
+  border-bottom: 0;
+  border-right: 0;
 }
-
-.bg-img {
-  position: absolute;
-  /* Values from Figma for '01' state or general fit */
-  width: 474%;
-  height: 500%;
-  left: -189%;
-  top: -125%;
-  max-width: none;
-  object-fit: cover;
+:host-context([dir=rtl]) .corner-accent.top-start {
+  left: auto;
+  right: -1px;
+  border-right: 1px solid #0eefb2;
+  border-left: 0;
 }
-
-/* Responsive */
-@media (max-width: 480px) {
-  .card-container {
-    height: auto;
-    min-height: 300px;
-    padding: 20px;
-  }
-  .card-title {
-    font-size: 18px;
-  }
-  .card-desc {
-    font-size: 16px;
-    line-height: 1.4;
-  }
-  .card-bg-wrapper {
-    width: 160px;
-    height: 154px;
-    top: 100px; /* Adjust vertical position */
-  }
-  .bg-img {
-    /* Adjust scale if necessary for smaller wrapper */
-  }
+.corner-accent.bottom-end {
+  bottom: -1px;
+  right: -1px;
+  border-top: 0;
+  border-left: 0;
+}
+:host-context([dir=rtl]) .corner-accent.bottom-end {
+  right: auto;
+  left: -1px;
+  border-left: 1px solid #0eefb2;
+  border-right: 0;
 }
 
 /*# sourceMappingURL=process-card.component.css.map */

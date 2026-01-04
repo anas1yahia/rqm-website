@@ -1,31 +1,21 @@
-<div class="process-section-container">
-  <div class="header-container">
-    <h2 class="section-title">
-      {{ 'LANDING.VALUES.HEADING' | translate }}
-    </h2>
-  </div>
-
-  <div class="content-body-wrapper">
-    <!-- Active Card Display (Left side) -->
-    <div class="active-card-container">
-      <div class="card-slot">
-       <ng-container *ngFor="let card of [cards[activeIndex]]; trackBy: trackById">
-         <app-process-card
-           [title]="card.title | translate"
-           [description]="card.description | translate"
-           [icon]="card.icon"
-           [bgImage]="card.bgImage"
-           [isActive]="true"
-           [position]="activeIndex"
-           class="process-card-item active-item">
-         </app-process-card>
-       </ng-container>
+<section class="process-section">
+  <div class="content-container">
+    
+    <!-- Title Panel (Sticky/Fixed Side) -->
+    <div class="title-panel">
+      <div class="title-content">
+        <h2>{{ 'LANDING.PROCESS.HEADING' | translate }}</h2>
+        <div class="title-line"></div>
       </div>
     </div>
 
-    <!-- Values Card (Right side) -->
-    <div class="values-card-wrapper">
-      <app-values-card></app-values-card>
+    <!-- Cards Grid -->
+    <div class="cards-grid">
+      <app-process-card 
+        *ngFor="let step of steps"
+        [step]="step">
+      </app-process-card>
     </div>
+
   </div>
-</div>
+</section>

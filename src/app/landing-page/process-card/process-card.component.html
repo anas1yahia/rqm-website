@@ -1,21 +1,25 @@
-<div class="card-container" [class.active]="isActive" [class.inactive]="!isActive">
-  <div class="card-header">
-    <div class="card-icon">
-    <img [src]="icon" alt="icon" class="icon-img">
-  </div>
-    <div class="card-title-wrapper">
-      <h3 class="card-title">{{ title }}</h3>
+<div class="process-card">
+  <!-- Top Row: ID and Icon -->
+  <div class="card-top">
+    <!-- Corner Borders (Top Left / Bottom Right based on direction or decoration) -->
+    <!-- Design has corner accents -->
+    <div class="corner-accent top-start"></div>
+    <div class="corner-accent bottom-end"></div>
+
+    <div class="card-id">
+      <span>{{ step.id }}</span>
     </div>
-
-  </div>
-
-  <div class="card-body">
-    <p class="card-desc">{{ description }}</p>
-  </div>
-
-  <div class="card-bg-wrapper">
-    <div class="card-bg-mask" @bgImageAnimation>
-       <img [src]="bgImage" alt="background" class="bg-img">
+    
+    <div class="icon-container">
+      <div class="icon-circle">
+        <lucide-icon [img]="step.icon" [size]="24" strokeWidth="1.5" color="white"></lucide-icon>
+      </div>
     </div>
+  </div>
+
+  <!-- Bottom Row: Content -->
+  <div class="card-content">
+    <h3>{{ step.titleKey | translate }}</h3>
+    <p>{{ step.descKey | translate }}</p>
   </div>
 </div>
