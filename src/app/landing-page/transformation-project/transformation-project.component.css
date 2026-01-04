@@ -28,6 +28,7 @@
 .controls {
   display: flex;
   gap: 12px;
+  border: 1px solid var(--card-border);
   /* Removed direction: ltr to follow global direction */
 }
 
@@ -80,7 +81,7 @@
 /* Responsive */
 @media (max-width: 768px) {
   .header-section {
-    flex-direction: column-reverse;
+    flex-direction: column;
     gap: 20px;
     align-items: flex-start;
   }
