@@ -48,18 +48,19 @@
       "REQUEST EVALUATION": "Request a consultation of your facility"
     },
     "VALUES": {
-      "HEADING": "Why Digital Leaders Choose Us?",
-      "ANALYSIS_CARD_TITLE": "Right Decision",
+      "HEADING": "Why do digital leaders choose us?",
+      "ANALYSIS_CARD_TITLE": "The right decision",
       "ANALYSIS_CARD_DESC": "We help you make the right technical decision before building.",
-      "PERFECTION_CARD_TITLE": "Realistic Execution",
+      "PERFECTION_CARD_TITLE": "Realistic execution",
       "PERFECTION_CARD_DESC": "We focus on what actually works, not what looks good in presentations.",
-      "COMMITMENT_CARD_TITLE": "Security & Sustainability",
-      "COMMITMENT_CARD_DESC": "We build the solution from the start to be secure, scalable, and compliant.",
-      "SUSTAINABILITY_CARD_TITLE": "Measured Success",
-      "SUSTAINABILITY_CARD_DESC": "Everything we implement is linked to clear KPIs.",
-      "VALUES_HEADING": "Our High Values",
-      "VALUES_SUBHEADING": "Trust Built on Clear Compliance",
-      "VALUES_CTA": "Start Your Tech Story"
+      "COMMITMENT_CARD_TITLE": "Security and sustainability",
+      "COMMITMENT_CARD_DESC": "We build the solution from scratch to be secure, scalable, and compliant.",
+      "SUSTAINABILITY_CARD_TITLE": "Measurable success",
+      "SUSTAINABILITY_CARD_DESC": "Everything we do is tied to clear performance indicators.",
+      "VALUES_HEADING": "Our high values",
+      "VALUES_SUBHEADING": "Trust built on clear compliance,",
+      "VALUES_CTA": "Start your tech story"
+
     },
     "PRODUCTS": {
       "HEADING": "Our Products",
