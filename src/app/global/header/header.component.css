@@ -59,18 +59,16 @@
 
 /* Contact CTA logic handled by app-button variant="contact" */
 /* Default Hover (Dark Theme / Top of page) */
-.contact-cta:hover .contact-wrapper p {
-  color: #0A0C1A !important; /* Force Dark text on White hover */
-  transition: color 0.3s;
+.contact-cta {
+  /* Hover state handled by app-button styles via inheritance */
 }
 
 .contact-wrapper p {
   margin: 0;
   font-size: 18.7px;
-  color: white;
+  color: inherit;
   line-height: 22.46px;
   white-space: nowrap;
-  transition: color 0.3s;
 }
 
 /* Light Theme Scrolled State Overrides */
@@ -99,21 +97,11 @@
   border-color: #62c4aa;
   /* Override gradient to fill with Teal instead of White */
   background-image: linear-gradient(to right, #62c4aa 50%, transparent 50%);
+  color: #0A0C1A; /* Dark text by default */
 }
 .header-container.scrolled-light .contact-cta ::ng-deep button.contact:hover {
   border-color: #62c4aa;
-}
-.header-container.scrolled-light .contact-cta {
-  /* Text Color Normal */
-}
-.header-container.scrolled-light .contact-cta .contact-wrapper p {
-  color: #0A0C1A;
-}
-.header-container.scrolled-light .contact-cta {
-  /* Text Color Hover (White on Teal) */
-}
-.header-container.scrolled-light .contact-cta:hover .contact-wrapper p {
-  color: white !important;
+  color: white; /* White text on hover */
 }
 .header-container.scrolled-light .toggle-container {
   border-color: rgba(0, 0, 0, 0.1);

@@ -165,22 +165,25 @@ button {
   border-radius: 37px;
   padding: 11.25px 20px 12px 20px;
   
+  /* Default (Dark Theme) Background */
   background: linear-gradient(to right, white 50%, transparent 50%);
   background-size: 200% 100%;
   background-position: 100% 0;
   transition: background-position 0.4s ease-out, border-color 0.3s, color 0.3s;
   color: white;
 
+  /* Default Hover (Dark Theme) */
+  &:hover {
+    background-position: 0 0;
+    border-color: white;
+    color: #0A0C1A; /* Dark text on White bg */
+  }
+
+  /* Light Theme Overrides */
   :host-context([data-theme="light"]) & {
     color: var(--primary-color);
     border-color: var(--primary-color);
     
-    /* In light mode, the gradient white part (hover state) is fine, 
-       but the transparent part (default state) sits on white bg.
-       So default text must be colored.
-       
-       On hover, background becomes white. Text should probably be dark/primary.
-    */
     background: linear-gradient(to right, var(--primary-color) 50%, transparent 50%);
     background-size: 200% 100%;
     background-position: 100% 0;
@@ -190,12 +193,5 @@ button {
       color: white; /* White text on Primary bg */
       border-color: var(--primary-color);
     }
-  }
-
-  /* Default (Dark Theme) Hover */
-  &:not( :host-context([data-theme="light"]) & ):hover {
-    background-position: 0 0;
-    border-color: white;
-    color: #0A0C1A;
   }
 }

@@ -65,19 +65,15 @@
 
 /* Default Hover (Dark Theme / Top of page) */
 .contact-cta {
-  &:hover .contact-wrapper p {
-    color: #0A0C1A !important; /* Force Dark text on White hover */
-    transition: color 0.3s;
-  }
+  /* Hover state handled by app-button styles via inheritance */
 }
 
 .contact-wrapper p {
   margin: 0;
   font-size: 18.7px;
-  color: white;
+  color: inherit;
   line-height: 22.46px;
   white-space: nowrap;
-  transition: color 0.3s;
 }
 
 /* Light Theme Scrolled State Overrides */
@@ -108,20 +104,12 @@
       border-color: #62c4aa;
       /* Override gradient to fill with Teal instead of White */
       background-image: linear-gradient(to right, #62c4aa 50%, transparent 50%);
+      color: #0A0C1A; /* Dark text by default */
       
       &:hover {
         border-color: #62c4aa;
+        color: white; /* White text on hover */
       }
-    }
-
-    /* Text Color Normal */
-    .contact-wrapper p {
-      color: #0A0C1A;
-    }
-
-    /* Text Color Hover (White on Teal) */
-    &:hover .contact-wrapper p {
-      color: white !important;
     }
   }
   
