@@ -14,6 +14,10 @@
   /* Removed fixed height constraint to allow content to flow if needed, 
      but keeping min-height for consistency with design feel */
   border: 1px solid rgba(255, 255, 255, 0.05);
+  /* Light Theme Override */
+}
+:host-context([data-theme=light]) .content-container {
+  border-color: rgba(0, 0, 0, 0.05);
 }
 @media (max-width: 1024px) {
   .content-container {
@@ -36,6 +40,11 @@
   justify-content: center; /* Center title vertically */
   padding: 33px;
   background-image: linear-gradient(243deg, rgba(102, 153, 255, 0) 0%, rgba(102, 153, 255, 0.04) 49%, rgba(102, 153, 255, 0) 100%);
+  /* Light Theme Override */
+}
+:host-context([data-theme=light]) .description-panel {
+  border-color: rgba(0, 0, 0, 0.05);
+  background-image: linear-gradient(243deg, rgba(54, 201, 203, 0) 0%, rgba(54, 201, 203, 0.04) 49%, rgba(54, 201, 203, 0) 100%);
 }
 @media (max-width: 1024px) {
   .description-panel {
@@ -71,6 +80,10 @@
   line-height: 1.4;
   color: #fff;
   margin: 0;
+  /* Light Theme Override */
+}
+:host-context([data-theme=light]) .panel-content h2 {
+  color: var(--text-color);
 }
 
 /* Stats Grid */
@@ -97,9 +110,17 @@
   padding: 20px;
   position: relative;
   transition: background 0.3s ease;
+  /* Light Theme Override */
+}
+:host-context([data-theme=light]) .award-card {
+  border-color: rgba(0, 0, 0, 0.05);
 }
 .award-card:hover {
   background: rgba(255, 255, 255, 0.03);
+  /* Light Theme Override */
+}
+:host-context([data-theme=light]) .award-card:hover {
+  background: rgba(0, 0, 0, 0.03);
 }
 .award-card:hover .stat-value {
   color: var(--primary-color);
@@ -125,6 +146,10 @@
   font-size: 10px;
   letter-spacing: 2px;
   color: rgba(255, 255, 255, 0.3);
+  /* Light Theme Override */
+}
+:host-context([data-theme=light]) .award-id {
+  color: rgba(0, 0, 0, 0.3);
 }
 
 .card-content {
@@ -144,6 +169,10 @@
   line-height: 1;
   color: #fff;
   transition: all 0.3s ease;
+  /* Light Theme Override */
+}
+:host-context([data-theme=light]) .stat-value {
+  color: var(--text-color);
 }
 
 .stat-label {
@@ -152,6 +181,10 @@
   font-size: 14px;
   color: rgba(255, 255, 255, 0.7);
   max-width: 120px; /* Prevent text from getting too wide */
+  /* Light Theme Override */
+}
+:host-context([data-theme=light]) .stat-label {
+  color: var(--text-muted);
 }
 
 /*# sourceMappingURL=statistic-section.component.css.map */

@@ -68,6 +68,11 @@
     color: #fff;
     margin: 0;
     
+    /* Light Theme Override */
+    :host-context([data-theme="light"]) & {
+      color: var(--text-color); /* Dark text */
+    }
+    
     @media (max-width: 768px) {
       font-size: 32px;
     }
@@ -80,6 +85,11 @@
   height: 140px; /* Shorter line */
   background: rgba(255, 255, 255, 0.1); /* Subtle color */
   margin-top: 10px;
+  
+  /* Light Theme Override */
+  :host-context([data-theme="light"]) & {
+    background: rgba(0, 0, 0, 0.1);
+  }
   
   @media (max-width: 1024px) {
     width: 100px;

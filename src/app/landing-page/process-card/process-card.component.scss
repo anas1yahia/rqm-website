@@ -12,9 +12,21 @@
   transition: all 0.3s ease;
   overflow: visible; /* Needed for negative margin decorations if any */
 
+  /* Light Theme Override */
+  :host-context([data-theme="light"]) & {
+    background: rgba(0, 0, 0, 0.02);
+    border-color: rgba(0, 0, 0, 0.05);
+  }
+
   &:hover {
     background: rgba(255, 255, 255, 0.04);
     border-color: rgba(255, 255, 255, 0.1);
+
+    /* Light Theme Override */
+    :host-context([data-theme="light"]) & {
+      background: rgba(0, 0, 0, 0.04);
+      border-color: rgba(0, 0, 0, 0.1);
+    }
 
     .corner-accent {
       opacity: 1;
@@ -48,6 +60,11 @@
   letter-spacing: 2px;
   color: rgba(255, 255, 255, 0.5);
 
+  /* Light Theme Override */
+  :host-context([data-theme="light"]) & {
+    color: rgba(0, 0, 0, 0.5);
+  }
+
   /* In RTL mode, if we want it on the left still: */
   :host-context([dir="rtl"]) & {
     left: 0;
@@ -69,6 +86,13 @@
   justify-content: center;
   align-items: center;
   transition: all 0.3s ease;
+  color: #fff;
+
+  /* Light Theme Override */
+  :host-context([data-theme="light"]) & {
+    border-color: rgba(0, 0, 0, 0.1);
+    color: var(--text-color); /* Ensure icon takes text color */
+  }
 
   /* Design shows square-ish container or circle? Icon is inside a box in design analysis "size-[48px]".
      Let's keep it square with slight border radius? Or fully square?
@@ -91,6 +115,11 @@
     line-height: 1.4;
     color: #fff;
     margin: 0;
+
+    /* Light Theme Override */
+    :host-context([data-theme="light"]) & {
+      color: var(--text-color);
+    }
   }
 
   p {
@@ -101,6 +130,11 @@
     color: rgba(255, 255, 255, 0.7);
     margin: 0;
     white-space: pre-wrap;
+
+    /* Light Theme Override */
+    :host-context([data-theme="light"]) & {
+      color: var(--text-muted);
+    }
   }
 }
 
