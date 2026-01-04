@@ -15,26 +15,26 @@ export class ProcessSectionComponent {
   steps = [
     {
       id: '001',
-      titleKey: 'LANDING.PROCESS.CARD_1_TITLE',
-      descKey: 'LANDING.PROCESS.CARD_1_DESC',
+      titleKey: 'LANDING.VALUES.ANALYSIS_CARD_TITLE',
+      descKey: 'LANDING.VALUES.ANALYSIS_CARD_DESC',
       icon: BrainCircuit
     },
     {
       id: '002',
-      titleKey: 'LANDING.PROCESS.CARD_2_TITLE',
-      descKey: 'LANDING.PROCESS.CARD_2_DESC',
+      titleKey: 'LANDING.VALUES.PERFECTION_CARD_TITLE',
+      descKey: 'LANDING.VALUES.PERFECTION_CARD_DESC',
       icon: Hammer
     },
     {
       id: '003',
-      titleKey: 'LANDING.PROCESS.CARD_3_TITLE',
-      descKey: 'LANDING.PROCESS.CARD_3_DESC',
+      titleKey: 'LANDING.VALUES.COMMITMENT_CARD_TITLE',
+      descKey: 'LANDING.VALUES.COMMITMENT_CARD_DESC',
       icon: ShieldCheck
     },
     {
       id: '004',
-      titleKey: 'LANDING.PROCESS.CARD_4_TITLE',
-      descKey: 'LANDING.PROCESS.CARD_4_DESC',
+      titleKey: 'LANDING.VALUES.SUSTAINABILITY_CARD_TITLE',
+      descKey: 'LANDING.VALUES.SUSTAINABILITY_CARD_DESC',
       icon: BarChart3
     }
   ];

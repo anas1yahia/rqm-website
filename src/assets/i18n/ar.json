@@ -37,18 +37,18 @@
       "CARD_4_DESC": "كل ما ننفذه مرتبط بمؤشرات أداء واضحة،\nلتعرف ماذا كسبت، وكيف تتقدم."
     },
     "VALUES": {
-      "HEADING": "الصفر الذي ننطلق منه في رقم",
-      "ANALYSIS_CARD_TITLE": "التحليل",
-      "ANALYSIS_CARD_DESC": "نغلف أعمالنا بالشفافية ونولي المعايير الأخلاقية الأولوية.",
-      "PERFECTION_CARD_TITLE": "الإتقان",
-      "PERFECTION_CARD_DESC": "نهتم بتفاصيل العمل لنلبّي احتياجات العميل",
-      "COMMITMENT_CARD_TITLE": "الالتزام",
-      "COMMITMENT_CARD_DESC": "نقيس خطواتنا بدقة ونتعهد بمسؤوليتنا تجاه العميل.",
-      "SUSTAINABILITY_CARD_TITLE": "الاستدامة",
-      "SUSTAINABILITY_CARD_DESC": "نحافظ على استدامة كفاءة الأعمال ونموّها",
+      "HEADING": "لماذا يختارنا القادة الرقميون؟",
+      "ANALYSIS_CARD_TITLE": "قرار صحيح",
+      "ANALYSIS_CARD_DESC": "نساعدك على اتخاذ القرار التقني الصحيح قبل البناء.",
+      "PERFECTION_CARD_TITLE": "تنفيذ واقعي",
+      "PERFECTION_CARD_DESC": "نركز على ما يعمل فعليًا، لا على ما يبدو جيدًا في العروض.",
+      "COMMITMENT_CARD_TITLE": "أمان واستدامة",
+      "COMMITMENT_CARD_DESC": "نبني الحل من البداية ليكون آمنًا، قابلًا للتوسع، ومتوافقًا.",
+      "SUSTAINABILITY_CARD_TITLE": "نجاح يُقاس",
+      "SUSTAINABILITY_CARD_DESC": "كل ما ننفذه مرتبط بمؤشرات أداء واضحة.",
       "VALUES_HEADING": "قيمنا العالية",
-      "VALUES_SUBHEADING": "هذه القيم تمثّل حجر أساس لكل أعمالنا مع الشركاء",
-      "VALUES_CTA": "الخطوة “صفر” تبدأ من رقم"
+      "VALUES_SUBHEADING": "ثقة تُبنى على امتثال واضح",
+      "VALUES_CTA": "ابدأ قصتك التقنية"
     },
     "PRODUCTS": {
       "HEADING": "منتجاتنا",
