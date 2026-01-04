@@ -1,0 +1,38 @@
+<section class="client-section">
+  <!-- Background Decorations -->
+  <div class="bg-blur"></div>
+  <div class="bg-gradient-top"></div>
+
+  <div class="content-wrapper">
+    <!-- Title -->
+    <div class="header-container">
+      <h2>{{ 'LANDING.CLIENTS' | translate }}</h2>
+    </div>
+
+    <!-- Slider -->
+    <div class="slider-container" dir="ltr">
+      <div class="slider-track">
+        <!-- Set 1 -->
+        <div class="slide" *ngFor="let client of clients">
+          <img [src]="client" alt="Client Logo">
+        </div>
+        <!-- Set 2 -->
+        <div class="slide" *ngFor="let client of clients">
+          <img [src]="client" alt="Client Logo">
+        </div>
+        <!-- Set 3 (Extra buffer for wide screens) -->
+        <div class="slide" *ngFor="let client of clients">
+          <img [src]="client" alt="Client Logo">
+        </div>
+        <!-- Set 4 (Extra buffer for wide screens) -->
+        <div class="slide" *ngFor="let client of clients">
+          <img [src]="client" alt="Client Logo">
+        </div>
+      </div>
+
+      <!-- Fade Edges -->
+      <div class="fade-overlay left"></div>
+      <div class="fade-overlay right"></div>
+    </div>
+  </div>
+</section>

@@ -6,6 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 // Layout & Sections
 import { MainLayoutComponent } from '../main-layout/main-layout.component';
 import { InfoSectionComponent } from '../info-section/info-section.component';
+import { ClientSectionComponent } from '../client-section/client-section.component';
 import { TransformationProjectComponent } from '../transformation-project/transformation-project.component';
 import { ProcessSectionComponent } from '../process-section/process-section.component';
 import { QualityProofComponent } from '../quality-proof/quality-proof.component';
@@ -22,6 +23,7 @@ import { ScrollFadeDirective } from '../../directives/scroll-fade';
     CommonModule,
     MainLayoutComponent,
     InfoSectionComponent,
+    ClientSectionComponent,
     TransformationProjectComponent,
     ProcessSectionComponent,
     QualityProofComponent,

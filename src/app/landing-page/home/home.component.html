@@ -2,6 +2,12 @@
   <app-main-layout id="home"></app-main-layout>
 
   @defer (on viewport) {
+    <app-client-section appScrollFade class="fade-in-section"></app-client-section>
+  } @placeholder {
+    <div style="min-height: 200px"></div>
+  }
+
+  @defer (on viewport) {
     <app-info-section id="about" appScrollFade class="fade-in-section"></app-info-section>
   } @placeholder {
     <div style="min-height: 500px"></div>

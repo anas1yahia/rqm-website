@@ -1,0 +1,136 @@
+.client-section {
+  position: relative;
+  width: 100%;
+  padding: 60px 0;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Ensure it blends with the dark background */
+  background: transparent;
+}
+
+.bg-blur {
+  position: absolute;
+  top: -100px; /* Adjust based on design */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: rgba(54, 201, 203, 0.08); /* Primary color low opacity */
+  filter: blur(120px);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.bg-gradient-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 160px;
+  background: radial-gradient(circle at top, rgba(54, 201, 203, 0.03), transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.content-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  z-index: 1;
+}
+
+.header-container {
+  text-align: center;
+  max-width: 800px;
+  padding: 0 20px;
+
+  h2 {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.5;
+    color: var(--text-color);
+    margin: 0;
+
+    /* Responsive font size */
+    @media (max-width: 768px) {
+      font-size: 20px;
+    }
+  }
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+
+  /* Mask for fading edges */
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.slider-track {
+  display: flex;
+  align-items: center;
+  gap: 60px; /* Space between logos */
+  width: max-content;
+
+  /* Animation */
+  animation: scroll 40s linear infinite;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+.slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px; /* Fixed width for consistency */
+  height: 80px;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    /* Optional: apply a filter if logos need to be monochrome or specific color */
+    /* filter: grayscale(100%) brightness(1.2); */
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+/* Keyframes for sliding left */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-25%); /* Move by 1 set (1/4 of total 4 sets) */
+  }
+}
+
+/* RTL Support via dir="ltr" on slider-container to keep direction consistent */
+/* However, if we want RTL direction scrolling (right to left is standard, but in RTL usually we read right to left)
+   Actually, for a continuous ticker, moving Left (Leftwards) is standard for "News Ticker" style even in RTL sometimes,
+   but strictly speaking, RTL might prefer moving Right.
+
+   The design is LTR based.
+   The user asked for "auto sliding".
+   Usually logos slide from Right to Left (content moves Left).
+
+   If I want to support both directions, I can change the animation direction.
+   But setting dir="ltr" on the container ensures the transform works predictably.
+*/
