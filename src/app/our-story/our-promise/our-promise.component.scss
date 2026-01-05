@@ -110,9 +110,9 @@
 
 .item-header {
   display: flex;
-  flex-direction: row; /* Standard flow */
+  flex-direction: row-reverse; /* Standard flow */
   align-items: center;
-  justify-content: flex-start; /* Align Start (Right in RTL) */
+  justify-content: flex-end; /* Align Start (Right in RTL) */
   gap: 16px;
   width: 100%;
 }
@@ -199,7 +199,7 @@
   z-index: 10;
   display: flex;
   justify-content: center;
-  
+
   @media (max-width: 992px) {
     bottom: 0;
     transform: translate(-50%, 50%);

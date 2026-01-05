@@ -112,9 +112,9 @@
 
 .item-header {
   display: flex;
-  flex-direction: row; /* Standard flow */
+  flex-direction: row-reverse; /* Standard flow */
   align-items: center;
-  justify-content: flex-start; /* Align Start (Right in RTL) */
+  justify-content: flex-end; /* Align Start (Right in RTL) */
   gap: 16px;
   width: 100%;
 }
