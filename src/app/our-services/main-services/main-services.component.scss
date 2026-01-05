@@ -73,7 +73,7 @@
     background: linear-gradient(to right, #62c4aa, #4c89d5) !important;
     border: 1px solid #62c4aa !important;
     white-space: nowrap;
-    
+
     /* Reset hover transition if needed to match design simplicity */
     background-image: linear-gradient(to right, #62c4aa, #4c89d5) !important;
     background-size: 100% 100% !important;
@@ -128,12 +128,27 @@
 .service-item {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+
   opacity: 0.7;
   transition: opacity 0.3s ease;
+  outline: none; /* Focus handled visually */
 
-  &:hover {
+  &:hover, &:focus-within {
     opacity: 1;
+
+    .details-container {
+      max-height: 300px;
+      opacity: 1;
+      margin-top: 16px;
+    }
+
+    .chevron {
+      transform: rotate(-90deg); /* Rotate down */
+    }
+
+    :host-context([dir="rtl"]) .chevron {
+        transform: rotate(-90deg); /* Same rotation visually usually points down */
+    }
   }
 
   .item-content {
@@ -141,6 +156,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    cursor: pointer;
   }
 
   .service-text {
@@ -155,10 +171,49 @@
     align-items: center;
     justify-content: center;
     opacity: 0.5;
+    transition: transform 0.3s ease;
   }
 
   .chevron {
     color: white;
+    transition: transform 0.3s ease;
+  }
+
+  /* Details Section Styles */
+  .details-container {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, opacity 0.4s ease-in-out, margin 0.3s ease;
+  }
+
+  .details-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-inline-start: 12px;
+
+    li {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.7);
+      position: relative;
+      padding-inline-start: 16px;
+      line-height: 1.5;
+
+      &::before {
+        content: '';
+        position: absolute;
+        inset-inline-start: 0;
+        top: 8px;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: #36c9cb;
+      }
+    }
   }
 
   .divider {
@@ -185,6 +240,10 @@
 :host-context([data-theme="light"]) {
   .section-title h2, .content-box .subheading, .service-text {
     color: var(--text-color);
+  }
+
+  .details-list li {
+    color: var(--text-muted);
   }
 
   .visual-box {
@@ -236,11 +295,11 @@
 
   .visual-box {
     height: 350px !important;
-    order: 2; /* Move visual below content on mobile for better flow? Or keep order 1? 
-                Figma has it Left (visual) and Right (content). In RTL, Visual is Left. 
+    order: 2; /* Move visual below content on mobile for better flow? Or keep order 1?
+                Figma has it Left (visual) and Right (content). In RTL, Visual is Left.
                 Usually content is more important. Let's keep content top. */
   }
-  
+
   .content-box {
     order: 1;
   }
@@ -272,7 +331,7 @@
     width: 90%;
     text-align: center;
     justify-content: center;
-    
+
     .btn-text {
       font-size: 16px;
     }
@@ -283,7 +342,7 @@
   .visual-box {
     height: 280px !important;
   }
-  
+
   .content-box .subheading {
     font-size: 24px;
   }

@@ -119,18 +119,30 @@
 .service-item {
   display: flex;
   flex-direction: column;
-  gap: 30px;
   opacity: 0.7;
   transition: opacity 0.3s ease;
+  outline: none; /* Focus handled visually */
 }
-.service-item:hover {
+.service-item:hover, .service-item:focus-within {
   opacity: 1;
+}
+.service-item:hover .details-container, .service-item:focus-within .details-container {
+  max-height: 300px;
+  opacity: 1;
+  margin-top: 16px;
+}
+.service-item:hover .chevron, .service-item:focus-within .chevron {
+  transform: rotate(-90deg); /* Rotate down */
+}
+.service-item:hover :host-context([dir=rtl]) .chevron, .service-item:focus-within :host-context([dir=rtl]) .chevron {
+  transform: rotate(-90deg); /* Same rotation visually usually points down */
 }
 .service-item .item-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  cursor: pointer;
 }
 .service-item .service-text {
   font-size: 1rem;
@@ -143,9 +155,46 @@
   align-items: center;
   justify-content: center;
   opacity: 0.5;
+  transition: transform 0.3s ease;
 }
 .service-item .chevron {
   color: white;
+  transition: transform 0.3s ease;
+}
+.service-item {
+  /* Details Section Styles */
+}
+.service-item .details-container {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out, opacity 0.4s ease-in-out, margin 0.3s ease;
+}
+.service-item .details-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-inline-start: 12px;
+}
+.service-item .details-list li {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  position: relative;
+  padding-inline-start: 16px;
+  line-height: 1.5;
+}
+.service-item .details-list li::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #36c9cb;
 }
 .service-item .divider {
   height: 1px;
@@ -165,6 +214,9 @@
 /* Light Theme Overrides */
 :host-context([data-theme=light]) .section-title h2, :host-context([data-theme=light]) .content-box .subheading, :host-context([data-theme=light]) .service-text {
   color: var(--text-color);
+}
+:host-context([data-theme=light]) .details-list li {
+  color: var(--text-muted);
 }
 :host-context([data-theme=light]) .visual-box {
   background: #f8f9fa;
@@ -213,8 +265,8 @@
   }
   .visual-box {
     height: 350px !important;
-    order: 2; /* Move visual below content on mobile for better flow? Or keep order 1? 
-  Figma has it Left (visual) and Right (content). In RTL, Visual is Left. 
+    order: 2; /* Move visual below content on mobile for better flow? Or keep order 1?
+  Figma has it Left (visual) and Right (content). In RTL, Visual is Left.
   Usually content is more important. Let's keep content top. */
   }
   .content-box {

@@ -25,14 +25,27 @@
       <h3 class="subheading">{{ 'SERVICES_PAGE.MAIN.SUBHEADING' | translate }}</h3>
 
       <div class="services-list">
-        @for (service of services; track service) {
-          <div class="service-item">
-            <div class="item-content">
-              <span class="service-text">{{ service | translate }}</span>
-              <div class="icon-wrapper">
-                <lucide-icon [img]="ChevronLeft" [size]="16" class="chevron"></lucide-icon>
+        @for (service of services; track service.key) {
+          <div class="service-item" tabindex="0"> <!-- Added tabindex for focus/interaction -->
+            <div class="item-header">
+              <div class="item-content">
+                <span class="service-text">{{ service.title | translate }}</span>
+                <div class="icon-wrapper">
+                  <lucide-icon [img]="ChevronLeft" [size]="16" class="chevron"></lucide-icon>
+                </div>
               </div>
             </div>
+            
+            <!-- Details Section (Shown on Hover) -->
+            <div class="details-container">
+              <ul class="details-list">
+                <!-- We assume translate returns an array here. If strict templates are on, might need a helper -->
+                <ng-container *ngFor="let detail of (service.details | translate)">
+                  <li>{{ detail }}</li>
+                </ng-container>
+              </ul>
+            </div>
+
             <div class="divider"></div>
           </div>
         }

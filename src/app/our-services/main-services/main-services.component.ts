@@ -17,11 +17,26 @@ export class MainServicesComponent {
   readonly ChevronLeft = ChevronLeft;
 
   services = [
-    'SERVICES_PAGE.MAIN.LIST.WEB_MOBILE',
-    'SERVICES_PAGE.MAIN.LIST.INTERNAL_PLATFORMS',
-    'SERVICES_PAGE.MAIN.LIST.INTEGRATION',
-    'SERVICES_PAGE.MAIN.LIST.ANALYSIS',
-    'SERVICES_PAGE.MAIN.LIST.UI_UX'
+    {
+      key: 'ENABLEMENT',
+      title: 'SERVICES_PAGE.MAIN.LIST.ENABLEMENT.TITLE',
+      details: 'SERVICES_PAGE.MAIN.LIST.ENABLEMENT.DETAILS'
+    },
+    {
+      key: 'SMART_SOLUTIONS',
+      title: 'SERVICES_PAGE.MAIN.LIST.SMART_SOLUTIONS.TITLE',
+      details: 'SERVICES_PAGE.MAIN.LIST.SMART_SOLUTIONS.DETAILS'
+    },
+    {
+      key: 'SECURITY',
+      title: 'SERVICES_PAGE.MAIN.LIST.SECURITY.TITLE',
+      details: 'SERVICES_PAGE.MAIN.LIST.SECURITY.DETAILS'
+    },
+    {
+      key: 'INNOVATION',
+      title: 'SERVICES_PAGE.MAIN.LIST.INNOVATION.TITLE',
+      details: 'SERVICES_PAGE.MAIN.LIST.INNOVATION.DETAILS'
+    }
   ];
 
   get imgService(): string {

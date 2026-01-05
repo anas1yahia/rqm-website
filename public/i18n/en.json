@@ -184,14 +184,41 @@
     },
     "MAIN": {
       "HEADING": "Our Services",
-      "LABEL": "From Vision… To Operation",
+      "LABEL": "From Vision... To Operational Impact",
       "SUBHEADING": "Integrated Service Ecosystem",
       "LIST": {
-        "WEB_MOBILE": "Digital Discovery and Guidance",
-        "INTERNAL_PLATFORMS": "Designing Digital Operational Solutions",
-        "INTEGRATION": "Building and Operating Digital Systems",
-        "ANALYSIS": "Data and Decision Support",
-        "UI_UX": "Developing Specialized Tech Products"
+        "ENABLEMENT": {
+          "TITLE": "Digital Readiness & Enablement",
+          "DETAILS": [
+            "Digital Capabilities Assessment",
+            "Designing Realistic Roadmap",
+            "Tech & Data Governance"
+          ]
+        },
+        "SMART_SOLUTIONS": {
+          "TITLE": "Smart Solutions & AI",
+          "DETAILS": [
+            "AI Models Serving Decisions",
+            "Process Automation",
+            "Operationally Ready Solutions"
+          ]
+        },
+        "SECURITY": {
+          "TITLE": "Cybersecurity & Compliance",
+          "DETAILS": [
+            "Security Built-in Infrastructure",
+            "Data Protection",
+            "Regulatory Alignment"
+          ]
+        },
+        "INNOVATION": {
+          "TITLE": "Studio & Innovation",
+          "DETAILS": [
+            "Market Research",
+            "Building POC & MVP",
+            "Turning Successful Ideas into Products"
+          ]
+        }
       }
     },
     "TASKS": {
