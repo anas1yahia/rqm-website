@@ -1,11 +1,9 @@
-/* System Theme Variables (Approximate usage) */
+/* System Theme Variables */
 .advisor-section {
   padding: 120px 0;
   width: 100%;
   display: flex;
   justify-content: center;
-  position: relative;
-  /* Subtle background grid if needed, or rely on global bg */
 }
 
 .content-container {
@@ -27,103 +25,144 @@
 }
 .header-group h2 {
   font-family: "IBM Plex Sans Arabic", sans-serif;
-  font-size: 3rem; /* Larger */
+  font-size: 3rem;
   font-weight: 700;
   margin: 0;
-  /* Gradient Text matching Hero/Vision */
   background: linear-gradient(135deg, #ffffff 30%, #a5b4fc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 .header-group p {
   font-family: "IBM Plex Sans Arabic", sans-serif;
   font-size: 1.25rem;
-  color: #94a6cc; /* System muted blue */
+  color: #94a6cc;
   line-height: 1.6;
   margin: 0;
 }
 
 .criteria-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 32px;
+  /* Use auto-fill to keep items on one row if space permits, wrapping to 2x2 naturally */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
   width: 100%;
+  align-items: stretch; /* Ensure all cards are same height */
 }
 
 .criteria-card {
-  /* Tech Card Base */
+  height: 100%; /* Fill grid cell height */
+  /* ... existing styles ... */
+  position: relative;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
+  border-radius: 24px;
   padding: 48px 32px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 24px;
+  gap: 28px;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  position: relative;
   overflow: hidden;
-  /* Top Tech Accent */
+  /* Tech Background Pattern */
+  background-image: radial-gradient(circle at top right, rgba(255, 255, 255, 0.03) 0%, transparent 40%);
+  /* Corner Accents (Pseudo-elements) */
 }
-.criteria-card::before {
+.criteria-card::before, .criteria-card::after {
   content: "";
   position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  transition: all 0.4s ease;
+  opacity: 0.5;
+}
+.criteria-card::before {
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 40px;
-  height: 3px;
-  background: #62c4aa;
-  box-shadow: 0 0 15px rgba(98, 196, 170, 0.5);
-  border-radius: 0 0 4px 4px;
-  transition: width 0.4s ease, box-shadow 0.4s ease;
+  left: 0;
+  border-top-color: rgba(255, 255, 255, 0.1);
+  border-left-color: rgba(255, 255, 255, 0.1);
+  border-radius: 24px 0 0 0;
+}
+.criteria-card::after {
+  bottom: 0;
+  right: 0;
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+  border-right-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0 0 24px 0;
 }
 .criteria-card {
-  /* Hover State */
+  /* RTL Corners */
+}
+:host-context([dir=rtl]) .criteria-card::before {
+  left: auto;
+  right: 0;
+  border-left-color: transparent;
+  border-right-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0 24px 0 0;
+}
+:host-context([dir=rtl]) .criteria-card::after {
+  right: auto;
+  left: 0;
+  border-right-color: transparent;
+  border-left-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0 0 0 24px;
 }
 .criteria-card:hover {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
-  transform: translateY(-10px);
-  border-color: rgba(98, 196, 170, 0.3);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(98, 196, 170, 0.2);
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.4);
+  /* Active Corners */
+}
+.criteria-card:hover::before, .criteria-card:hover::after {
+  width: 40px;
+  height: 40px;
+  opacity: 1;
 }
 .criteria-card:hover::before {
-  width: 60%;
-  box-shadow: 0 0 25px rgba(98, 196, 170, 0.8);
+  border-color: #62c4aa;
+}
+.criteria-card:hover::after {
+  border-color: #62c4aa;
+}
+:host-context([dir=rtl]) .criteria-card:hover::before {
+  border-color: #62c4aa;
+}
+:host-context([dir=rtl]) .criteria-card:hover::after {
+  border-color: #62c4aa;
 }
 .criteria-card:hover .icon-wrapper {
-  background: rgba(98, 196, 170, 0.15);
-  border-color: #62c4aa;
+  background: rgba(98, 196, 170, 0.1);
   color: #62c4aa;
+  border-color: #62c4aa;
+  box-shadow: 0 0 30px rgba(98, 196, 170, 0.4);
   transform: scale(1.1);
 }
-.criteria-card:hover .icon-wrapper .icon {
-  filter: drop-shadow(0 0 5px #62c4aa);
-}
 .criteria-card .icon-wrapper {
-  width: 72px;
-  height: 72px;
-  border-radius: 20px; /* Squircle for more modern look */
-  background: rgba(255, 255, 255, 0.04);
+  width: 80px;
+  height: 80px;
+  border-radius: 24px; /* Soft squircle */
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
   color: rgba(255, 255, 255, 0.6);
-  transition: all 0.4s ease;
-  /* Inner dot or grid detail could be added here */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.criteria-card .icon-wrapper .icon {
+  transition: transform 0.4s ease;
 }
 .criteria-card p {
   font-family: "IBM Plex Sans Arabic", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 500;
-  color: white;
+  color: #e2e8f0;
   line-height: 1.5;
   margin: 0;
-  max-width: 90%;
+  z-index: 1;
 }
 
 /* Light Theme Overrides */
@@ -136,31 +175,31 @@
   color: var(--text-muted);
 }
 :host-context([data-theme=light]) .criteria-card {
-  background: white;
-  border-color: rgba(0, 0, 0, 0.08);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
 }
-:host-context([data-theme=light]) .criteria-card::before {
-  background: #4c89d5; /* Use blue for light theme primary? or Teal */
-  box-shadow: none;
+:host-context([data-theme=light]) .criteria-card::before, :host-context([data-theme=light]) .criteria-card::after {
+  border-color: rgba(0, 0, 0, 0.1);
 }
 :host-context([data-theme=light]) .criteria-card p {
   color: var(--text-color);
 }
+:host-context([data-theme=light]) .criteria-card .icon-wrapper {
+  background: #f1f5f9;
+  border-color: transparent;
+  color: #64748b;
+}
 :host-context([data-theme=light]) .criteria-card:hover {
   border-color: #62c4aa;
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(98, 196, 170, 0.15);
+  box-shadow: 0 15px 40px rgba(98, 196, 170, 0.1);
 }
 :host-context([data-theme=light]) .criteria-card:hover .icon-wrapper {
   background: rgba(98, 196, 170, 0.1);
-  border-color: #62c4aa;
   color: #62c4aa;
 }
-:host-context([data-theme=light]) .criteria-card .icon-wrapper {
-  background: #f3f4f6;
-  border-color: transparent;
-  color: #64748b;
+:host-context([data-theme=light]) .criteria-card:hover::before, :host-context([data-theme=light]) .criteria-card:hover::after {
+  border-color: #62c4aa;
 }
 
 @media (max-width: 768px) {
@@ -175,46 +214,38 @@
   }
   .criteria-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 16px;
   }
   .criteria-card {
-    padding: 32px 24px;
     flex-direction: row;
+    padding: 24px;
     text-align: start;
-    align-items: center;
     gap: 20px;
-    /* Horizontal card on mobile: remove top bar, maybe add side bar? */
+    min-height: auto;
+    /* Adjust corners for horizontal layout if needed, or keep as framing corners */
   }
   .criteria-card::before {
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    width: 3px;
-    height: 40px;
-    border-radius: 0 4px 4px 0;
+    width: 12px;
+    height: 12px;
   }
-  .criteria-card:hover::before {
-    width: 3px; /* Keep width */
-    height: 70%; /* Expand height */
+  .criteria-card::after {
+    width: 12px;
+    height: 12px;
   }
-  /* RTL adjust for row layout on mobile */
+  .criteria-card:hover::before, .criteria-card:hover::after {
+    width: 24px;
+    height: 24px;
+  }
   :host-context([dir=rtl]) .criteria-card {
     text-align: right;
   }
-  :host-context([dir=rtl]) .criteria-card::before {
-    left: auto;
-    right: 0;
-    border-radius: 4px 0 0 4px;
-  }
   .icon-wrapper {
-    width: 56px;
-    height: 56px;
-    border-radius: 16px;
+    width: 60px;
+    height: 60px;
     flex-shrink: 0;
   }
   .criteria-card p {
     font-size: 1.1rem;
-    max-width: 100%;
   }
 }
 
