@@ -14,6 +14,7 @@ import { Subscription } from 'rxjs';
 })
 export class OurPromiseComponent implements OnInit, OnDestroy {
   currentLang: string = 'ar';
+  bgImage = "/solutions-bg.svg";
   private langChangeSubscription!: Subscription;
 
   constructor(private translate: TranslateService) {
