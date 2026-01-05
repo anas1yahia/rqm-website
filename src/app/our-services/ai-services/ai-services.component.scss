@@ -51,6 +51,15 @@
   }
 }
 
+/* Tech Background Mixin */
+@mixin tech-bg {
+  background-color: rgba(255, 255, 255, 0.02);
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
 /* Desktop Layout */
 .desktop-layout {
   display: grid;
@@ -62,36 +71,86 @@
 .triggers-grid {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
 }
 
 .trigger-card {
-  padding: 20px 24px;
-  background: rgba(255, 255, 255, 0.03);
+  padding: 24px;
+  @include tech-bg;
   border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
+  border-radius: 4px; /* Tech borders usually sharper */
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
   
+  /* Corner Accents */
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-color: rgba(255, 255, 255, 0.1);
+    border-style: solid;
+    transition: all 0.3s ease;
+  }
+  
+  &::before {
+    top: 0;
+    left: 0;
+    border-width: 1px 0 0 1px;
+  }
+  
+  &::after {
+    bottom: 0;
+    right: 0;
+    border-width: 0 1px 1px 0;
+  }
+  
+  /* RTL adjustments for corners */
+  :host-context([dir="rtl"]) &::before {
+    left: auto; right: 0;
+    border-width: 1px 1px 0 0;
+  }
+  :host-context([dir="rtl"]) &::after {
+    right: auto; left: 0;
+    border-width: 0 0 1px 1px;
+  }
+
   &:hover {
-    background: rgba(255, 255, 255, 0.06);
+    background-color: rgba(255, 255, 255, 0.04);
     transform: translateX(5px);
+    border-color: rgba(255, 255, 255, 0.15);
+    
+    &::before, &::after {
+      width: 100%;
+      height: 100%;
+      border-color: rgba(255, 255, 255, 0.1);
+      opacity: 0.5;
+    }
   }
   
   &.active {
-    background: linear-gradient(90deg, rgba(54, 201, 203, 0.1) 0%, rgba(255, 255, 255, 0.03) 100%);
+    background-color: rgba(54, 201, 203, 0.05);
     border-color: #62c4aa;
+    box-shadow: inset 0 0 20px rgba(98, 196, 170, 0.1);
+    
+    &::before, &::after {
+      border-color: #62c4aa;
+      width: 12px; 
+      height: 12px;
+      opacity: 1;
+    }
     
     .trigger-title {
       color: #62c4aa;
       font-weight: 700;
+      text-shadow: 0 0 10px rgba(98, 196, 170, 0.4);
     }
     
     .indicator-dot {
       background: #62c4aa;
-      box-shadow: 0 0 10px rgba(98, 196, 170, 0.6);
+      box-shadow: 0 0 10px #62c4aa;
       transform: scale(1.2);
     }
   }
@@ -101,18 +160,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .trigger-title {
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
   transition: color 0.3s;
+  letter-spacing: 0.5px;
 }
 
 .indicator-dot {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.2);
   transition: all 0.3s;
@@ -120,13 +182,33 @@
 
 /* Detail Panel */
 .detail-panel {
-  background: rgba(255, 255, 255, 0.03);
+  @include tech-bg;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
+  border-radius: 12px;
   padding: 48px;
   min-height: 500px;
   animation: fadeSlideIn 0.4s ease-out;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  position: relative;
+  
+  /* Tech border highlight on side */
+  border-left: 2px solid rgba(98, 196, 170, 0.5);
+  
+  :host-context([dir="rtl"]) & {
+    border-left: 1px solid rgba(255, 255, 255, 0.08); /* Reset */
+    border-right: 2px solid rgba(98, 196, 170, 0.5);
+  }
+  
+  /* Scanline effect */
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.1) 50%);
+    background-size: 100% 4px;
+    pointer-events: none;
+    opacity: 0.3;
+  }
 }
 
 @keyframes fadeSlideIn {
