@@ -1,12 +1,3 @@
-<section class="ai-services-container">
-  <!-- Background Decoration -->
-  <div class="bg-glow"></div>
-
-  <!-- Header -->
-  <div class="section-header">
-    <h2>{{ 'SERVICES_PAGE.AI_SECTION.HEADING' | translate }}</h2>
-    <p class="intro-desc">{{ 'SERVICES_PAGE.AI_SECTION.DESCRIPTION' | translate }}</p>
-  </div>
 
 <section class="ai-services-container">
   <!-- Background Decoration -->
@@ -39,9 +30,9 @@
           <h3>{{ 'SERVICES_PAGE.AI_SECTION.SERVICES_LIST.' + servicesList[activeIndex] + '.TITLE' | translate }}</h3>
           <span class="subtitle">{{ 'SERVICES_PAGE.AI_SECTION.SERVICES_LIST.' + servicesList[activeIndex] + '.SUBTITLE' | translate }}</span>
         </div>
-        
+
         <p class="description">{{ 'SERVICES_PAGE.AI_SECTION.SERVICES_LIST.' + servicesList[activeIndex] + '.DESC' | translate }}</p>
-        
+
         <div class="details-grid">
           <div class="details-col includes">
             <h4>{{ 'SERVICES_PAGE.AI_SECTION.SERVICES_LIST.' + servicesList[activeIndex] + '.INCLUDES_TITLE' | translate }}</h4>
@@ -51,7 +42,7 @@
               </ng-container>
             </ul>
           </div>
-          
+
           <div class="details-col value">
             <h4>{{ 'SERVICES_PAGE.AI_SECTION.SERVICES_LIST.' + servicesList[activeIndex] + '.VALUE_TITLE' | translate }}</h4>
             <ul>
@@ -79,11 +70,11 @@
               <lucide-icon [img]="ChevronDown" [size]="24" class="chevron"></lucide-icon>
             </div>
           </div>
-          
+
           <div class="expandable-content">
             <div class="content-inner">
               <p class="description">{{ 'SERVICES_PAGE.AI_SECTION.SERVICES_LIST.' + key + '.DESC' | translate }}</p>
-              
+
               <div class="details-grid">
                 <div class="details-col includes">
                   <h4>{{ 'SERVICES_PAGE.AI_SECTION.SERVICES_LIST.' + key + '.INCLUDES_TITLE' | translate }}</h4>
@@ -93,7 +84,7 @@
                     </ng-container>
                   </ul>
                 </div>
-                
+
                 <div class="details-col value">
                   <h4>{{ 'SERVICES_PAGE.AI_SECTION.SERVICES_LIST.' + key + '.VALUE_TITLE' | translate }}</h4>
                   <ul>

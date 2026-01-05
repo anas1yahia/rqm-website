@@ -238,13 +238,27 @@
   display: none;
 }
 
-/* Responsive Visibility */
+/* Responsive Visibility & Layout */
 @media (max-width: 1100px) {
   .desktop-layout { display: none; }
   .mobile-layout { display: block; }
+  
+  .ai-services-container {
+    padding: 40px 20px; /* Reduced padding container */
+    gap: 40px;
+    border-width: 1px; /* Thinner border on mobile */
+  }
+  
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .section-header .intro-desc {
+    font-size: 1rem;
+  }
 }
 
-/* Shared/Mobile Styles */
+/* Shared/Mobile Styles Refined */
 .services-wrapper {
   position: relative;
   z-index: 1;
@@ -255,34 +269,89 @@
 }
 
 .service-block {
-/* ... reuse existing mobile service block styles ... */
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 16px;
   overflow: hidden;
   transition: all 0.3s ease;
   
+  /* Active state mobile */
   &.expanded {
     background: rgba(255, 255, 255, 0.08);
     border-color: #62c4aa;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
   }
 }
 
 .service-header-row {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 24px;
+  align-items: flex-start; /* Align top for multiline titles */
+  padding: 20px; /* Comfortable touch padding */
   cursor: pointer;
+  min-height: 60px; /* Ensure touch target size */
   
-  h3 { font-size: 1.2rem; color: white; margin: 0; }
-  .subtitle { font-size: 0.95rem; color: #62c4aa; display: block; margin-top: 4px; }
-  .chevron { transition: transform 0.3s; color: rgba(255,255,255,0.6); }
+  h3 { 
+    font-size: 1.1rem; 
+    color: white; 
+    margin: 0; 
+    line-height: 1.4;
+  }
+  
+  .subtitle { 
+    font-size: 0.9rem; 
+    color: #62c4aa; 
+    display: block; 
+    margin-top: 4px; 
+    font-weight: 400;
+  }
+  
+  .chevron { 
+    transition: transform 0.3s; 
+    color: rgba(255,255,255,0.6); 
+    margin-top: 4px; /* Align with title */
+  }
 }
 
 .service-block.expanded .chevron {
   transform: rotate(180deg);
   color: white;
+}
+
+/* Mobile Details */
+.content-inner {
+  padding: 0 20px 24px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 16px 0;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Stack on mobile */
+  gap: 24px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+}
+
+/* Tablet adjustments */
+@media (min-width: 768px) and (max-width: 1100px) {
+  .service-header-row {
+    padding: 24px 32px;
+    align-items: center;
+    
+    h3 { font-size: 1.3rem; }
+    .subtitle { font-size: 1rem; }
+  }
+  
+  .details-grid {
+    grid-template-columns: 1fr 1fr; /* 2 cols on tablet */
+  }
 }
 
 /* RTL Support for Desktop Grid */
