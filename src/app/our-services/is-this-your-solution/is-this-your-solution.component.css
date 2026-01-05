@@ -1,13 +1,11 @@
-:host {
-  display: block;
-  width: 100%;
-}
-
+/* System Theme Variables (Approximate usage) */
 .advisor-section {
-  padding: 100px 0;
+  padding: 120px 0;
   width: 100%;
   display: flex;
   justify-content: center;
+  position: relative;
+  /* Subtle background grid if needed, or rely on global bg */
 }
 
 .content-container {
@@ -17,27 +15,32 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 60px;
+  gap: 80px;
 }
 
 .header-group {
   text-align: center;
-  max-width: 700px;
+  max-width: 800px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
 }
 .header-group h2 {
   font-family: "IBM Plex Sans Arabic", sans-serif;
-  font-size: 2.5rem;
+  font-size: 3rem; /* Larger */
   font-weight: 700;
-  color: white;
   margin: 0;
+  /* Gradient Text matching Hero/Vision */
+  background: linear-gradient(135deg, #ffffff 30%, #a5b4fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 .header-group p {
   font-family: "IBM Plex Sans Arabic", sans-serif;
   font-size: 1.25rem;
-  color: rgba(255, 255, 255, 0.85);
+  color: #94a6cc; /* System muted blue */
   line-height: 1.6;
   margin: 0;
 }
@@ -45,59 +48,88 @@
 .criteria-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
+  gap: 32px;
   width: 100%;
 }
 
 .criteria-card {
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+  /* Tech Card Base */
+  background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 24px;
-  padding: 40px 32px;
+  border-radius: 20px;
+  padding: 48px 32px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 24px;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   position: relative;
   overflow: hidden;
+  /* Top Tech Accent */
+}
+.criteria-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  background: #62c4aa;
+  box-shadow: 0 0 15px rgba(98, 196, 170, 0.5);
+  border-radius: 0 0 4px 4px;
+  transition: width 0.4s ease, box-shadow 0.4s ease;
+}
+.criteria-card {
+  /* Hover State */
 }
 .criteria-card:hover {
-  background: rgba(255, 255, 255, 0.05);
-  transform: translateY(-8px);
-  border-color: rgba(98, 196, 170, 0.5); /* Brand Teal */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+  transform: translateY(-10px);
+  border-color: rgba(98, 196, 170, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+.criteria-card:hover::before {
+  width: 60%;
+  box-shadow: 0 0 25px rgba(98, 196, 170, 0.8);
 }
 .criteria-card:hover .icon-wrapper {
-  background: #62c4aa;
-  color: white;
-  transform: scale(1.1) rotate(5deg);
-  box-shadow: 0 0 20px rgba(98, 196, 170, 0.4);
+  background: rgba(98, 196, 170, 0.15);
+  border-color: #62c4aa;
+  color: #62c4aa;
+  transform: scale(1.1);
+}
+.criteria-card:hover .icon-wrapper .icon {
+  filter: drop-shadow(0 0 5px #62c4aa);
 }
 .criteria-card .icon-wrapper {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.06);
+  width: 72px;
+  height: 72px;
+  border-radius: 20px; /* Squircle for more modern look */
+  background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #62c4aa;
+  color: rgba(255, 255, 255, 0.6);
   transition: all 0.4s ease;
+  /* Inner dot or grid detail could be added here */
 }
 .criteria-card p {
   font-family: "IBM Plex Sans Arabic", sans-serif;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.95);
+  color: white;
   line-height: 1.5;
   margin: 0;
+  max-width: 90%;
 }
 
 /* Light Theme Overrides */
 :host-context([data-theme=light]) .header-group h2 {
+  background: none;
+  -webkit-text-fill-color: initial;
   color: var(--text-color);
 }
 :host-context([data-theme=light]) .header-group p {
@@ -106,16 +138,29 @@
 :host-context([data-theme=light]) .criteria-card {
   background: white;
   border-color: rgba(0, 0, 0, 0.08);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+:host-context([data-theme=light]) .criteria-card::before {
+  background: #4c89d5; /* Use blue for light theme primary? or Teal */
+  box-shadow: none;
 }
 :host-context([data-theme=light]) .criteria-card p {
   color: var(--text-color);
 }
 :host-context([data-theme=light]) .criteria-card:hover {
   border-color: #62c4aa;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(98, 196, 170, 0.15);
+}
+:host-context([data-theme=light]) .criteria-card:hover .icon-wrapper {
+  background: rgba(98, 196, 170, 0.1);
+  border-color: #62c4aa;
+  color: #62c4aa;
 }
 :host-context([data-theme=light]) .criteria-card .icon-wrapper {
-  background: rgba(98, 196, 170, 0.1);
+  background: #f3f4f6;
+  border-color: transparent;
+  color: #64748b;
 }
 
 @media (max-width: 768px) {
@@ -123,24 +168,53 @@
     padding: 60px 0;
   }
   .header-group h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
   .header-group p {
     font-size: 1.1rem;
   }
   .criteria-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 20px;
   }
   .criteria-card {
     padding: 32px 24px;
     flex-direction: row;
     text-align: start;
     align-items: center;
+    gap: 20px;
+    /* Horizontal card on mobile: remove top bar, maybe add side bar? */
+  }
+  .criteria-card::before {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 40px;
+    border-radius: 0 4px 4px 0;
+  }
+  .criteria-card:hover::before {
+    width: 3px; /* Keep width */
+    height: 70%; /* Expand height */
   }
   /* RTL adjust for row layout on mobile */
   :host-context([dir=rtl]) .criteria-card {
     text-align: right;
+  }
+  :host-context([dir=rtl]) .criteria-card::before {
+    left: auto;
+    right: 0;
+    border-radius: 4px 0 0 4px;
+  }
+  .icon-wrapper {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    flex-shrink: 0;
+  }
+  .criteria-card p {
+    font-size: 1.1rem;
+    max-width: 100%;
   }
 }
 
