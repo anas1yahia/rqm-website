@@ -5,27 +5,108 @@
   <!-- Header -->
   <div class="section-header">
     <h2>{{ 'SERVICES_PAGE.AI_SECTION.HEADING' | translate }}</h2>
-    <p>{{ 'SERVICES_PAGE.AI_SECTION.DESCRIPTION' | translate }}</p>
+    <p class="intro-desc">{{ 'SERVICES_PAGE.AI_SECTION.DESCRIPTION' | translate }}</p>
   </div>
 
-  <!-- Cards Grid -->
-  <div class="cards-grid">
-    <div class="top-row">
-      <div class="ai-card">
-        <h3>{{ 'SERVICES_PAGE.AI_SECTION.CARDS.AGENTS_TITLE' | translate }}</h3>
-        <p>{{ 'SERVICES_PAGE.AI_SECTION.CARDS.AGENTS_DESC' | translate }}</p>
-      </div>
-      <div class="ai-card">
-        <h3>{{ 'SERVICES_PAGE.AI_SECTION.CARDS.AUTOMATION_TITLE' | translate }}</h3>
-        <p>{{ 'SERVICES_PAGE.AI_SECTION.CARDS.AUTOMATION_DESC' | translate }}</p>
+<section class="ai-services-container">
+  <!-- Background Decoration -->
+  <div class="bg-glow"></div>
+
+  <!-- Header -->
+  <div class="section-header">
+    <h2>{{ 'SERVICES_PAGE.AI_SECTION.HEADING' | translate }}</h2>
+    <p class="intro-desc">{{ 'SERVICES_PAGE.AI_SECTION.DESCRIPTION' | translate }}</p>
+  </div>
+
+  <!-- Desktop Layout (Grid Tabs + Content) -->
+  <div class="desktop-layout">
+    <!-- Triggers Grid -->
+    <div class="triggers-grid">
+      @for (key of servicesList; track key; let i = $index) {
+        <div class="trigger-card" [class.active]="activeIndex === i" (click)="selectService(i)" tabindex="0">
+          <div class="trigger-content">
+            <span class="trigger-title">{{ 'SERVICES_PAGE.AI_SECTION.SERVICES_LIST.' + key + '.TITLE' | translate }}</span>
+            <div class="indicator-dot"></div>
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Active Detail Panel -->
+    <div class="detail-panel" *ngIf="activeIndex !== null">
+      <div class="panel-content">
+        <div class="panel-header">
+          <h3>{{ 'SERVICES_PAGE.AI_SECTION.SERVICES_LIST.' + servicesList[activeIndex] + '.TITLE' | translate }}</h3>
+          <span class="subtitle">{{ 'SERVICES_PAGE.AI_SECTION.SERVICES_LIST.' + servicesList[activeIndex] + '.SUBTITLE' | translate }}</span>
+        </div>
+        
+        <p class="description">{{ 'SERVICES_PAGE.AI_SECTION.SERVICES_LIST.' + servicesList[activeIndex] + '.DESC' | translate }}</p>
+        
+        <div class="details-grid">
+          <div class="details-col includes">
+            <h4>{{ 'SERVICES_PAGE.AI_SECTION.SERVICES_LIST.' + servicesList[activeIndex] + '.INCLUDES_TITLE' | translate }}</h4>
+            <ul>
+              <ng-container *ngFor="let item of ('SERVICES_PAGE.AI_SECTION.SERVICES_LIST.' + servicesList[activeIndex] + '.INCLUDES' | translate)">
+                <li>{{ item }}</li>
+              </ng-container>
+            </ul>
+          </div>
+          
+          <div class="details-col value">
+            <h4>{{ 'SERVICES_PAGE.AI_SECTION.SERVICES_LIST.' + servicesList[activeIndex] + '.VALUE_TITLE' | translate }}</h4>
+            <ul>
+              <ng-container *ngFor="let item of ('SERVICES_PAGE.AI_SECTION.SERVICES_LIST.' + servicesList[activeIndex] + '.VALUE' | translate)">
+                <li>{{ item }}</li>
+              </ng-container>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
-    
-    <div class="bottom-row">
-      <div class="ai-card full-width">
-        <h3>{{ 'SERVICES_PAGE.AI_SECTION.CARDS.ML_TITLE' | translate }}</h3>
-        <p>{{ 'SERVICES_PAGE.AI_SECTION.CARDS.ML_DESC' | translate }}</p>
-      </div>
+  </div>
+
+  <!-- Mobile Layout (Accordion) -->
+  <div class="mobile-layout">
+    <div class="services-wrapper">
+      @for (key of servicesList; track key; let i = $index) {
+        <div class="service-block" [class.expanded]="activeIndex === i" (click)="setActive(i)">
+          <div class="service-header-row">
+            <div class="header-text">
+              <h3>{{ 'SERVICES_PAGE.AI_SECTION.SERVICES_LIST.' + key + '.TITLE' | translate }}</h3>
+              <span class="subtitle">{{ 'SERVICES_PAGE.AI_SECTION.SERVICES_LIST.' + key + '.SUBTITLE' | translate }}</span>
+            </div>
+            <div class="icon-wrapper">
+              <lucide-icon [img]="ChevronDown" [size]="24" class="chevron"></lucide-icon>
+            </div>
+          </div>
+          
+          <div class="expandable-content">
+            <div class="content-inner">
+              <p class="description">{{ 'SERVICES_PAGE.AI_SECTION.SERVICES_LIST.' + key + '.DESC' | translate }}</p>
+              
+              <div class="details-grid">
+                <div class="details-col includes">
+                  <h4>{{ 'SERVICES_PAGE.AI_SECTION.SERVICES_LIST.' + key + '.INCLUDES_TITLE' | translate }}</h4>
+                  <ul>
+                    <ng-container *ngFor="let item of ('SERVICES_PAGE.AI_SECTION.SERVICES_LIST.' + key + '.INCLUDES' | translate)">
+                      <li>{{ item }}</li>
+                    </ng-container>
+                  </ul>
+                </div>
+                
+                <div class="details-col value">
+                  <h4>{{ 'SERVICES_PAGE.AI_SECTION.SERVICES_LIST.' + key + '.VALUE_TITLE' | translate }}</h4>
+                  <ul>
+                    <ng-container *ngFor="let item of ('SERVICES_PAGE.AI_SECTION.SERVICES_LIST.' + key + '.VALUE' | translate)">
+                      <li>{{ item }}</li>
+                    </ng-container>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
     </div>
   </div>
 </section>

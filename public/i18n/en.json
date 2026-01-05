@@ -171,15 +171,134 @@
       "CTA": "Step 'Zero' for Digital Transformation"
     },
     "AI_SECTION": {
-      "HEADING": "Automation and Smart Solutions",
-      "DESCRIPTION": "We apply automation and smart solutions where they make a real difference. Including automating repetitive processes and applying smart solutions supporting operations.",
-      "CARDS": {
-        "AGENTS_TITLE": "AI Agents Development",
-        "AGENTS_DESC": "Developing smart agents to support interaction and operations.",
-        "AUTOMATION_TITLE": "AI Business Automation",
-        "AUTOMATION_DESC": "Automating processes to reduce manual effort and increase efficiency.",
-        "ML_TITLE": "Machine Learning & Data Analysis",
-        "ML_DESC": "Building machine learning models to analyze data and support decisions."
+      "HEADING": "How We Work Through Our Services?",
+      "DESCRIPTION": "All our services are delivered within one approach:\nDeep understanding of business reality\nContext-appropriate solution design\nStable implementation and operation\nImpact measurement and continuous improvement",
+      "SERVICES_LIST": {
+        "DISCOVERY": {
+          "TITLE": "First: Digital Discovery & Guidance",
+          "SUBTITLE": "Starting from reality, not the solution",
+          "DESC": "We help you see your digital status clearly before any technical decision.",
+          "INCLUDES_TITLE": "This service includes:",
+          "INCLUDES": [
+            "Current digital operation analysis",
+            "Technical and organizational readiness assessment",
+            "Identifying gaps and risks",
+            "Aligning digital vision with business goals"
+          ],
+          "VALUE_TITLE": "Value achieved:",
+          "VALUE": [
+            "Clearer decisions",
+            "Correct priorities",
+            "Reducing waste in time and cost"
+          ]
+        },
+        "DESIGN": {
+          "TITLE": "Second: Designing Operational Digital Solutions",
+          "SUBTITLE": "Turning vision into a working model",
+          "DESC": "We design applicable digital solutions, not theoretical models.",
+          "INCLUDES_TITLE": "This service includes:",
+          "INCLUDES": [
+            "Digital solution architecture design",
+            "Operational process modeling",
+            "Defining implementation phases",
+            "Aligning technology with compliance requirements"
+          ],
+          "VALUE_TITLE": "Value achieved:",
+          "VALUE": [
+            "Realistic executable solutions",
+            "Organized transition without business disruption",
+            "Higher operational readiness"
+          ]
+        },
+        "BUILD": {
+          "TITLE": "Third: Building & Operating Digital Systems",
+          "SUBTITLE": "Stable operation supporting growth",
+          "DESC": "We build and operate the digital systems your business relies on daily.",
+          "INCLUDES_TITLE": "This service includes:",
+          "INCLUDES": [
+            "Operational systems development and implementation",
+            "Systems and data integration",
+            "Actual operation and launch management",
+            "Performance and stability improvement"
+          ],
+          "VALUE_TITLE": "Value achieved:",
+          "VALUE": [
+            "Systems running stably",
+            "Better user experience",
+            "Reducing failures and complexity"
+          ]
+        },
+        "DATA": {
+          "TITLE": "Fourth: Data & Decision Support",
+          "SUBTITLE": "From scattered data... to confident decision",
+          "DESC": "We turn data into a practical tool serving management and decision-makers.",
+          "INCLUDES_TITLE": "This service includes:",
+          "INCLUDES": [
+            "Organizing and unifying data sources",
+            "Building dashboards and KPIs",
+            "Enabling operational and administrative analysis",
+            "Linking data to business goals"
+          ],
+          "VALUE_TITLE": "Value achieved:",
+          "VALUE": [
+            "Comprehensive performance view",
+            "Data-driven decisions",
+            "Higher response speed"
+          ]
+        },
+        "SECURITY": {
+          "TITLE": "Fifth: Cybersecurity & Operational Compliance",
+          "SUBTITLE": "Security is part of the solution, not an addition",
+          "DESC": "We integrate security and compliance into system design and operation from the start.",
+          "INCLUDES_TITLE": "This service includes:",
+          "INCLUDES": [
+            "Security risk assessment",
+            "Designing protection controls",
+            "Regulatory compliance alignment",
+            "Enhancing long-term operational readiness"
+          ],
+          "VALUE_TITLE": "Value achieved:",
+          "VALUE": [
+            "Internal and external confidence",
+            "Reducing operational risks",
+            "Higher readiness for regulators"
+          ]
+        },
+        "AUTOMATION": {
+          "TITLE": "Sixth: Automation & Smart Solutions",
+          "SUBTITLE": "Smarter operation with less effort",
+          "DESC": "We apply automation and smart solutions where they make a real difference.",
+          "INCLUDES_TITLE": "This service includes:",
+          "INCLUDES": [
+            "Automating repetitive processes",
+            "Applying smart solutions supporting operations",
+            "Improving efficiency and reducing manual intervention"
+          ],
+          "VALUE_TITLE": "Value achieved:",
+          "VALUE": [
+            "Saving time and effort",
+            "Raising operational efficiency",
+            "Focusing teams on higher-value tasks"
+          ]
+        },
+        "PRODUCT": {
+          "TITLE": "Seventh: Specialized Tech Product Development",
+          "SUBTITLE": "From operational need... to scalable product",
+          "DESC": "We develop specialized tech products starting from real needs, built for enterprise use and scalability.",
+          "INCLUDES_TITLE": "This service includes:",
+          "INCLUDES": [
+            "Analyzing need and turning it into product concept",
+            "Designing appropriate user experience",
+            "Product development and operation",
+            "Preparing for growth and long-term adoption"
+          ],
+          "VALUE_TITLE": "Value achieved:",
+          "VALUE": [
+            "Products built on business reality",
+            "Higher reliability",
+            "Long-term technical investment"
+          ]
+        }
       }
     },
     "MAIN": {
