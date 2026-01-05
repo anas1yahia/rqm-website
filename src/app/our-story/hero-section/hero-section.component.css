@@ -339,21 +339,25 @@
   }
   .contact-group {
     margin-bottom: 40px;
-    width: auto;
+    width: fit-content;
     display: flex;
+    flex-direction: row-reverse;
     align-items: center;
-    gap: 20px;
+    gap: 12px;
   }
   .contact-group .binary-numbers {
     position: relative;
     top: auto;
     inset-inline-end: auto;
+    display: flex;
+    flex-shrink: 0;
   }
   .contact-group .btn-wrapper {
     position: relative;
     top: auto;
     left: auto;
     transform: none;
+    width: 155px;
   }
   .rqm-ai-label {
     margin-top: auto;
@@ -376,12 +380,10 @@
     min-height: auto;
   }
   .contact-group {
-    flex-direction: column;
-    align-items: flex-start;
+    align-self: center;
   }
   .contact-group .btn-wrapper {
-    width: 100%;
-    max-width: 200px;
+    width: 155px;
   }
 }
 

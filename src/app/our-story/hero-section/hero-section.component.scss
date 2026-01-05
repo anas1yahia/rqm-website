@@ -402,15 +402,18 @@
 
   .contact-group {
     margin-bottom: 40px;
-    width: auto;
+    width: fit-content;
     display: flex;
+    flex-direction: row-reverse;
     align-items: center;
-    gap: 20px;
+    gap: 12px;
 
     .binary-numbers {
       position: relative;
       top: auto;
       inset-inline-end: auto;
+      display: flex;
+      flex-shrink: 0;
     }
 
     .btn-wrapper {
@@ -418,6 +421,7 @@
       top: auto;
       left: auto;
       transform: none;
+      width: 155px;
     }
   }
 
@@ -449,12 +453,10 @@
   }
 
   .contact-group {
-    flex-direction: column;
-    align-items: flex-start;
+    align-self: center; // Center the group if it's in a column parent
     
     .btn-wrapper {
-      width: 100%;
-      max-width: 200px;
+      width: 155px;
     }
   }
 }
