@@ -356,6 +356,14 @@
       "MAIN_HEADING": "Your Business Solutions are One Step Away",
       "SUB_HEADING": "Start a discovery session, and together we determine where you stand, and what service creates the biggest impact now.",
       "BTN_TEXT": "Book Your Session Now"
+    },
+    "IS_THIS_YOUR_SOLUTION": {
+      "TITLE": "Is This Service Right For You?",
+      "INTRO": "RQM services are suitable for entities that:",
+      "ITEM_1": "Are looking for stable digital operation",
+      "ITEM_2": "Need clearer data-driven decisions",
+      "ITEM_3": "Operate in environments requiring security and compliance",
+      "ITEM_4": "Want solutions that grow with them, not replaced constantly"
     }
   },
   "FOOTER": {
