@@ -109,12 +109,13 @@
   }
 
   .subheading {
-    font-size: 2rem;
+    font-size: 1.5rem; /* Reduced from 2rem for better fit */
     font-weight: 500;
     color: white;
-    line-height: 1.15;
-    margin: 0 0 48px 0;
-    max-width: 490px;
+    line-height: 1.5; /* Increased for readability */
+    margin: 0 0 32px 0; /* Reduced bottom margin */
+    max-width: 100%; /* Allow full width */
+    opacity: 0.9;
   }
 }
 
