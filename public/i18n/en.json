@@ -101,9 +101,9 @@
     "ABOUT": {
       "TITLE": "Why Was RQM Founded?",
       "SUBTITLE": "Launched from Market Reality",
-      "DESC_1": "RQM launched from a realistic observation: Many digital initiatives do not achieve their full impact due to a lack of integration between operations, security, and data.",
-      "DESC_2": "We built our expertise in turning technology into actual operations that serve decision-making and business.",
-      "DESC_3": "We design solutions to be reliably operable, compliant with regulations, and linked to business needs."
+      "DESC_1": "Many digital initiatives do not achieve their full impact, not because of weak technology, but due to the lack of integration between operations, security, data, and decision-making.",
+      "DESC_2": "Therefore, we built our expertise in transforming technology into actual operations that serve decisions and business.",
+      "DESC_3": "We design solutions to be: reliably operable, compliant with regulatory requirements, and directly linked to business needs and decision-making."
     },
     "MESSAGE_VALUE": {
       "VISION_TITLE": "Our Vision",
@@ -138,6 +138,17 @@
       "CARD_5_DESC": "Specialized teams to ensure projects are executed with high efficiency.",
       "CARD_6_TITLE": "Continuous Support",
       "CARD_6_DESC": "Technical and operational support to ensure solution continuity and efficiency."
+    },
+    "PROMISE": {
+      "TITLE": "Our Promise",
+      "ITEM_1_TAG": "The promise",
+      "ITEM_1_DESC_1": "We open the gate to the digital future through smart and secure operational solutions,",
+      "ITEM_1_DESC_2": "executed with clear steps,",
+      "ITEM_2_TITLE": "Measured by real value within your business.",
+      "ITEM_3_TAG": "At RQM, we work as an operational partner,",
+      "ITEM_3_SUBTITLE": "Bridging vision with execution,",
+      "ITEM_3_DESC": "Accompanying you until digital initiatives turn into working reality and tangible impact.",
+      "CTA": "Contact Us"
     }
   },
   "SERVICES_PAGE": {

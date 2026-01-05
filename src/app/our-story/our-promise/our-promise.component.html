@@ -1,0 +1,59 @@
+<section class="our-promise-section">
+  <div class="promise-container">
+
+    <!-- Title Section -->
+    <div class="title-section">
+      <h2>{{ 'OUR_STORY.PROMISE.TITLE' | translate }}</h2>
+      <div class="vertical-line"></div>
+    </div>
+
+    <!-- Main Content Card -->
+    <div class="content-card">
+
+      <!-- Item 1 -->
+      <div class="promise-item item-1">
+        <div class="item-header">
+          <span class="tag-text">{{ 'OUR_STORY.PROMISE.ITEM_1_TAG' | translate }}</span>
+          <div class="indicator orange"></div>
+        </div>
+        <div class="divider"></div>
+        <div class="item-body faded">
+          <p>{{ 'OUR_STORY.PROMISE.ITEM_1_DESC_1' | translate }}</p>
+          <p>{{ 'OUR_STORY.PROMISE.ITEM_1_DESC_2' | translate }}</p>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="promise-item item-2">
+        <div class="item-header">
+          <h3 class="main-value">{{ 'OUR_STORY.PROMISE.ITEM_2_TITLE' | translate }}</h3>
+          <div class="indicator green"></div>
+        </div>
+        <div class="divider"></div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="promise-item item-3">
+        <div class="item-header">
+          <span class="tag-text">{{ 'OUR_STORY.PROMISE.ITEM_3_TAG' | translate }}</span>
+          <div class="indicator purple"></div>
+        </div>
+        <div class="divider"></div>
+        <div class="item-body">
+          <p class="subtitle">{{ 'OUR_STORY.PROMISE.ITEM_3_SUBTITLE' | translate }}</p>
+          <p class="faded">{{ 'OUR_STORY.PROMISE.ITEM_3_DESC' | translate }}</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA Button (Overlapping or centered below) -->
+    <div class="contact-btn-wrapper">
+      <app-button variant="contact" className="services-visual-contact-btn"
+                  [routerLink]="['/', currentLang, 'contact-us']">
+        <span class="btn-text">{{ 'HEADER.CONTACT_US' | translate }}</span>
+      </app-button>
+    </div>
+
+  </div>
+</section>

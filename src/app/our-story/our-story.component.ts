@@ -7,6 +7,7 @@ import { AboutRqmComponent } from './about-rqm/about-rqm.component';
 import { OurMessageValueComponent } from './our-message-value/our-message-value.component';
 import { YourSuccessPartnerComponent } from './your-success-partner/your-success-partner.component';
 import { OurDutyComponent } from './our-duty/our-duty.component';
+import { OurPromiseComponent } from './our-promise/our-promise.component';
 import { ScrollFadeDirective } from '../directives/scroll-fade';
 
 @Component({
@@ -21,6 +22,7 @@ import { ScrollFadeDirective } from '../directives/scroll-fade';
     OurMessageValueComponent, 
     YourSuccessPartnerComponent, 
     OurDutyComponent,
+    OurPromiseComponent,
     ScrollFadeDirective
   ],
   templateUrl: './our-story.component.html',

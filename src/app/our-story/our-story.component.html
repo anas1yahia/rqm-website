@@ -20,10 +20,18 @@
   }
 
   @defer (on viewport) {
+    <app-our-promise appScrollFade class="fade-in-section"></app-our-promise>
+  } @placeholder {
+    <div style="min-height: 500px"></div>
+  }
+
+  @defer (on viewport) {
     <app-our-duty appScrollFade class="fade-in-section"></app-our-duty>
   } @placeholder {
     <div style="min-height: 500px"></div>
   }
+
+
 </main>
 
 @defer (on viewport) {

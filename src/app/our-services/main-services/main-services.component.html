@@ -10,9 +10,10 @@
       <div class="mask-container">
         <img [src]="imgService" alt="Service Illustration" class="service-img">
       </div>
-      
+
       <div class="contact-btn-wrapper">
-        <app-button variant="contact" className="services-visual-contact-btn" [routerLink]="['/', currentLang, 'contact-us']">
+        <app-button variant="contact" className="services-visual-contact-btn"
+                    [routerLink]="['/', currentLang, 'contact-us']">
           <span class="btn-text">{{ 'HEADER.CONTACT_US' | translate }}</span>
         </app-button>
       </div>
