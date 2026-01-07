@@ -1,28 +1,47 @@
 <div class="quality-proof-container">
   <div class="left-content">
-    <div class="iso-links-group">
-      <div class="iso-link-item">
-        <p>ISO-IEC 27001-2022</p>
-      </div>
-      <div class="iso-link-item">
-        <p>ISO-IEC 20000-1-2018</p>
-      </div>
-      <div class="iso-link-item">
-        <p>ISO-9001-2015</p>
+    <!-- ISO Certificates Section -->
+    <div class="iso-certificates-container">
+      <div class="grid-overlay"></div>
+      <div class="iso-grid">
+        <div class="iso-card">
+          <div class="iso-badge">SECURE</div>
+          <p>ISO-IEC 27001-2022</p>
+        </div>
+        <div class="iso-card">
+          <div class="iso-badge">SERVICE</div>
+          <p>ISO-IEC 20000-1-2018</p>
+        </div>
+        <div class="iso-card">
+          <div class="iso-badge">QUALITY</div>
+          <p>ISO-9001-2015</p>
+        </div>
       </div>
     </div>
-    
-    <div class="logos-group">
-      <div class="logo-wrapper iso-wrapper">
-        <img [src]="isoLogo" [alt]="'QUALITY_PROOF.ISO_LOGO_ALT' | translate" class="iso-img">
-      </div>
-      <div class="logo-wrapper sdaia-wrapper">
-        <img [src]="sdaiaLogo" [alt]="'QUALITY_PROOF.SDAIA_LOGO_ALT' | translate" class="sdaia-img">
+
+    <!-- Logos Matrix Grid -->
+    <div class="logos-matrix-container">
+      <div class="logos-grid">
+        <!-- Primary Logos -->
+        <div class="logo-wrapper iso-wrapper">
+          <img [src]="isoLogo" [alt]="'QUALITY_PROOF.ISO_LOGO_ALT' | translate" class="iso-img">
+        </div>
+        <div class="logo-wrapper sdaia-wrapper">
+          <img [src]="sdaiaLogo" [alt]="'QUALITY_PROOF.SDAIA_LOGO_ALT' | translate" class="sdaia-img">
+        </div>
+        
+        <!-- Other Certification Logos -->
+        @for (logo of certLogos; track logo) {
+          <div class="cert-logo-wrapper">
+            <img [src]="logo" alt="Certification Logo" class="cert-logo-img">
+          </div>
+        }
       </div>
     </div>
   </div>
 
   <div class="heading-section">
+    <div class="section-badge">{{ 'LANDING.QUALITY_PROOF.TITLE' | translate }}</div>
     <h2>{{ 'LANDING.QUALITY_PROOF.TITLE' | translate }}</h2>
     <p>{{ 'LANDING.QUALITY_PROOF.DESCRIPTION' | translate }}</p>
   </div>

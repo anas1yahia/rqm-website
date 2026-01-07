@@ -12,4 +12,15 @@ import { TranslateModule } from '@ngx-translate/core';
 export class QualityProofComponent {
   isoLogo = "/iso-logo.svg";
   sdaiaLogo = "/sdaia-logo.png";
+  
+  // New logos
+  certLogos = [
+    "/1.webp",
+    "/2.webp",
+    "/3.webp",
+    "/4.webp",
+    "/6.webp",
+    "/7.webp",
+    "/9.webp"
+  ];
 }

@@ -11,22 +11,16 @@
   justify-content: center;
   align-items: center;
   gap: 6rem;
-  padding: 0 132px;
+  padding: 0 24px;
   width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
   box-sizing: border-box;
-  /* Responsive adjustments */
-}
-@media (max-width: 1200px) {
-  .quality-proof-container {
-    padding: 0 60px;
-    gap: 60px;
-  }
 }
 @media (max-width: 992px) {
   .quality-proof-container {
-    flex-direction: column-reverse;
     gap: 40px;
-    padding: 40px 20px;
+    padding: 60px 20px;
   }
 }
 
@@ -34,124 +28,156 @@
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-  gap: 21px;
-  flex: 1;
-  justify-content: flex-start;
+  gap: 100px;
   width: 100%;
+  justify-content: space-evenly;
 }
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .left-content {
     flex-direction: column-reverse;
-    gap: 30px;
+    gap: 60px;
+    justify-content: center;
   }
 }
 
-.iso-links-group {
-  width: 100%;
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center; /* Stretch to same height */
-  height: 100%;
-}
-@media (max-width: 576px) {
-  .iso-links-group {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-}
-
-.iso-link-item {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 24px; /* Increased padding for better visual */
-  height: 100.8px; /* Match tallest logo height */
+/* ISO Certificates Section - Redesigned to match System Grid */
+.iso-certificates-container {
+  position: relative;
+  background: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 40px;
+  overflow: hidden;
+  flex: 1;
+  max-width: 500px;
+}
+.iso-certificates-container .grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(var(--grid-line-color) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line-color) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.1;
+  pointer-events: none;
+}
+.iso-certificates-container .iso-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  position: relative;
+  z-index: 1;
+}
+.iso-certificates-container .iso-card {
   background: var(--card-bg);
-  /* Use margin-inline to respect direction */
-  margin-inline-end: -1px;
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: all 0.3s ease;
+  min-width: 220px;
 }
-.iso-link-item:last-child {
-  margin-inline-end: 0;
+.iso-certificates-container .iso-card:hover {
+  background: var(--glass-bg);
+  border-color: var(--primary-color);
+  transform: scale(1.02);
 }
-@media (max-width: 576px) {
-  .iso-link-item {
-    width: 100%;
-    height: 60px;
-    margin-right: 0;
-    margin-bottom: -1px;
-  }
-}
-.iso-link-item p {
-  font-family: "IBM Plex Sans Arabic", sans-serif;
+.iso-certificates-container .iso-card .iso-badge {
+  font-size: 9px;
   font-weight: 700;
-  font-size: 14.4px;
+  color: var(--primary-color);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.iso-certificates-container .iso-card p {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-weight: 600;
+  font-size: 13px;
   color: var(--text-color);
   margin: 0;
   white-space: nowrap;
-  text-align: center;
-  line-height: 1.5;
+}
+@media (max-width: 768px) {
+  .iso-certificates-container {
+    width: 100%;
+  }
+  .iso-certificates-container .iso-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-.logos-group {
+/* Logos Matrix Grid Section */
+.logos-matrix-container {
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 21px;
+  flex: 1;
 }
 
-.logo-wrapper {
+.logos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+@media (max-width: 480px) {
+  .logos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.logo-wrapper, .cert-logo-wrapper {
+  width: 130px;
+  height: 90px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: white;
+  border: 1px solid var(--card-border);
+  padding: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.logo-wrapper:hover, .cert-logo-wrapper:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+.logo-wrapper img, .cert-logo-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .iso-wrapper {
-  width: 98.86px;
-  height: 100.8px;
-  border-radius: 12px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--card-bg); /* Match link border/bg style for consistency if needed, or transparent */
-  border: 1px solid var(--card-border); /* Add border to match links */
+  background: var(--card-bg);
 }
 .iso-wrapper .iso-img {
-  width: 100%; /* Adjust size inside */
-  height: auto;
-  object-fit: contain;
   filter: grayscale(100%);
   opacity: 0.8;
 }
 :host-context([data-theme=light]) .iso-wrapper .iso-img {
-  filter: grayscale(100%) invert(1) brightness(0.2); /* Make it dark for light theme if it was white */
+  filter: grayscale(100%) invert(1) brightness(0.2);
 }
 
-.sdaia-wrapper {
-  width: 150px;
-  height: 93.75px;
-  border-radius: 12px;
-  background: white; /* White background as seen in screenshot */
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--card-border);
-}
-.sdaia-wrapper .sdaia-img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
+.cert-logo-img {
+  mix-blend-mode: multiply;
 }
 
+/* Heading Section */
 .heading-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 12px;
-  max-width: 380px;
+  max-width: 600px;
+}
+.heading-section .section-badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+  opacity: 0.8;
 }
 .heading-section h2 {
   font-family: "IBM Plex Sans Arabic", sans-serif;
@@ -160,35 +186,17 @@
   color: var(--text-color);
   margin: 0;
   letter-spacing: -0.78px;
-  white-space: nowrap;
-}
-@media (max-width: 992px) {
-  .heading-section h2 {
-    white-space: normal;
-    text-align: center;
-  }
+  text-align: center;
 }
 .heading-section p {
   font-family: "IBM Plex Sans Arabic", sans-serif;
   font-weight: 400;
-  text-wrap: wrap;
   text-align: center;
   font-size: 16px;
   color: var(--text-color);
   opacity: 0.8;
   margin: 0;
   line-height: 1.6;
-}
-@media (max-width: 992px) {
-  .heading-section p {
-    text-align: center;
-  }
-}
-@media (max-width: 992px) {
-  .heading-section {
-    align-items: center;
-    max-width: 100%;
-  }
 }
 
 /*# sourceMappingURL=quality-proof.component.css.map */
