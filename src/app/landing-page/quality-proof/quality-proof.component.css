@@ -28,7 +28,7 @@
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-  gap: 100px;
+  gap: 80px;
   width: 100%;
   justify-content: space-evenly;
 }
@@ -40,70 +40,113 @@
   }
 }
 
-/* ISO Certificates Section - Redesigned to match System Grid */
+/* ISO Certificates Section - Classic Official Design */
 .iso-certificates-container {
   position: relative;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--card-border);
-  border-radius: 16px;
-  padding: 40px;
-  overflow: hidden;
   flex: 1;
   max-width: 500px;
-}
-.iso-certificates-container .grid-overlay {
-  position: absolute;
-  inset: 0;
-  background-image: linear-gradient(var(--grid-line-color) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line-color) 1px, transparent 1px);
-  background-size: 20px 20px;
-  opacity: 0.1;
-  pointer-events: none;
+  width: 100%;
 }
 .iso-certificates-container .iso-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
-  position: relative;
-  z-index: 1;
-}
-.iso-certificates-container .iso-card {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 8px;
-  padding: 16px 24px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 20px;
+}
+.iso-certificates-container .iso-official-card {
+  display: flex;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  position: relative;
+  overflow: hidden;
   transition: all 0.3s ease;
-  min-width: 220px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
-.iso-certificates-container .iso-card:hover {
-  background: var(--glass-bg);
-  border-color: var(--primary-color);
-  transform: scale(1.02);
+.iso-certificates-container .iso-official-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
-.iso-certificates-container .iso-card .iso-badge {
-  font-size: 9px;
+.iso-certificates-container .iso-official-card:hover .accent-bar {
+  width: 8px;
+}
+:host-context([data-theme=light]) .iso-certificates-container .iso-official-card {
+  background: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.05);
+}
+.iso-certificates-container .accent-bar {
+  width: 4px;
+  flex-shrink: 0;
+  transition: width 0.3s ease;
+}
+.iso-certificates-container .accent-bar.secure {
+  background: #b56e49;
+}
+.iso-certificates-container .accent-bar.service {
+  background: #94a6cc;
+}
+.iso-certificates-container .accent-bar.quality {
+  background: #e2c044;
+}
+.iso-certificates-container .card-body {
+  flex: 1;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.iso-certificates-container .header-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.iso-certificates-container .header-meta .org-label {
+  font-size: 8px;
   font-weight: 700;
-  color: var(--primary-color);
+  color: var(--text-muted);
   letter-spacing: 1px;
-  text-transform: uppercase;
 }
-.iso-certificates-container .iso-card p {
-  font-family: "IBM Plex Sans Arabic", sans-serif;
-  font-weight: 600;
-  font-size: 13px;
+.iso-certificates-container .header-meta .cert-status {
+  font-size: 8px;
+  font-weight: 800;
+  color: var(--primary-color);
+  padding: 2px 8px;
+  border: 1px solid var(--primary-color);
+  border-radius: 2px;
+}
+.iso-certificates-container .cert-main .cert-title {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
   color: var(--text-color);
-  margin: 0;
-  white-space: nowrap;
+  margin: 0 0 4px 0;
+  letter-spacing: -0.5px;
 }
-@media (max-width: 768px) {
-  .iso-certificates-container {
-    width: 100%;
-  }
-  .iso-certificates-container .iso-grid {
-    grid-template-columns: 1fr;
-  }
+.iso-certificates-container .cert-main .cert-subtitle {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0;
+  font-weight: 500;
+}
+.iso-certificates-container .card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+:host-context([data-theme=light]) .iso-certificates-container .card-footer {
+  border-top-color: rgba(0, 0, 0, 0.05);
+}
+.iso-certificates-container .card-footer .standard-ref {
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+.iso-certificates-container .card-footer .security-seal {
+  color: var(--primary-color);
+  opacity: 0.4;
 }
 
 /* Logos Matrix Grid Section */
