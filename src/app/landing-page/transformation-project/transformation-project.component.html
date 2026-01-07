@@ -15,7 +15,7 @@
 
     <!-- CTA (Left side in RTL, Right in LTR) -->
     <div class="controls">
-      <app-button variant="action" [routerLink]="['/', currentLang, 'contact-us']">
+      <app-button variant="action" className="evaluation-btn" (onClick)="openBookingLink()">
         {{ 'LANDING.PROCESS.REQUEST_EVALUATION' | translate }}
       </app-button>
     </div>

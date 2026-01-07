@@ -17,6 +17,10 @@ import { ButtonComponent } from '../../global/button/button.component';
 export class TransformationProjectComponent {
   readonly ArrowUp = ArrowUp;
 
+  openBookingLink() {
+    window.open('https://outlook.office.com/book/TechnicalConsulting@rqm.sa/?ismsaljsauthenabled=true', '_blank');
+  }
+
   get currentLang(): string {
     return this.translate.currentLang || this.translate.defaultLang || 'ar';
   }

@@ -6,7 +6,7 @@
       <div class="title-content">
         <h2>{{ 'LANDING.VALUES.HEADING' | translate }}</h2>
         <div class="title-cta">
-          <app-button variant="action" className="evaluation-btn">
+          <app-button variant="action" className="evaluation-btn" (onClick)="openBookingLink()">
             {{ 'LANDING.PROCESS.REQUEST_EVALUATION' | translate }}
           </app-button>
         </div>

@@ -13,6 +13,10 @@ import { ButtonComponent } from '../../global/button/button.component';
   styleUrls: ['./process-section.component.scss']
 })
 export class ProcessSectionComponent {
+  openBookingLink() {
+    window.open('https://outlook.office.com/book/TechnicalConsulting@rqm.sa/?ismsaljsauthenabled=true', '_blank');
+  }
+
   steps = [
     {
       id: '001',

@@ -28,8 +28,25 @@
 .controls {
   display: flex;
   gap: 12px;
-  border: 1px solid var(--card-border);
-  /* Removed direction: ltr to follow global direction */
+}
+.controls ::ng-deep .evaluation-btn {
+  background-color: #ffffff !important;
+  background-image: none !important;
+  color: #000000 !important;
+  border: none !important;
+  border-radius: 99px !important;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 30px !important;
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.controls ::ng-deep .evaluation-btn:hover {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  transform: none !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
 }
 
 /* control-btn styles moved to app-button component */

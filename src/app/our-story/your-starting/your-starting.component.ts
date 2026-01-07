@@ -11,4 +11,8 @@ import { ButtonComponent } from '../../global/button/button.component';
   templateUrl: './your-starting.component.html',
   styleUrls: ['./your-starting.component.scss']
 })
-export class YourStartingComponent {}
+export class YourStartingComponent {
+  openBookingLink() {
+    window.open('https://outlook.office.com/book/TechnicalConsulting@rqm.sa/?ismsaljsauthenabled=true', '_blank');
+  }
+}
