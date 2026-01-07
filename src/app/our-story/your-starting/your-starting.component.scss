@@ -4,6 +4,7 @@
   padding: 100px 0;
   position: relative;
   background-color: var(--bg-color);
+  transition: background-color 0.3s ease;
 
   .container {
     max-width: 1212px;
@@ -16,20 +17,21 @@
   position: relative;
   width: 100%;
   min-height: 520px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(54, 201, 203, 0.1);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
   border-radius: 12px;
   overflow: hidden;
   display: flex;
   align-items: center;
   backdrop-filter: blur(10px);
   padding: 60px;
+  transition: all 0.3s ease;
 
   /* Tech Grid Overlay */
   .grid-overlay {
     position: absolute;
     inset: 0;
-    background-image:
+    background-image: 
       linear-gradient(var(--grid-line-color) 1px, transparent 1px),
       linear-gradient(90deg, var(--grid-line-color) 1px, transparent 1px);
     background-size: 40px 40px;
@@ -49,6 +51,10 @@
     filter: blur(40px);
     pointer-events: none;
     animation: pulseGlow 8s infinite alternate;
+
+    :host-context([data-theme="light"]) & {
+      background: radial-gradient(circle, rgba(43, 166, 168, 0.1) 0%, transparent 70%);
+    }
   }
 
   /* Binary Particles */
@@ -63,6 +69,12 @@
 
     &.top-left { top: 20px; left: 30px; }
     &.bottom-right { bottom: 20px; right: 30px; }
+  }
+
+  :host-context([data-theme="light"]) & {
+    background: rgba(2, 7, 14, 0.03);
+    border-color: rgba(43, 166, 168, 0.2);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
   }
 }
 
@@ -119,6 +131,10 @@
     height: auto;
     filter: drop-shadow(0 0 30px rgba(54, 201, 203, 0.2));
     z-index: 1;
+
+    :host-context([data-theme="light"]) & {
+      filter: drop-shadow(0 0 30px rgba(43, 166, 168, 0.15)) var(--illustration-filter);
+    }
   }
 
   .image-bg-glow {
@@ -166,10 +182,11 @@
   .main-title {
     font-size: 48px;
     font-weight: 800;
-    color: white;
+    color: var(--text-color);
     line-height: 1.1;
     margin-bottom: 32px;
     font-family: 'Noto Sans Arabic', sans-serif;
+    transition: color 0.3s ease;
 
     @media (max-width: 768px) {
       font-size: 36px;
@@ -178,41 +195,41 @@
 
   .description-group {
     margin-bottom: 40px;
-
+    
     .desc-item {
       font-size: 18px;
       line-height: 1.6;
       color: var(--text-muted);
       margin-bottom: 12px;
+      transition: color 0.3s ease;
 
       &.highlighted {
-        color: white;
+        color: var(--text-color);
         font-weight: 500;
       }
     }
   }
 }
 
-/* Primary CTA Enhancement */
-  .cta-wrapper {
-    margin-top: 10px;
+.cta-wrapper {
+  margin-top: 10px;
+  
+  .btn-text {
+    margin-inline-end: 12px;
+  }
 
-    .btn-text {
-      margin-inline-end: 12px;
-    }
+  .btn-icon {
+    transition: transform 0.3s ease;
+  }
 
-    .btn-icon {
-      transition: transform 0.3s ease;
-    }
-
-    app-button:hover .btn-icon {
-      transform: translate(2px, -2px);
-
-      [dir="rtl"] & {
-        transform: translate(-2px, -2px);
-      }
+  app-button:hover .btn-icon {
+    transform: translate(2px, -2px);
+    
+    [dir="rtl"] & {
+      transform: translate(-2px, -2px);
     }
   }
+}
 
 @keyframes pulseGlow {
   from { opacity: 0.15; transform: translate(-50%, -50%) scale(1); }

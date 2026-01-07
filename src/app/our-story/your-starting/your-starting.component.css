@@ -2,6 +2,7 @@
   padding: 100px 0;
   position: relative;
   background-color: var(--bg-color);
+  transition: background-color 0.3s ease;
 }
 .your-starting-section .container {
   max-width: 1212px;
@@ -13,14 +14,15 @@
   position: relative;
   width: 100%;
   min-height: 520px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(54, 201, 203, 0.1);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
   border-radius: 12px;
   overflow: hidden;
   display: flex;
   align-items: center;
   backdrop-filter: blur(10px);
   padding: 60px;
+  transition: all 0.3s ease;
   /* Tech Grid Overlay */
 }
 .tech-container .grid-overlay {
@@ -46,6 +48,9 @@
   pointer-events: none;
   animation: pulseGlow 8s infinite alternate;
 }
+:host-context([data-theme=light]) .tech-container .glow-sphere {
+  background: radial-gradient(circle, rgba(43, 166, 168, 0.1) 0%, transparent 70%);
+}
 .tech-container {
   /* Binary Particles */
 }
@@ -65,6 +70,11 @@
 .tech-container .binary-data.bottom-right {
   bottom: 20px;
   right: 30px;
+}
+:host-context([data-theme=light]) .tech-container {
+  background: rgba(2, 7, 14, 0.03);
+  border-color: rgba(43, 166, 168, 0.2);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
 }
 
 /* Frame Corners Enhancements */
@@ -144,6 +154,9 @@
   filter: drop-shadow(0 0 30px rgba(54, 201, 203, 0.2));
   z-index: 1;
 }
+:host-context([data-theme=light]) .media-box .main-illustration {
+  filter: drop-shadow(0 0 30px rgba(43, 166, 168, 0.15)) var(--illustration-filter);
+}
 .media-box .image-bg-glow {
   position: absolute;
   width: 80%;
@@ -188,10 +201,11 @@
 .text-box .main-title {
   font-size: 48px;
   font-weight: 800;
-  color: white;
+  color: var(--text-color);
   line-height: 1.1;
   margin-bottom: 32px;
   font-family: "Noto Sans Arabic", sans-serif;
+  transition: color 0.3s ease;
 }
 @media (max-width: 768px) {
   .text-box .main-title {
@@ -206,13 +220,13 @@
   line-height: 1.6;
   color: var(--text-muted);
   margin-bottom: 12px;
+  transition: color 0.3s ease;
 }
 .text-box .description-group .desc-item.highlighted {
-  color: white;
+  color: var(--text-color);
   font-weight: 500;
 }
 
-/* Primary CTA Enhancement */
 .cta-wrapper {
   margin-top: 10px;
 }
