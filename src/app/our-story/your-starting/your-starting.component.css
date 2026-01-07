@@ -49,7 +49,7 @@
   animation: pulseGlow 8s infinite alternate;
 }
 :host-context([data-theme=light]) .tech-container .glow-sphere {
-  background: radial-gradient(circle, rgba(43, 166, 168, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(43, 166, 168, 0.15) 0%, transparent 70%);
 }
 .tech-container {
   /* Binary Particles */
@@ -72,8 +72,8 @@
   right: 30px;
 }
 :host-context([data-theme=light]) .tech-container {
-  background: rgba(2, 7, 14, 0.03);
-  border-color: rgba(43, 166, 168, 0.2);
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(43, 166, 168, 0.1);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
 }
 
@@ -147,24 +147,34 @@
   position: relative;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .media-box .main-illustration {
   max-width: 100%;
   height: auto;
-  filter: drop-shadow(0 0 30px rgba(54, 201, 203, 0.2));
   z-index: 1;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.1));
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
-:host-context([data-theme=light]) .media-box .main-illustration {
-  filter: drop-shadow(0 0 30px rgba(43, 166, 168, 0.15)) var(--illustration-filter);
+:host-context([data-theme=dark]) .media-box .main-illustration {
+  filter: drop-shadow(0 0 30px rgba(54, 201, 203, 0.2));
+}
+.media-box .main-illustration:hover {
+  transform: translateY(-5px);
 }
 .media-box .image-bg-glow {
   position: absolute;
-  width: 80%;
-  height: 80%;
-  background: var(--primary-color);
-  opacity: 0.05;
-  filter: blur(80px);
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
+  opacity: 0.1;
+  filter: blur(60px);
   border-radius: 50%;
+  pointer-events: none;
+}
+:host-context([data-theme=light]) .media-box .image-bg-glow {
+  opacity: 0.15;
+  background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
 }
 @media (max-width: 1024px) {
   .media-box {
