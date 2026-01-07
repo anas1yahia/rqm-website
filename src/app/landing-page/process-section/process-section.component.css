@@ -145,12 +145,23 @@
   width: 100%;
   padding-bottom: 300px;
 }
+@media (max-width: 1024px) {
+  .cards-grid {
+    gap: 5vh;
+    padding-bottom: 100px;
+  }
+}
 .cards-grid ::ng-deep app-process-card {
   position: sticky;
   top: 150px;
   display: block;
   width: 100%;
   transition: transform 0.3s ease;
+}
+@media (max-width: 1024px) {
+  .cards-grid ::ng-deep app-process-card {
+    top: 100px;
+  }
 }
 .cards-grid ::ng-deep app-process-card:nth-child(1) {
   z-index: 1;
