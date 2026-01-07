@@ -27,7 +27,7 @@
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-  gap: 80px;
+
   width: 100%;
   justify-content: space-evenly;
 
@@ -99,7 +99,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
     .org-label {
       font-size: 8px;
       font-weight: 700;
@@ -165,14 +165,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex: 1;
+
 }
 
 .logos-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  
+
   @media (max-width: 480px) {
     grid-template-columns: repeat(2, 1fr);
   }

@@ -84,7 +84,13 @@
     },
     "QUALITY_PROOF": {
         "TITLE": "Compliance Scope",
-        "DESCRIPTION": "We operate within a framework of high digital compliance to ensure the security and sustainability of your business."
+        "DESCRIPTION": "We operate within a framework of high digital compliance to ensure the security and sustainability of your business.",
+        "CERTIFIED_SYSTEM": "CERTIFIED MANAGEMENT SYSTEM",
+        "VERIFIED": "VERIFIED",
+        "ISO_27001_SUB": "Information Security Management",
+        "ISO_20000_SUB": "Information Technology Service",
+        "ISO_9001_SUB": "Quality Management Systems",
+        "STANDARD_REF": "STANDARD: {{year}} EDITION"
     }
   },
   "OUR_STORY": {
