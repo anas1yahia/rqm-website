@@ -21,6 +21,7 @@ export class QualityProofComponent {
     "/4.webp",
     "/6.webp",
     "/7.webp",
+    "/8.webp",
     "/9.webp"
   ];
 }

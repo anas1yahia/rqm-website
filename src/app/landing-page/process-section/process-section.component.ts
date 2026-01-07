@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { LucideAngularModule, BrainCircuit, Hammer, ShieldCheck, BarChart3 } from 'lucide-angular';
 import { ProcessCardComponent } from '../process-card/process-card.component';
+import { ButtonComponent } from '../../global/button/button.component';
 
 @Component({
   selector: 'app-process-section',
   standalone: true,
-  imports: [CommonModule, TranslateModule, LucideAngularModule, ProcessCardComponent],
+  imports: [CommonModule, TranslateModule, LucideAngularModule, ProcessCardComponent, ButtonComponent],
   templateUrl: './process-section.component.html',
   styleUrls: ['./process-section.component.scss']
 })

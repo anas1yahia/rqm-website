@@ -59,8 +59,8 @@
   flex-direction: column;
   gap: 24px;
   position: relative;
-  align-items: flex-end; /* RTL: Align right */
-  text-align: right;
+  align-items: flex-start; /* RTL: Align right */
+  text-align: start;
 }
 :host-context([dir=ltr]) .title-content {
   align-items: flex-start;
@@ -87,6 +87,19 @@
 @media (max-width: 768px) {
   .title-content h2 {
     font-size: 32px;
+  }
+}
+
+.title-cta {
+  width: fit-content;
+  display: flex;
+  background-color: #f0f0f0 !important;
+  border-radius: 99px !important;
+  color: var(--text-color) !important;
+}
+@media (max-width: 1024px) {
+  .title-cta {
+    justify-content: center;
   }
 }
 
