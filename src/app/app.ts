@@ -27,16 +27,24 @@ export class App implements OnInit {
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
+      let lastUrl = this.router.url;
+
       this.router.events.subscribe((event: Event) => {
         // Navigation Start -> Show Overlay
         if (event instanceof NavigationStart) {
-          this.uiService.startTransition();
+          const isToContact = event.url.includes('contact-us');
+          const isFromContact = lastUrl.includes('contact-us');
+          
+          if (!isToContact && !isFromContact) {
+            this.uiService.startTransition();
+          }
         }
 
         // Navigation End/Cancel/Error -> Update Lang (if needed) and Hide Overlay
         if (event instanceof NavigationEnd || event instanceof NavigationCancel || event instanceof NavigationError) {
           if (event instanceof NavigationEnd) {
-            this.updateLanguageFromUrl(event.urlAfterRedirects || event.url);
+            lastUrl = event.urlAfterRedirects || event.url;
+            this.updateLanguageFromUrl(lastUrl);
           }
           // Small delay to let the overlay finish appearing if nav was super fast
           setTimeout(() => {
