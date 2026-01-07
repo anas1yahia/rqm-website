@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
-import { LucideAngularModule, Linkedin, Twitter, Globe, Github } from 'lucide-angular';
+import { LucideAngularModule, Linkedin, Instagram, X } from 'lucide-angular';
 
 @Component({
   selector: 'app-contact-social',
@@ -12,14 +12,24 @@ import { LucideAngularModule, Linkedin, Twitter, Globe, Github } from 'lucide-an
 })
 export class ContactSocialComponent {
   readonly Linkedin = Linkedin;
-  readonly Twitter = Twitter;
-  readonly Medium = Globe; // Using Globe as a placeholder for Medium
-  readonly Behance = Github; // Using Github as a placeholder for Behance
+  readonly Instagram = Instagram;
+  readonly X = X;
 
   socialLinks = [
-    { name: 'CONTACT_US.SOCIAL.BEHANCE', icon: this.Behance, url: '#' },
-    { name: 'CONTACT_US.SOCIAL.MEDIUM', icon: this.Medium, url: '#' },
-    { name: 'CONTACT_US.SOCIAL.X', icon: this.Twitter, url: '#' },
-    { name: 'CONTACT_US.SOCIAL.LINKEDIN', icon: this.Linkedin, url: '#' }
+    { 
+      name: 'CONTACT_US.SOCIAL.LINKEDIN', 
+      icon: this.Linkedin, 
+      url: 'https://www.linkedin.com/company/byrqm-sa' 
+    },
+    { 
+      name: 'CONTACT_US.SOCIAL.INSTAGRAM', 
+      icon: this.Instagram, 
+      url: 'https://www.instagram.com/byrqm_sa/' 
+    },
+    { 
+      name: 'CONTACT_US.SOCIAL.X', 
+      icon: this.X, 
+      url: 'https://x.com/byrqm_sa' 
+    }
   ];
 }

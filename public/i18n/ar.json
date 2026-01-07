@@ -420,15 +420,12 @@
       "HOURS_LABEL": "ساعات العمل",
       "HOURS_VALUE": "الأحد - الخميس: 9:00 - 18:00"
     },
-    "SOCIAL": {
-      "FOLLOW_US": "للمتابعة:",
-      "BEHANCE": "behance",
-      "MEDIUM": "MEDIUM",
-      "INSTAGRAM": "instagram",
-      "X": "X/Twitter",
-      "LINKEDIN": "LINKEDIN"
-
-    }
+        "SOCIAL": {
+          "FOLLOW_US": "للمتابعة:",
+          "INSTAGRAM": "انستغرام",
+          "X": "إكس (تويتر)",
+          "LINKEDIN": "لينكد إن"
+        }
   },
   "PRIVACY_POLICY": {
     "TITLE": "سياسة خصوصية - رقم",
