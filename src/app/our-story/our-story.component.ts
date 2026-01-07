@@ -8,6 +8,7 @@ import { OurMessageValueComponent } from './our-message-value/our-message-value.
 import { YourSuccessPartnerComponent } from './your-success-partner/your-success-partner.component';
 import { OurDutyComponent } from './our-duty/our-duty.component';
 import { OurPromiseComponent } from './our-promise/our-promise.component';
+import { YourStartingComponent } from './your-starting/your-starting.component';
 import { ScrollFadeDirective } from '../directives/scroll-fade';
 
 @Component({
@@ -23,6 +24,7 @@ import { ScrollFadeDirective } from '../directives/scroll-fade';
     YourSuccessPartnerComponent, 
     OurDutyComponent,
     OurPromiseComponent,
+    YourStartingComponent,
     ScrollFadeDirective
   ],
   templateUrl: './our-story.component.html',
