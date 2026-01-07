@@ -8,23 +8,40 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: flex-start; /* flex-start horizontally */
-  transition: all 0.3s ease;
-  overflow: visible; /* Needed for negative margin decorations if any */
+  align-items: flex-start;
+  transition: background 0.4s ease, border-color 0.3s ease, transform 0.3s ease;
+  overflow: visible;
+  /* State: Stacking (Stuck) */
+}
+.process-card.is-stuck {
+  background: #0d0f1f;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.process-card {
   /* Light Theme Override */
 }
 :host-context([data-theme=light]) .process-card {
   background: rgba(0, 0, 0, 0.02);
   border-color: rgba(0, 0, 0, 0.05);
 }
+:host-context([data-theme=light]) .process-card.is-stuck {
+  background: #f0f2f5;
+  border-color: rgba(0, 0, 0, 0.1);
+}
 .process-card:hover {
   background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(255, 255, 255, 0.1);
+}
+.process-card:hover.is-stuck {
+  background: #14172b;
+}
+.process-card:hover {
   /* Light Theme Override */
 }
 :host-context([data-theme=light]) .process-card:hover {
   background: rgba(0, 0, 0, 0.04);
-  border-color: rgba(0, 0, 0, 0.1);
+}
+:host-context([data-theme=light]) .process-card:hover.is-stuck {
+  background: #e8eaf0;
 }
 .process-card:hover .corner-accent {
   opacity: 1;
@@ -43,10 +60,6 @@
 .card-id {
   position: absolute;
   top: -10px;
-  /* RTL: Left is End, Right is Start. ID is usually on Left (LTR) or Right (RTL)?
-     Screenshot shows "001" on top-left.
-     So regardless of dir, let's pin it to the left side (LTR start, RTL end).
-  */
   inset-inline-end: auto; /* Reset */
   left: 0; /* Force left */
   font-family: "IBM Plex Sans Arabic", sans-serif;
@@ -89,9 +102,6 @@
   color: var(--text-color); /* Ensure icon takes text color */
 }
 .icon-circle {
-  /* Design shows square-ish container or circle? Icon is inside a box in design analysis "size-[48px]".
-     Let's keep it square with slight border radius? Or fully square?
-     Screenshot shows icon inside a square box. */
   border-radius: 0;
 }
 
@@ -142,8 +152,6 @@
 }
 .corner-accent.top-start {
   top: -1px;
-  left: -1px; /* Always left? Or start? Design shows corners on hover usually match layout. */
-  /* Let's stick to Left-Top and Right-Bottom as typical diagonal */
   left: -1px;
   border-bottom: 0;
   border-right: 0;
