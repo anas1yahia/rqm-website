@@ -3,14 +3,12 @@
   padding: 100px 0;
   display: flex;
   justify-content: center;
-  overflow: visible; /* Needed for sticky to work if parent overflows */
+  overflow: visible;
 
-  /* Comfort Pattern Background */
   background: rgba(255, 255, 255, 0.015);
   border-top: 1px solid rgba(255, 255, 255, 0.03);
   border-bottom: 1px solid rgba(255, 255, 255, 0.03);
 
-  /* Light Theme Override */
   :host-context([data-theme="light"]) & {
     background: rgba(0, 0, 0, 0.02);
     border-top: 1px solid rgba(0, 0, 0, 0.03);
@@ -22,9 +20,9 @@
   display: flex;
   width: 100%;
   max-width: 1200px;
-  gap: 60px; /* Increased gap */
+  gap: 60px;
   padding: 0 20px;
-  position: relative; /* Context for sticky */
+  position: relative;
 
   @media (max-width: 1024px) {
     flex-direction: column;
@@ -35,14 +33,13 @@
 
 .title-panel {
   flex: 0 0 350px;
-  /* Sticky positioning */
   position: sticky;
-  top: 120px; /* Adjust based on header height */
+  top: 120px;
   height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-self: flex-start; /* Important for sticky in flex item */
+  align-self: flex-start;
 
   @media (max-width: 1024px) {
     position: relative;
@@ -59,7 +56,7 @@
   flex-direction: column;
   gap: 24px;
   position: relative;
-  align-items: flex-start; /* RTL: Align right */
+  align-items: flex-start;
   text-align: start;
 
   :host-context([dir="ltr"]) & {
@@ -75,14 +72,13 @@
   h2 {
     font-family: 'IBM Plex Sans Arabic', sans-serif;
     font-weight: 700;
-    font-size: 42px; /* Increased size */
+    font-size: 42px;
     line-height: 1.2;
     color: #fff;
     margin: 0;
 
-    /* Light Theme Override */
     :host-context([data-theme="light"]) & {
-      color: var(--text-color); /* Dark text */
+      color: var(--text-color);
     }
 
     @media (max-width: 768px) {
@@ -92,26 +88,42 @@
 }
 
 .title-cta {
-  width: fit-content;
   display: flex;
-  background-color: #f0f0f0 !important;
-  border-radius: 99px !important;
-  color: var(--text-color) !important;
+  margin-top: 10px;
+
   @media (max-width: 1024px) {
     justify-content: center;
+    margin: 10px auto 0;
   }
 
+  ::ng-deep .evaluation-btn {
+    background-color: #ffffff !important;
+    background-image: none !important;
+    color: #000000 !important; // Force black text
+    border: none !important;
+    border-radius: 99px !important;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 12px 30px !important;
+    white-space: nowrap;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 
+    &:hover {
+      background-color: #ffffff !important;
+      color: #000000 !important;
+      transform: none !important;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+    }
+  }
 }
 
 .title-line {
-  /* Vertical line next to title */
   width: 1px;
-  height: 140px; /* Shorter line */
-  background: rgba(255, 255, 255, 0.1); /* Subtle color */
+  height: 140px;
+  background: rgba(255, 255, 255, 0.1);
   margin-top: 10px;
 
-  /* Light Theme Override */
   :host-context([data-theme="light"]) & {
     background: rgba(0, 0, 0, 0.1);
   }
