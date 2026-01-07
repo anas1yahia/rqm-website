@@ -141,7 +141,29 @@
   box-shadow: 0 0 10px #62c4aa;
   transform: scale(1.2);
 }
+.trigger-card .progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: #62c4aa;
+  width: 0;
+  animation: progressFill 3s linear forwards;
+  z-index: 2;
+}
+:host-context([dir=rtl]) .trigger-card .progress-bar {
+  left: auto;
+  right: 0;
+}
 
+@keyframes progressFill {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
 .trigger-content {
   display: flex;
   justify-content: space-between;

@@ -12,13 +12,15 @@
   <!-- Desktop Layout (Grid Tabs + Content) -->
   <div class="desktop-layout">
     <!-- Triggers Grid -->
-    <div class="triggers-grid">
+    <div class="triggers-grid" (mouseenter)="stopAutoSlide()" (mouseleave)="startAutoSlide()">
       @for (key of servicesList; track key; let i = $index) {
         <div class="trigger-card" [class.active]="activeIndex === i" (click)="selectService(i)" tabindex="0">
           <div class="trigger-content">
             <span class="trigger-title">{{ 'SERVICES_PAGE.AI_SECTION.SERVICES_LIST.' + key + '.TITLE' | translate }}</span>
             <div class="indicator-dot"></div>
           </div>
+          <!-- Progress bar for auto-slide -->
+          <div class="progress-bar" *ngIf="activeIndex === i"></div>
         </div>
       }
     </div>
@@ -58,7 +60,7 @@
 
   <!-- Mobile Layout (Accordion) -->
   <div class="mobile-layout">
-    <div class="services-wrapper">
+    <div class="services-wrapper" (mouseenter)="stopAutoSlide()" (mouseleave)="startAutoSlide()">
       @for (key of servicesList; track key; let i = $index) {
         <div class="service-block" [class.expanded]="activeIndex === i" (click)="setActive(i)">
           <div class="service-header-row">
