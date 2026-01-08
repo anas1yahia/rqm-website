@@ -327,6 +327,11 @@
   margin-top: auto; /* Push footer to bottom */
 }
 
+.link-wrapper {
+  text-decoration: none;
+  display: block;
+}
+
 /* Note: Lucide icon color inherits from parent 'color', so setting color on btn handles icon */
 .btn-text {
   font-family: "IBM Plex Sans Arabic", sans-serif;
