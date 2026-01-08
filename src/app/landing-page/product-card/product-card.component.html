@@ -51,6 +51,16 @@
             </div>
           </app-button>
         </a>
+      } @else if (internalLink) {
+        <a [routerLink]="internalLink" class="link-wrapper">
+          <app-button variant="action">
+            <span class="btn-text">{{ 'LANDING.PRODUCTS.QAID_CTA_MORE' | translate }}</span>
+            <div class="btn-icon">
+               <!-- Lucide Icon -->
+               <lucide-icon [img]="currentIcon" [size]="16" strokeWidth="2"></lucide-icon>
+            </div>
+          </app-button>
+        </a>
       } @else {
         <app-button variant="action">
           <span class="btn-text">{{ 'LANDING.PRODUCTS.QAID_CTA_MORE' | translate }}</span>

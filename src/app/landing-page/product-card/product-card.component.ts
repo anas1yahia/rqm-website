@@ -23,6 +23,7 @@ export class ProductCardComponent implements OnInit, OnDestroy {
   @Input() themeColor: string = '#62c4aa'; // Default to green
   @Input() isSmall: boolean = false; // For the "more solutions" card
   @Input() link: string = '';
+  @Input() internalLink: string | any[] | null = null;
   
   isLoading: boolean = true; // Added for skeleton loading
 

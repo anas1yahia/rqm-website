@@ -11,5 +11,9 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   styleUrls: ['./our-products.component.scss']
 })
 export class OurProductsComponent {
+  get currentLang(): string {
+    return this.translate.currentLang || this.translate.defaultLang || 'ar';
+  }
+
   constructor(private translate: TranslateService) {}
 }
