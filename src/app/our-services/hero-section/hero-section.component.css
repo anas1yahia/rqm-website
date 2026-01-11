@@ -70,7 +70,7 @@
   gap: 20px;
   text-align: start;
 }
-.feature-card h2 {
+.feature-card h1, .feature-card h2 {
   font-size: 32px; /* Smaller font for longer titles */
   font-weight: 700;
   color: white;
