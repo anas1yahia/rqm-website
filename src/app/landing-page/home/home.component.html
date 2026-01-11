@@ -1,52 +1,44 @@
 <div class="home-container">
   <app-main-layout id="home"></app-main-layout>
 
-  @defer (on viewport) {
-    <app-client-section appScrollFade class="fade-in-section"></app-client-section>
-  } @placeholder {
-    <div style="min-height: 200px"></div>
-  }
-
-  @defer (on viewport) {
-    <app-info-section id="about" appScrollFade class="fade-in-section"></app-info-section>
-  } @placeholder {
-    <div style="min-height: 500px"></div>
-  }
+  <!-- Eager load Client and Info sections to prevent layout shifts near the top -->
+  <app-client-section appScrollFade class="fade-in-section"></app-client-section>
+  <app-info-section id="about" appScrollFade class="fade-in-section"></app-info-section>
 
   @defer (on viewport) {
     <app-transformation-project appScrollFade class="fade-in-section delay-100"></app-transformation-project>
   } @placeholder {
-    <div style="min-height: 600px"></div>
+    <div style="min-height: 800px"></div>
   }
 
   @defer (on viewport) {
     <app-process-section appScrollFade class="fade-in-section"></app-process-section>
   } @placeholder {
-    <div style="min-height: 600px"></div>
+    <div style="min-height: 700px"></div>
   }
 
   @defer (on viewport) {
     <app-statistic-section appScrollFade class="fade-in-section"></app-statistic-section>
   } @placeholder {
-    <div style="min-height: 300px"></div>
+    <div style="min-height: 400px"></div>
   }
 
   @defer (on viewport) {
     <app-quality-proof appScrollFade class="fade-in-section"></app-quality-proof>
   } @placeholder {
-    <div style="min-height: 300px"></div>
+    <div style="min-height: 500px"></div>
   }
 
   @defer (on viewport) {
     <app-our-partners appScrollFade class="fade-in-section"></app-our-partners>
   } @placeholder {
-    <div style="min-height: 300px"></div>
+    <div style="min-height: 400px"></div>
   }
 
   @defer (on viewport) {
     <app-footer id="contact" appScrollFade class="fade-in-section"></app-footer>
   } @placeholder {
-    <div style="min-height: 400px"></div>
+    <div style="min-height: 450px"></div>
   }
   <!-- Future content sections will go here -->
 

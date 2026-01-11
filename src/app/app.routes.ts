@@ -1,10 +1,5 @@
 import { Routes, UrlSegment } from '@angular/router';
 import { HomeComponent } from './landing-page/home/home.component';
-import { OurStoryComponent } from './our-story/our-story.component';
-import { ContactUsComponent } from './contact-us/contact-us.component';
-import { OurServicesComponent } from './our-services/our-services.component';
-import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
-import { NotFoundComponent } from './global/not-found/not-found.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'ar', pathMatch: 'full' },
@@ -20,12 +15,35 @@ export const routes: Routes = [
       return null;
     },
     children: [
-      { path: '', component: HomeComponent, data: { animation: 'HomePage' } },
-      { path: 'our-story', component: OurStoryComponent, data: { animation: 'OurStoryPage' } },
-      { path: 'contact-us', component: ContactUsComponent, data: { animation: 'ContactUsPage' } },
-      { path: 'services', component: OurServicesComponent, data: { animation: 'ServicesPage' } },
-      { path: 'privacy-policy', component: PrivacyPolicyComponent, data: { animation: 'PrivacyPolicyPage' } }
+      { 
+        path: '', 
+        component: HomeComponent, 
+        data: { animation: 'HomePage' } 
+      },
+      { 
+        path: 'our-story', 
+        loadComponent: () => import('./our-story/our-story.component').then(m => m.OurStoryComponent), 
+        data: { animation: 'OurStoryPage' } 
+      },
+      { 
+        path: 'contact-us', 
+        loadComponent: () => import('./contact-us/contact-us.component').then(m => m.ContactUsComponent), 
+        data: { animation: 'ContactUsPage' } 
+      },
+      { 
+        path: 'services', 
+        loadComponent: () => import('./our-services/our-services.component').then(m => m.OurServicesComponent), 
+        data: { animation: 'ServicesPage' } 
+      },
+      { 
+        path: 'privacy-policy', 
+        loadComponent: () => import('./privacy-policy/privacy-policy.component').then(m => m.PrivacyPolicyComponent), 
+        data: { animation: 'PrivacyPolicyPage' } 
+      }
     ]
   },
-  { path: '**', component: NotFoundComponent } // Catch-all for invalid routes
+  { 
+    path: '**', 
+    loadComponent: () => import('./global/not-found/not-found.component').then(m => m.NotFoundComponent) 
+  } // Catch-all for invalid routes
 ];

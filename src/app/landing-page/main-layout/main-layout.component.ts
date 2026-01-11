@@ -10,5 +10,5 @@ import { HeroSectionComponent } from '../hero-section/hero-section.component';
   styleUrls: ['./main-layout.component.scss']
 })
 export class MainLayoutComponent {
-  imgHeaderBackground = "/header_bg01.png";
+  imgHeaderBackground = "/header_bg01.webp";
 }
