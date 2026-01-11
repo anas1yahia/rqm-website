@@ -13,7 +13,7 @@
   <div class="desktop-layout">
     <!-- Triggers Grid -->
     <div class="triggers-grid" (mouseenter)="stopAutoSlide()" (mouseleave)="startAutoSlide()">
-      @for (key of servicesList; track key; let i = $index) {
+      @for (key of servicesList; track $index; let i = $index) {
         <div class="trigger-card" [class.active]="activeIndex === i" (click)="selectService(i)" tabindex="0">
           <div class="trigger-content">
             <span class="trigger-title">{{ 'SERVICES_PAGE.AI_SECTION.SERVICES_LIST.' + key + '.TITLE' | translate }}</span>
@@ -61,7 +61,7 @@
   <!-- Mobile Layout (Accordion) -->
   <div class="mobile-layout">
     <div class="services-wrapper" (mouseenter)="stopAutoSlide()" (mouseleave)="startAutoSlide()">
-      @for (key of servicesList; track key; let i = $index) {
+      @for (key of servicesList; track $index; let i = $index) {
         <div class="service-block" [class.expanded]="activeIndex === i" (click)="setActive(i)">
           <div class="service-header-row">
             <div class="header-text">

@@ -88,7 +88,7 @@
         </div>
         
         <!-- Other Certification Logos -->
-        @for (logo of certLogos; track logo) {
+        @for (logo of certLogos; track $index) {
           <div class="cert-logo-wrapper">
             <img [src]="logo" alt="Certification Logo" class="cert-logo-img">
           </div>

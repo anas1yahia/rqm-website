@@ -59,8 +59,13 @@ import { ProductCardComponent } from '../../landing-page/product-card/product-ca
         pointerEvents: 'auto',
         visibility: 'visible'
       })),
-      transition('closed => open', animate('0.3s cubic-bezier(0.16, 1, 0.3, 1)')),
-      transition('open => closed', animate('0.2s cubic-bezier(0.7, 0, 0.84, 0)'))
+      transition('closed => open', [
+        style({ visibility: 'visible', pointerEvents: 'auto' }),
+        animate('0.3s cubic-bezier(0.16, 1, 0.3, 1)', style({ opacity: 1, transform: 'translateY(0)' }))
+      ]),
+      transition('open => closed', [
+        animate('0.2s cubic-bezier(0.7, 0, 0.84, 0)', style({ opacity: 0, transform: 'translateY(-10px)' }))
+      ])
     ])
   ]
 })

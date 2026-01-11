@@ -28,7 +28,7 @@
       
       <!-- Features List -->
       <div class="features-list">
-        @for (feature of features; track feature) {
+        @for (feature of features; track $index) {
           <div class="feature-item">
             <span class="feature-text">{{ feature }}</span>
             <div class="feature-icon-wrapper">
