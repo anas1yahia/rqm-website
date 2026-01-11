@@ -36,7 +36,7 @@
         <div class="nav-item-wrapper" (mouseenter)="toggleProductsMenu(true)" (mouseleave)="toggleProductsMenu(false)">
           <button class="nav-link products-btn" [class.active]="isProductsMenuOpen">
             {{ 'HEADER.PRODUCTS' | translate }}
-            <lucide-icon name="chevron-down" [size]="16" class="chevron-icon"></lucide-icon>
+            <lucide-icon [img]="ChevronDownIcon" [size]="16" class="chevron-icon"></lucide-icon>
           </button>
           
           <!-- Mega Menu Dropdown -->
@@ -109,7 +109,7 @@
       <!-- Mobile Products Toggle -->
       <button class="mobile-nav-link products-mobile-btn" (click)="toggleMobileProducts()" [class.active]="isMobileProductsOpen">
         {{ 'HEADER.PRODUCTS' | translate }}
-        <lucide-icon name="chevron-down" [size]="20" class="chevron-icon"></lucide-icon>
+        <lucide-icon [img]="ChevronDownIcon" [size]="20" class="chevron-icon"></lucide-icon>
       </button>
       
       <!-- Mobile Products Accordion Content -->
